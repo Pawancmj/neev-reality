@@ -1,11 +1,10 @@
-import Navbar from "./reusable_components/navbar/navbar";
-import Hero from "./homepage/herosection/hero"
+
+import Homepage from "./homepage/page";
 
 export default function Home() {
   return (
     <div  >
-    <Navbar/>
-    <Hero/>
+      <Homepage/>
     </div>
   );
 }
