@@ -40,7 +40,7 @@ const posts: BlogPost[] = [
 
 const BlogSection: React.FC = () => {
   return (
-    <section className="w-full bg-white py-16 relative top-90">
+    <section className="w-full bg-white py-16 mt-94">
       <div className="mx-auto max-w-4xl px-4 text-center">
         <h2 className="text-3xl font-semibold text-gray-900">
           Blog and News Updates
