@@ -16,7 +16,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <header className="w-full border-b border-gray-200 bg-white mx-auto " style={{width:1520}} >
+    <header className=" bg-white mx-auto " style={{width:1520}} >
       <nav className="mx-auto flex  items-center justify-between px-6 py-3" style={{width:1212,height:132}}>
         <div className="flex items-center"style={{width:73,height:62}}>
           <Link href="/">
