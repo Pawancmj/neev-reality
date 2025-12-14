@@ -27,7 +27,7 @@ export default function SearchCard() {
              <Image
                           src="/images/heroimg.png" 
                           alt="Neev Realty Logo"
-                          width={1440}
+                          width={15200}
                           height={617}
                           className="h-auto w-auto mx-auto"
                           style={{width:1520,height:617}}
