@@ -1,0 +1,75 @@
+import React from "react";
+import bigServices from "@/data/bigServices";
+
+export default function BigServices() {
+  return (
+    <section className="py-20">
+      <div className="max-w-[1180px] mx-auto px-4">
+
+        {/* TOP 2 BOXES */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {bigServices.slice(0, 2).map((b) => (
+            <div
+              key={b.id}
+              className="
+                border border-gray-300 rounded-xl p-10 
+                bg-white
+                min-h-[220px] 
+                flex flex-col justify-center
+              "
+            >
+              <h4 className="text-[#1D4ED8] text-xl font-semibold mb-3">
+                {b.title}
+              </h4>
+              <p className="text-gray-600 text-[15px] leading-6 max-w-[420px]">
+                {b.text}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* MIDDLE BOX (HIGHLIGHTED) */}
+        <div className="relative flex justify-center mt-[-60px] mb-[-60px] z-10">
+          <div
+            className="
+              bg-white border border-gray-300 
+              rounded-xl shadow-lg
+              p-10 text-center 
+              w-full max-w-[520px]
+              min-h-[220px]
+            "
+          >
+            <h4 className="text-[#1D4ED8] text-xl font-semibold mb-3">
+              {bigServices[2].title}
+            </h4>
+            <p className="text-gray-600 text-[15px] leading-6">
+              {bigServices[2].text}
+            </p>
+          </div>
+        </div>
+
+        {/* BOTTOM 2 BOXES */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+          {bigServices.slice(3).map((b) => (
+            <div
+              key={b.id}
+              className="
+                border border-gray-300 rounded-xl p-10 
+                bg-white
+                min-h-[220px] 
+                flex flex-col justify-center
+              "
+            >
+              <h4 className="text-[#1D4ED8] text-xl font-semibold mb-3">
+                {b.title}
+              </h4>
+              <p className="text-gray-600 text-[15px] leading-6 max-w-[420px]">
+                {b.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
