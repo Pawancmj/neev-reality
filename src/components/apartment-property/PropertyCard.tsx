@@ -13,9 +13,7 @@ export default function PropertyCard({ property }: any) {
             src={property.img}
             alt={property.title}
             fill
-            sizes="(max-width:640px) 100vw,
-                   (max-width:1024px) 50vw,
-                   25vw"
+            sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
             className="object-cover"
           />
 
