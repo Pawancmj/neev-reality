@@ -1,6 +1,5 @@
-// app/blog/[id]/page.tsx
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 
 type Section = {
   id: string;
@@ -119,7 +118,6 @@ type BlogDetailPageProps = {
 };
 
 export default function BlogDetailPage({ params }: BlogDetailPageProps) {
-  // In real app, fetch by params.id
   const blog = blogPost; // placeholder
 
   return (

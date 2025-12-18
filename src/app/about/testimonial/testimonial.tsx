@@ -34,7 +34,7 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-[#F7F9FC] py-16 mx-auto" style={{width:1520,height:692}}>
+    <section className="bg-[#F7F9FC] py-16 overflow-hidden mx-auto" style={{width:1520,height:692}}>
       <div className=" mx-auto px-4 mt-14" style={{width:1240}}>
         {/* Heading */}
         <div className="text-center mb-12">
@@ -74,7 +74,7 @@ export default function TestimonialsSection() {
               </p>
 
               {/* Stars */}
-              <div className="flex gap-1 mt-6 text-[#2559FF]">
+              <div className="flex gap-1 mt-6 text-[#DBA40D]">
                 {Array.from({ length: 5 }).map((_, idx) => (
                   <span key={idx} className="text-xl">
                     ★

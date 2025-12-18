@@ -15,12 +15,12 @@ export default function Homepage() {
           <div  >
     <Navbar/>
     <Hero/>
-    <Banner/>
     <NewLaunchProjects/>
     <Trendingprojects/>
     <WhyChooseNeev/>
     <DevelopersSection/>
     <BlogSection/>
+    <Banner/>
     <Footer/>
     </div>
     )

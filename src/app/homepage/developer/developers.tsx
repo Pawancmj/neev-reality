@@ -64,10 +64,10 @@ const developers: Developer[] = [
 
 const DevelopersSection: React.FC = () => {
   return (
-    <section className="mx-auto bg-[#F5F7FB] py-16  relative top-80" style={{width:1520,height:487}}>
+    <section className="mx-auto bg-[#F5F7FB] py-16  relative top-80" style={{width:1520,height:514}}>
       <div className="mx-auto max-w-5xl px-4 text-center">
         <h2 className="text-3xl relative bottom-12 font-semibold text-gray-900">
-          Top Real Estate Developers in India
+          Top Real Estate Developers in <span className="text-[#DBA40D]">Gurgaon</span>
         </h2>
       </div>
 
@@ -77,13 +77,13 @@ const DevelopersSection: React.FC = () => {
             key={dev.name}
             className="flex flex-col items-center rounded-2xl bg-white px-6 py-6 shadow-sm"
             style={{width:215,height:131}}  >
-            <div className="flex relative bottom-18 border-2 h-24 w-24 items-center justify-center rounded-full bg-white">
+            <div className="flex relative bottom-18 border-1 h-24 w-24 items-center justify-center  rounded-full bg-white">
               <Image
                 src={dev.logo}
                 alt={dev.name}
                 width={100}
                 height={100}
-                className="object-cover rounded-full"
+                className="object-cover rounded-full "
               />
             </div>
             <p className="relative bottom-16 text-sm font-medium text-gray-900 text-center" style={{fontSize:14}}>

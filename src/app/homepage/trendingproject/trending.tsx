@@ -130,7 +130,7 @@ const trendingprojects: React.FC = () => {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4">
         <div className="text-center md:text-left">
           <h2 className=" font-semibold  text-gray-900 relative left-90 bottom-10" style={{fontSize:40}}>
-            Trending Projects
+            Trending <span className="text-[#DBA40D]">Projects</span>
           </h2>
           <p className="mt-2  text-black relative left-78 bottom-12" style={{fontSize:17}}>
             Explore our curated selection of the finest homes available right now.
@@ -140,7 +140,7 @@ const trendingprojects: React.FC = () => {
           </p>
         </div>
 
-        <button className="relative left-41 top-15 rounded-sm bg-[#2563EB] px-6 py-2 text-xs font-medium text-white shadow-sm hover:bg-[#1D4ED8] md:mt-0">
+        <button className="relative left-41 top-15 rounded-sm bg-[#DBA40D] px-6 py-2 text-xs font-medium text-white shadow-sm hover:bg-[#1D4ED8] md:mt-0">
           Explore More
         </button>
       </div>

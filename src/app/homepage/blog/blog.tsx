@@ -43,14 +43,15 @@ const BlogSection: React.FC = () => {
     <section className="w-full bg-white py-16 mt-94">
       <div className="mx-auto max-w-4xl px-4 text-center">
         <h2 className="text-3xl font-semibold text-gray-900">
-          Blog and News Updates
+          Blog and News  <span className="text-[#DBA40D]">Updates</span>
         </h2>
         <p className="mt-4 text-sm text-gray-600">
           Your trusted source for expert updates on residential and commercial real estate.
         </p>
+        <button className="relative left-120 bottom-12 bg-[#DBA40D] p-1 border-2 border-[#DBA40D] rounded-sm text-white">Explore More</button>
       </div>
 
-      <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-8 px-4 md:grid-cols-3">
+      <div className="mx-auto  grid max-w-6xl grid-cols-1 gap-8 px-4 md:grid-cols-3">
         {posts.map((post) => (
           <article
             key={`${post.title}-${post.date}`}

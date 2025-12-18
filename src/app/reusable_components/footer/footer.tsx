@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaFacebookF,
@@ -13,58 +14,69 @@ const Footer: React.FC = () => {
   return (
     <footer className=" text-gray-200 bg-[#1B121E] mx-auto" style={{width:1520}}>
       {/* top links */}
-      <div className=" px-6 py-10 mx-auto grid gap-6 md:grid-cols-5 bg-[#29192B] border-b border-[#2c1b32]">
+      <div className=" px-6 py-10  mx-auto grid gap-6 md:grid-cols-5 bg-[#29192B] border-b border-[#2c1b32]">
         <div>
           <h4 className="font-semibold mb-4 text-[16px]">
-            Property in Top Country
+            Projects by size
           </h4>
           <ul className="space-y-3 text-white text-[15px]">
-            <li>Property in India</li>
-            <li>Residential Property in India</li>
-            <li>Commercial Property in India</li>
+            <li>1 BHK property in Gurgaon</li>
+            <li>1.5 BHK property in Gurgaon</li>
+            <li>2 BHK property in Gurgaon</li>
+            <li>2.5 BHK property in Gurgaon</li>
+            <li>3 BHK property in Gurgaon</li>
+            <li>3.5 BHK property in Gurgaon</li>
+            <li>4 BHK property in Gurgaon</li>
+            <li>4.5 BHK property in Gurgaon</li>
+            <li>5 BHK property in Gurgaon</li>
+            <li> Above 5 BHK property in Gurgaon</li>
+           
           </ul>
         </div>
 
-        <div>
+        <div className="ml-14">
           <h4 className="font-semibold mb-4 text-[16px]">
-            Property in Top State
+            Property by type
           </h4>
           <ul className="space-y-3 text-white text-[15px]">
-            <li>Property in Haryana</li>
-            <li>Property in Maharashtra</li>
-            <li>Property in Uttar Pradesh</li>
-            <li>Property in Tamil Nadu</li>
-            <li>Property in West Bengal</li>
+            <li>Residential property in gurgaon</li>
+            <li>Commercial property in gurgaon</li>
+            <li>Luxury apartment in Gurgaon</li>
+            <li>Builder floor in Gurgaon</li>
+            <li>Retail shops in Gurgaon</li>
+            <li>SCO plots in Gurgaon</li>
           </ul>
         </div>
 
-        <div>
+        <div className="ml-14"style={{width:284}}>
           <h4 className="font-semibold mb-4 text-[16px]">
-            Property in Top City
+            Projects by construction status
           </h4>
           <ul className="space-y-3 text-white text-[15px]">
-            <li>Property in Gurgaon</li>
-            <li>Property in Pune</li>
-            <li>Property in Noida</li>
-            <li>Property in Chennai</li>
-            <li>Property in Bangalore</li>
+            <li>New launch project in Gurgaon</li>
+            <li>Ready to move project in Gurgaon</li>
+            <li>Under construction project in Gurgaon </li>
+            <li>Pre launch project in Gurgaon</li>
           </ul>
         </div>
 
-        <div>
+        <div className="ml-14"style={{width:297}}>
           <h4 className="font-semibold mb-4 text-[16px]">
-            Property in Popular Localities
+            Projects by Location
           </h4>
           <ul className="space-y-3 text-white text-[15px]">
-            <li>Property in NH 8 Gurgaon</li>
-            <li>Property in Hinjewadi Pune</li>
-            <li>Property in NH24 Ghaziabad</li>
-            <li>Property in Porur Chennai</li>
-            <li>Property in North Bangalore</li>
+            <li>Projects in Dwarka Expressway</li>
+            <li>Projects in Golf Course Road</li>
+            <li>Projects in Golf Course Extension Road</li>
+            <li>Projects in Sohna Road</li>
+            <li>Projects in New Gurgaon</li>
+            <li>Projects in old Gurgaon</li>
+            <li>Projects in SPR</li>
+            <li>Projects in NH8</li>
           </ul>
         </div>
 
-        <div>
+        {/* <div>
           <h4 className="font-semibold mb-4 text-[16px]">Popular Developer</h4>
           <ul className="space-y-3 text-white text-[15px]">
             <li>Property of Godrej</li>
@@ -73,7 +85,7 @@ const Footer: React.FC = () => {
             <li>Mahagun</li>
             <li>Gulshan Homz</li>
           </ul>
-        </div>
+        </div> */}
       </div>
 
       {/* middle row */}
@@ -108,8 +120,8 @@ const Footer: React.FC = () => {
       <span>Sitemap</span>
       <span>Awards</span>
       <span>Our Services</span>
-      <span>Careers</span>
-      <span>Contact</span>
+      <Link href="career">Careers</Link>
+      <Link href="/Contact">Contact</Link>
     </div>
   </div>
 

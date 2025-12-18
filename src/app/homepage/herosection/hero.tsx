@@ -34,11 +34,11 @@ export default function SearchCard() {
                         />
         </div>
     <section className="flex w-full justify-center bg-transparent py-10 absolute top-148">
-      <div className="w-full  rounded-lg bg-white px-8 py-6 shadow-[0_20px_60px_rgba(15,23,42,0.15)]" style={{width:1144,height:238}}>
+      <div className="w-full  rounded-lg bg-white px-8 py-6 shadow-[0_20px_60px_rgba(15,23,42,0.15)]" style={{width:1144,height:268}}>
         {/* Heading + Tabs */}
         <div className="mb-6 flex items-center justify-between gap-4">
-          <h2 className="text-xl font-normal tracking-wide text-gray-800 relative left-30">
-            Find your Perfect Home with Neev Reality
+          <h2 className=" font-bold tracking-wide text-gray-800 relative left-30"style={{width:370,fontSize:30}}>
+            Find your Perfect Home with <span className="text-[#DBA40D]"> Neev Reality </span>
           </h2>
 
           <div className="inline-flex items-center rounded-full bg-gray-100 p-1 relative right-20">
@@ -94,7 +94,7 @@ export default function SearchCard() {
           {/* Search button */}
           <button
             type="button"
-            className="inline-flex items-center gap-2 rounded-full bg-[#0054F8] px-6 py-2 text-sm font-medium text-white ]"
+            className="inline-flex items-center gap-2 rounded-full bg-[#DBA40D] px-6 py-2 text-sm font-medium text-white ]"
           >
             <FiSearch size={18} />
             <span>Search</span>

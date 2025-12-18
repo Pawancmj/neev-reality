@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Residential", href: "/residential", hasDropdown: true },
   { label: "Commercial", href: "/commercial", hasDropdown: true },
   { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contact" },
+  // { label: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -44,7 +44,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden text-sm font-normal text-black  md:block">
+        <div className="hidden text-sm font-normal text-black  md:block shadow-sm bg-white">
           <a href="tel:+918824966669" className="hover:text-black">
             +91 8824966669
           </a>
