@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../reusable_components/navbar/navbar";
 import Hero from "@/components/services/Hero";
 import ServicesMain from "@/components/services/ServicesMain";
-import ValueAdded from "@/components/services/ValueAdded";
 import BigServices from "@/components/services/BigServices";
 import Footer from "../reusable_components/footer/footer";
 
@@ -24,7 +23,7 @@ export default function Page() {
         <div className="mx-auto" style={{ width: 1520 }}>
           <Hero />
           <ServicesMain />
-          <ValueAdded />
+          
           <BigServices />
         </div>
 

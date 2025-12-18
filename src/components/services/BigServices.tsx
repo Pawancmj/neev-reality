@@ -18,7 +18,7 @@ export default function BigServices() {
                 flex flex-col justify-center
               "
             >
-              <h4 className="text-[#1D4ED8] text-xl font-semibold mb-3">
+              <h4 className="text-[#F5A300] text-xl font-semibold mb-3">
                 {b.title}
               </h4>
               <p className="text-gray-600 text-[15px] leading-6 max-w-[420px]">
@@ -39,7 +39,7 @@ export default function BigServices() {
               min-h-[220px]
             "
           >
-            <h4 className="text-[#1D4ED8] text-xl font-semibold mb-3">
+            <h4 className="text-[#F5A300] text-xl font-semibold mb-3">
               {bigServices[2].title}
             </h4>
             <p className="text-gray-600 text-[15px] leading-6">
@@ -60,7 +60,7 @@ export default function BigServices() {
                 flex flex-col justify-center
               "
             >
-              <h4 className="text-[#1D4ED8] text-xl font-semibold mb-3">
+              <h4 className="text-[#F5A300] text-xl font-semibold mb-3">
                 {b.title}
               </h4>
               <p className="text-gray-600 text-[15px] leading-6 max-w-[420px]">

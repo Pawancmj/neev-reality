@@ -1,3 +1,5 @@
+
+
 import {
   FaInstagram,
   FaLinkedinIn,
@@ -6,6 +8,8 @@ import {
   FaTwitter,
   FaLink,
   FaWhatsapp,
+  FaPhoneAlt,
+
 } from "react-icons/fa";
 
 
@@ -131,6 +135,9 @@ export default async function ApartmentDetails({ params }: Props) {
       ];
 
 
+
+
+
   return (
     <>
       <Navbar />
@@ -183,7 +190,7 @@ export default async function ApartmentDetails({ params }: Props) {
                 {property.price}
               </p>
 
-              <button className="px-5 py-2 bg-blue-600 text-white rounded-md text-sm">
+              <button className="px-5 py-2 bg-[#F5A300] text-white rounded-md text-sm">
                 ⬇ Download Brochure
               </button>
             </div>
@@ -227,7 +234,7 @@ export default async function ApartmentDetails({ params }: Props) {
               </span>
             </p>
 
-            <button className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-md text-sm">
+            <button className="mt-6 px-6 py-2 bg-[#F5A300] text-white rounded-md text-sm">
               Inquire Now !
             </button>
           </div>
@@ -258,10 +265,10 @@ export default async function ApartmentDetails({ params }: Props) {
                   <p className="text-sm font-semibold">INR {fp.price}</p>
 
                   <div className="flex justify-between mt-3 text-xs">
-                    <span className="text-blue-600 cursor-pointer">
-                      Request Callback
+                    <span className="text-[#F5A300] cursor-pointer">
+                      Request<br /> Callback
                     </span>
-                    <span className="text-blue-600 text-lg">📞</span>
+                    <span className="text-[#F5A300] text-lg"><FaPhoneAlt className="text-yellow-400 text-lg" /></span>
                   </div>
                 </div>
               ))}
@@ -343,33 +350,38 @@ export default async function ApartmentDetails({ params }: Props) {
             </div>
           </section>
 
-          {/* ================= FAQ ================= */}
-          <section>
-            <h2 className="text-xl font-semibold mb-4">
-              Frequently Asked Questions
-            </h2>
 
-            {[
-              "Where is the project located?",
-              "What is the price range?",
-              "Is home loan available?",
-            ].map((q) => (
-              <details key={q} className="border rounded-lg mb-2 p-4">
-                <summary className="font-medium cursor-pointer">
-                  {q}
-                </summary>
-                <p className="mt-2 text-sm text-gray-600">
-                  Please contact our sales team.
-                </p>
-              </details>
-            ))}
-          </section>
 
           {/* ================= EMI CALCULATOR ================= */}
           <section className="max-w-[1240px] mx-auto px-4 mt-14">
             <h2 className="text-xl font-semibold mb-6">EMI Calculator</h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-[#F6FAFF] p-6 rounded-xl">
+
+              {/* RIGHT : PIE CHART (STATIC UI VERSION) */}
+              <div className="flex flex-col items-center">
+                <h3 className="text-lg font-semibold mb-4">
+                  Break-up of Total Payment
+                </h3>
+
+                <Image
+                  src="/images/emi-chart.png"
+                  alt="EMI Chart"
+                  width={260}
+                  height={260}
+                />
+
+                <div className="flex gap-6 mt-4 text-sm">
+                  <span className="flex items-center gap-2">
+                    <span className="w-3 h-3 bg-blue-600 rounded-full"></span>
+                    Total Interest
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <span className="w-3 h-3 bg-blue-300 rounded-full"></span>
+                    Principal Amount
+                  </span>
+                </div>
+              </div>
 
               {/* LEFT : FORM */}
               <div className="bg-white rounded-xl p-6 shadow-sm space-y-4">
@@ -418,32 +430,36 @@ export default async function ApartmentDetails({ params }: Props) {
                 </div>
               </div>
 
-              {/* RIGHT : PIE CHART (STATIC UI VERSION) */}
-              <div className="flex flex-col items-center">
-                <h3 className="text-lg font-semibold mb-4">
-                  Break-up of Total Payment
-                </h3>
 
-                <Image
-                  src="/images/emi-chart.png"
-                  alt="EMI Chart"
-                  width={260}
-                  height={260}
-                />
-
-                <div className="flex gap-6 mt-4 text-sm">
-                  <span className="flex items-center gap-2">
-                    <span className="w-3 h-3 bg-blue-600 rounded-full"></span>
-                    Total Interest
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <span className="w-3 h-3 bg-blue-300 rounded-full"></span>
-                    Principal Amount
-                  </span>
-                </div>
-              </div>
 
             </div>
+          </section>
+
+          {/* ================= FAQ ================= */}
+          <section className="bg-[#F6FAFF]">
+
+            <h2 className="text-xl font-semibold mb-4">
+              FAQ
+            </h2>
+            <h3 className="text-xl font-semibold mb-4">
+              Frequently Asked Questions
+            </h3>
+
+            {[
+              "Where is the project located?",
+              "What is the price range?",
+              "Is home loan available?",
+            ].map((q) => (
+              <details key={q} className="border rounded-lg mb-2 p-4">
+                <summary className="font-medium cursor-pointer">
+                  {q}
+                </summary>
+                <p className="mt-2 text-sm text-gray-600">
+                  Please contact our sales team.
+                </p>
+              </details>
+            ))}
+
           </section>
 
 
@@ -473,7 +489,7 @@ export default async function ApartmentDetails({ params }: Props) {
                 </div>
 
                 {/* RIGHT : PARTNER BADGE */}
-                <button className="px-4 py-2 border border-blue-500 text-blue-600 rounded-full text-sm font-medium">
+                <button className="px-4 py-2 border border-[#F5A300] text-[#F5A300] rounded-full text-sm font-medium">
                   Neev Realty Channel Partner
                 </button>
               </div>
@@ -481,7 +497,7 @@ export default async function ApartmentDetails({ params }: Props) {
               {/* STATS */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8 text-center">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
                     🏛️
                   </div>
                   <p className="text-sm text-gray-500">Established</p>
@@ -489,7 +505,7 @@ export default async function ApartmentDetails({ params }: Props) {
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
                     🏗️
                   </div>
                   <p className="text-sm text-gray-500">Total Projects</p>
@@ -497,7 +513,7 @@ export default async function ApartmentDetails({ params }: Props) {
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
                     🏢
                   </div>
                   <p className="text-sm text-gray-500">Ongoing Projects</p>
@@ -505,7 +521,7 @@ export default async function ApartmentDetails({ params }: Props) {
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
                     📍
                   </div>
                   <p className="text-sm text-gray-500">City Present</p>
@@ -524,6 +540,52 @@ export default async function ApartmentDetails({ params }: Props) {
 
             </div>
           </section>
+
+          {/* ================= SIMILAR PROJECTS ================= */}
+          <section className="max-w-[1240px] mx-auto px-4 mt-16 mb-10">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-xl font-semibold">Similar Projects</h2>
+            </div>
+
+            {/* Horizontal scroll (mouse + touch) */}
+            <div className="flex gap-6 overflow-x-auto scroll-smooth pb-4">
+              {apartments
+                .filter((p) => p.slug !== property.slug)
+                .map((p) => (
+                  <Link
+                    key={p.slug}
+                    href={`/residential/apartments/${p.slug}`}
+                    className="min-w-[260px] max-w-[260px] border rounded-lg p-2 hover:shadow-md transition bg-white"
+                  >
+                    <Image
+                      src={p.img}
+                      alt={p.title}
+                      width={400}
+                      height={300}
+                      className="rounded-md h-[160px] w-full object-cover"
+                    />
+
+                    <h3 className="font-medium mt-2 text-sm">{p.title}</h3>
+                    <p className="text-xs text-gray-500">{p.location}</p>
+
+                    <div className="flex items-center justify-between mt-2">
+                      <p className="text-blue-600 font-semibold text-sm">
+                        {p.price}
+                      </p>
+                      <span className="text-xs text-pink-600 font-medium">
+                        Contact
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+
+            <p className="text-xs text-gray-400 mt-2">
+              ← Scroll to view more projects →
+            </p>
+          </section>
+
+
 
         </div>
 
@@ -681,36 +743,7 @@ export default async function ApartmentDetails({ params }: Props) {
 
       </section>
 
-      {/* ================= SIMILAR PROJECTS ================= */}
-      <section className="max-w-[1240px] mx-auto px-4 mt-16 mb-10">
-        <h2 className="text-xl font-semibold mb-6">
-          Similar Projects
-        </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {apartments
-            .filter((p) => p.slug !== property.slug)
-            .slice(0, 4)
-            .map((p) => (
-              <Link
-                key={p.slug}
-                href={`/residential/apartments/${p.slug}`}
-                className="border rounded-lg p-2 hover:shadow-md transition"
-              >
-                <Image
-                  src={p.img}
-                  alt={p.title}
-                  width={300}
-                  height={200}
-                  className="rounded-md"
-                />
-                <h3 className="font-medium mt-2">{p.title}</h3>
-                <p className="text-sm text-gray-500">{p.location}</p>
-                <p className="text-blue-600 font-semibold">{p.price}</p>
-              </Link>
-            ))}
-        </div>
-      </section>
 
       <Footer />
     </>
