@@ -58,12 +58,12 @@ export default function Home() {
       </div>
 
       <div>
-        <h1 className="font-medium relative  top-16 mx-auto  " style={{fontSize:68,width:1144,fontFamily:"Roboto",height:182}}>Welcome to Neev Realty - <span className="text-[#1D4ED8]"> Turning Dreams </span> Into Real Homes</h1>
+        <h1 className="font-medium relative  top-16 mx-auto  " style={{fontSize:68,width:1144,fontFamily:"Roboto",height:182}}>Welcome to Neev Realty - <span className="text-[#DBA40D]"> Turning Dreams </span> Into Real Homes</h1>
       </div>
 
 
       <div className="relative top-54 right-88 mx-auto "style={{width:440}}>
-        <h1 className="mb-6" style={{width:440,height:84,fontSize:52}}> <span className="text-[#1D4ED8]" style={{fontSize:66}}>WHO</span> WE ARE</h1>
+        <h1 className="mb-6" style={{width:440,height:84,fontSize:52}}> <span className="text-[#DBA40D]" style={{fontSize:66}}>WHO</span> WE ARE</h1>
         <p className="font-medium  text-[#3E3E3E]" style={{fontSize:20,width:390}}>As a leading luxury real estate boutique firm, we offer a comprehensive range of solutions tailored to your specific needs. We specialize in brand-new projects across Delhi NCR. <br />From investment portfolios to first-time home purchases, property sales, and loan assistance, our team of experienced advisors is dedicated to providing personalized solutions that meet your unique needs. <br />Discover your real estate journey with Neev Realty.</p>
       </div>
        
@@ -104,8 +104,8 @@ export default function Home() {
 
 
 
-       <div className="mx-auto relative bottom-40" style={{width:1154,height:365,gap:21}}>
-        <h1 className="relative mx-auto text-center " style={{fontSize:48,width:1154,height:105}}> <span className="text-[#1D4ED8]" style={{fontSize:65}}>Why</span> Are We Different?</h1>
+       <div className="mx-auto relative bottom-32" style={{width:1154,height:365,gap:21}}>
+        <h1 className="relative mx-auto text-center " style={{fontSize:48,width:1154,height:105}}> <span className="text-[#DBA40D]" style={{fontSize:65}}>Why</span> Are We Different?</h1>
 
         <div className="flex gap-16 relative left-2">
             <p className="text-[#3E3E3E]" style={{width:539,height:215}}>At Neev Realty, we redefine real estate with a client-first philosophy.Our unique solutions are crafted to match your unique aspirations,whether you are seeking a luxurious home, building a profitable investment portfolio or navigating the complexities of property sales. We believe in empowering our clients with expert insights,curated property selections and expert financial advice to make informed decisions. Our approach is rooted in trust, transparency and a deep understanding of the ever-evolving real estate landscape.</p>
@@ -118,12 +118,30 @@ export default function Home() {
        </div>
 
 
+       <div className=" mx-auto bg-[#F8FBFF] mb-18 " style={{width:1520,height:679}}>
+        <h1 className="font-semibold text-center mx-auto" style={{fontSize:58, width:1154}}> <span className="text-[#DBA40D]" style={{fontSize:78}}>Our</span>   Vision & Mission</h1>
+
+        <div className=" flex mx-auto text-center gap-12 mt-10" style={{width:1113, height:487}}>
+
+          <div className="border-2  " style={{width:518,borderRadius:324}}>
+            <h1 className="relative top-20 font-semibold text-[#DBA40D] " style={{fontSize:41}}>Vision</h1>
+            <p className="text-[#6D717F] relative top-30 left-20" style={{width:349,fontSize:16,height:205}}>To be recognized as a trusted and forward-thinking real estate partner, known for excellence, ethics, and a customer-first approach, while actively contributing to sustainable urban development and modern, high-quality lifestyles.</p>
+          </div>
+
+          <div className="border-2" style={{width:518,borderRadius:324}}>
+            <h1 className="relative top-20 font-semibold text-[#DBA40D]"style={{fontSize:41}}>Mission</h1>
+            <p className="text-[#6D717F] relative top-30 left-30" style={{width:280}}>Our mission is to provide transparent and reliable real estate solutions, create value-driven opportunities, and uphold integrity, professionalism, and modern sustainable practices in everything we do</p>
+          </div>
+        </div>
+       </div>
+
+
 
         <section className="w-full  mx-auto " style={{width:1281,height:329}}>
       {/* Heading */}
       <div className="text-center mb-10 px-4">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900">
-          <span className="text-blue-500 font-semibold">5 Steps</span>{" "}
+          <span className="text-[#DBA40D] font-semibold">5 Steps</span>{" "}
           to Your Dream Home
         </h2>
       </div>

@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900">
-            What Our Clients Say About Us
+            What Our Clients Say <span className="text-[#DBA40D]"> About Us</span>
           </h2>
           <p className="mt-4 text-gray-500">
             Real stories from families and investors who trusted Livora.
