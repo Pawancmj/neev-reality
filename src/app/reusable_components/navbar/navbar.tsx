@@ -44,7 +44,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden text-sm font-normal text-black  md:block shadow-sm bg-white">
+        <div className="hidden text-sm font-normal   md:block border-1 p-1 text-[#DBA40D] bg-white">
           <a href="tel:+918824966669" className="hover:text-black">
             +91 8824966669
           </a>
