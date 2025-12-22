@@ -17,15 +17,17 @@ const navLinks: NavLink[] = [
   { label: "Our Services", href: "/services" },
   {
     label: "Residential",
+    href: "/residential",
     hasDropdown: true,
     children: [
-      { label: "Apartments", href: "/residential/apartments" },
-      { label: "Villas", href: "/residential/villas" },
-      { label: "Plots", href: "/residential/plots" },
+      { label: "Residental Apartment", href: "/residential/ResidentalApartment" },
+      { label: "Builder Floor", href: "/residential/builderfloor" },
+      
     ],
   },
   {
     label: "Commercial",
+    href: "/commercial",
     hasDropdown: true,
     children: [
       { label: "Office Space", href: "/commercial/office-space" },
@@ -42,9 +44,9 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState<string | null>(null);
 
   return (
-    /* 🔥 HIGH Z-INDEX + STICKY */
     <header className="sticky top-0 w-full bg-white shadow-sm z-[9999]">
       <nav className="max-w-[1240px] mx-auto flex items-center justify-between px-6 py-4 relative">
+
         {/* LOGO */}
         <Link href="/" className="flex items-center">
           <Image
@@ -52,33 +54,49 @@ export default function Navbar() {
             alt="Neev Realty Logo"
             width={55}
             height={55}
-            className="cursor-pointer"
           />
         </Link>
 
-        {/* DESKTOP MENU */}
+        {/* ================= DESKTOP MENU ================= */}
         <ul className="hidden md:flex items-center gap-8 text-[15px] text-black">
           {navLinks.map((item) =>
             item.hasDropdown && item.children ? (
               <li key={item.label} className="relative group">
-                <button className="flex items-center gap-2 hover:text-blue-600 transition">
-                  <span>{item.label}</span>
-                  <svg width="10" height="6" viewBox="0 0 10 6">
+
+                {/* PARENT LINK (CLICKABLE) */}
+                <Link
+                  href={item.href || "#"}
+                  className="flex items-center gap-2 hover:text-blue-600 transition"
+                >
+                  {item.label}
+                  <svg
+                    width="10"
+                    height="6"
+                    viewBox="0 0 10 6"
+                    className="transition-transform group-hover:rotate-180"
+                  >
                     <path
                       d="M1 1L5 5L9 1"
-                      stroke="#374151"
+                      stroke="currentColor"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
-                </button>
+                </Link>
 
-                {/* ✅ FIXED DROPDOWN */}
-
-                <div className="absolute left-0 mt-3 w-48 bg-white border rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-200 z-[10000]">
-
-
+                {/* DROPDOWN (HOVER) */}
+                <div
+                  className="
+                    absolute left-0 mt-3 w-48
+                    bg-white border rounded-md shadow-xl
+                    opacity-0 invisible
+                    group-hover:opacity-100 group-hover:visible
+                    translate-y-2 group-hover:translate-y-0
+                    transition-all duration-200
+                    z-[10000]
+                  "
+                >
                   <ul>
                     {item.children.map((c) => (
                       <li key={c.href}>
@@ -95,7 +113,10 @@ export default function Navbar() {
               </li>
             ) : (
               <li key={item.label}>
-                <Link href={item.href || "#"} className="hover:text-blue-600 transition">
+                <Link
+                  href={item.href || "#"}
+                  className="hover:text-blue-600 transition"
+                >
                   {item.label}
                 </Link>
               </li>
@@ -110,7 +131,7 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* MOBILE HAMBURGER */}
+        {/* ================= MOBILE HAMBURGER ================= */}
         <button
           onClick={() => {
             setMenuOpen(!menuOpen);
@@ -124,18 +145,21 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* MOBILE MENU */}
+      {/* ================= MOBILE MENU ================= */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t shadow-sm px-6 py-4 z-[9999]">
+        <div className="md:hidden bg-white border-t shadow-sm px-6 py-4">
           <ul className="flex flex-col gap-2 text-[16px]">
+
             {navLinks.map((item) =>
               item.hasDropdown && item.children ? (
                 <li key={item.label}>
                   <button
                     onClick={() =>
-                      setMobileOpen(mobileOpen === item.label ? null : item.label)
+                      setMobileOpen(
+                        mobileOpen === item.label ? null : item.label
+                      )
                     }
-                    className="w-full flex justify-between py-2"
+                    className="w-full flex justify-between py-2 font-medium"
                   >
                     {item.label}
                     <span>{mobileOpen === item.label ? "−" : "+"}</span>
@@ -143,6 +167,16 @@ export default function Navbar() {
 
                   {mobileOpen === item.label && (
                     <ul className="pl-4">
+                      <li>
+                        <Link
+                          href={item.href || "#"}
+                          onClick={() => setMenuOpen(false)}
+                          className="block py-2 text-gray-700 font-medium"
+                        >
+                          View All {item.label}
+                        </Link>
+                      </li>
+
                       {item.children.map((c) => (
                         <li key={c.href}>
                           <Link
@@ -174,7 +208,10 @@ export default function Navbar() {
             )}
 
             <li className="pt-4 border-t">
-              <a href="tel:+918824966669" className="text-blue-600 font-semibold">
+              <a
+                href="tel:+918824966669"
+                className="text-blue-600 font-semibold"
+              >
                 +91 8824966669
               </a>
             </li>
