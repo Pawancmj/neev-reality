@@ -10,14 +10,14 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Subham rao",
+    name: "Subham Rao",
     role: "First-time Homebuyer",
     quote:
       "Livora made my dream of homeownership a reality. The agents were patient, knowledgeable, and helped me navigate every step of the process. I couldn't be happier with my new home!",
     avatar: "/images/aboutimg/testimonial.png",
   },
   {
-    name: "krishankaa",
+    name: "Krishankaa",
     role: "Real Estate Investor",
     quote:
       "As an investor, I need reliable data and quick access to properties. Livora's platform exceeded my expectations with verified listings and market insights that helped me make informed decisions.",
@@ -41,18 +41,19 @@ export default function TestimonialsSection() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900">
             What Our Clients Say <span className="text-[#DBA40D]"> About Us</span>
           </h2>
-          <p className="mt-4 text-gray-500">
+          <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
             Real stories from families and investors who trusted Livora.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid gap-6 md:grid-cols-3 " style={{width:1240}}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((item) => (
             <article
               key={item.name}
               className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 flex flex-col h-full"
-              style={{width:400}}>
+            >
+              {/* Avatar + Info */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
@@ -63,8 +64,12 @@ export default function TestimonialsSection() {
                   />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">{item.name}</h3>
-                  <p className="text-sm text-gray-500">{item.role}</p>
+                  <h3 className="font-semibold text-gray-900">
+                    {item.name}
+                  </h3>
+                  <p className="text-sm text-gray-500">
+                    {item.role}
+                  </p>
                 </div>
               </div>
 
@@ -76,7 +81,7 @@ export default function TestimonialsSection() {
               {/* Stars */}
               <div className="flex gap-1 mt-6 text-[#DBA40D]">
                 {Array.from({ length: 5 }).map((_, idx) => (
-                  <span key={idx} className="text-xl">
+                  <span key={idx} className="text-lg">
                     ★
                   </span>
                 ))}
@@ -84,6 +89,7 @@ export default function TestimonialsSection() {
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );
