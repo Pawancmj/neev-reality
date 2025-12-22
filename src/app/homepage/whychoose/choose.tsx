@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { Roboto } from "next/font/google";
 
 type Feature = {
   title: string;
@@ -50,42 +51,37 @@ const features: Feature[] = [
 
 const WhyChooseNeev: React.FC = () => {
   return (
-    <section className="w-full bg-white py-20">
-      {/* Heading */}
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-3xl sm:text-4xl font-semibold text-black">
-          Why Choose Neev Reality?
+    <section className="relative top-70 w-full bg-white py-16">
+      <div className="mx-auto max-w-5xl px-4 text-center">
+        <h2 className=" font-medium text-black relative left-19" style={{width:812,height:60,fontSize:40,fontFamily:"Roboto"}}>
+          Why Choose <span className="text-[#DBA40D]">Neev Reality? </span> 
         </h2>
-        <p className="mt-4 text-sm sm:text-base text-gray-600">
-          Premium support, zero brokerage, and end-to-end assistance — everything
-          you need to buy with confidence.
+        <p className="mt-6 text-sm text-gray-600">
+          Premium support, zero brokerage, and end-to-end assistance — everything you need to buy with confidence.
         </p>
       </div>
 
-      {/* Features Grid */}
-      <div className="max-w-7xl mx-auto mt-12 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mx-auto mt-10 grid  grid-cols-1 gap-5 px-4 md:grid-cols-2     lg:grid-cols-3" style={{width:1240,height:362}}>
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="flex gap-4 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
-          >
-            {/* Icon */}
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#1D4ED8]">
+            className="flex h-full gap-4 rounded-2xl  border border-gray-200 bg-white px-5 py-6 shadow-sm"
+              style={{width:390,height:171}}>
+            <div className=" relative bottom-2  items-center justify-center rounded-lg p-2.5 bg-[#DBA40D]" style={{width:46,height:46}}>
               <Image
                 src={feature.image}
                 alt={feature.title}
-                width={28}
-                height={28}
-                className="object-contain"
+                width={32}
+                height={24}
+              
+                style={{width:32,height:24}}
               />
             </div>
-
-            {/* Content */}
-            <div>
-              <h3 className="text-sm sm:text-base font-semibold text-gray-900">
+            <div className="relative top-12 right-12">
+              <h3 className="text-sm font-semibold text-gray-900">
                 {feature.title}
               </h3>
-              <p className="mt-2 text-xs sm:text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 text-xs leading-relaxed text-gray-600">
                 {feature.description}
               </p>
             </div>

@@ -14,26 +14,18 @@ const stats: StatItem[] = [
 
 const StatsBar: React.FC = () => {
   return (
-    <section className="w-full bg-[#F8FBFF] py-14">
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
-          {stats.map((item) => (
-            <div
-              key={item.label}
-              className="flex flex-col items-center"
-            >
-              <span className="text-3xl sm:text-4xl font-semibold text-black">
-                {item.value}
-              </span>
-              <span className="mt-2 text-sm sm:text-base text-gray-600">
-                {item.label}
-              </span>
-            </div>
-          ))}
-        </div>
-
+    <section className="w-[1440] h-[201] mx-auto relative  bg-[#F8FBFF] py-12 " style={{width:1520}}>
+      <div className="mx-auto flex w-[1083] h-[70] flex-col items-center justify-between gap-10 px-6 text-center md:flex-row md:text-left">
+        {stats.map((item) => (
+          <div key={item.label} className="flex flex-col items-center md:items-start">
+            <span className="text-3xl  text-black md:text-4xl relative left-5">
+              {item.value}
+            </span>
+            <span className="mt-2 text-sm text-gray-600 md:text-base">
+              {item.label}
+            </span>
+          </div>
+        ))}
       </div>
     </section>
   );
