@@ -34,13 +34,12 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-[#F7F9FC] py-16">
-      <div className="max-w-7xl mx-auto px-4">
-
+    <section className="bg-[#F7F9FC] py-16 overflow-hidden mx-auto" style={{width:1520,height:692}}>
+      <div className=" mx-auto px-4 mt-14" style={{width:1240}}>
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900">
-            What Our Clients Say About Us
+            What Our Clients Say <span className="text-[#DBA40D]"> About Us</span>
           </h2>
           <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
             Real stories from families and investors who trusted Livora.
@@ -80,7 +79,7 @@ export default function TestimonialsSection() {
               </p>
 
               {/* Stars */}
-              <div className="flex gap-1 mt-6 text-[#2559FF]">
+              <div className="flex gap-1 mt-6 text-[#DBA40D]">
                 {Array.from({ length: 5 }).map((_, idx) => (
                   <span key={idx} className="text-lg">
                     ★

@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
+import React, { useState } from "react";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -10,6 +11,12 @@ import {
 } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
+  const [showLastDiv, setShowLastDiv] = useState(false);
+
+  const toggleDivs = () => {
+    setShowLastDiv(!showLastDiv);
+  };
+
   return (
     <footer className="bg-[#1B121E] text-gray-200 w-full">
       {/* ================= TOP LINKS ================= */}

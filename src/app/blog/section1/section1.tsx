@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 /* ================= TYPES ================= */
 type Blog = {
@@ -81,11 +82,13 @@ const recentBlogs: RecentBlog[] = [
 /* ================= PAGE ================= */
 export default function BlogPage() {
   return (
-    <main className="bg-white px-4 py-10 md:px-10 lg:px-20 mx-auto max-w-[1520px]">
-
-      {/* ================= HEADING ================= */}
-      <section className="mb-10 text-center">
-        <h1 className="text-3xl font-bold md:text-4xl">
+    <main
+      className="bg-white px-4 py-10 md:px-10 lg:px-20 mx-auto"
+      style={{ width: 1520, height: 1132 }}
+    >
+      {/* Heading */}
+      <section className="mb-6 text-center">
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
           Blog and News Updates
         </h1>
         <p className="mt-4 text-sm text-gray-500 md:text-base">

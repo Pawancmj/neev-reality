@@ -50,6 +50,7 @@ const BlogSection: React.FC = () => {
           Your trusted source for expert updates on residential and commercial
           real estate.
         </p>
+        <button className="relative left-120 bottom-12 bg-[#DBA40D] p-1 border-2 border-[#DBA40D] rounded-sm text-white">Explore More</button>
       </div>
 
       {/* Blog Cards */}

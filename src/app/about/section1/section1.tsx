@@ -4,148 +4,175 @@ const steps = [
   {
     title: "Personalized Consultation",
     desc: "Our experts will evaluate your real estate goals and preferences.",
-    logo: "/images/aboutimg/logo1.png",
+    logo:"/images/aboutimg/logo1.png"
   },
   {
     title: "Curated Property Selection",
     desc: "We'll present the best options tailored to your preferences.",
-    logo: "/images/aboutimg/logo2.png",
+    logo:"/images/aboutimg/logo2.png"
   },
   {
     title: "Immersive Property Experiences",
     desc: "Explore properties through virtual tours or in-person visits.",
-    logo: "/images/aboutimg/logo3.png",
+    logo:"/images/aboutimg/logo3.png"
   },
   {
     title: "Comprehensive Financial Guidance",
     desc: "Get expert advice on loans, investments, and tax implications.",
-    logo: "/images/aboutimg/logo4.png",
+    logo:"/images/aboutimg/logo4.png"
   },
   {
     title: "Seamless Transactions And Support",
     desc: "Enjoy a smooth buying process and ongoing assistance.",
-    logo: "/images/aboutimg/logo5.png",
+    logo:"/images/aboutimg/logo5.png"
   },
 ];
 
+
 export default function Home() {
   return (
-    <main className="w-full overflow-x-hidden">
+    <main>
+      <div className="mx-auto relative bottom-15" style={{width:1520,height:617}}>
+ <h1 className="relative top-34 left-25  text-white" style={{fontSize:60,width:638,height:60}}>Turning <span className="text-[#E7C873]"> Dreams </span> into Real Homes</h1>
+         <Image
+                        src="/images/aboutimg/img1.jpg"
+                        alt=""
+                        width={1520}
+                        height={617}
+                        className=""
+                        style={{width:1520,height:617}}
+                      />
+                      <button className="border-2 text-white p-2 rounded-lg relative bottom-80 left-30">LET US GUIDE YOUR HOME</button>
 
-      {/* ================= HERO ================= */}
-      <section className="relative">
+                      <div className="flex relative bottom-42 left-25 " style={{width:172,height:54}}>
+                       <Image
+                        src="/images/aboutimg/img2.png"
+                        alt=""
+                        width={172}
+                        height={54}
+                        className="rounded-full"
+                        style={{width:172,height:54}}
+                      />
+                      </div>
+      </div>
+
+      <div>
+        <h1 className="font-medium relative  top-16 mx-auto  " style={{fontSize:68,width:1144,fontFamily:"Roboto",height:182}}>Welcome to Neev Realty - <span className="text-[#DBA40D]"> Turning Dreams </span> Into Real Homes</h1>
+      </div>
+
+
+      <div className="relative top-54 right-88 mx-auto "style={{width:440}}>
+        <h1 className="mb-6" style={{width:440,height:84,fontSize:52}}> <span className="text-[#DBA40D]" style={{fontSize:66}}>WHO</span> WE ARE</h1>
+        <p className="font-medium  text-[#3E3E3E]" style={{fontSize:20,width:390}}>As a leading luxury real estate boutique firm, we offer a comprehensive range of solutions tailored to your specific needs. We specialize in brand-new projects across Delhi NCR. <br />From investment portfolios to first-time home purchases, property sales, and loan assistance, our team of experienced advisors is dedicated to providing personalized solutions that meet your unique needs. <br />Discover your real estate journey with Neev Realty.</p>
+      </div>
+       
+       <div className="grid grid-cols-2 relative left-90 bottom-64 mx-auto" style={{width:510,height:501}}>
         <Image
-          src="/images/aboutimg/img1.jpg"
-          alt=""
-          width={1600}
-          height={700}
-          className="w-full h-[70vh] object-cover"
-        />
+                        src="/images/aboutimg/img3.jpg"
+                        alt=""
+                        width={177}
+                        height={177}
+                        className="rotate-45 relative top-8 left-10 object-cover"
+                        style={{width:177,height:177}}
+                      />
+                      <Image
+                        src="/images/aboutimg/img4.jpg"
+                        alt=""
+                        width={251}
+                        height={251}
+                        className="object-cover "
+                        style={{width:251,height:251}}
+                      />
+                      <Image
+                        src="/images/aboutimg/img5.jpg"
+                        alt=""
+                        width={251}
+                        height={251}
+                        className="rounded-bl-full object-cover"
+                        style={{width:251,height:251}}
+                      />
+                      <Image
+                        src="/images/aboutimg/img6.jpg"
+                        alt=""
+                        width={251}
+                        height={251}
+                        className="rounded-full object-cover"
+                        style={{width:251,height:251}}
+                      />
+       </div>
 
-        <div className="absolute inset-0 flex flex-col justify-center px-6 lg:px-24">
-          <h1 className="text-white text-3xl sm:text-4xl lg:text-6xl font-semibold max-w-3xl">
-            Turning <span className="text-[#E7C873]">Dreams</span> into Real Homes
-          </h1>
 
-          <button className="mt-6 w-fit border-2 border-white text-white px-6 py-3 rounded-lg">
-            LET US GUIDE YOUR HOME
-          </button>
 
-          <Image
-            src="/images/aboutimg/img2.png"
-            alt=""
-            width={172}
-            height={54}
-            className="mt-6"
-          />
-        </div>
-      </section>
+       <div className="mx-auto relative bottom-32" style={{width:1154,height:365,gap:21}}>
+        <h1 className="relative mx-auto text-center " style={{fontSize:48,width:1154,height:105}}> <span className="text-[#DBA40D]" style={{fontSize:65}}>Why</span> Are We Different?</h1>
 
-      {/* ================= INTRO ================= */}
-      <section className="max-w-6xl mx-auto px-4 py-20 text-center">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium">
-          Welcome to Neev Realty –{" "}
-          <span className="text-[#1D4ED8]">Turning Dreams</span> Into Real Homes
-        </h1>
-      </section>
+        <div className="flex gap-16 relative left-2">
+            <p className="text-[#3E3E3E]" style={{width:539,height:215}}>At Neev Realty, we redefine real estate with a client-first philosophy.Our unique solutions are crafted to match your unique aspirations,whether you are seeking a luxurious home, building a profitable investment portfolio or navigating the complexities of property sales. We believe in empowering our clients with expert insights,curated property selections and expert financial advice to make informed decisions. Our approach is rooted in trust, transparency and a deep understanding of the ever-evolving real estate landscape.</p>
+        
 
-      {/* ================= WHO WE ARE ================= */}
-      <section className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 className="text-4xl font-semibold mb-6">
-            <span className="text-[#1D4ED8] text-5xl">WHO</span> WE ARE
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            As a leading luxury real estate boutique firm, we offer a
-            comprehensive range of solutions tailored to your specific needs.
-            We specialize in brand-new projects across Delhi NCR.
-            <br /><br />
-            From investment portfolios to first-time home purchases, property
-            sales, and loan assistance, our team of experienced advisors is
-            dedicated to providing personalized solutions.
-          </p>
+        
+            <p className="text-[#3E3E3E]" style={{width:539,height:239}}>What truly makes us stand out is our ability to merge personalizationwith expertise. With over 20 years of experience and a portfolio of 100 premium projects, we deliver a world of opportunities tailored just for you. From immersive virtual tours and in-person visits to seamless transaction support and ongoing assistance, we ensure your journey with us is as smooth as it is successful. At Neev Realty, we combine local expertise and global insight, ensuring that every client enjoys unparalleled service and a rewarding real estate experience. Experience the difference with Neev Realty - a trustedpartner who brings your real estate dreams to life.</p>
         </div>
 
-        {/* Image Grid */}
-        <div className="grid grid-cols-2 gap-4">
-          <Image src="/images/aboutimg/img3.jpg" alt="" width={250} height={250} className="rounded-lg object-cover" />
-          <Image src="/images/aboutimg/img4.jpg" alt="" width={250} height={250} className="rounded-lg object-cover" />
-          <Image src="/images/aboutimg/img5.jpg" alt="" width={250} height={250} className="rounded-lg object-cover" />
-          <Image src="/images/aboutimg/img6.jpg" alt="" width={250} height={250} className="rounded-full object-cover" />
-        </div>
-      </section>
+       </div>
 
-      {/* ================= WHY DIFFERENT ================= */}
-      <section className="max-w-6xl mx-auto px-4 py-20">
-        <h2 className="text-center text-4xl font-medium mb-12">
-          <span className="text-[#1D4ED8] text-5xl">Why</span> Are We Different?
+
+       <div className=" mx-auto bg-[#F8FBFF] mb-18 " style={{width:1520,height:679}}>
+        <h1 className="font-semibold text-center mx-auto" style={{fontSize:58, width:1154}}> <span className="text-[#DBA40D]" style={{fontSize:78}}>Our</span>   Vision & Mission</h1>
+
+        <div className=" flex mx-auto text-center gap-12 mt-10" style={{width:1113, height:487}}>
+
+          <div className="border-2  " style={{width:518,borderRadius:324}}>
+            <h1 className="relative top-20 font-semibold text-[#DBA40D] " style={{fontSize:41}}>Vision</h1>
+            <p className="text-[#6D717F] relative top-30 left-20" style={{width:349,fontSize:16,height:205}}>To be recognized as a trusted and forward-thinking real estate partner, known for excellence, ethics, and a customer-first approach, while actively contributing to sustainable urban development and modern, high-quality lifestyles.</p>
+          </div>
+
+          <div className="border-2" style={{width:518,borderRadius:324}}>
+            <h1 className="relative top-20 font-semibold text-[#DBA40D]"style={{fontSize:41}}>Mission</h1>
+            <p className="text-[#6D717F] relative top-30 left-30" style={{width:280}}>Our mission is to provide transparent and reliable real estate solutions, create value-driven opportunities, and uphold integrity, professionalism, and modern sustainable practices in everything we do</p>
+          </div>
+        </div>
+       </div>
+
+
+
+        <section className="w-full  mx-auto " style={{width:1281,height:329}}>
+      {/* Heading */}
+      <div className="text-center mb-10 px-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900">
+          <span className="text-[#DBA40D] font-semibold">5 Steps</span>{" "}
+          to Your Dream Home
         </h2>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700">
-          <p>
-            At Neev Realty, we redefine real estate with a client-first
-            philosophy. Our solutions are crafted to match your aspirations,
-            whether luxury living or smart investments.
-          </p>
-
-          <p>
-            With over 20 years of experience and 100+ premium projects, we
-            deliver unmatched expertise, immersive tours, and seamless
-            transactions.
-          </p>
-        </div>
-      </section>
-
-      {/* ================= 5 STEPS ================= */}
-      <section className="max-w-7xl mx-auto px-4 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light">
-            <span className="text-blue-500 font-semibold">5 Steps</span> to Your
-            Dream Home
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {steps.map((step) => (
-            <div
-              key={step.title}
-              className="flex flex-col items-center text-center border rounded-md shadow-sm py-8 px-4"
-            >
+      {/* Cards */}
+      <div className="mx-auto  px-4 grid gap-6 md:grid-cols-3 lg:grid-cols-5" style={{width:1281}}>
+        {steps.map((step) => (
+          <div
+            key={step.title}
+            className="flex flex-col items-center text-center border  border-gray-200 rounded-md  shadow-sm py-8 px-4"
+             style={{width:221,height:192}}>
+            
+           <div className="">
               <Image
                 src={step.logo}
                 alt={step.title}
                 width={40}
                 height={40}
+                className="object-contain"
               />
-              <h3 className="mt-4 font-semibold">{step.title}</h3>
-              <p className="text-sm text-gray-600 mt-2">
-                {step.desc}
-              </p>
             </div>
-          ))}
-        </div>
-      </section>
-
+            <h3 className="font-semibold text-gray-900 " style={{fontSize:16,width:190}}>
+              {step.title}
+            </h3>
+            <p className="text-sm text-gray-600 leading-relaxed" style={{fontSize:13}}>
+              {step.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+      
     </main>
   );
 }

@@ -14,37 +14,37 @@ const features: Feature[] = [
     title: "Free Service (No Brokerage)",
     description:
       "Explore and book properties without any buyer fee with expert support and zero charges.",
-    image: "/images/chooseimg/logo1.png",
+    image: "/images/chooseimg/logo01.png",
   },
   {
     title: "Fully Transparent Process",
     description:
       "Clear pricing, verified documents, and honest advice with no hidden costs or surprises.",
-    image: "/images/chooseimg/logo2.png",
+    image: "/images/chooseimg/logo02.png",
   },
   {
     title: "Expert Real Estate Consulting",
     description:
       "Personalized property recommendations based on location, budget, appreciation, and lifestyle.",
-    image: "/images/chooseimg/logo3.png",
+    image: "/images/chooseimg/logo03.png",
   },
   {
     title: "One-Stop Real Estate Solutions",
     description:
       "Property search, site visits, legal checks, loans, and post-sale support handled end to end.",
-    image: "/images/chooseimg/logo4.png",
+    image: "/images/chooseimg/logo04.png",
   },
   {
     title: "Home Loan Consultation",
     description:
       "Help choosing the best loan offers, preparing documents, and speeding approvals with banking partners.",
-    image: "/images/chooseimg/logo5.png",
+    image: "/images/chooseimg/logo05.png",
   },
   {
     title: "After-Sales Assistance",
     description:
       "Support after booking, from builder coordination to possession and documentation help.",
-    image: "/images/chooseimg/logo6.png",
+    image: "/images/chooseimg/logo06.png",
   },
 ];
 
