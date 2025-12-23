@@ -34,24 +34,27 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-[#F7F9FC] py-16 overflow-hidden mx-auto" style={{width:1520,height:692}}>
-      <div className=" mx-auto px-4 mt-14" style={{width:1240}}>
-        {/* Heading */}
+    <section className="bg-[#F7F9FC] py-16 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* ===== Heading ===== */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900">
-            What Our Clients Say <span className="text-[#DBA40D]"> About Us</span>
+            What Our Clients Say{" "}
+            <span className="text-[#DBA40D]">About Us</span>
           </h2>
-          <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+          <p className="mt-4 text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">
             Real stories from families and investors who trusted Livora.
           </p>
         </div>
 
-        {/* Cards */}
+        {/* ===== Testimonials Grid ===== */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((item) => (
             <article
               key={item.name}
-              className="bg-white rounded-2xl border hover:scale-105 border-gray-200 shadow-sm p-8 flex flex-col h-full"
+              className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 sm:p-8
+                         flex flex-col transition hover:shadow-md hover:-translate-y-1"
             >
               {/* Avatar + Info */}
               <div className="flex items-center gap-4 mb-6">
@@ -63,6 +66,7 @@ export default function TestimonialsSection() {
                     className="object-cover"
                   />
                 </div>
+
                 <div>
                   <h3 className="font-semibold text-gray-900">
                     {item.name}
@@ -74,11 +78,11 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Quote */}
-              <p className="text-sm text-gray-600 leading-relaxed flex-1">
+              <p className="text-sm sm:text-[15px] text-gray-600 leading-relaxed flex-1">
                 {item.quote}
               </p>
 
-              {/* Stars */}
+              {/* Rating */}
               <div className="flex gap-1 mt-6 text-[#DBA40D]">
                 {Array.from({ length: 5 }).map((_, idx) => (
                   <span key={idx} className="text-lg">

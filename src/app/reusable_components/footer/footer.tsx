@@ -18,17 +18,20 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="text-gray-200 bg-[#1B121E] mx-auto" style={{width:1520}}>
-      {/* top links - EXACTLY 4 VISIBLE, NO EXTRA */}
-      <div className="relative px-6 py-10 mx-auto bg-[#29192B] border-b border-[#2c1b32]">
+    <footer className="text-gray-200 bg-[#1B121E] mx-auto w-full max-w-[1520px]">
+      
+      {/* ================= TOP LINKS ================= */}
+      <div className="relative px-4 sm:px-6 py-10 mx-auto bg-[#29192B] border-b border-[#2c1b32]">
         <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 gap-6">
-          
-          {/* Div 1: Projects by size - HIDES first */}
-          <div className={`
-            ${showLastDiv ? 'hidden md:hidden xl:hidden opacity-0' : 'block opacity-100'}
-            transition-all duration-500 ease-in-out transform 
-            ${showLastDiv ? '-translate-x-8 scale-90' : 'translate-x-0 scale-100'}
-          `}>
+
+          {/* Div 1 */}
+          <div
+            className={`
+              ${showLastDiv ? "hidden md:hidden xl:hidden opacity-0" : "block opacity-100"}
+              transition-all duration-500 ease-in-out transform
+              ${showLastDiv ? "-translate-x-8 scale-90" : "translate-x-0 scale-100"}
+            `}
+          >
             <h4 className="font-semibold mb-4 text-[16px]">Projects by size</h4>
             <ul className="space-y-3 text-white text-[15px]">
               <li>1 BHK property in Gurgaon</li>
@@ -44,7 +47,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Div 2: Property by type - MOVES LEFT */}
+          {/* Div 2 */}
           <div className="ml-0 md:ml-8">
             <h4 className="font-semibold mb-4 text-[16px]">Property by type</h4>
             <ul className="space-y-3 text-white text-[15px]">
@@ -57,9 +60,11 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Div 3: Construction status - MOVES LEFT */}
-          <div className="ml-0 md:ml-8" style={{width:284}}>
-            <h4 className="font-semibold mb-4 text-[16px]">Projects by construction status</h4>
+          {/* Div 3 */}
+          <div className="ml-0 md:ml-8 w-full max-w-[284px]">
+            <h4 className="font-semibold mb-4 text-[16px]">
+              Projects by construction status
+            </h4>
             <ul className="space-y-3 text-white text-[15px]">
               <li>New launch project in Gurgaon</li>
               <li>Ready to move project in Gurgaon</li>
@@ -68,8 +73,8 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Div 4: Location - MOVES LEFT */}
-          <div className="ml-0 md:ml-8" style={{width:297}}>
+          {/* Div 4 */}
+          <div className="ml-0 md:ml-8 w-full max-w-[297px]">
             <h4 className="font-semibold mb-4 text-[16px]">Projects by Location</h4>
             <ul className="space-y-3 text-white text-[15px]">
               <li>Projects in Dwarka Expressway</li>
@@ -83,14 +88,16 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Div 5: Popular Developer - ONLY SHOWS on first click */}
-          <div className={`
-            ${showLastDiv ? 'block md:block xl:block opacity-100' : 'hidden opacity-0'}
-            transition-all duration-500 ease-in-out md:ml-8 transform 
-            ${showLastDiv ? 'translate-x-0 scale-100' : 'translate-x-8 scale-90'}
-            ml-0 md:ml-14
-          `} style={{width:297}}>
-            <h4 className="font-semibold mb-4 text-[16px]">Projects by Location</h4>
+          {/* Div 5 */}
+          <div
+            className={`
+              ${showLastDiv ? "block md:block xl:block opacity-100" : "hidden opacity-0"}
+              transition-all duration-500 ease-in-out transform
+              ml-0 md:ml-14 w-full max-w-[297px]
+              ${showLastDiv ? "translate-x-0 scale-100" : "translate-x-8 scale-90"}
+            `}
+          >
+            <h4 className="font-semibold mb-4 text-[16px]">Projects by Budget</h4>
             <ul className="space-y-3 text-white text-[15px]">
               <li>Property between 1 to 2 cr in Gurgaon</li>
               <li>Property between 2 to 3 cr in Gurgaon</li>
@@ -104,34 +111,32 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* HUGE RED BUTTON */}
-        <div className="absolute top-42 right-4 z-20 pt-2">
+        {/* Toggle Button */}
+        <div className="absolute top-6 sm:top-12 right-4 z-20 pt-2">
           <button
             onClick={toggleDivs}
-            className="w-20 h-20 rounded-full flex items-center justify-center text-[#979797] text-5xl  shadow-2xl border-6 border-white hover:border-gray-200 bg-white hover:gray-200 active:scale-95 transform hover:scale-110 transition-all duration-300 mx-auto"
-            // style={{ boxShadow: '0 10px 30px rgba(239, 68, 68, 0.4)' }}
+            className="w-20 h-20 rounded-full flex items-center justify-center
+              text-[#979797] text-5xl shadow-2xl border-4 border-white
+              bg-white hover:scale-110 active:scale-95 transition-all duration-300"
           >
             {showLastDiv ? "<" : ">"}
           </button>
         </div>
       </div>
 
-      {/* middle row - UNCHANGED */}
-      <div className="w-full px-6 py-10 mx-auto grid gap-10 md:grid-cols-3">
+      {/* ================= MIDDLE SECTION ================= */}
+      <div className="w-full px-4 sm:px-6 py-10 mx-auto grid gap-10 md:grid-cols-3 max-w-[1212px]">
         <div>
           <h4 className="font-semibold mb-4 text-[20px]">About Us</h4>
           <p className="text-gray-400 text-[15px] max-w-xs">
             Neev Reality is a trusted name in real estate consulting that
-            believes every property journey should be smooth and rewarding
-            transition from vision to reality. Our team operates with core
-            principles of customer trust, integrity and excellence, helping
-            you find properties perfectly aligned with your needs.
+            believes every property journey should be smooth and rewarding.
           </p>
         </div>
 
         <div className="mx-auto">
           <h4 className="font-semibold mb-4 text-[20px]">Quick Links</h4>
-          <div className="grid grid-cols-2 gap-y-2 text-gray-400 text-[15px]" style={{ width: 420 }}>
+          <div className="grid grid-cols-2 gap-y-2 text-gray-400 text-[15px] w-full max-w-[420px]">
             <span>NRI Services</span>
             <span>Terms</span>
             <span>News</span>
@@ -154,27 +159,23 @@ const Footer: React.FC = () => {
 
           <h4 className="mt-6 text-sm font-semibold">Follow us on</h4>
           <div className="mt-3 flex items-center gap-2 text-sm">
-            <a className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-all duration-200" href="#" aria-label="Facebook">
-              <FaFacebookF />
-            </a>
-            <a className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-all duration-200" href="#" aria-label="LinkedIn">
-              <FaLinkedinIn />
-            </a>
-            <a className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-all duration-200" href="#" aria-label="Instagram">
-              <FaInstagram />
-            </a>
-            <a className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-all duration-200" href="#" aria-label="Twitter">
-              <FaXTwitter />
-            </a>
-            <a className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-all duration-200" href="#" aria-label="YouTube">
-              <FaYoutube />
-            </a>
+            {[FaFacebookF, FaLinkedinIn, FaInstagram, FaXTwitter, FaYoutube].map(
+              (Icon, i) => (
+                <a
+                  key={i}
+                  className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition"
+                  href="#"
+                >
+                  <Icon />
+                </a>
+              )
+            )}
           </div>
         </div>
       </div>
 
-      {/* bottom bar - UNCHANGED */}
-      <div className="border-t border-[#2c1b32] mx-auto" style={{ width: 780 }}>
+      {/* ================= BOTTOM BAR ================= */}
+      <div className="border-t border-[#2c1b32] mx-auto w-full max-w-[780px]">
         <div className="px-4 py-4 text-center">
           <p className="text-[11px] text-gray-500">
             © Copyright 360 Realtors.com. 2025 Comprehensive Property Portal

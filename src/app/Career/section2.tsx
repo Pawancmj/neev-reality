@@ -11,7 +11,7 @@ const images = [
   "/images/career/img5.jpg",
 ];
 
-const AUTOPLAY_DELAY = 3000; // 2s
+const AUTOPLAY_DELAY = 3000;
 
 const LifeAtNeev = () => {
   const [current, setCurrent] = useState(0);
@@ -26,16 +26,22 @@ const LifeAtNeev = () => {
   };
 
   const resetAutoplay = () => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
     intervalRef.current = setInterval(goToNext, AUTOPLAY_DELAY);
   };
 
   useEffect(() => {
     resetAutoplay();
+
+    // ✅ FIXED CLEANUP (NO NULL RETURN)
     return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleNext = () => {
@@ -51,24 +57,25 @@ const LifeAtNeev = () => {
   return (
     <section className="w-full bg-white py-16">
       <div className="mx-auto max-w-6xl space-y-12 px-4 lg:px-0">
-        {/* Top cards */}
+
+        {/* TOP CARDS */}
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-2xl bg-white shadow-[0_10px_35px_rgba(15,23,42,0.08)] px-8 py-7">
             <h3 className="mb-3 text-lg font-semibold text-slate-900">
               Client - Centric Approach
             </h3>
             <p className="text-sm leading-relaxed text-slate-500">
-              We provide building long‑lasting relationship by offering personalized
+              We provide building long-lasting relationship by offering personalized
               solutions tailored to your unique needs.
             </p>
           </div>
 
           <div className="rounded-2xl bg-white shadow-[0_10px_35px_rgba(15,23,42,0.08)] px-8 py-7">
             <h3 className="mb-3 text-lg font-semibold text-slate-900">
-              Experties Across the Spectrum
+              Expertise Across the Spectrum
             </h3>
             <p className="text-sm leading-relaxed text-slate-500">
-              Our team consists of seasoned real estate professionals, with years of
+              Our team consists of seasoned real estate professionals with years of
               experience in buying, selling and managing properties.
             </p>
           </div>
@@ -78,55 +85,49 @@ const LifeAtNeev = () => {
               Driven By Innovation
             </h3>
             <p className="text-sm leading-relaxed text-slate-500">
-              We stay ahead of the curve with modern tools, market trends and
-              insights to deliver exceptional results.
+              We stay ahead of the curve with modern tools, market trends and insights
+              to deliver exceptional results.
             </p>
           </div>
         </div>
 
-        {/* Slider + text */}
-        <div className="grid items-center gap-10 rounded-3xl bg-slate-50 px-6 py-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:px-10 lg:px-16">
-          {/* Image slider */}
+        {/* SLIDER + TEXT */}
+        <div className="grid items-center gap-10 rounded-3xl bg-slate-50 px-6 py-10 md:grid-cols-[1.3fr_1fr] md:px-10 lg:px-16">
+          
+          {/* SLIDER */}
           <div className="flex justify-center">
             <div className="relative w-full max-w-xl overflow-hidden rounded-3xl bg-black/5 shadow-[0_20px_50px_rgba(15,23,42,0.1)]">
               <Image
                 src={images[current]}
-                alt="Office team working"
+                alt="Life at Neev Realty"
                 width={800}
                 height={450}
-                className="h-full w-full object-cover transition-all duration-500 ease-out"
+                className="h-full w-full object-cover transition-all duration-500"
                 priority
               />
 
-              {/* Arrow buttons */}
               <button
-                type="button"
-                aria-label="Previous"
                 onClick={handlePrev}
-                className="absolute left-4 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md"
+                className="absolute left-4 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow"
               >
-                <ChevronLeft className="h-4 w-4 text-slate-700" />
+                <ChevronLeft className="h-4 w-4" />
               </button>
+
               <button
-                type="button"
-                aria-label="Next"
                 onClick={handleNext}
-                className="absolute right-4 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-md"
+                className="absolute right-4 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow"
               >
-                <ChevronRight className="h-4 w-4 text-slate-700" />
+                <ChevronRight className="h-4 w-4" />
               </button>
             </div>
           </div>
 
-          {/* Text block */}
-          <div className="space-y-4 ml-20 ">
-            <h2 className="text-3xl font-semibold tracking-tight  text-slate-900 md:text-4xl">
+          {/* TEXT */}
+          <div className="space-y-4">
+            <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
               Life at <span className="text-[#DBA40D]">Neev Realty</span>
             </h2>
-            <p
-              className="text-sm leading-relaxed text-slate-500"
-              style={{ width: 347, height: 63 }}
-            >
+            <p className="text-sm leading-relaxed text-slate-500 max-w-sm">
               We believe in teamwork, transparency and continuous growth. At Neev
               Realty, your ideas matter and your career grows with the organization.
             </p>

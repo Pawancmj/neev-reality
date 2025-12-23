@@ -11,30 +11,32 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className="bg-white text-gray-900" >
+    <main className="bg-white text-gray-900 overflow-x-hidden">
 
-      {/* FULL WIDTH NAVBAR */}
+      {/* ===== FULL WIDTH NAVBAR ===== */}
       <Navbar />
 
-      {/* FULL WIDTH OUTER CONTAINER JUST LIKE ABOUT PAGE */}
-      <div className="mx-auto" style={{ width: 1520 }}>
+      {/* ===== PAGE CONTENT ===== */}
+      <section className="w-full">
         
-        {/* INNER CONTENT WIDTH (same as testimonial section = 1240px) */}
-        <div className="mx-auto" style={{ width: 1520 }}>
+        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+
           <Hero />
+
           <ServicesMain />
-          
+
           <BigServices />
+
         </div>
+      </section>
 
-      </div>
-
-      {/* FULL WIDTH FOOTER */}
+      {/* ===== FULL WIDTH FOOTER ===== */}
       <Footer />
 
     </main>
   );
 }
+
 
 
 

@@ -23,13 +23,13 @@ export default function ApartmentsPage() {
       <section className="bg-[#F6FBFF] ">
         <div className="max-w-[1240px] mx-auto px-4 py-6">
           <div className="text-sm text-gray-500 mb-3">
-            Residential
+            Commercial
           </div>
 
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="max-w-4xl">
               <h1 className="text-xl sm:text-2xl md:text-[26px] font-semibold text-gray-900 leading-snug">
-                Residential Apartments Property for Sale in Gurgaon
+                Commercial Apartments Property for Sale in Gurgaon
               </h1>
 
               <p className="mt-2 text-sm sm:text-[15px] text-gray-600 leading-relaxed">

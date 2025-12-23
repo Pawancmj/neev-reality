@@ -1,25 +1,42 @@
-import Image from "next/image"
+import Image from "next/image";
 
+export default function Career() {
+  return (
+    <section className="w-full bg-[#F8FBFF] py-16">
+      <div className="max-w-[1240px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
 
-export default function career(){
-    return(
-        <main className="bg-[#F8FBFF]  mx-auto" style={{width:1520,height:432}}>
-            <div>
-                <h1 className="font-bold relative left-26 " style={{width:672,height:136,fontSize:57}}>Reshape the <span className="text-[#DBA40D]"> Real Estate </span> Industry With Us</h1>
+        {/* LEFT CONTENT */}
+        <div className="text-center lg:text-left">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            Reshape the{" "}
+            <span className="text-[#DBA40D]">Real Estate</span>{" "}
+            Industry With Us
+          </h1>
 
-                <h2 className="relative top-22 left-26" style={{width:426,height:48,fontSize:40}}>The <span className="text-[#DBA40D]">Neev Realty</span>  Team</h2>
+          <h2 className="mt-6 text-2xl sm:text-3xl lg:text-4xl font-medium">
+            The{" "}
+            <span className="text-[#DBA40D]">Neev Realty</span>{" "}
+            Team
+          </h2>
 
-                <button className="relative left-28 top-28 bg-[#DBA40D] text-white rounded-lg border-1" style={{width:253,height:49}}>View Open Position</button>
+          <button className="mt-8 inline-block rounded-lg bg-[#DBA40D] px-8 py-3 text-white font-medium hover:bg-[#c8940c] transition">
+            View Open Positions
+          </button>
+        </div>
 
-                <Image
-                                src="/images/career/img1.png"
-                                alt=""
-                                width={394}
-                                height={423}
-                                className="object-cover absolute left-259 top-30"
-                                style={{ width: 394, height: 423 }}
-                              />
-            </div>
-        </main>
-    )
+        {/* RIGHT IMAGE */}
+        <div className="flex justify-center lg:justify-end">
+          <Image
+            src="/images/career/img1.png"
+            alt="Neev Realty Careers"
+            width={394}
+            height={423}
+            className="object-contain max-w-full h-auto"
+            priority
+          />
+        </div>
+
+      </div>
+    </section>
+  );
 }

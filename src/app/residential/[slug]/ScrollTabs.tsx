@@ -17,13 +17,19 @@ export default function ScrollTabs() {
   const [activeTab, setActiveTab] = useState("overview");
 
   const scrollToSection = (id: string) => {
-    setActiveTab(id); // 👈 ACTIVE SET
+    setActiveTab(id);
+
     const section = document.getElementById(id);
     if (!section) return;
 
-    section.scrollIntoView({
+    const HEADER_OFFSET = 140; // 👈 adjust if needed (navbar + tabs height)
+
+    const elementPosition = section.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - HEADER_OFFSET;
+
+    window.scrollTo({
+      top: offsetPosition,
       behavior: "smooth",
-      block: "start",
     });
   };
 
@@ -49,4 +55,5 @@ export default function ScrollTabs() {
     </div>
   );
 }
+
 

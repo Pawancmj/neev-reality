@@ -147,7 +147,7 @@ export default async function ApartmentDetails({ params }: Props) {
 
       {/* ================= BREADCRUMB ================= */}
       <div className="max-w-[1240px] mx-auto px-4 py-4 text-sm text-gray-500">
-        Home / Residential / Apartments /{" "}
+        Home / Residential /{" "}
         <span className="text-gray-900 font-medium">{property.title}</span>
       </div>
 

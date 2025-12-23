@@ -1,6 +1,7 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-
 
 type ProjectCardProps = {
   title: string;
@@ -51,23 +52,20 @@ const projects: ProjectCardProps[] = [
   },
 ];
 
-const Badge = ({ text }: { text: string }) => (
-  <span className="rounded-full bg-[#f3f3f3] px-3 py-1 text-xs font-medium flex text-gray-700 shadow-sm">
-    {text} <span> 
-        <Image
-          src="/images/newlaunchproject/rera.png"
-          alt=""
-          width={12}
-          height={12}
-          className="relative left-2 top-0.5"
-          style={{width:12,height:12}}
-        /></span>
-
+const Badge = () => (
+  <span className="flex items-center gap-1 rounded-full bg-[#f3f3f3] px-3 py-1 text-[11px] font-medium text-gray-700">
+    RERA
+    <Image
+      src="/images/newlaunchproject/rera.png"
+      alt=""
+      width={12}
+      height={12}
+    />
   </span>
 );
 
 const ContactButton = () => (
-  <button className="rounded-full bg-[#F4F2F1] px-6 py-2 text-xs font-medium text-[#DBA40D] shadow-sm ">
+  <button className="rounded-full bg-[#F4F2F1] px-5 py-1.5 text-[11px] font-medium text-[#DBA40D]">
     Contact
   </button>
 );
@@ -82,40 +80,36 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
 }) => {
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-l bg-white shadow-sm ">
-      <div className="relative ">
-        <Image
-          src={image}
-          alt={title}
-          width={1400}
-          height={150}
-          className="object-cover"
-        //   sizes="(min-width: 1024px) 300px, 100vw"
-        style={{width:1400,height:170}}
-        />
+    <div className="flex flex-col overflow-hidden rounded-lg bg-white shadow-sm">
+      {/* Image */}
+      <div className="relative h-[170px] w-full">
+        <Image src={image} alt={title} fill className="object-cover" />
       </div>
 
-      <div className="flex flex-1 flex-col justify-between px-4 pb-4 pt-3">
+      {/* Content */}
+      <div className="flex flex-1 flex-col justify-between px-4 py-3">
         <div>
-          <div className="mb-2 flex items-center justify-between gap-2">
+          <div className="mb-1 flex items-center justify-between">
             <p className="text-sm font-semibold text-gray-900 line-clamp-1">
               {title}
             </p>
-            <Badge text="RERA" />
+            <Badge />
           </div>
+
           <p className="text-xs text-gray-500">
             By <span className="font-medium text-gray-700">{builder}</span>
           </p>
-          <p className="mt-1 text-xs text-gray-500">{location}</p>
+          <p className="mt-0.5 text-xs text-gray-500">{location}</p>
 
           <div className="mt-3 flex items-center justify-between text-[11px] text-gray-500">
             <span>{bhk}</span>
             <span>{area}</span>
           </div>
-          <h1 className="border-1 relative top-3"></h1>
+
+          <div className="mt-3 border-t" />
         </div>
 
-        <div className="mt-4 flex items-center justify-between">
+        <div className="mt-3 flex items-center justify-between">
           <p className="text-xs font-semibold text-gray-900">{priceRange}</p>
           <ContactButton />
         </div>
@@ -124,28 +118,33 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   );
 };
 
-const trendingprojects: React.FC = () => {
+const TrendingProjects: React.FC = () => {
   return (
-    <section className="w-full bg-white py-16 relative top-70">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4">
-        <div className="text-center md:text-left">
-          <h2 className=" font-semibold  text-gray-900 relative left-90 bottom-10" style={{fontSize:40}}>
+    <section className="w-full bg-white py-14">
+      {/* ===== Heading Row ===== */}
+      <div className="mx-auto max-w-[1480px] px-6 flex items-start justify-between relative">
+        <div className="mx-auto text-center">
+          <h2 className="text-3xl font-semibold text-gray-900">
             Trending <span className="text-[#DBA40D]">Projects</span>
           </h2>
-          <p className="mt-2  text-black relative left-78 bottom-12" style={{fontSize:17}}>
-            Explore our curated selection of the finest homes available right now.
-          </p>
-          <p className="text-black relative left-110 bottom-6" style={{fontSize:17}}>
-            The Noteworthy Real Estate in India
+          <p className="mt-2 text-sm text-gray-600">
+            Explore our top current projects across the growing cityscape
           </p>
         </div>
 
-        <button className="relative left-41 top-15 rounded-sm bg-[#DBA40D] px-6 py-2 text-xs font-medium text-white shadow-sm hover:bg-[#1D4ED8] md:mt-0">
+        <button className="absolute right-20 rounded-md bg-[#DBA40D] px-5 py-1.5 text-xs font-medium text-white">
           Explore More
         </button>
       </div>
 
-      <div className="mx-auto mt-10 grid  grid-cols-1 gap-5 px-4 md:grid-cols-2 lg:grid-cols-4" style={{width:1480,height:350}}>
+      {/* ===== Cards Grid ===== */}
+      <div
+        className="
+          mx-auto mt-8 grid max-w-[1480px] grid-cols-4 gap-6 px-6
+          max-lg:grid-cols-2
+          max-md:grid-cols-1
+        "
+      >
         {projects.map((project) => (
           <ProjectCard key={project.title + project.image} {...project} />
         ))}
@@ -154,4 +153,4 @@ const trendingprojects: React.FC = () => {
   );
 };
 
-export default trendingprojects;
+export default TrendingProjects;

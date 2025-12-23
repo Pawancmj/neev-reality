@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { Roboto } from "next/font/google";
 
 type Feature = {
   title: string;
@@ -12,72 +11,84 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    title: "Free Service (No Brokerage)",
+    title: "One-Stop Real Estate Solutions",
     description:
-      "Explore and book properties without any buyer fee with expert support and zero charges.",
+      "From property search, site visits, legal checks to final possession, we handle everything end-to-end.",
     image: "/images/chooseimg/logo01.png",
   },
   {
     title: "Fully Transparent Process",
     description:
-      "Clear pricing, verified documents, and honest advice with no hidden costs or surprises.",
+      "No hidden costs, clear documentation, verified properties, and honest guidance at every step.",
     image: "/images/chooseimg/logo02.png",
   },
   {
-    title: "Expert Real Estate Consulting",
+    title: "Expert Real Estate Advisors",
     description:
-      "Personalized property recommendations based on location, budget, appreciation, and lifestyle.",
+      "Our experienced consultants help you choose the right property based on location, budget and ROI.",
     image: "/images/chooseimg/logo03.png",
   },
   {
-    title: "One-Stop Real Estate Solutions",
+    title: "Site Visit Assistance",
     description:
-      "Property search, site visits, legal checks, loans, and post-sale support handled end to end.",
+      "We arrange and assist site visits so you can explore properties comfortably and confidently.",
     image: "/images/chooseimg/logo04.png",
   },
   {
     title: "Home Loan Consultation",
     description:
-      "Help choosing the best loan offers, preparing documents, and speeding approvals with banking partners.",
+      "Get help with loan selection, documentation and faster approvals through trusted banking partners.",
     image: "/images/chooseimg/logo05.png",
   },
   {
     title: "After-Sales Assistance",
     description:
-      "Support after booking, from builder coordination to possession and documentation help.",
+      "From booking to possession and beyond, we support you with all post-sale formalities.",
     image: "/images/chooseimg/logo06.png",
   },
 ];
 
 const WhyChooseNeev: React.FC = () => {
   return (
-    <section className="relative top-70 w-full bg-white py-16">
+    <section className="w-full bg-white py-16">
+      {/* ===== Heading ===== */}
       <div className="mx-auto max-w-5xl px-4 text-center">
-        <h2 className=" font-medium text-black relative left-19" style={{width:812,height:60,fontSize:40,fontFamily:"Roboto"}}>
-          Why Choose <span className="text-[#DBA40D]">Neev Reality? </span> 
+        <h2 className="text-3xl font-semibold text-gray-900">
+          Why Choose <span className="text-[#DBA40D]">Neev Realty</span>
         </h2>
-        <p className="mt-6 text-sm text-gray-600">
-          Premium support, zero brokerage, and end-to-end assistance — everything you need to buy with confidence.
+        <p className="mt-3 text-sm text-gray-600">
+          Your trusted partner for the right property choices in Gurgaon
         </p>
       </div>
 
-      <div className="mx-auto mt-10 grid  grid-cols-1 gap-5 px-4 md:grid-cols-2   lg:grid-cols-3" style={{width:1240,height:362}}>
+      {/* ===== Feature Cards ===== */}
+      <div
+        className="
+          mx-auto mt-10 grid max-w-[1240px] grid-cols-3 gap-6 px-4
+          max-lg:grid-cols-2
+          max-md:grid-cols-1
+        "
+      >
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="flex h-full gap-4 rounded-2xl  border border-gray-200 hover:scale-105 bg-white px-5 py-6 shadow-sm"
-              style={{width:390,height:171}}>
-            <div className=" relative bottom-2  items-center justify-center rounded-lg p-2.5 bg-[#DBA40D]" style={{width:46,height:46}}>
+            className="
+              flex gap-4 rounded-xl border border-gray-200
+              bg-white px-5 py-6 shadow-sm
+            "
+          >
+            {/* Icon box */}
+            <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#DBA40D] shrink-0">
               <Image
                 src={feature.image}
                 alt={feature.title}
-                width={32}
+                width={24}
                 height={24}
-              
-                style={{width:32,height:24}}
               />
             </div>
-            <div className="relative top-12 right-12">
+
+            {/* Text */}
+            <div>
               <h3 className="text-sm font-semibold text-gray-900">
                 {feature.title}
               </h3>
