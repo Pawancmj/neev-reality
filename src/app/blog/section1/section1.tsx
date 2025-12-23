@@ -1,3 +1,4 @@
+// app/blog/page.tsx
 import Image from "next/image";
 import Link from "next/link";
 
@@ -92,69 +93,71 @@ export default function BlogPage() {
           Blog and News Updates
         </h1>
         <p className="mt-4 text-sm text-gray-500 md:text-base">
-          Your trusted source for expert updates on residential and commercial real estate.
+          Your trusted source for expert updates on residential and commercial
+          real estate.
         </p>
       </section>
 
       {/* ================= MAIN GRID ================= */}
       <section className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] items-start">
-
-
         {/* ================= LEFT CONTENT ================= */}
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-
           {blogs.map((blog) => (
-            <article
+            <Link
               key={blog.id}
-              className="bg-white border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
+              href={`/blog/${blog.id}`}
+              className="bg-white border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition block"
             >
-              {/* IMAGE */}
-              <div className="relative h-48 w-full">
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  fill
-                  className="object-cover"
-                />
+              <article>
+                {/* IMAGE */}
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    fill
+                    className="object-cover"
+                  />
 
-                {/* DATE PILL */}
-                <div className="absolute -bottom-6 right-5 bg-white rounded-2xl px-4 py-2 text-center shadow">
-                  <p className="text-xs text-gray-500">{blog.date}</p>
-                  <p className="text-lg font-semibold">{blog.day}</p>
+                  {/* DATE PILL */}
+                  <div className="absolute -bottom-6 right-5 bg-white rounded-2xl px-4 py-2 text-center shadow">
+                    <p className="text-xs text-gray-500">{blog.date}</p>
+                    <p className="text-lg font-semibold">{blog.day}</p>
+                  </div>
                 </div>
-              </div>
 
-              {/* CONTENT */}
-              <div className="px-5 pt-8 pb-5">
-                <h2 className="text-sm font-semibold md:text-base line-clamp-2">
-                  {blog.title}
-                </h2>
+                {/* CONTENT */}
+                <div className="px-5 pt-8 pb-5">
+                  <h2 className="text-sm font-semibold md:text-base line-clamp-2">
+                    {blog.title}
+                  </h2>
 
-                <p className="mt-2 text-xs text-gray-500 line-clamp-2 md:text-sm">
-                  {blog.excerpt}
-                </p>
+                  <p className="mt-2 text-xs text-gray-500 line-clamp-2 md:text-sm">
+                    {blog.excerpt}
+                  </p>
 
-                <button className="mt-4 text-xs font-semibold text-black">
-                  Read More
-                </button>
-              </div>
-            </article>
+                  <span className="mt-4 inline-block text-xs font-semibold text-black">
+                    Read More
+                  </span>
+                </div>
+              </article>
+            </Link>
           ))}
-
         </div>
 
         {/* ================= RIGHT SIDEBAR ================= */}
         <aside className="space-y-6 lg:sticky lg:top-24">
-
           {/* SEARCH */}
           <section className="bg-white border rounded-xl p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-4">
-              <Image
-                src="/images/blogsection/searchlogo.png"
-                alt=""
-                width={36}
-                height={36}
-              />
+              <div className="rounded-full bg-[#DBA40D] ">
+                <Image
+                  src="/images/blogsection/searchicon.png"
+                  alt=""
+                  width={36}
+                  height={36}
+                  className=" p-1"
+                />
+              </div>
               <h3 className="font-semibold text-sm md:text-base">
                 Search Blogs
               </h3>
@@ -177,13 +180,16 @@ export default function BlogPage() {
 
           {/* RECENT BLOGS */}
           <section className="bg-white border rounded-xl p-5 shadow-sm">
-            <div className="flex items-center gap-3 mb-4">
-              <Image
-                src="/images/blogsection/recentlogo.png"
-                alt=""
-                width={36}
-                height={36}
-              />
+            <div className="flex items-center gap-3 mb-4 ">
+              <div className=" rounded-3xl bg-[#DBA40D] p-1 ">
+                <Image
+                  src="/images/blogsection/recenticon.png"
+                  alt=""
+                  width={36}
+                  height={36}
+                  className=" p-1 "
+                />
+              </div>
               <h3 className="font-semibold text-sm md:text-base">
                 Recent Blogs
               </h3>
@@ -244,10 +250,8 @@ export default function BlogPage() {
               />
             </div>
           </section>
-
         </aside>
       </section>
     </main>
   );
 }
-

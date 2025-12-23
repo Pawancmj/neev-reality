@@ -150,7 +150,7 @@ export default function Home() {
         {steps.map((step) => (
           <div
             key={step.title}
-            className="flex flex-col items-center text-center border  border-gray-200 rounded-md  shadow-sm py-8 px-4"
+            className="flex flex-col items-center hover:scale-105 text-center border  border-gray-200 rounded-md  shadow-sm py-8 px-4"
              style={{width:221,height:192}}>
             
            <div className="">

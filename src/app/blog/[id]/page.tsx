@@ -491,22 +491,21 @@ simple and modern. Each of them lifts your room, which makes your hall feel styl
                     className="rounded-lg border border-gray-200 bg-white p-4"
                     style={{ width: 387, height: 553 }}
                   >
-                    <div className="flex">
-                      <Image
-                        src="/images/blogsection/recentlogo.png"
-                        alt=""
-                        width={45}
-                        height={45}
-                        className="object-cover absolute right-85"
-                        style={{ width: 45, height: 45 }}
-                      />
-                      <h3
-                        className="mb-4 text-sm font-semibold md:text-base ml-14 relative top-2"
-                        style={{ width: 357, height: 62 }}
-                      >
-                        Latest Blogs
-                      </h3>
-                    </div>
+                    <div className="flex items-center gap-3 mb-4 ">
+                                 <div className=" rounded-3xl bg-[#DBA40D] p-1 relative right-3 top-2 ">
+                                   <Image
+                                     src="/images/blogsection/recenticon.png"
+                                     alt=""
+                                     width={36}
+                                     height={36}
+                                     className=" p-1  "
+                                   />
+                                 </div>
+                                 <h3 className="font-semibold text-sm md:text-base">
+                                   Latest Blogs
+                                 </h3>
+                               </div>
+                                 <h6 className="text-sm relative bottom-6 text-gray-400 left-12">Updates from around the world</h6>
                     <ul className="space-y-3" style={{ width: 352, height: 462 }}>
                       {recentBlogs.map((blog, index) => (
                         <li
@@ -533,7 +532,7 @@ simple and modern. Each of them lifts your room, which makes your hall feel styl
                           </div>
                         </li>
                       ))}
-                      <button className="relative left-30 text-sm border-2 p-2 rounded-lg  bg-[#1D4ED8] font-semibold text-white">
+                      <button className="relative left-30 text-sm border-2 p-2 rounded-lg  bg-[#DBA40D] font-semibold text-white">
                               View more
                             </button>
                     </ul>

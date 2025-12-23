@@ -51,7 +51,7 @@ export default function TestimonialsSection() {
           {testimonials.map((item) => (
             <article
               key={item.name}
-              className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 flex flex-col h-full"
+              className="bg-white rounded-2xl border hover:scale-105 border-gray-200 shadow-sm p-8 flex flex-col h-full"
             >
               {/* Avatar + Info */}
               <div className="flex items-center gap-4 mb-6">

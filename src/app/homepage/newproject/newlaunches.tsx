@@ -67,7 +67,7 @@ const Badge = ({ text }: { text: string }) => (
 );
 
 const ContactButton = () => (
-  <button className="rounded-full bg-[#F4F2F1] px-6 py-2 text-xs font-medium text-[#D23292] shadow-sm ">
+  <button className="rounded-full bg-[#F4F2F1] px-6 py-2 text-xs font-medium text-[#DBA40D] shadow-sm ">
     Contact
   </button>
 );
@@ -140,7 +140,7 @@ const NewLaunchProjects: React.FC = () => {
           </p>
         </div>
 
-        <button className="relative left-41 top-15 rounded-sm bg-[#DBA40D] px-6 py-2 text-xs font-medium text-white shadow-sm hover:bg-[#1D4ED8] md:mt-0">
+        <button className="relative left-41 top-15 rounded-sm bg-[#DBA40D] px-6 py-2 text-xs font-medium text-white shadow-sm  md:mt-0">
           Explore More
         </button>
       </div>

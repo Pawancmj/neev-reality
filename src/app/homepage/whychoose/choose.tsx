@@ -61,11 +61,11 @@ const WhyChooseNeev: React.FC = () => {
         </p>
       </div>
 
-      <div className="mx-auto mt-10 grid  grid-cols-1 gap-5 px-4 md:grid-cols-2     lg:grid-cols-3" style={{width:1240,height:362}}>
+      <div className="mx-auto mt-10 grid  grid-cols-1 gap-5 px-4 md:grid-cols-2   lg:grid-cols-3" style={{width:1240,height:362}}>
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="flex h-full gap-4 rounded-2xl  border border-gray-200 bg-white px-5 py-6 shadow-sm"
+            className="flex h-full gap-4 rounded-2xl  border border-gray-200 hover:scale-105 bg-white px-5 py-6 shadow-sm"
               style={{width:390,height:171}}>
             <div className=" relative bottom-2  items-center justify-center rounded-lg p-2.5 bg-[#DBA40D]" style={{width:46,height:46}}>
               <Image
