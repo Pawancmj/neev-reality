@@ -22,6 +22,7 @@ export default function Homepage() {
     <BlogSection/>
     <Banner/>
     <Footer/>
+    
     </div>
     )
 }

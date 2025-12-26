@@ -65,7 +65,7 @@ const Badge = () => (
 );
 
 const ContactButton = () => (
-  <button className="rounded-full bg-[#F4F2F1] px-5 py-1.5 text-[11px] font-medium text-[#DBA40D]">
+  <button className="rounded-full bg-[#F4F2F1] px-5 py-1.5 text-[11px] font-medium text-[#DBA40D] hover:text-white hover:bg-[#DBA40D]">
     Contact
   </button>
 );
