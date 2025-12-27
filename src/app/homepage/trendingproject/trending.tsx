@@ -80,7 +80,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
 }) => {
   return (
-    <div className="flex flex-col overflow-hidden rounded-lg bg-white shadow-sm">
+    <div className="flex flex-col overflow-hidden rounded-lg bg-white shadow-sm min-w-[320px] max-md:min-w-[280px]">
       {/* Image */}
       <div className="relative h-[170px] w-full">
         <Image src={image} alt={title} fill className="object-cover" />
@@ -132,22 +132,29 @@ const TrendingProjects: React.FC = () => {
           </p>
         </div>
 
-        <button className="absolute right-20 rounded-md bg-[#DBA40D] px-5 py-1.5 text-xs font-medium text-white">
+        <button className="absolute right-20 rounded-md bg-[#DBA40D] px-5 py-1.5 text-xs font-medium text-white max-md:hidden">
           Explore More
         </button>
       </div>
 
-      {/* ===== Cards Grid ===== */}
-      <div
-        className="
-          mx-auto mt-8 grid max-w-[1480px] grid-cols-4 gap-6 px-6
-          max-lg:grid-cols-2
-          max-md:grid-cols-1
-        "
-      >
-        {projects.map((project) => (
-          <ProjectCard key={project.title + project.image} {...project} />
-        ))}
+      {/* ===== Cards Grid / Horizontal Scroll ===== */}
+      <div className="mx-auto mt-8 max-w-[1480px] px-6">
+        <div
+          className="
+            grid 
+            grid-cols-4 gap-6
+            max-lg:grid-cols-2
+            max-md:flex max-md:gap-4 max-md:overflow-x-auto max-md:pb-4 max-md:-mb-4
+            max-md:snap-x max-md:snap-mandatory scrollbar-hide
+          "
+        >
+          {projects.map((project, index) => (
+            <ProjectCard 
+              key={project.title + project.image + index} 
+              {...project} 
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

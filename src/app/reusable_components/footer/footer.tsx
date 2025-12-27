@@ -1,6 +1,8 @@
+"use client";
 
 
 import Link from "next/link";
+import React, { useState } from "react";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -9,17 +11,29 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 
-export default function Footer() {
+const Footer: React.FC = () => {
+  const [showLastDiv, setShowLastDiv] = useState(false);
+
+  const toggleDivs = () => {
+    setShowLastDiv(!showLastDiv);
+  };
   return (
     <footer className="bg-[#1B121E] text-gray-300 w-full">
 
-      {/* ================= TOP LINKS ================= */}
-      <div className="bg-[#29192B] border-b border-[#2c1b32]">
-        <div className="max-w-[1400px] mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
+         {/* ================= TOP LINKS ================= */}
+      <div className="relative px-4 sm:px-6 py-10 mx-auto bg-[#29192B] border-b border-[#2c1b32]">
+        <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 gap-6">
 
-          <div>
-            <h4 className="text-white font-semibold mb-4">Projects by size</h4>
-            <ul className="space-y-2 text-sm">
+          {/* Div 1 */}
+          <div
+            className={`
+              ${showLastDiv ? "hidden md:hidden xl:hidden opacity-0" : "block opacity-100"}
+              transition-all duration-500 ease-in-out transform
+              ${showLastDiv ? "-translate-x-8 scale-90" : "translate-x-0 scale-100"}
+            `}
+          >
+            <h4 className="font-semibold mb-4 text-[16px]">Projects by size</h4>
+            <ul className="space-y-3 text-white text-[15px]">
               <li>1 BHK property in Gurgaon</li>
               <li>1.5 BHK property in Gurgaon</li>
               <li>2 BHK property in Gurgaon</li>
@@ -33,11 +47,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-white font-semibold mb-4">Property by type</h4>
-            <ul className="space-y-2 text-sm">
-              <li>Residential property in Gurgaon</li>
-              <li>Commercial property in Gurgaon</li>
+          {/* Div 2 */}
+          <div className="ml-0 md:ml-8">
+            <h4 className="font-semibold mb-4 text-[16px]">Property by type</h4>
+            <ul className="space-y-3 text-white text-[15px]">
+              <li>Residential property in gurgaon</li>
+              <li>Commercial property in gurgaon</li>
               <li>Luxury apartment in Gurgaon</li>
               <li>Builder floor in Gurgaon</li>
               <li>Retail shops in Gurgaon</li>
@@ -45,11 +60,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-white font-semibold mb-4">
+          {/* Div 3 */}
+          <div className="ml-0 md:ml-8 w-full max-w-[284px]">
+            <h4 className="font-semibold mb-4 text-[16px]">
               Projects by construction status
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-3 text-white text-[15px]">
               <li>New launch project in Gurgaon</li>
               <li>Ready to move project in Gurgaon</li>
               <li>Under construction project in Gurgaon</li>
@@ -57,20 +73,54 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-white font-semibold mb-4">Projects by Location</h4>
-            <ul className="space-y-2 text-sm">
+          {/* Div 4 */}
+          <div className="ml-0 md:ml-8 w-full max-w-[297px]">
+            <h4 className="font-semibold mb-4 text-[16px]">Projects by Location</h4>
+            <ul className="space-y-3 text-white text-[15px]">
               <li>Projects in Dwarka Expressway</li>
               <li>Projects in Golf Course Road</li>
               <li>Projects in Golf Course Extension Road</li>
               <li>Projects in Sohna Road</li>
               <li>Projects in New Gurgaon</li>
-              <li>Projects in Old Gurgaon</li>
+              <li>Projects in old Gurgaon</li>
               <li>Projects in SPR</li>
               <li>Projects in NH8</li>
             </ul>
           </div>
 
+          {/* Div 5 */}
+          <div
+            className={`
+              ${showLastDiv ? "block md:block xl:block opacity-100" : "hidden opacity-0"}
+              transition-all duration-500 ease-in-out transform
+              ml-0 md:ml-14 w-full max-w-[297px]
+              ${showLastDiv ? "translate-x-0 scale-100" : "translate-x-8 scale-90"}
+            `}
+          >
+            <h4 className="font-semibold mb-4 text-[16px]">Projects by Budget</h4>
+            <ul className="space-y-3 text-white text-[15px]">
+              <li>Property between 1 to 2 cr in Gurgaon</li>
+              <li>Property between 2 to 3 cr in Gurgaon</li>
+              <li>Property between 3 to 4 cr in Gurgaon</li>
+              <li>Property between 4 to 5 cr in Gurgaon</li>
+              <li>Property between 5 to 6 cr in Gurgaon</li>
+              <li>Property between 6 to 7 cr in Gurgaon</li>
+              <li>Property between 7 to 8 cr in Gurgaon</li>
+              <li>Property above 8 cr in Gurgaon</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Toggle Button */}
+        <div className="absolute top-6 sm:top-12 right-4 z-20 pt-2">
+          <button
+            onClick={toggleDivs}
+            className="w-20 h-20 rounded-full flex items-center justify-center
+              text-[#979797] text-5xl shadow-2xl border-4 border-white
+              bg-white hover:scale-110 active:scale-95 transition-all duration-300"
+          >
+            {showLastDiv ? "<" : ">"}
+          </button>
         </div>
       </div>
 
@@ -116,8 +166,8 @@ export default function Footer() {
             <Link href="/commercial" className="hover:text-white transition">Commercial</Link>
             <Link href="/services" className="hover:text-white transition">Our Services</Link>
 
-            <Link href="/career" className="hover:text-white transition">Careers</Link>
-            <Link href="/contact" className="hover:text-white transition">Contact</Link>
+            <Link href="/Career" className="hover:text-white transition">Careers</Link>
+            <Link href="/Contact" className="hover:text-white transition">Contact</Link>
           </div>
         </div>
 
@@ -153,5 +203,6 @@ export default function Footer() {
 
     </footer>
   );
-}
+};
 
+export default Footer;

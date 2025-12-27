@@ -8,7 +8,6 @@ import DevelopersSection from "./developer/developers";
 import BlogSection from "./blog/blog";
 import Footer from "../reusable_components/footer/footer";
 
-
 export default function Homepage() {
     return( 
 
@@ -21,7 +20,7 @@ export default function Homepage() {
     <DevelopersSection/>
     <BlogSection/>
     <Banner/>
-    <Footer/>
+     <Footer/>
     
     </div>
     )

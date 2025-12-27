@@ -61,49 +61,53 @@ const WhyChooseNeev: React.FC = () => {
         </p>
       </div>
 
-      {/* ===== Feature Cards ===== */}
-<div
-  className="
-    mx-auto mt-12 grid max-w-[1240px] grid-cols-3 gap-8 px-4
-    max-lg:grid-cols-2
-    max-md:grid-cols-1
-  "
->
-  {features.map((feature) => (
-    <div
-      key={feature.title}
-      className="
-        relative rounded-2xl bg-white
-        px-7 py-8
-        shadow-[0_10px_30px_rgba(0,0,0,0.06)]
-        border border-gray-100
-        hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)]
-        transition
-      "
-    >
-      {/* ICON */}
-      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-[#DBA40D]">
-        <Image
-          src={feature.image}
-          alt={feature.title}
-          width={22}
-          height={22}
-        />
+      {/* ===== Feature Cards Grid / Horizontal Scroll ===== */}
+      <div className="mx-auto mt-12 max-w-[1240px] px-4">
+        <div
+          className="
+            grid 
+            grid-cols-3 gap-8
+            max-lg:grid-cols-2
+            max-md:flex max-md:gap-4 max-md:overflow-x-auto max-md:pb-4 max-md:-mb-4
+            max-md:snap-x max-md:snap-mandatory scrollbar-hide
+          "
+        >
+          {features.map((feature, index) => (
+            <div
+              key={feature.title + index}
+              className="
+                relative rounded-2xl bg-white
+                px-7 py-8
+                shadow-[0_10px_30px_rgba(0,0,0,0.06)]
+                border border-gray-100
+                hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)]
+                transition-all duration-300
+                min-w-[320px] max-md:min-w-[280px]
+              "
+            >
+              {/* ICON */}
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-[#DBA40D]">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={22}
+                  height={22}
+                />
+              </div>
+
+              {/* TITLE */}
+              <h3 className="text-[15px] font-semibold text-gray-900">
+                {feature.title}
+              </h3>
+
+              {/* DESCRIPTION */}
+              <p className="mt-3 text-[13px] leading-[22px] text-gray-600">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-
-      {/* TITLE */}
-      <h3 className="text-[15px] font-semibold text-gray-900">
-        {feature.title}
-      </h3>
-
-      {/* DESCRIPTION */}
-      <p className="mt-3 text-[13px] leading-[22px] text-gray-600">
-        {feature.description}
-      </p>
-    </div>
-  ))}
-</div>
-
     </section>
   );
 };

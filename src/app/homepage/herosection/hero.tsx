@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   FiMapPin,
@@ -25,29 +25,89 @@ type Tab = "Residential" | "Commercial";
 export default function SearchCard() {
   const [activeTab, setActiveTab] = useState<Tab>("Residential");
   const [query, setQuery] = useState("");
+  const [showVideo, setShowVideo] = useState(true);
+
+  useEffect(() => {
+    setShowVideo(true);
+  }, []);
+
+  const handleCloseVideo = () => {
+    setShowVideo(false);
+  };
 
   return (
     <section className="relative w-full">
+      {/* ============== HERO WRAPPER (IMAGE + VIDEO) ============== */}
+      <div className="relative mx-auto w-[1520px] h-[720px] max-w-full max-lg:max-h-[400px]">
+        <Image
+          src="/images/heroimg.png"
+          alt="Hero"
+          fill
+          className="object-cover rounded-xl"
+          priority
+        />
 
-      {/* ================= HERO IMAGE ================= */}
-      <Image
-        src="/images/heroimg.png"
-        alt="Hero"
-        width={1520}
-        height={720}
-        className="mx-auto"
-        style={{ width: 1520, height: 720 }}
-        priority
-      />
+        {/* --- YouTube Video Overlay --- */}
+        {showVideo && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/50 p-4">
+            {/* DESKTOP: Exact same as your original */}
+            <div className="relative w-[800px] aspect-video hidden max-md:block md:flex">
+              <button
+                onClick={handleCloseVideo}
+                className="
+                  absolute -top-2 -right-83 z-20
+                  h-10 w-10 rounded-full bg-black/90 text-white hover:bg-black
+                  flex items-center justify-center text-lg font-bold shadow-lg
+                  transition-all duration-200 hover:scale-110
+                "
+              >
+                ✕
+              </button>
 
-      {/* ================= FLOATING SEARCH CARD ================= */}
+              <iframe
+                className="w-90 h-60 absolute left-190 rounded-2xl shadow-2xl"
+                src="https://www.youtube.com/embed/4jnzf1yj48M?autoplay=1&mute=0&controls=1"
+                title="Neev Reality Promotional Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+
+            {/* MOBILE: WIDER WIDTH + SMALLER CLOSE BUTTON */}
+            <div className="relative w-[98vw] max-w-[550px] max-h-[225px] aspect-video block max-md:flex md:hidden">
+              <button
+                onClick={handleCloseVideo}
+                className="
+                  absolute -top-2 -right-2 z-20
+                  h-8 w-8 rounded-full bg-black/95 text-white hover:bg-black
+                  flex items-center justify-center text-base font-bold shadow-xl
+                  transition-all duration-200 hover:scale-110
+                "
+              >
+                ✕
+              </button>
+
+              <iframe
+                className="absolute inset-0 w-full h-full rounded-3xl shadow-2xl"
+                src="https://www.youtube.com/embed/4jnzf1yj48M?autoplay=1&mute=0&controls=1"
+                title="Neev Reality Promotional Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* ================= FLOATING SEARCH CARD (unchanged) ================= */}
       <div
         className="
           absolute left-1/2 top-[520px] -translate-x-1/2
           w-[1180px] rounded-2xl bg-white
           shadow-[0_25px_70px_rgba(0,0,0,0.15)]
           px-8 py-6
-
           max-lg:static
           max-lg:translate-x-0
           max-lg:mx-auto
@@ -55,7 +115,6 @@ export default function SearchCard() {
           max-lg:w-[95%]
         "
       >
-        {/* -------- Heading + Tabs -------- */}
         <div className="mb-5 flex items-center justify-between max-lg:flex-col max-lg:gap-4">
           <h2 className="text-[28px] font-semibold text-gray-800">
             Find your Perfect Home with{" "}
@@ -79,17 +138,14 @@ export default function SearchCard() {
           </div>
         </div>
 
-        {/* -------- Search Bar -------- */}
         <div
           className="
             mb-4 flex items-center gap-4 rounded-full
             bg-white px-5 py-3
             shadow-[0_10px_35px_rgba(0,0,0,0.12)]
-
             max-lg:flex-col max-lg:rounded-2xl
           "
         >
-          {/* Input */}
           <div className="flex flex-1 items-center gap-3 max-lg:w-full">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-500">
               <FiMapPin size={16} />
@@ -102,7 +158,6 @@ export default function SearchCard() {
             />
           </div>
 
-          {/* Icons */}
           <div className="flex items-center gap-3 text-gray-500">
             <button className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-gray-100">
               <CiGlobe size={18} />
@@ -112,7 +167,6 @@ export default function SearchCard() {
             </button>
           </div>
 
-          {/* Search Button */}
           <button
             className="
               flex items-center gap-2 rounded-full
@@ -126,19 +180,16 @@ export default function SearchCard() {
           </button>
         </div>
 
-        {/* -------- Tags -------- */}
         <div className="flex items-center gap-3">
           <button className="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow max-md:hidden">
             <FiChevronLeft />
           </button>
 
-          <div className="flex flex-1 gap-3 overflow-x-auto">
+          <div className="flex flex-1 gap-3 overflow-x-auto scrollbar-hide">
             {TAGS.map((tag) => (
               <button
                 key={tag}
-                className="whitespace-nowrap rounded-full border
-                border-gray-200 bg-white px-4 py-1.5 text-xs
-                shadow hover:border-gray-300"
+                className="whitespace-nowrap rounded-full border border-gray-200 bg-white px-4 py-1.5 text-xs shadow hover:border-gray-300 hover:shadow-md transition-all"
               >
                 {tag}
               </button>
@@ -153,4 +204,3 @@ export default function SearchCard() {
     </section>
   );
 }
-
