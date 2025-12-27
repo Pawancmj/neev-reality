@@ -158,7 +158,7 @@ export default async function ApartmentDetails({ params }: Props) {
         <div className="lg:col-span-2 space-y-6 shadow-md">
 
           {/* HERO IMAGE */}
-          <div className="relative w-full h-[420px] rounded-xl overflow-hidden">
+          <div className="relative w-full h-[315px] rounded-xl overflow-hidden">
             <Image
               src={property.img}
               alt={property.title}
@@ -648,7 +648,7 @@ export default async function ApartmentDetails({ params }: Props) {
           key={p.slug}
           className="min-w-[260px] max-w-[260px] flex-shrink-0"
         >
-          <Link href={`/residential/apartments/${p.slug}`}>
+          <Link href={`/residential/${p.slug}`}>
 
             <div className="flex h-full flex-col overflow-hidden rounded-xl bg-white border shadow-sm hover:shadow-md transition cursor-pointer">
 
@@ -720,158 +720,123 @@ export default async function ApartmentDetails({ params }: Props) {
 
 
         {/* ================= RIGHT SIDEBAR ================= */}
-        <div className="w-[340px] hidden lg:block">
-          <aside className="sticky top-[100px] space-y-4">
+<div className="w-[340px] hidden lg:block space-y-4">
 
-            {/* IMAGE + VIDEO PREVIEW */}
-            <div className="bg-white border rounded-xl overflow-hidden shadow-sm">
-              {/* TOP THUMBNAILS */}
-              <div className="grid grid-cols-2 gap-1 p-1">
-                <div className="relative">
-                  <Image
-                    src="/images/s1.png"
-                    alt="Gallery"
-                    width={200}
-                    height={120}
-                    className="object-cover rounded"
-                  />
-                </div>
+  {/* ❌ NOT STICKY — IMAGE + VIDEO PREVIEW */}
+  <div className="bg-white border rounded-xl overflow-hidden shadow-sm">
+    
+    {/* TOP THUMBNAILS */}
+    <div className="grid grid-cols-2 gap-1 p-1">
+      <div className="relative">
+        <Image
+          src="/images/s1.png"
+          alt="Gallery"
+          width={200}
+          height={120}
+          className="object-cover rounded"
+        />
+      </div>
 
-                <div className="relative">
-                  <Image
-                    src="/images/s2.png"
-                    alt="Gallery"
-                    width={200}
-                    height={120}
-                    className="object-cover rounded"
-                  />
-                  <span className="absolute bottom-2 left-2 bg-white/90 text-xs px-2 py-1 rounded">
-                    5+ Photos
-                  </span>
-                </div>
-              </div>
+      <div className="relative">
+        <Image
+          src="/images/s2.png"
+          alt="Gallery"
+          width={200}
+          height={120}
+          className="object-cover rounded"
+        />
+        <span className="absolute bottom-2 left-2 bg-white/90 text-xs px-2 py-1 rounded">
+          5+ Photos
+        </span>
+      </div>
+    </div>
 
-              {/* VIDEO PREVIEW */}
-              <div className="relative">
-                <Image
-                  src="/images/s3.png"
-                  alt="Video Preview"
-                  width={400}
-                  height={220}
-                  className="w-full h-[200px] object-cover"
-                />
+    {/* VIDEO PREVIEW */}
+    <div className="relative">
+      <Image
+        src="/images/s3.png"
+        alt="Video Preview"
+        width={400}
+        height={220}
+        className="w-full h-[200px] object-cover"
+      />
 
-                {/* PLAY ICON */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow cursor-pointer text-xl">
-                    ▶
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* QUICK FACTS */}
-            <div className="bg-white border rounded-xl p-5 shadow-sm">
-              <h3 className="font-semibold mb-3 border-b pb-2">Quick Facts</h3>
-              <div className="text-sm space-y-2 text-gray-600">
-                <p>Developer :</p>
-                <p>Type :</p>
-                <p>Elevation / Tower :</p>
-                <p>Rera No :</p>
-                <p>Project Handover :</p>
-              </div>
-            </div>
-
-            {/* BRAND + CTA */}
-            <div className="bg-white border rounded-xl p-5 text-center shadow-sm">
-              <Image
-                src="/images/logo.png"
-                alt="Neev Realty"
-                width={70}
-                height={70}
-                className="mx-auto"
-              />
-
-              <p className="mt-2 font-medium text-lg">Neev Realty</p>
-
-              <div className="flex gap-3 mt-4">
-                <button className="flex-1 py-2 border rounded-lg text-sm">
-                  Call Us
-                </button>
-                <button className="flex-1 py-2 border border-blue-600 text-blue-600 rounded-lg text-sm">
-                  Inquiry
-                </button>
-              </div>
-
-              {/* CONNECT VIA */}
-              <p className="mt-4 text-sm text-gray-500">Connect us via</p>
-
-              <div className="flex justify-center mt-2">
-                <a
-                  href="https://wa.me/918824966669"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition"
-                >
-                  <FaWhatsapp className="text-xl" />
-                </a>
-
-              </div>
-            </div>
-
-            {/* SHARE */}
-            <div className="bg-white border rounded-xl p-5 shadow-sm text-center">
-
-              {/* TITLE + LINK ICON */}
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <p className="font-medium">Share</p>
-                <FaLink className="text-gray-400 text-sm cursor-pointer" />
-              </div>
-
-              {/* SOCIAL ICONS */}
-              <div className="flex justify-center gap-3">
-
-                <a
-                  href="#"
-                  className="w-9 h-9 flex items-center justify-center rounded bg-pink-500 text-white hover:scale-105 transition"
-                >
-                  <FaInstagram />
-                </a>
-
-                <a
-                  href="#"
-                  className="w-9 h-9 flex items-center justify-center rounded bg-blue-700 text-white hover:scale-105 transition"
-                >
-                  <FaLinkedinIn />
-                </a>
-
-                <a
-                  href="#"
-                  className="w-9 h-9 flex items-center justify-center rounded bg-red-600 text-white hover:scale-105 transition"
-                >
-                  <FaPinterestP />
-                </a>
-
-                <a
-                  href="#"
-                  className="w-9 h-9 flex items-center justify-center rounded bg-blue-600 text-white hover:scale-105 transition"
-                >
-                  <FaFacebookF />
-                </a>
-
-                <a
-                  href="#"
-                  className="w-9 h-9 flex items-center justify-center rounded bg-sky-500 text-white hover:scale-105 transition"
-                >
-                  <FaTwitter />
-                </a>
-
-              </div>
-            </div>
-
-
-          </aside>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow cursor-pointer text-xl">
+          ▶
         </div>
+      </div>
+    </div>
+  </div>
+
+  {/* ✅ STICKY PART STARTS HERE */}
+  <aside className="sticky top-[135px] space-y-4">
+
+    {/* QUICK FACTS */}
+    <div className="bg-white border rounded-xl p-5 shadow-sm">
+      <h3 className="font-semibold mb-3 border-b pb-2">Quick Facts</h3>
+      <div className="text-sm space-y-2 text-gray-600">
+        <p>Developer :</p>
+        <p>Type :</p>
+        <p>Elevation / Tower :</p>
+        <p>Rera No :</p>
+        <p>Project Handover :</p>
+      </div>
+    </div>
+
+    {/* BRAND + CTA */}
+    <div className="bg-white border rounded-xl p-5 text-center shadow-sm">
+      <Image
+        src="/images/logo.png"
+        alt="Neev Realty"
+        width={70}
+        height={70}
+        className="mx-auto"
+      />
+
+      <p className="mt-2 font-medium text-lg">Neev Realty</p>
+
+      <div className="flex gap-3 mt-4">
+        <button className="flex-1 py-2 border rounded-lg text-sm">
+          Call Us
+        </button>
+        <button className="flex-1 py-2 border border-blue-600 text-blue-600 rounded-lg text-sm">
+          Inquiry
+        </button>
+      </div>
+
+      <p className="mt-4 text-sm text-gray-500">Connect us via</p>
+
+      <div className="flex justify-center mt-2">
+        <a
+          href="https://wa.me/918824966669"
+          target="_blank"
+          className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition"
+        >
+          <FaWhatsapp className="text-xl" />
+        </a>
+      </div>
+    </div>
+
+    {/* SHARE */}
+    <div className="bg-white border rounded-xl p-5 shadow-sm text-center">
+      <div className="flex items-center justify-center gap-2 mb-4">
+        <p className="font-medium">Share</p>
+        <FaLink className="text-gray-400 text-sm cursor-pointer" />
+      </div>
+
+      <div className="flex justify-center gap-3">
+        <FaInstagram className="w-9 h-9 p-2 bg-pink-500 text-white rounded cursor-pointer" />
+        <FaLinkedinIn className="w-9 h-9 p-2 bg-blue-700 text-white rounded cursor-pointer" />
+        <FaPinterestP className="w-9 h-9 p-2 bg-red-600 text-white rounded cursor-pointer" />
+        <FaFacebookF className="w-9 h-9 p-2 bg-blue-600 text-white rounded cursor-pointer" />
+        <FaTwitter className="w-9 h-9 p-2 bg-sky-500 text-white rounded cursor-pointer" />
+      </div>
+    </div>
+
+  </aside>
+</div>
+
 
       </section>
 

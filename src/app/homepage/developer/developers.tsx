@@ -35,45 +35,59 @@ const DevelopersSection: React.FC = () => {
       </div>
 
       {/* ===== Developers Grid ===== */}
+<div
+  className="
+    mx-auto mt-12 grid max-w-[1240px] grid-cols-5 gap-8 px-6
+    max-lg:grid-cols-3
+    max-md:grid-cols-2
+    max-sm:grid-cols-1
+  "
+>
+  {developers.map((dev) => (
+    <div
+      key={dev.name}
+      className="
+        flex flex-col items-center
+        rounded-xl bg-white
+        px-6 py-6
+        border border-gray-100
+        shadow-[0_8px_20px_rgba(0,0,0,0.06)]
+        hover:shadow-[0_14px_32px_rgba(0,0,0,0.08)]
+        transition
+      "
+    >
+      {/* LOGO CIRCLE */}
       <div
         className="
-          mx-auto mt-10 grid max-w-[1240px] grid-cols-5 gap-8 px-6
-          max-lg:grid-cols-3
-          max-md:grid-cols-2
-          max-sm:grid-cols-1
+          -mt-12 
+          flex h-20 w-20 items-center justify-center
+          rounded-full bg-white
+          border border-gray-200
+          shadow-sm
         "
       >
-        {developers.map((dev) => (
-          <div
-            key={dev.name}
-            className="
-              flex flex-col items-center rounded-xl bg-white
-              px-6 py-5 shadow-sm
-            "
-          >
-            {/* Logo */}
-            <div className="flex h-20 w-20 items-center justify-center">
-              <Image
-                src={dev.logo}
-                alt={dev.name}
-                width={80}
-                height={80}
-                className="object-contain"
-              />
-            </div>
-
-            {/* Name */}
-            <p className="mt-4 text-sm font-medium text-gray-900 text-center">
-              {dev.name}
-            </p>
-
-            {/* Projects */}
-            <p className="mt-1 text-xs text-gray-500">
-              {dev.projects}
-            </p>
-          </div>
-        ))}
+        <Image
+          src={dev.logo}
+          alt={dev.name}
+          width={48}
+          height={48}
+          className="object-contain"
+        />
       </div>
+
+      {/* NAME */}
+      <p className="mt-4 text-sm font-semibold text-gray-900 text-center">
+        {dev.name}
+      </p>
+
+      {/* PROJECT COUNT */}
+      <p className="mt-1 text-xs text-gray-500">
+        {dev.projects}
+      </p>
+    </div>
+  ))}
+</div>
+
     </section>
   );
 };

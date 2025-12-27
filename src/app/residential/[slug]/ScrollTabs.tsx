@@ -34,7 +34,7 @@ export default function ScrollTabs() {
   };
 
   return (
-    <div className="sticky top-[80px] z-50 bg-white border rounded-xl shadow-sm p-6">
+    <div className="sticky top-[132px] z-50 bg-white border rounded-xl shadow-sm p-6">
       <div className="flex flex-wrap justify-center gap-6 text-sm font-medium border-b pb-2">
         {tabs.map((tab) => (
           <span

@@ -6,44 +6,30 @@ export default function Hero() {
       <div className="max-w-[1240px] w-full mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
 
         {/* LEFT TEXT */}
-        <div className="md:col-span-6 order-1 text-center md:text-left flex flex-col items-center md:items-start">
-          
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-xl">☰</span>
-            <span className="text-blue-600 font-medium text-[18px]">
-              › Services
-            </span>
-          </div>
+        <div className="md:col-span-6 order-1 flex flex-col items-center md:items-start text-center md:text-left">
 
-          {/* Heading */}
-          <h1 className="font-bold text-gray-900 leading-tight text-[32px] sm:text-[44px] md:text-[55px]">
-            Your choice is our <br />
-            first and foremost <br />
-            <span className="text-blue-600 underline decoration-[4px]">
-              Priority
+
+          {/* Main Heading */}
+          <h1 className="font-extrabold leading-tight text-[32px] sm:text-[42px] md:text-[52px] text-gray-900">
+            Your Property Goals Are Our <br />
+            <span className="text-[#F5A200]">
+              Top Priority
             </span>
           </h1>
 
-          {/* Subtitle */}
-          <h3 className="mt-5 text-gray-700 font-semibold text-[18px] sm:text-[20px]">
-            The Real Creative Potential
-          </h3>
-
-          {/* Paragraph */}
-          <p className="mt-4 text-gray-600 text-[15px] sm:text-[17px] leading-[26px] max-w-[520px]">
-            We make spaces and structures for our customers and local area
-            itedes malis civibus kase iuvaret blandit ipsum Past more
-            emotionless this.
+          {/* Sub Heading */}
+          <p className="mt-5 text-[17px] sm:text-[18px] text-gray-700 font-extrabold">
+            Smart Real Estate Solutions That{" "}
+            <span className="text-[#F5A200]">Create Value</span>
           </p>
 
-          {/* Bullet List */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 mt-8 text-[16px] sm:text-[18px] font-medium text-center sm:text-left">
-            <div className="text-[#6D50FF]">↪ Consulting</div>
-            <div className="text-[#6D50FF]">↪ Concept Design</div>
-            <div className="text-[#6D50FF]">↪ Construction</div>
-            <div className="text-[#6D50FF]">↪ Design Development</div>
-          </div>
+          {/* Description */}
+          <p className="mt-6 max-w-[540px] text-gray-500 text-[15px] sm:text-[16px] leading-[26px]">
+            At Neev Realty, we offer expert guidance for buying, selling, and
+            investing in residential and commercial properties. Our focus is on
+            transparency, market insight, and long-term value.
+          </p>
+
         </div>
 
         {/* RIGHT IMAGE */}

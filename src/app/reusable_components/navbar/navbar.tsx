@@ -31,7 +31,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <header className="bg-white mx-auto w-full max-w-[1520px]">
+    <header className="sticky top-0 z-50 bg-white mx-auto w-full max-w-[1520px]">
       <nav className="mx-auto flex items-center justify-between px-4 sm:px-6 py-3 w-full max-w-[1212px] h-[132px]">
 
         {/* Logo */}

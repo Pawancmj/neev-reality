@@ -64,78 +64,190 @@ export default function Home() {
       </section>
 
       {/* ================= WHO WE ARE ================= */}
-      <section className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center py-16">
+<section className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start py-16">
 
-        {/* Text */}
-        <div>
-          <h3 className="text-3xl sm:text-4xl font-semibold mb-6">
-            <span className="text-[#DBA40D] text-5xl">WHO</span> WE ARE
-          </h3>
-          <p className="text-gray-700 leading-relaxed">
-            As a leading luxury real estate boutique firm, we offer a comprehensive
-            range of solutions tailored to your specific needs. We specialize in
-            brand-new projects across Delhi NCR.
-            <br /><br />
-            From investment portfolios to first-time home purchases, property sales,
-            and loan assistance, our advisors deliver personalized solutions.
-          </p>
-        </div>
+  {/* Text */}
+  <div>
+    {/* Heading */}
+    <h3 className="mb-6 text-[36px] font-semibold leading-none">
+      <span className="text-[#DBA40D] text-[44px] font-bold">WHO</span>{" "}
+      <span className="text-gray-900">WE ARE</span>
+    </h3>
+
+    {/* Paragraphs */}
+    <p className="text-[15px] text-gray-600 leading-[24px] max-w-[420px]">
+      As a leading luxury real estate boutique firm, we offer a
+      comprehensive range of solutions tailored to your specific needs.
+      We specialize in brand-new projects across Delhi NCR.
+      <br /><br />
+      From investment portfolios to first-time home purchases, property
+      sales, and loan assistance, our team of experienced advisors is
+      dedicated to providing personalized solutions that meet your unique
+      needs.
+      <br /><br />
+      Discover your real estate journey with{" "}
+      <span className="font-semibold text-gray-900">
+        Neev Realty.
+      </span>
+    </p>
+  </div>
 
         {/* Images */}
-        <div className="grid grid-cols-2 gap-4">
-          <Image src="/images/aboutimg/img3.jpg" alt="" width={300} height={300} className="rounded-lg object-cover" />
-          <Image src="/images/aboutimg/img4.jpg" alt="" width={300} height={300} className="rounded-lg object-cover" />
-          <Image src="/images/aboutimg/img5.jpg" alt="" width={300} height={300} className="rounded-lg object-cover" />
-          <Image src="/images/aboutimg/img6.jpg" alt="" width={300} height={300} className="rounded-lg object-cover" />
-        </div>
+<div className="grid grid-cols-2 gap-[1px]">
+
+  {/* TOP LEFT – DIAMOND */}
+ <div className="relative w-[215px] h-[215px] translate-x-[45px] mt-1">
+  <div
+    className="
+      relative w-full h-full overflow-hidden
+      [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]
+    "
+  >
+    <Image
+      src="/images/aboutimg/img3.jpg"
+      alt=""
+      fill
+      className="object-cover"
+    />
+  </div>
+</div>
+
+
+
+
+
+  {/* TOP RIGHT – RECTANGLE */}
+  <div className="relative w-[220px] h-[220px] overflow-hidden">
+    <Image
+      src="/images/aboutimg/img4.jpg"
+      alt=""
+      fill
+      className="object-cover"
+    />
+  </div>
+
+  {/* BOTTOM LEFT – PIZZA SLICE (QUARTER CIRCLE) */}
+  <div className="relative w-[220px] h-[220px] overflow-hidden [clip-path:circle(100%_at_0%_100%)] rotate-180 translate-x-[45px]">
+    <Image
+      src="/images/aboutimg/img5.jpg"
+      alt=""
+      fill
+      className="object-cover"
+    />
+  </div>
+
+  {/* BOTTOM RIGHT – CIRCLE */}
+  <div className="relative w-[220px] h-[220px] overflow-hidden rounded-full">
+    <Image
+      src="/images/aboutimg/img6.jpg"
+      alt=""
+      fill
+      className="object-cover"
+    />
+  </div>
+
+</div>
+
+
+
+
+
 
       </section>
+
+
 
       {/* ================= WHY DIFFERENT ================= */}
-      <section className="bg-[#F8FBFF] py-16">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">
-            <span className="text-[#DBA40D] text-6xl">Why</span> Are We Different?
-          </h2>
 
-          <div className="grid md:grid-cols-2 gap-10 mt-10 text-left">
-            <p className="text-gray-700">
-              At Neev Realty, we redefine real estate with a client-first philosophy.
-              Our solutions match your aspirations, whether luxury living or
-              profitable investments.
-            </p>
-            <p className="text-gray-700">
-              With 20+ years of experience and 100+ premium projects, we ensure
-              transparency, trust, and seamless execution at every step.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section className="bg-white py-20">
+  <div className="max-w-6xl mx-auto px-6">
 
-      {/* ================= VISION & MISSION ================= */}
-      <section className="max-w-6xl mx-auto px-6 py-16 text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-12">
-          <span className="text-[#DBA40D] text-6xl">Our</span> Vision & Mission
-        </h2>
+    {/* HEADING */}
+    <h2 className="text-center text-3xl sm:text-4xl font-semibold mb-12">
+      <span className="text-[#DBA40D]">Why</span>{" "}
+      <span className="text-gray-900">Are We Different?</span>
+    </h2>
 
-        <div className="grid md:grid-cols-2 gap-10">
-          <div className="border rounded-full p-10">
-            <h3 className="text-3xl font-semibold text-[#DBA40D] mb-4">Vision</h3>
-            <p className="text-gray-600">
-              To be a trusted, ethical, and forward-thinking real estate partner
-              contributing to sustainable urban development.
-            </p>
-          </div>
+    {/* CONTENT */}
+    <div className="grid md:grid-cols-2 gap-12 text-[15px] leading-[26px] text-gray-600">
 
-          <div className="border rounded-full p-10">
-            <h3 className="text-3xl font-semibold text-[#DBA40D] mb-4">Mission</h3>
-            <p className="text-gray-600">
-              Deliver transparent, value-driven real estate solutions with integrity
-              and professionalism.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* LEFT COLUMN */}
+      <p>
+        At Neev Realty, we redefine real estate with a client-first philosophy.
+        Our unique solutions are crafted to match your unique aspirations,
+        whether you are seeking a luxurious home, building a profitable
+        investment portfolio, or navigating the complexities of property sales.
+        We believe in empowering our clients with expert insights, curated
+        property selections and expert financial advice to make informed
+        decisions. Our approach is rooted in trust, transparency and a deep
+        understanding of the ever-evolving real estate landscape.
+      </p>
+
+      {/* RIGHT COLUMN */}
+      <p>
+        What truly makes us stand out is our ability to merge personalization
+        with expertise. With over 20 years of experience and a portfolio of 100
+        premium projects, we deliver a world of opportunities tailored just for
+        you. From immersive virtual tours and in-person visits to seamless
+        transaction support and ongoing assistance, we ensure your journey with
+        us is as smooth as it is successful. At Neev Realty, we combine local
+        expertise and global insight, ensuring that every client enjoys an
+        unparalleled service and a rewarding real estate experience. Experience
+        the difference with Neev Realty – a trusted partner who brings your real
+        estate dreams to life.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+          {/* ================= MISSION and VISSION ================= */}
+
+      <section className="bg-[#F8FBFF] py-20">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+
+    {/* HEADING */}
+    <h2 className="text-4xl font-semibold mb-16">
+      <span className="text-[#DBA40D]">Our</span> Vision & Mission
+    </h2>
+
+    {/* CIRCLES */}
+    <div className="flex flex-col md:flex-row justify-center gap-20">
+
+      {/* VISION */}
+      <div className="w-[360px] h-[360px] rounded-full border border-gray-400 flex flex-col justify-center items-center px-10 text-center">
+        <h3 className="text-xl font-semibold text-[#DBA40D] mb-6">
+          Vision
+        </h3>
+
+        <p className="text-sm text-gray-600 leading-relaxed">
+          To be recognized as a trusted and forward-thinking real estate
+          partner, known for excellence, ethics, and a customer-first
+          approach, while actively contributing to sustainable urban
+          development and modern, high-quality lifestyles.
+        </p>
+      </div>
+
+      {/* MISSION */}
+      <div className="w-[360px] h-[360px] rounded-full border border-gray-400 flex flex-col justify-center items-center px-10 text-center">
+        <h3 className="text-xl font-semibold text-[#DBA40D] mb-6">
+          Mission
+        </h3>
+
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Our mission is to provide transparent and reliable real estate
+          solutions, create value-driven opportunities, and uphold
+          integrity, professionalism, and modern sustainable practices
+          in everything we do.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
 
       {/* ================= 5 STEPS ================= */}
       <section className="max-w-7xl mx-auto px-6 py-16">
@@ -147,7 +259,7 @@ export default function Home() {
           {steps.map((step) => (
             <div
               key={step.title}
-              className="border rounded-lg p-6 text-center hover:scale-105 transition shadow-sm bg-white"
+              className="rounded-lg p-6 text-center hover:scale-105 transition shadow-sm bg-white"
             >
               <Image
                 src={step.logo}
