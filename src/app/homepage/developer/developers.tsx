@@ -83,7 +83,7 @@ const DevelopersSection: React.FC = () => {
               </p>
 
               {/* PROJECT COUNT */}
-              <p className="mt-1 text-xs text-gray-500 text-center">
+              <p className="mt-1 text-xs text-gray-400 text-center">
                 {dev.projects}
               </p>
             </div>

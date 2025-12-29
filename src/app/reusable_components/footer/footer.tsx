@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-[#1B121E] text-gray-300 w-full">
 
-         {/* ================= TOP LINKS ================= */}
+         {/* ================= TOP LINKS changed ================= */}
       <div className="relative px-4 sm:px-6 py-10 mx-auto bg-[#29192B] border-b border-[#2c1b32]">
         <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 gap-6">
 
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
 
           {/* Div 2 */}
           <div className="ml-0 md:ml-8">
-            <h4 className="font-semibold mb-4 text-[16px]">Property by type</h4>
+            <h4 className="font-semibold mb-4 text-[16px]">Properties by type</h4>
             <ul className="space-y-3 text-white text-[15px]">
               <li>Residential property in gurgaon</li>
               <li>Commercial property in gurgaon</li>
