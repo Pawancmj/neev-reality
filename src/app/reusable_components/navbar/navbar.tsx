@@ -1,6 +1,7 @@
 // components/Navbar.tsx
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,6 +31,8 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 bg-white mx-auto w-full max-w-[1520px]">
       <nav className="mx-auto flex items-center justify-between px-4 sm:px-6 py-3 w-full max-w-[1212px] h-[132px]">
@@ -47,46 +50,22 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Center Nav Links */}
-        <ul className="hidden md:flex items-center gap-8 text-sm font-normal text-black">
+        {/* Desktop Nav */}
+        <ul className="hidden min-[800px]:flex items-center gap-8 text-sm text-black">
           {navLinks.map((item) => (
-            <li
-              key={item.label}
-              className="relative group cursor-pointer whitespace-nowrap"
-            >
-              <Link
-                href={item.href}
-                className="flex items-center gap-1 hover:text-black"
-              >
+            <li key={item.label} className="relative group">
+              <Link href={item.href} className="flex items-center gap-1">
                 {item.label}
-                {item.hasDropdown && (
-                  <span className="text-xs text-gray-500">▾</span>
-                )}
+                {item.hasDropdown && <span className="text-xs">▾</span>}
               </Link>
 
-              {/* Dropdown */}
               {item.hasDropdown && item.children && (
-                <ul
-                  className="
-                    absolute left-0 top-full mt-3
-                    min-w-[220px]
-                    rounded-lg bg-white
-                    shadow-[0_10px_30px_rgba(0,0,0,0.12)]
-                    border border-gray-100
-                    opacity-0 invisible
-                    group-hover:opacity-100 group-hover:visible
-                    transition-all duration-200
-                    z-50
-                  "
-                >
+                <ul className="absolute left-0 top-full mt-3 min-w-[220px] bg-white rounded-lg border shadow opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                   {item.children.map((child) => (
                     <li key={child.label}>
                       <Link
                         href={child.href}
-                        className="
-                          block px-4 py-3 text-sm text-gray-700
-                          hover:bg-gray-50 hover:text-black
-                        "
+                        className="block px-4 py-3 text-sm hover:bg-gray-50"
                       >
                         {child.label}
                       </Link>
@@ -99,21 +78,60 @@ export default function Navbar() {
         </ul>
 
         {/* Phone */}
-        <div className="hidden md:block text-sm font-normal text-[#DBA40D]">
-          <a href="tel:+918824966669" className="hover:text-black">
-            +91 8824966669
-          </a>
+        <div className="hidden min-[800px]:block text-sm text-[#DBA40D]">
+          <a href="tel:+918824966669">+91 8824966669</a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Hamburger */}
         <button
-          className="inline-flex flex-col gap-1 md:hidden"
-          aria-label="Open menu"
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="flex flex-col gap-1 min-[800px]:hidden"
+          aria-label="Open Menu"
         >
-          <span className="block h-0.5 w-5 bg-gray-800" />
-          <span className="block h-0.5 w-5 bg-gray-800" />
+          <span className="h-0.5 w-5 bg-black" />
+          <span className="h-0.5 w-5 bg-black" />
+          <span className="h-0.5 w-5 bg-black" />
         </button>
       </nav>
+
+      {/* ================= MOBILE MENU ================= */}
+      {menuOpen && (
+        <div className="min-[800px]:hidden bg-white border-t shadow-md">
+          <ul className="flex flex-col px-6 py-4 gap-4 text-sm">
+            {navLinks.map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="font-medium"
+                >
+                  {item.label}
+                </Link>
+
+                {item.hasDropdown && item.children && (
+                  <ul className="ml-4 mt-2 space-y-2 text-gray-600">
+                    {item.children.map((child) => (
+                      <li key={child.label}>
+                        <Link
+                          href={child.href}
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+
+            <li className="pt-4 border-t text-[#DBA40D] font-medium">
+              <a href="tel:+918824966669">+91 8824966669</a>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
+

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 
 type Developer = {
@@ -23,9 +23,48 @@ const developers: Developer[] = [
 ];
 
 const DevelopersSection: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef<number | null>(null);
+
+  /* ================= AUTO SCROLL ================= */
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const interval = setInterval(() => {
+      if (
+        container.scrollLeft + container.clientWidth >=
+        container.scrollWidth - 10
+      ) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollBy({ left: 260, behavior: "smooth" });
+      }
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  /* ================= SWIPE ================= */
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStartX.current || !scrollRef.current) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+
+    if (Math.abs(diff) > 50) {
+      scrollRef.current.scrollBy({
+        left: diff > 0 ? 260 : -260,
+        behavior: "smooth",
+      });
+    }
+    touchStartX.current = null;
+  };
+
   return (
     <section className="w-full bg-[#F5F7FB] py-16">
-      
       {/* ===== Heading ===== */}
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="text-3xl font-semibold text-gray-900">
@@ -34,60 +73,90 @@ const DevelopersSection: React.FC = () => {
         </h2>
       </div>
 
-      {/* ===== Developers Grid ===== */}
-<div
-  className="
-    mx-auto mt-12 grid max-w-[1240px] grid-cols-5 gap-8 px-6
-    max-lg:grid-cols-3
-    max-md:grid-cols-2
-    max-sm:grid-cols-1
-  "
->
-  {developers.map((dev) => (
-    <div
-      key={dev.name}
-      className="
-        flex flex-col items-center
-        rounded-xl bg-white
-        px-6 py-6
-        border border-gray-100
-        shadow-[0_8px_20px_rgba(0,0,0,0.06)]
-        hover:shadow-[0_14px_32px_rgba(0,0,0,0.08)]
-        transition
-      "
-    >
-      {/* LOGO CIRCLE */}
-      <div
-        className="
-          -mt-12 
-          flex h-20 w-20 items-center justify-center
-          rounded-full bg-white
-          border border-gray-200
-          shadow-sm
-        "
-      >
-        <Image
-          src={dev.logo}
-          alt={dev.name}
-          width={48}
-          height={48}
-          className="object-contain"
-        />
+      {/* ===== MOBILE / TAB SLIDER ===== */}
+      <div className="mt-12 lg:hidden">
+        <div
+          ref={scrollRef}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+          className="flex gap-6 overflow-x-hidden px-6 pt-12"
+        >
+          {developers.map((dev) => (
+            <div
+              key={dev.name}
+              className="
+                min-w-[220px]
+                flex-shrink-0
+                flex flex-col items-center
+                rounded-xl bg-white
+                px-6 py-6
+                border border-gray-100
+                shadow-[0_8px_20px_rgba(0,0,0,0.06)]
+              "
+            >
+              <div className="-mt-12 flex h-20 w-20 items-center justify-center rounded-full bg-white border border-gray-200 shadow-sm">
+                <Image
+                  src={dev.logo}
+                  alt={dev.name}
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                />
+              </div>
+
+              <p className="mt-4 text-sm font-semibold text-gray-900 text-center">
+                {dev.name}
+              </p>
+
+              <p className="mt-1 text-xs text-gray-500">
+                {dev.projects}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* NAME */}
-      <p className="mt-4 text-sm font-semibold text-gray-900 text-center">
-        {dev.name}
-      </p>
+      {/* ===== DESKTOP GRID (UNCHANGED) ===== */}
+      <div
+        className="
+          hidden lg:grid
+          mx-auto mt-12 max-w-[1240px]
+          grid-cols-5 gap-8 px-6
+        "
+      >
+        {developers.map((dev) => (
+          <div
+            key={dev.name}
+            className="
+              flex flex-col items-center
+              rounded-xl bg-white
+              px-6 py-6
+              border border-gray-100
+              shadow-[0_8px_20px_rgba(0,0,0,0.06)]
+              hover:shadow-[0_14px_32px_rgba(0,0,0,0.08)]
+              transition
+            "
+          >
+            <div className="-mt-12 flex h-20 w-20 items-center justify-center rounded-full bg-white border border-gray-200 shadow-sm">
+              <Image
+                src={dev.logo}
+                alt={dev.name}
+                width={48}
+                height={48}
+                className="object-contain"
+              />
+            </div>
 
-      {/* PROJECT COUNT */}
-      <p className="mt-1 text-xs text-gray-500">
-        {dev.projects}
-      </p>
-    </div>
-  ))}
-</div>
+            <p className="mt-4 text-sm font-semibold text-gray-900 text-center">
+              {dev.name}
+            </p>
 
+            <p className="mt-1 text-xs text-gray-500">
+              {dev.projects}
+            </p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

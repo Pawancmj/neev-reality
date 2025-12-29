@@ -144,7 +144,6 @@ export default async function ApartmentDetails({ params }: Props) {
   return (
     <>
       <Navbar />
-
       {/* ================= BREADCRUMB ================= */}
       <div className="max-w-[1240px] mx-auto px-4 py-4 text-sm text-gray-500">
         Home / Residential /{" "}
@@ -336,7 +335,7 @@ export default async function ApartmentDetails({ params }: Props) {
     {/* LEFT : MAP CARD */}
     <div
       className="
-        w-[390px] h-[288px]
+        w-full max-w-[390px] h-[288px]
         bg-white
         border border-gray-300/70
         rounded-2xl
@@ -356,7 +355,7 @@ export default async function ApartmentDetails({ params }: Props) {
     {/* RIGHT : DISTANCE LIST CARD */}
 <div
   className="
-    w-[390px] h-[288px]
+    w-full max-w-[390px] h-[288px]
     bg-white
     border border-gray-300/70
     rounded-2xl
@@ -716,14 +715,123 @@ export default async function ApartmentDetails({ params }: Props) {
 
   </div>
 </section>
+
+
 </div>
+
+{/* ================= RIGHT SIDEBAR (MOBILE VIEW) ================= */}
+<div className="block lg:hidden mt-12 space-y-4">
+
+  {/* IMAGE + VIDEO PREVIEW */}
+  <div className="bg-white rounded-xl overflow-hidden shadow-sm">
+
+    <div className="grid grid-cols-2 gap-1 p-1">
+      <Image
+        src="/images/s1.png"
+        alt="Gallery"
+        width={200}
+        height={120}
+        className="w-full h-auto object-cover rounded"
+      />
+
+      <div className="relative">
+        <Image
+          src="/images/s2.png"
+          alt="Gallery"
+          width={200}
+          height={120}
+          className="w-full h-auto object-cover rounded"
+        />
+        <span className="absolute bottom-2 left-2 bg-white/90 text-xs px-2 py-1 rounded">
+          5+ Photos
+        </span>
+      </div>
+    </div>
+
+    <div className="relative">
+      <Image
+        src="/images/s3.png"
+        alt="Video Preview"
+        width={400}
+        height={220}
+        className="w-full h-[180px] object-cover"
+      />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow">
+          ▶
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* QUICK FACTS */}
+  <div className="bg-white rounded-xl p-5 shadow-sm">
+    <h3 className="font-semibold mb-3 border-b pb-2">Quick Facts</h3>
+    <div className="text-sm space-y-2 text-gray-600">
+      <p>Developer :</p>
+      <p>Type :</p>
+      <p>Elevation / Tower :</p>
+      <p>Rera No :</p>
+      <p>Project Handover :</p>
+    </div>
+  </div>
+
+  {/* BRAND + CTA */}
+  <div className="bg-white rounded-xl p-5 text-center shadow-sm">
+    <Image
+      src="/images/logo.png"
+      alt="Neev Realty"
+      width={70}
+      height={70}
+      className="mx-auto"
+    />
+
+    <p className="mt-2 font-medium text-lg">Neev Realty</p>
+
+    <div className="flex gap-3 mt-4">
+      <button className="flex-1 py-2 border rounded-lg text-sm">
+        Call Us
+      </button>
+      <button className="flex-1 py-2 border border-blue-600 text-blue-600 rounded-lg text-sm">
+        Inquiry
+      </button>
+    </div>
+
+    <p className="mt-4 text-sm text-gray-500">Connect us via</p>
+
+    <div className="flex justify-center mt-2">
+      <a
+        href="https://wa.me/918824966669"
+        target="_blank"
+        className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center"
+      >
+        <FaWhatsapp className="text-xl" />
+      </a>
+    </div>
+  </div>
+
+  {/* SHARE */}
+  <div className="bg-white rounded-xl p-5 shadow-sm text-center">
+    <p className="font-medium mb-4">Share</p>
+
+    <div className="flex justify-center gap-3">
+      <FaInstagram className="w-9 h-9 p-2 bg-pink-500 text-white rounded" />
+      <FaLinkedinIn className="w-9 h-9 p-2 bg-blue-700 text-white rounded" />
+      <FaPinterestP className="w-9 h-9 p-2 bg-red-600 text-white rounded" />
+      <FaFacebookF className="w-9 h-9 p-2 bg-blue-600 text-white rounded" />
+      <FaTwitter className="w-9 h-9 p-2 bg-sky-500 text-white rounded" />
+    </div>
+  </div>
+
+</div>
+
 
 
         {/* ================= RIGHT SIDEBAR ================= */}
 <div className="w-[340px] hidden lg:block space-y-4">
 
   {/* ❌ NOT STICKY — IMAGE + VIDEO PREVIEW */}
-  <div className="bg-white border rounded-xl overflow-hidden shadow-sm">
+  <div className="bg-white rounded-xl overflow-hidden shadow-sm">
     
     {/* TOP THUMBNAILS */}
     <div className="grid grid-cols-2 gap-1 p-1">
@@ -773,7 +881,7 @@ export default async function ApartmentDetails({ params }: Props) {
   <aside className="sticky top-[135px] space-y-4">
 
     {/* QUICK FACTS */}
-    <div className="bg-white border rounded-xl p-5 shadow-sm">
+    <div className="bg-white rounded-xl p-5 shadow-sm">
       <h3 className="font-semibold mb-3 border-b pb-2">Quick Facts</h3>
       <div className="text-sm space-y-2 text-gray-600">
         <p>Developer :</p>
@@ -785,7 +893,7 @@ export default async function ApartmentDetails({ params }: Props) {
     </div>
 
     {/* BRAND + CTA */}
-    <div className="bg-white border rounded-xl p-5 text-center shadow-sm">
+    <div className="bg-white rounded-xl p-5 text-center shadow-sm">
       <Image
         src="/images/logo.png"
         alt="Neev Realty"
@@ -819,7 +927,7 @@ export default async function ApartmentDetails({ params }: Props) {
     </div>
 
     {/* SHARE */}
-    <div className="bg-white border rounded-xl p-5 shadow-sm text-center">
+    <div className="bg-white rounded-xl p-5 py-20 shadow-sm text-center">
       <div className="flex items-center justify-center gap-2 mb-4">
         <p className="font-medium">Share</p>
         <FaLink className="text-gray-400 text-sm cursor-pointer" />
@@ -839,7 +947,6 @@ export default async function ApartmentDetails({ params }: Props) {
 
 
       </section>
-
 
 
       <Footer />

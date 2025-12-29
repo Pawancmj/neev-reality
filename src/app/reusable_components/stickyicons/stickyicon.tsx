@@ -14,7 +14,7 @@ export default function StickyIcons() {
         </div>
 
         {/* Enquire Button - Lift + Glow */}
-        <div className="group absolute left-330 transform -translate-x-1/2">
+        <div className="group absolute left-300 transform -translate-x-1/2">
           <button className="bg-[#DBA40D] flex items-center gap-2 rounded-2xl px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-[#DBA40D]/50 hover:-translate-y-1 hover:bg-[#c8950a] active:scale-95 relative overflow-hidden">
             <span className="text-lg transition-transform group-hover:rotate-12">
               <FaPhoneAlt />

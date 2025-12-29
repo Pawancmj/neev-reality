@@ -1,4 +1,6 @@
-// app/components/TestimonialsSection.tsx
+"use client";
+
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 type Testimonial = {
@@ -33,6 +35,47 @@ const testimonials: Testimonial[] = [
 ];
 
 export default function TestimonialsSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef<number | null>(null);
+
+  /* ================= AUTO SCROLL ================= */
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const interval = setInterval(() => {
+      if (
+        container.scrollLeft + container.clientWidth >=
+        container.scrollWidth - 10
+      ) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollBy({ left: 320, behavior: "smooth" });
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  /* ================= SWIPE SUPPORT ================= */
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStartX.current || !scrollRef.current) return;
+
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+
+    if (Math.abs(diff) > 50) {
+      scrollRef.current.scrollBy({
+        left: diff > 0 ? 320 : -320,
+        behavior: "smooth",
+      });
+    }
+    touchStartX.current = null;
+  };
+
   return (
     <section className="bg-[#F7F9FC] py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,15 +91,74 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* ===== Testimonials Grid ===== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* ===== MOBILE / TAB SLIDER ===== */}
+        <div className="lg:hidden">
+          <div
+            ref={scrollRef}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+            className="flex gap-6 overflow-x-hidden px-2 pt-2"
+          >
+            {testimonials.map((item) => (
+              <article
+                className="
+    w-[85%]
+    sm:w-[70%]
+    flex-shrink-0
+    bg-white
+    rounded-2xl
+    border border-gray-200
+    shadow-sm
+    p-6
+    flex flex-col
+  "
+              >
+
+                {/* Avatar + Info */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                    <Image
+                      src={item.avatar}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-gray-900">
+                      {item.name}
+                    </h3>
+                    <p className="text-sm text-gray-500">
+                      {item.role}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Quote */}
+                <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                  {item.quote}
+                </p>
+
+                {/* Rating */}
+                <div className="flex gap-1 mt-6 text-[#DBA40D]">
+                  {Array.from({ length: 5 }).map((_, idx) => (
+                    <span key={idx} className="text-lg">★</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* ===== DESKTOP GRID (UNCHANGED) ===== */}
+        <div className="hidden lg:grid grid-cols-3 gap-6">
           {testimonials.map((item) => (
             <article
               key={item.name}
-              className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 sm:p-8
+              className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8
                          flex flex-col transition hover:shadow-md hover:-translate-y-1"
             >
-              {/* Avatar + Info */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
@@ -77,17 +179,13 @@ export default function TestimonialsSection() {
                 </div>
               </div>
 
-              {/* Quote */}
-              <p className="text-sm sm:text-[15px] text-gray-600 leading-relaxed flex-1">
+              <p className="text-[15px] text-gray-600 leading-relaxed flex-1">
                 {item.quote}
               </p>
 
-              {/* Rating */}
               <div className="flex gap-1 mt-6 text-[#DBA40D]">
                 {Array.from({ length: 5 }).map((_, idx) => (
-                  <span key={idx} className="text-lg">
-                    ★
-                  </span>
+                  <span key={idx} className="text-lg">★</span>
                 ))}
               </div>
             </article>
@@ -98,3 +196,4 @@ export default function TestimonialsSection() {
     </section>
   );
 }
+  
