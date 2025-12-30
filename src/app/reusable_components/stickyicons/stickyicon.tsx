@@ -13,16 +13,48 @@ export default function StickyIcons() {
           </div>
         </div>
 
-        {/* Enquire Button - Lift + Glow */}
-        <div className="group absolute left-300 transform -translate-x-1/2">
-          <button className="bg-[#DBA40D] flex items-center gap-2 rounded-2xl px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-[#DBA40D]/50 hover:-translate-y-1 hover:bg-[#c8950a] active:scale-95 relative overflow-hidden">
-            <span className="text-lg transition-transform group-hover:rotate-12">
-              <FaPhoneAlt />
-            </span>
-            Enquire Now!
-            <div className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 transition-transform origin-center duration-300" />
-          </button>
-        </div>
+        {/* Enquire Button - Responsive */}
+<div
+  className="absolute
+    left-1/2
+    bottom-6
+    sm:bottom-8
+    lg:bottom-10
+    transform
+    -translate-x-1/2
+    z-50
+  "
+>
+  <button
+    className="group
+      bg-[#DBA40D]
+      flex items-center gap-2
+      rounded-2xl
+      px-5 sm:px-6
+      py-2.5 sm:py-3
+      text-xs sm:text-sm
+      font-semibold
+      text-white
+      shadow-lg
+      transition-all duration-300 ease-out
+      hover:scale-105
+      hover:shadow-2xl
+      hover:shadow-[#DBA40D]/50
+      hover:-translate-y-1
+      hover:bg-[#c8950a]
+      active:scale-95
+      relative
+      overflow-hidden
+    "
+  >
+    <span className="text-base sm:text-lg transition-transform group-hover:rotate-12">
+      <FaPhoneAlt />
+    </span>
+    Enquire Now!
+    <div className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-300" />
+  </button>
+</div>
+
 
         {/* WhatsApp Icon - Pulse + Rotate */}
         <div className="group absolute right-6">

@@ -56,9 +56,9 @@ const BlogSection: React.FC = () => {
         <button
           className="
             mt-6 md:mt-0
-            md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2
-            bg-[#DBA40D] p-1 border-2 border-[#DBA40D]
-            rounded-sm text-white text-sm
+    md:absolute md:right-[0.1px] md:top-1/2 md:-translate-y-1/2
+    bg-[#DBA40D] p-1 border-2 border-[#DBA40D]
+    rounded-sm text-white text-sm 
           "
         >
           Explore More

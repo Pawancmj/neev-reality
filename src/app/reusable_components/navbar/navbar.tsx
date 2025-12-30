@@ -35,16 +35,16 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white mx-auto w-full max-w-[1520px]">
-      <nav className="mx-auto flex items-center justify-between px-4 sm:px-6 py-3 w-full max-w-[1212px] h-[132px]">
+      <nav className="mx-auto flex items-center justify-between px-4 sm:px-6 py-3 w-full max-w-[1212px] h-[102px]">
 
         {/* Logo */}
-        <div className="flex items-center w-[73px] h-[62px]">
+        <div className="flex items-center w-[73px] h-[72px]">
           <Link href="/">
             <Image
               src="/images/logo.png"
               alt="Neev Realty Logo"
-              width={50}
-              height={50}
+              width={75}
+              height={75}
               priority
             />
           </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
         </ul>
 
         {/* Phone */}
-        <div className="hidden min-[800px]:block text-sm text-[#DBA40D]">
+        <div className="hidden min-[800px]:block text-sm rounded-full bg-[#F5F5F5] px-4 py-1.5 text-xs font-medium text-[#F5A300]">
           <a href="tel:+918824966669">+91 8824966669</a>
         </div>
 

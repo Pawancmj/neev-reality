@@ -93,16 +93,16 @@ export default function Home() {
         <div className="grid grid-cols-2 gap-4 place-items-center">
 
           {/* DIAMOND */}
-          <div className="relative w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[215px] lg:h-[215px] lg:translate-x-[45px]">
+          <div className="relative w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] lg:w-[215px] lg:h-[215px] lg:translate-x-[45px]">
             <div className="relative w-full h-full overflow-hidden
               [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]">
-              <Image src="/images/aboutimg/img3.jpg" alt="" fill className="object-cover" />
+              <Image src="/images/aboutimg/img7.png" alt="" fill className="object-cover" />
             </div>
           </div>
 
           {/* RECTANGLE */}
           <div className="relative w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[220px] lg:h-[220px]">
-            <Image src="/images/aboutimg/img4.jpg" alt="" fill className="object-cover" />
+            <Image src="/images/aboutimg/img8.png" alt="" fill className="object-cover" />
           </div>
 
           {/* PIZZA */}
@@ -113,7 +113,7 @@ export default function Home() {
 
           {/* CIRCLE */}
           <div className="relative w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[220px] lg:h-[220px] rounded-full overflow-hidden">
-            <Image src="/images/aboutimg/img6.jpg" alt="" fill className="object-cover" />
+            <Image src="/images/aboutimg/img10.png" alt="" fill className="object-cover" />
           </div>
 
         </div>

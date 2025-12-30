@@ -11,7 +11,7 @@ export default function ApartmentsPage() {
   const [page, setPage] = useState(1);
 
   return (
-    <>
+    <> 
       <Navbar />
 
       {/* ================= PAGE INTRO ================= */}
@@ -41,7 +41,7 @@ export default function ApartmentsPage() {
 
       {/* ================= TRENDING BANNER ================= */}
       <section className="bg-white py-16">
-        <div className="max-w-[1240px] mx-auto px-4">
+        <div className="max-w-[1440px] mx-auto px-26">
           <h2 className="text-center text-3xl sm:text-4xl font-bold mb-12">
             Trending <span className="text-[#F5A300]">Projects</span>
           </h2>
@@ -98,7 +98,7 @@ export default function ApartmentsPage() {
                
                 lg:absolute lg:left-0 lg:translate-y-[244px]
 
-                lg:w-[80%] xl:w-[85%] 2xl:w-[90%]
+                lg:w-[80%] xl:w-[85%] 2xl:w-[90%] 
               "
             >
               <div
@@ -108,7 +108,7 @@ export default function ApartmentsPage() {
                   flex flex-col gap-3
                   overflow-hidden rounded-2xl
 
-                  lg:flex-row lg:items-center lg:rounded-full
+                  lg:flex-row lg:items-center lg:rounded-full border border-yellow-400
                 "
               >
                 <input
