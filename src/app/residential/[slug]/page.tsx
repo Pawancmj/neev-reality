@@ -14,6 +14,7 @@ import {
 
 import ScrollTabs from "./ScrollTabs";
 import FloorPlanSection from "./FloorPlanSection";
+import AutoPopup from "./AutoPopup";
 
 
 
@@ -152,6 +153,8 @@ export default async function ApartmentDetails({ params }: Props) {
 
       {/* ================= HERO + SIDEBAR ================= */}
       <section className="max-w-[1240px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <AutoPopup />
+
 
         {/* ================= LEFT MAIN ================= */}
         <div className="lg:col-span-2 space-y-6 shadow-md">
@@ -287,7 +290,7 @@ export default async function ApartmentDetails({ params }: Props) {
                 <div
                   key={i}
                   className="
-          w-[192px] h-[149px]
+          w-[172px] h-[149px]
           bg-white
           border border-gray-300
           rounded-[4px]

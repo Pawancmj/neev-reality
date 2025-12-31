@@ -93,6 +93,7 @@ export default function ContactPage() {
 
               {/* FORM */}
               <form className="space-y-8">
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <label className="text-xs font-medium text-slate-700">
@@ -147,16 +148,17 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <div className="pt-4">
+                {/* BUTTON */}
+                <div className="pt-4 flex justify-center ">
                   <button
                     type="submit"
-                    className="w-full md:w-auto rounded-md bg-[#DBA40D] px-10 py-3 text-sm font-semibold text-white shadow-md"
+                    className="rounded-md bg-[#DBA40D] px-10 py-3 text-sm font-semibold text-white shadow-md hover:bg-[#c8950a] transition"
                   >
                     Send Message
                   </button>
                 </div>
-              </form>
 
+              </form>
             </div>
           </section>
 
