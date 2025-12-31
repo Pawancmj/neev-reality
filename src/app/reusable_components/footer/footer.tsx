@@ -22,11 +22,21 @@ const Footer: React.FC = () => {
 
          {/* ================= TOP LINKS changed ================= */}
       <div className="relative px-4 sm:px-6 py-10 mx-auto bg-[#29192B] border-b border-[#2c1b32]">
-        <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 gap-6">
+        <div
+  className="
+    flex md:grid
+    md:grid-cols-4 xl:grid-cols-5
+    gap-6
+    overflow-x-auto md:overflow-visible
+    scrollbar-hide
+    snap-x snap-mandatory
+  ">
+
 
           {/* Div 1 */}
           <div
             className={`
+              min-w-[85%] sm:min-w-[70%] md:min-w-0 snap-start
               ${showLastDiv ? "hidden md:hidden xl:hidden opacity-0" : "block opacity-100"}
               transition-all duration-500 ease-in-out transform
               ${showLastDiv ? "-translate-x-8 scale-90" : "translate-x-0 scale-100"}
@@ -48,7 +58,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Div 2 */}
-          <div className="ml-0 md:ml-8">
+          <div className="ml-0 md:ml-8 min-w-[85%] sm:min-w-[70%] md:min-w-0 snap-start">
             <h4 className="font-semibold mb-4 text-[16px]">Properties by type</h4>
             <ul className="space-y-3 text-white text-[15px]">
               <li>Residential property in gurgaon</li>
@@ -61,7 +71,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Div 3 */}
-          <div className="ml-0 md:ml-8 w-full max-w-[284px]">
+          <div className="ml-0 md:ml-8 w-full max-w-[284px] min-w-[85%] sm:min-w-[70%] md:min-w-0 snap-start">
             <h4 className="font-semibold mb-4 text-[16px]">
               Projects by construction status
             </h4>
@@ -74,7 +84,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Div 4 */}
-          <div className="ml-0 md:ml-8 w-full max-w-[297px]">
+          <div className="ml-0 md:ml-8 w-full max-w-[297px] min-w-[85%] sm:min-w-[70%] md:min-w-0 snap-start">
             <h4 className="font-semibold mb-4 text-[16px]">Projects by Location</h4>
             <ul className="space-y-3 text-white text-[15px]">
               <li>Projects in Dwarka Expressway</li>
@@ -91,6 +101,7 @@ const Footer: React.FC = () => {
           {/* Div 5 */}
           <div
             className={`
+              min-w-[85%] sm:min-w-[70%] md:min-w-0 snap-start
               ${showLastDiv ? "block md:block xl:block opacity-100" : "hidden opacity-0"}
               transition-all duration-500 ease-in-out transform
               ml-0 md:ml-14 w-full max-w-[297px]
@@ -112,7 +123,8 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Toggle Button */}
-        <div className="absolute top-6 sm:top-12 right-4 z-20 pt-2">
+        <div className="hidden md:block absolute top-1 sm:top-45 right-4 z-20 pt-2">
+
           <button
             onClick={toggleDivs}
             className="w-20 h-20 rounded-full flex items-center justify-center
@@ -161,7 +173,7 @@ const Footer: React.FC = () => {
             <Link href="/faqs" className="hover:text-white transition">FAQs</Link>
 
             <Link href="/residential" className="hover:text-white transition">Residential</Link>
-            <Link href="/sitemap" className="hover:text-white transition">Sitemap</Link>
+            <Link href="/blog" className="hover:text-white transition">Blog</Link>
 
             <Link href="/commercial" className="hover:text-white transition">Commercial</Link>
             <Link href="/services" className="hover:text-white transition">Our Services</Link>

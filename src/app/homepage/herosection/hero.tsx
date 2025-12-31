@@ -27,84 +27,64 @@ export default function SearchCard() {
   const [query, setQuery] = useState("");
   const [showVideo, setShowVideo] = useState(true);
 
-  useEffect(() => {
-    setShowVideo(true);
-  }, []);
-
-  const handleCloseVideo = () => {
-    setShowVideo(false);
-  };
-
   return (
     <section className="relative w-full">
-      {/* ============== HERO WRAPPER (IMAGE + VIDEO) ============== */}
-      <div className="relative mx-auto w-[1520px] h-[720px] max-w-full max-lg:max-h-[400px]">
+      {/* ================= HERO ================= */}
+      <div className="relative w-full h-[420px] max-w-none max-lg:h-[500px] mb-23 overflow-visible">
         <Image
           src="/images/heroimg.png"
           alt="Hero"
           fill
-          className="object-cover rounded-xl"
           priority
+          className="object-cover w-full h-full"
+          sizes="(max-width: 768px) 100vw, 1920px"
+          style={{ objectPosition: 'center' }}
         />
 
-        {/* --- YouTube Video Overlay --- */}
+        {/* ================= VIDEO OVERLAY ================= */}
         {showVideo && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/50 p-4">
-            {/* DESKTOP: Exact same as your original */}
-            <div className="relative w-[800px] aspect-video hidden max-md:block md:flex">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/50 px-4 z-20">
+            {/* ✅ DESKTOP VIDEO */}
+            <div className="hidden md:flex absolute right-12 top-1/2 -translate-y-1/2 w-[340px] aspect-video">
               <button
-                onClick={handleCloseVideo}
-                className="
-                  absolute -top-2 -right-83 z-20
-                  h-10 w-10 rounded-full bg-black/90 text-white hover:bg-black
-                  flex items-center justify-center text-lg font-bold shadow-lg
-                  transition-all duration-200 hover:scale-110
-                "
+                onClick={() => setShowVideo(false)}
+                className="absolute -top-4 -right-4 z-30 h-10 w-10 rounded-full bg-black text-white flex items-center justify-center shadow-2xl"
               >
                 ✕
               </button>
 
               <iframe
-                className="w-90 h-60 absolute left-190 rounded-2xl shadow-2xl"
-                src="https://www.youtube.com/embed/4jnzf1yj48M?autoplay=1&mute=0&controls=1"
-                title="Neev Reality Promotional Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                className="w-full h-full rounded-2xl shadow-2xl"
+                src="https://www.youtube.com/embed/4jnzf1yj48M?autoplay=1&mute=1"
+                allow="autoplay; encrypted-media"
                 allowFullScreen
-                loading="lazy"
               />
             </div>
 
-            {/* MOBILE: WIDER WIDTH + SMALLER CLOSE BUTTON */}
-            <div className="relative w-[98vw] max-w-[550px] max-h-[225px] aspect-video block max-md:flex md:hidden">
+            {/* ✅ MOBILE VIDEO */}
+            <div className="md:hidden relative w-full max-w-[360px] max-h-[250px] aspect-video mx-auto">
               <button
-                onClick={handleCloseVideo}
-                className="
-                  absolute -top-2 -right-2 z-20
-                  h-8 w-8 rounded-full bg-black/95 text-white hover:bg-black
-                  flex items-center justify-center text-base font-bold shadow-xl
-                  transition-all duration-200 hover:scale-110
-                "
+                onClick={() => setShowVideo(false)}
+                className="absolute -top-3 -right-3 z-30 h-10 w-10 rounded-full bg-black text-white flex items-center justify-center shadow-xl text-lg"
               >
                 ✕
               </button>
 
               <iframe
-                className="absolute inset-0 w-full h-full rounded-3xl shadow-2xl"
-                src="https://www.youtube.com/embed/4jnzf1yj48M?autoplay=1&mute=0&controls=1"
-                title="Neev Reality Promotional Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                className="w-full h-full rounded-2xl shadow-2xl"
+                src="https://www.youtube.com/embed/4jnzf1yj48M?autoplay=1&mute=1"
+                allow="autoplay; encrypted-media"
                 allowFullScreen
-                loading="lazy"
               />
             </div>
           </div>
         )}
       </div>
 
-      {/* ================= FLOATING SEARCH CARD (unchanged) ================= */}
+      {/* ================= FLOATING SEARCH CARD (EXACT SAME) ================= */}
       <div
         className="
-          absolute left-1/2 top-[520px] -translate-x-1/2
+          absolute left-1/2 top-[280px] -translate-x-1/2
           w-[1180px] rounded-2xl bg-white
           shadow-[0_25px_70px_rgba(0,0,0,0.15)]
           px-8 py-6
@@ -126,11 +106,10 @@ export default function SearchCard() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`rounded-full px-5 py-2 text-sm font-medium transition ${
-                  activeTab === tab
+                className={`rounded-full px-5 py-2 text-sm font-medium transition ${activeTab === tab
                     ? "bg-white shadow text-gray-900"
                     : "text-gray-500 hover:text-gray-800"
-                }`}
+                  }`}
               >
                 {tab}
               </button>
@@ -139,45 +118,50 @@ export default function SearchCard() {
         </div>
 
         <div
-          className="
-            mb-4 flex items-center gap-4 rounded-full
-            bg-white px-5 py-3
-            shadow-[0_10px_35px_rgba(0,0,0,0.12)]
-            max-lg:flex-col max-lg:rounded-2xl
-          "
+          className="mb-4 flex items-center gap-4 rounded-full
+                    bg-white px-5 py-3
+                    shadow-[0_10px_35px_rgba(0,0,0,0.12)]
+                    max-lg:flex-col max-lg:rounded-2xl
+                  "
         >
           <div className="flex flex-1 items-center gap-3 max-lg:w-full">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-500">
               <FiMapPin size={16} />
             </span>
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search by City, Locality, or Project"
-              className="w-full border-none bg-transparent text-sm outline-none"
-            />
-          </div>
+            <div className="relative w-full">
+              {!query && (
+                <div className="absolute top-1/2 -translate-y-1/2 left-3 w-[90%] overflow-hidden pointer-events-none">
+                  <div className="whitespace-nowrap animate-scroll text-sm text-gray-400">
+                    Search by City, Locality, or Project • Search by City, Locality, or Project •
+                  </div>
+                </div>
+              )}
 
-          <div className="flex items-center gap-3 text-gray-500">
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className="w-full bg-white rounded-md py-2 px-3 text-sm outline-none"
+              />
+            </div>
+
             <button className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-gray-100">
               <CiGlobe size={18} />
             </button>
             <button className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-gray-100">
               <FiMic size={16} />
             </button>
-          </div>
 
-          <button
-            className="
-              flex items-center gap-2 rounded-full
-              bg-[#DBA40D] px-7 py-3
-              text-sm font-medium text-white
-              max-lg:w-full max-lg:justify-center
-            "
-          >
-            <FiSearch size={18} />
-            Search
-          </button>
+            <button
+              className="flex items-center gap-2 rounded-full
+                        bg-[#DBA40D] px-3 py-3
+                        text-sm font-medium text-white
+                        max-sm:w-full max-lg:justify-center
+                      "
+            >
+              <FiSearch size={15} />
+              Search
+            </button>
+          </div>
         </div>
 
         <div className="flex items-center gap-3">

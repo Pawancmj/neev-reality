@@ -4,7 +4,8 @@ import Link from "next/link";
 export default function PropertyCard({ property }: any) {
   return (
     <Link href={`/residential/${property.slug}`}>
-      <div className="flex h-full flex-col overflow-hidden rounded-xl bg-white border shadow-sm hover:shadow-md transition cursor-pointer">
+      <div className="group flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+
 
         {/* IMAGE */}
         <div className="relative h-44 w-full">
@@ -59,7 +60,10 @@ export default function PropertyCard({ property }: any) {
               {property.price}
             </p>
 
-            <button className="rounded-full bg-[#F5F5F5] px-4 py-1.5 text-xs font-medium text-[#F5A300] hover:bg-[#EFEFEF]">
+            <button className="rounded-full bg-[#F5F5F5] px-4 py-1.5 text-xs font-medium text-[#F5A300] 
+  transition-all duration-300
+  group-hover:bg-[#F5A300] 
+  group-hover:text-white">
               Contact
             </button>
           </div>

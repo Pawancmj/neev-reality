@@ -1,4 +1,4 @@
-// app/blog/page.tsx
+// app/blog/section1/section1.tsx
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,46 +17,11 @@ type RecentBlog = {
   logo: string;
 };
 
-/* ================= DATA ================= */
-const blogs: Blog[] = [
-  {
-    id: 1,
-    title: "Unveils the Best Canadian Cities for Biking and Walk",
-    excerpt:
-      "Stay updated with the most important developments in the most important...",
-    date: "Feb",
-    day: "03",
-    image: "/images/blogsection/img1.jpg",
-  },
-  {
-    id: 2,
-    title: "Unveils the Best Canadian Cities for Biking and Walk",
-    excerpt:
-      "Stay updated with the most important developments in the most important...",
-    date: "Feb",
-    day: "03",
-    image: "/images/blogsection/img1.jpg",
-  },
-  {
-    id: 3,
-    title: "Unveils the Best Canadian Cities for Biking and Walk",
-    excerpt:
-      "Stay updated with the most important developments in the most important...",
-    date: "Feb",
-    day: "03",
-    image: "/images/blogsection/img1.jpg",
-  },
-  {
-    id: 4,
-    title: "Unveils the Best Canadian Cities for Biking and Walk",
-    excerpt:
-      "Stay updated with the most important developments in the most important...",
-    date: "Feb",
-    day: "03",
-    image: "/images/blogsection/img1.jpg",
-  },
-];
+type BlogPageProps = {
+  blogs: Blog[];
+};
 
+/* ================= RECENT BLOGS ================= */
 const recentBlogs: RecentBlog[] = [
   {
     title: "IGRSUP 2025: Complete Guide to Online Property Registration in UP",
@@ -81,7 +46,7 @@ const recentBlogs: RecentBlog[] = [
 ];
 
 /* ================= PAGE ================= */
-export default function BlogPage() {
+export default function BlogPage({ blogs }: BlogPageProps) {
   return (
     <main className="bg-white py-12">
       {/* ===== HEADING ===== */}

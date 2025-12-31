@@ -19,7 +19,7 @@ export default function Page() {
       {/* ===== PAGE CONTENT ===== */}
       <section className="w-full">
         
-        <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <Hero />
 
