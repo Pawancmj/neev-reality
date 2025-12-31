@@ -336,24 +336,24 @@ export default async function ApartmentDetails({ params }: Props) {
   <div className="flex flex-col lg:flex-row items-start gap-10">
 
     {/* LEFT : MAP CARD */}
-    <div
-      className="
-        w-full max-w-[390px] h-[288px]
-        bg-white
-        border border-gray-300/70
-        rounded-2xl
-        overflow-hidden
-        flex-shrink-0
-      "
-    >
-      <Image
-        src="/images/locality-map.png"
-        alt="Location Map"
-        width={410}
-        height={360}
-        className="w-full h-full object-cover"
-      />
-    </div>
+<div
+  className="
+    w-full max-w-[390px] h-[288px]
+    bg-white
+    border border-gray-300/70
+    rounded-2xl
+    overflow-hidden
+    flex-shrink-0
+  "
+>
+  <iframe
+    src="https://www.google.com/maps?q=Adani%20Shantigram%20Ahmedabad&output=embed"
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="w-full h-full border-0"
+  />
+</div>
+
 
     {/* RIGHT : DISTANCE LIST CARD */}
 <div

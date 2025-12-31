@@ -90,33 +90,39 @@ export default function Home() {
         </div>
 
         {/* IMAGES */}
-        <div className="grid grid-cols-2 gap-4 place-items-center">
+        <div className="flex justify-center">
+          <div className="grid grid-cols-2 gap-0">
 
-          {/* DIAMOND */}
-          <div className="relative w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] lg:w-[215px] lg:h-[215px] lg:translate-x-[45px]">
-            <div className="relative w-full h-full overflow-hidden
-              [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]">
-              <Image src="/images/aboutimg/img7.png" alt="" fill className="object-cover" />
+            {/* DIAMOND (Top-Left) */}
+            <div className="relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px]">
+              <div className="absolute inset-0 overflow-hidden 
+      [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]">
+                <Image src="/images/aboutimg/img7.png" alt="" fill className="object-cover" />
+              </div>
             </div>
-          </div>
 
-          {/* RECTANGLE */}
-          <div className="relative w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[220px] lg:h-[220px]">
-            <Image src="/images/aboutimg/img8.png" alt="" fill className="object-cover" />
-          </div>
+            {/* RECTANGLE (Top-Right) */}
+            <div className="relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] overflow-hidden">
+              <Image src="/images/aboutimg/img8.png" alt="" fill className="object-cover" />
+            </div>
 
-          {/* PIZZA */}
-          <div className="relative w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[220px] lg:h-[220px]
-                          [clip-path:circle(100%_at_0%_100%)] rotate-180 lg:translate-x-[45px]">
-            <Image src="/images/aboutimg/img5.jpg" alt="" fill className="object-cover" />
-          </div>
+            {/* PIZZA (Bottom-Left) */}
+            <div className="relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px]
+    overflow-hidden [clip-path:circle(100%_at_0%_100%)] rotate-180">
+              <Image src="/images/aboutimg/img5.jpg" alt="" fill className="object-cover" />
+            </div>
 
-          {/* CIRCLE */}
-          <div className="relative w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[220px] lg:h-[220px] rounded-full overflow-hidden">
-            <Image src="/images/aboutimg/img10.png" alt="" fill className="object-cover" />
-          </div>
+            {/* CIRCLE (Bottom-Right) */}
+            <div className="relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px]
+     rounded-full overflow-hidden">
+              <Image src="/images/aboutimg/img10.png" alt="" fill className="object-cover" />
+            </div>
 
+          </div>
         </div>
+
+
+
       </section>
 
       {/* ================= WHY DIFFERENT ================= */}
@@ -140,19 +146,19 @@ export default function Home() {
         </div>
       </section>
 
-     {/* ================= VISION / MISSION ================= */}
-<section className="bg-[#F8FBFF] py-20">
-  <div className="max-w-6xl mx-auto px-6 text-center">
-    <h2 className="text-4xl font-semibold mb-16">
-      <span className="text-[#DBA40D]">Our</span> Vision & Mission
-    </h2>
+      {/* ================= VISION / MISSION ================= */}
+      <section className="bg-[#F8FBFF] py-20">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-semibold mb-16">
+            <span className="text-[#DBA40D]">Our</span> Vision & Mission
+          </h2>
 
-    {/* CENTERED CIRCLES */}
-    <div className="flex flex-col items-center justify-center md:flex-row md:items-center md:justify-center gap-20">
-      
-      {/* VISION */}
-      <div
-        className="
+          {/* CENTERED CIRCLES */}
+          <div className="flex flex-col items-center justify-center md:flex-row md:items-center md:justify-center gap-20">
+
+            {/* VISION */}
+            <div
+              className="
           w-[280px] h-[280px]
           sm:w-[320px] sm:h-[320px]
           lg:w-[360px] lg:h-[360px]
@@ -163,21 +169,21 @@ export default function Home() {
           px-10
           text-center
         "
-      >
-        <h3 className="text-xl font-semibold text-[#DBA40D] mb-6">
-          Vision
-        </h3>
+            >
+              <h3 className="text-xl font-semibold text-[#DBA40D] mb-6">
+                Vision
+              </h3>
 
-        <p className="text-sm text-gray-600 leading-relaxed">
-          To be recognized as a trusted and forward-thinking real estate
-          partner, known for excellence, ethics, and a customer-first
-          approach, while contributing to sustainable urban development.
-        </p>
-      </div>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                To be recognized as a trusted and forward-thinking real estate
+                partner, known for excellence, ethics, and a customer-first
+                approach, while contributing to sustainable urban development.
+              </p>
+            </div>
 
-      {/* MISSION */}
-      <div
-        className="
+            {/* MISSION */}
+            <div
+              className="
           w-[280px] h-[280px]
           sm:w-[320px] sm:h-[320px]
           lg:w-[360px] lg:h-[360px]
@@ -188,21 +194,21 @@ export default function Home() {
           px-10
           text-center
         "
-      >
-        <h3 className="text-xl font-semibold text-[#DBA40D] mb-6">
-          Mission
-        </h3>
+            >
+              <h3 className="text-xl font-semibold text-[#DBA40D] mb-6">
+                Mission
+              </h3>
 
-        <p className="text-sm text-gray-600 leading-relaxed">
-          Our mission is to provide transparent and reliable real estate
-          solutions, create value-driven opportunities, and uphold
-          integrity, professionalism, and modern sustainable practices.
-        </p>
-      </div>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Our mission is to provide transparent and reliable real estate
+                solutions, create value-driven opportunities, and uphold
+                integrity, professionalism, and modern sustainable practices.
+              </p>
+            </div>
 
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
 
       {/* ================= 5 STEPS ================= */}
