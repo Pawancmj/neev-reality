@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function PropertyCard({ property }: any) {
   return (
     <Link href={`/residential/${property.slug}`}>
-      <div className="group flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+      <div className="group flex h-full w-90 flex-col overflow-hidden rounded-xl bg-white shadow-sm  hover:shadow-md transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg cursor-pointer">
 
 
         {/* IMAGE */}

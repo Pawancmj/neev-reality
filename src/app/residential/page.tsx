@@ -46,7 +46,7 @@ export default function ApartmentsPage() {
             Trending <span className="text-[#F5A300]">Projects</span>
           </h2>
 
-          <div className="w-[300px] h-[70px] sm:w-[350px] sm:h-[90px] md:w-[450px] md:h-[120px] lg:w-full lg:h-[250px] mx-auto lg:mx-0 rounded-xl bg-gray-100 overflow-hidden">
+          <div className="w-[300px] h-[70px]  sm:w-[350px] sm:h-[90px] md:w-[450px] md:h-[120px] lg:w-full lg:h-[250px] mx-auto lg:mx-0 rounded-xl bg-gray-100 overflow-hidden">
             <Image
               src="/images/Rbanner.png"
               alt="Property Banner"
@@ -146,7 +146,7 @@ export default function ApartmentsPage() {
       {/* ================= LISTINGS ================= */}
       <main className="py-10">
         <div className="max-w-[1240px] mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {apartments.map((item) => (
               <PropertyCard key={item.id} property={item} />
             ))}

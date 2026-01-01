@@ -54,7 +54,7 @@ const projects: ProjectCardProps[] = [
 
 export default function NewLaunchProjects() {
   return (
-    <section className="max-w-[1240px] mx-auto px-4 mt-16 mb-10">
+    <section className="max-w-[1240px] mx-auto px-4 mt-32 mb-10">
 
       {/* HEADER */}
       <div className="mx-auto max-w-[1480px] px-6 py-10 text-center">
@@ -67,7 +67,7 @@ export default function NewLaunchProjects() {
       </div>
 
       {/* HORIZONTAL SCROLL */}
-      <div className="flex gap-6 overflow-x-auto scroll-smooth pb-6">
+      <div className="flex gap-6 p-2 overflow-x-auto scroll-smooth pb-6">
 
         {projects.map((project) => (
           <div
@@ -75,10 +75,10 @@ export default function NewLaunchProjects() {
             className="min-w-[320px] max-w-[320px] flex-shrink-0"
           >
             {/*  GROUP added here */}
-            <div className="group flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+            <div className="group flex h-full  w-80 flex-col overflow-hidden  rounded-xl bg-white shadow-sm  hover:shadow-md transition-all duration-300 hover:scale-[1.02]  hover:-translate-y-1 hover:shadow-lg cursor-pointer">
 
               {/* IMAGE */}
-              <div className="relative h-40 w-full">
+              <div className="relative h-46 w-full">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -107,13 +107,13 @@ export default function NewLaunchProjects() {
                   </span>
                 </div>
 
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-3 text-xs text-gray-500">
                   By <span className="font-medium text-gray-700">{project.builder}</span>
                 </p>
 
-                <p className="text-xs text-gray-500">{project.location}</p>
+                <p className="text-xs mt-2 text-gray-500">{project.location}</p>
 
-                <p className="text-xs text-gray-500">{project.bhk}</p>
+                <p className="text-xs text-gray-500 mt-2">{project.bhk}</p>
 
                 {/* DIVIDER */}
                 <div className="my-3 h-px w-full bg-gray-200" />

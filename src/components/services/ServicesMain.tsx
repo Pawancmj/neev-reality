@@ -1,46 +1,56 @@
-import {
-  FiHome,
-  FiCheckSquare,
-  FiLayers,
-  FiUser,
-  FiDollarSign,
-  FiHeadphones,
-} from "react-icons/fi";
+"use client";
+
+import React, { useRef } from "react";
+import Image from "next/image";
 
 const services = [
   {
-    title: "Site Visit Assistance",
-    desc: "We offer guided site visits with complete project insights to help you make informed decisions.",
-    icon: <FiHome />,
+    title: "One-Stop Real Estate Solution",
+    desc: "From property selection to site visits, home loans, legal checks, and documentation—everything is handled under one roof.",
+    icon: "/images/chooseimg/logo01.png",
   },
   {
     title: "Fully Transparent Process",
-    desc: "No hidden costs. No surprises. Every detail from pricing to paperwork is shared clearly.",
-    icon: <FiCheckSquare />,
-  },
-  {
-    title: "One-Stop Real Estate Solution",
-    desc: "From property selection to site visits, home loans, legal checks, and documentation.",
-    icon: <FiLayers />,
+    desc: "No hidden costs. No surprises. Every detail—from pricing to paperwork—is shared clearly for complete peace of mind.  ",
+    icon: "/images/chooseimg/logo02.png",
   },
   {
     title: "Expert Real Estate Advisors",
-    desc: "Our advisors recommend the best properties based on your budget, location, and goals.",
-    icon: <FiUser />,
+    desc: "Our advisors recommend the best properties based on your budget, location preference, lifestyle needs, and investment goals.",
+    icon: "/images/chooseimg/logo03.png",
+  },
+  {
+    title: "Site Visit Assistance",
+    desc: "We offer guided site visits with complete project insights to help you make informed decisions.",
+    icon: "/images/chooseimg/logo04.png",
   },
   {
     title: "Home Loan Consultation",
-    desc: "We help you secure the best loan options and manage documents with banking partners.",
-    icon: <FiDollarSign />,
+    desc: "We help you secure the best loan options, manage documents, and get faster approvals with our banking partners.",
+    icon: "/images/chooseimg/logo05.png",
   },
   {
     title: "After-Sales Assistance",
-    desc: "We assist with builder coordination, possession updates, agreements, and support.",
-    icon: <FiHeadphones />,
+    desc: "Our support continues even after the booking. We assist with builder coordination, payment updates, agreements, and possession guidance.",
+    icon: "/images/chooseimg/logo06.png",
   },
 ];
 
 export default function OurServices() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="bg-white py-16">
       <div className="max-w-[1240px] mx-auto px-4">
@@ -56,16 +66,77 @@ export default function OurServices() {
           </p>
         </div>
 
-        {/* CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* MOBILE SCROLL VIEW */}
+        <div className="lg:hidden relative mb-8">
+          {/* Mobile Scroll Buttons */}
+          <button
+            onClick={scrollLeft}
+            className="absolute right-62 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-white/95 backdrop-blur-sm shadow-md border flex items-center justify-center hover:bg-white hover:shadow-lg transition-all text-gray-700 hover:text-[#DBA40D]"
+            aria-label="Scroll left"
+          >
+            ‹
+          </button>
+          
+          <button
+            onClick={scrollRight}
+            className="absolute left-62 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-white/95 backdrop-blur-sm shadow-md border flex items-center justify-center hover:bg-white hover:shadow-lg transition-all text-gray-700 hover:text-[#DBA40D]"
+            aria-label="Scroll right"
+          >
+            ›
+          </button>
+
+          {/* Mobile Scroll Container */}
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto scrollbar-hide pb-3 snap-x snap-mandatory px-1"
+          >
+            {services.map((item) => (
+              <div
+                key={item.title}
+                className="
+                  flex-shrink-0 w-[300px] snap-center
+                  bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all p-6
+                "
+              >
+                {/* ICON */}
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[#DBA40D]">
+                  <Image
+                    src={item.icon}
+                    alt=""
+                    width={26}
+                    height={26}
+                  />
+                </div>
+
+                {/* TITLE */}
+                <h3 className="text-base font-semibold text-gray-900 mb-3 leading-tight">
+                  {item.title}
+                </h3>
+
+                {/* DESC */}
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* DESKTOP GRID - UNCHANGED */}
+        <div className="hidden lg:grid grid-cols-3 gap-8">
           {services.map((item) => (
             <div
               key={item.title}
               className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition p-6"
             >
               {/* ICON */}
-              <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#F5A300] text-black mb-4">
-                {item.icon}
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-[#DBA40D]">
+                <Image
+                  src={item.icon}
+                  alt=""
+                  width={22}
+                  height={22}
+                />
               </div>
 
               {/* TITLE */}
@@ -85,4 +156,3 @@ export default function OurServices() {
     </section>
   );
 }
-

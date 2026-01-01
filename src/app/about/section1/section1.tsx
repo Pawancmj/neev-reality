@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useRef } from "react";
 import Image from "next/image";
 
 const steps = [
@@ -31,6 +32,20 @@ const steps = [
 ];
 
 export default function Home() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -280, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 280, behavior: "smooth" });
+    }
+  };
+
   return (
     <main className="w-full overflow-x-hidden">
 
@@ -133,12 +148,27 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-12 text-[15px] leading-[26px] text-gray-600 text-center md:text-left">
             <p>
-              At Neev Realty, we redefine real estate with a client-first philosophy.
-              Our unique solutions are crafted to match your unique aspirations.
+            At Neev Realty, we redefine real estate with a client-first philosophy.
+            Our unique solutions are crafted to match your unique aspirations,
+            whether you are seeking a luxurious home, building a profitable
+            investment portfolio or navigating the complexities of property
+            sales. We believe in empowering our clients with expert insights,
+            curated property selections and expert financial advice to make
+            informed decisions. Our approach is rooted in trust, transparency
+            and a deep understanding of the ever-evolving real estate
+            landscape.
             </p>
             <p>
-              With over 20 years of experience and a portfolio of 100 premium projects,
-              we ensure every client enjoys an unparalleled service.
+             What truly makes us stand out is our ability to merge personalization
+            with expertise. With over 20 years of experience and a portfolio of 100
+            premium projects, we deliver a world of opportunities tailored just
+            for you. From immersive virtual tours and in-person visits to
+            seamless transaction support and ongoing assistance, we ensure
+            your journey with us is as smooth as it is successful. At Neev Realty,
+            we combine local expertise and global insight, ensuring that every
+            client enjoys unparalleled service and a rewarding real estate
+            experience. Experience the difference with Neev Realty - a trusted
+            partner who brings your real estate dreams to life.
             </p>
           </div>
         </div>
@@ -208,13 +238,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= 5 STEPS ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl mb-12">
+      {/* ================= 5 STEPS - MOBILE SCROLL ONLY ================= */}
+      <section className="max-w-7xl mx-auto px-6 py-16 lg:py-20">
+        <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl mb-12 lg:mb-16">
           <span className="text-[#DBA40D] font-semibold">5 Steps</span> to Your Dream Home
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 place-items-center">
+        {/* MOBILE SCROLL VIEW */}
+        <div className="lg:hidden relative">
+          {/* Mobile Scroll Buttons */}
+          <button
+            onClick={scrollLeft}
+            className="absolute right-62 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-white/95 backdrop-blur-sm shadow-lg border flex items-center justify-center hover:bg-white hover:shadow-xl transition-all text-gray-700 hover:text-[#DBA40D] text-lg"
+            aria-label="Scroll left"
+          >
+            ‹
+          </button>
+          
+          <button
+            onClick={scrollRight}
+            className="absolute left-62 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-white/95 backdrop-blur-sm shadow-lg border flex items-center justify-center hover:bg-white hover:shadow-xl transition-all text-gray-700 hover:text-[#DBA40D] text-lg"
+            aria-label="Scroll right"
+          >
+            ›
+          </button>
+
+          {/* Mobile Scroll Container */}
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory px-2"
+          >
+            {steps.map((step) => (
+              <div
+                key={step.title}
+                className="
+                  flex-shrink-0 w-[260px] snap-center
+                  rounded-lg p-5 text-center shadow-sm bg-white border hover:shadow-md hover:scale-[1.02] transition-all
+                "
+              >
+                <Image src={step.logo} alt={step.title} width={36} height={36} className="mx-auto mb-3" />
+                <h3 className="font-semibold text-sm leading-tight mb-2">{step.title}</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* DESKTOP GRID - UNCHANGED */}
+        <div className="hidden lg:grid grid-cols-5 gap-6 place-items-center">
           {steps.map((step) => (
             <div
               key={step.title}
