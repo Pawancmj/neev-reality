@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
     <footer className="bg-[#1B121E] text-gray-300 w-full">
 
          {/* ================= TOP LINKS changed ================= */}
-      <div className="relative px-4 sm:px-6 py-10 mx-auto bg-[#29192B] border-b border-[#2c1b32]">
+      <div className="relative px-6 sm:px-30 py-10 mx-auto bg-[#29192B] border-b border-[#2c1b32]">
         <div
   className="
     flex md:grid
@@ -98,7 +98,23 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Div 5 */}
+          <div className="ml-0 md:ml-8 w-full max-w-[310px] min-w-[85%] sm:min-w-[70%] md:min-w-0 snap-start">
+            <h4 className="font-semibold mb-4 text-[16px]">Projects by Budget</h4>
+            <ul className="space-y-3 text-white text-[15px]">
+              <li>Property between 1 to 2 cr in Gurgaon</li>
+              <li>Property between 2 to 3 cr in Gurgaon</li>
+              <li>Property between 3 to 4 cr in Gurgaon</li>
+              <li>Property between 4 to 5 cr in Gurgaon</li>
+              <li>Property between 5 to 6 cr in Gurgaon</li>
+              <li>Property between 6 to 7 cr in Gurgaon</li>
+              <li>Property between 7 to 8 cr in Gurgaon</li>
+              <li>Property above 8 cr in Gurgaon</li>
+            </ul>
+          </div>
+
+         
+
+          {/* Div 5 
           <div
             className={`
               min-w-[85%] sm:min-w-[70%] md:min-w-0 snap-start
@@ -122,17 +138,17 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Toggle Button */}
-        <div className="hidden md:block absolute top-1 sm:top-45 right-4 z-20 pt-2">
+        {
+        <div className="hidden md:block absolute top-1 sm:top-45 right-5 z-20 pt-5">
 
           <button
             onClick={toggleDivs}
-            className="w-20 h-20 rounded-full flex items-center justify-center
-              text-[#979797] text-5xl shadow-2xl border-4 border-white
-              bg-white hover:scale-110 active:scale-95 transition-all duration-300"
+            className="w-10 h-10 rounded-full flex items-center justify-center
+              text-[#979797] text-3xl shadow-2xl border-4 border-white
+              bg-white hover:scale-110 active:scale-85 transition-all duration-300"
           >
             {showLastDiv ? "<" : ">"}
-          </button>
+          </button>*/}
         </div>
       </div>
 

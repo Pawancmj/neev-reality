@@ -57,7 +57,7 @@ const StatsBar: React.FC = () => {
   };
 
   return (
-    <section className="mx-auto bg-[#F8FBFF] py-12 w-full max-w-[1520px]">
+    <section className="mx-auto bg-[#F8FBFF] py-6 w-full max-w-[1520px]">
       {/* ================= MOBILE / TAB SLIDER ================= */}
       <div className="md:hidden">
         <div

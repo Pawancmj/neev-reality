@@ -50,7 +50,7 @@ const features: Feature[] = [
 
 const WhyChooseNeev: React.FC = () => {
   return (
-    <section className="w-full bg-white py-16">
+    <section className="w-full bg-white py-6">
       {/* ===== Heading ===== */}
       <div className="mx-auto max-w-5xl px-4 text-center">
         <h2 className="text-3xl font-semibold text-gray-900">

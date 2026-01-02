@@ -54,30 +54,48 @@ const projects: ProjectCardProps[] = [
 
 export default function NewLaunchProjects() {
   return (
-    <section className="max-w-[1240px] mx-auto px-4 mt-32 mb-10">
+    <section className="max-w-[1240px] mx-auto px-4 mt-12 mb-10">
 
-      {/* HEADER */}
-      <div className="mx-auto max-w-[1480px] px-6 py-10 text-center">
-        <h2 className="text-3xl font-semibold text-gray-900">
-          New Launch <span className="text-[#DBA40D]">Projects</span>
-        </h2>
-        <p className="mt-2 text-sm text-gray-600">
-          Explore new residential and commercial projects in Gurgaon
-        </p>
+      {/* HEADER + BUTTON */}
+      <div className="max-w-[1480px] mx-auto px-1 
+flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+
+        {/* Center Heading */}
+        <div className="flex-1 text-center">
+          <h2 className="text-3xl font-semibold text-gray-900">
+            New Launch <span className="text-[#DBA40D]">Projects</span>
+          </h2>
+
+          <p className="mt-2 text-sm text-gray-600">
+            Explore new residential and commercial projects in Gurgaon
+          </p>
+        </div>
+
+        {/* Explore More Button */}
+        <button
+  className="
+    bg-[#DBA40D] px-4 py-2 border-2 border-[#DBA40D]
+    rounded-sm text-white text-sm
+    md:mr-0
+  "
+>
+  Explore More
+</button>
+
+         
       </div>
 
+
       {/* HORIZONTAL SCROLL */}
-      <div className="flex gap-6 p-2 overflow-x-auto scroll-smooth pb-6">
+      <div className="flex gap-6 p-2 overflow-x-auto scroll-smooth pb-6 mt-8">
 
         {projects.map((project) => (
           <div
             key={project.title + project.image}
             className="min-w-[320px] max-w-[320px] flex-shrink-0"
           >
-            {/*  GROUP added here */}
-            <div className="group flex h-full  w-80 flex-col overflow-hidden  rounded-xl bg-white shadow-sm  hover:shadow-md transition-all duration-300 hover:scale-[1.02]  hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+            <div className="group flex h-full  w-80 flex-col overflow-hidden  rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg cursor-pointer">
 
-              {/* IMAGE */}
               <div className="relative h-46 w-full">
                 <Image
                   src={project.image}
@@ -87,10 +105,8 @@ export default function NewLaunchProjects() {
                 />
               </div>
 
-              {/* CONTENT */}
               <div className="flex flex-1 flex-col px-4 py-3">
 
-                {/* TITLE + RERA */}
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-sm font-semibold text-gray-900 line-clamp-1">
                     {project.title}
@@ -115,21 +131,18 @@ export default function NewLaunchProjects() {
 
                 <p className="text-xs text-gray-500 mt-2">{project.bhk}</p>
 
-                {/* DIVIDER */}
                 <div className="my-3 h-px w-full bg-gray-200" />
 
-                {/* PRICE + CONTACT */}
                 <div className="flex items-center justify-between">
                   <p className="text-sm font-semibold text-gray-900">
                     {project.priceRange}
                   </p>
 
-                  {/* button reacts to card hover */}
                   <button
                     className="rounded-full bg-[#F5F5F5] px-4 py-1.5 text-xs font-medium text-[#F5A300]
-  transition-all duration-300
-  group-hover:bg-amber-500
-  group-hover:text-white"
+                    transition-all duration-300
+                    group-hover:bg-amber-500
+                    group-hover:text-white"
                   >
                     Contact
                   </button>
@@ -144,4 +157,3 @@ export default function NewLaunchProjects() {
     </section>
   );
 }
-

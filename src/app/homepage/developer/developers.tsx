@@ -58,7 +58,7 @@ const DevelopersSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#F5F7FB] py-16">
+    <section className="w-full bg-[#F5F7FB] py-6">
       {/* ===== Heading ===== */}
       <div className="mx-auto max-w-5xl text-center px-6">
         <h2 className="text-3xl font-semibold text-gray-900">

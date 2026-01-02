@@ -40,25 +40,27 @@ const posts: BlogPost[] = [
 
 const BlogSection: React.FC = () => {
   return (
-    <section className="w-full bg-white py-16">
-      
-      {/* ================= HEADING ================= */}
-      <div className="mx-auto max-w-4xl px-4 text-center relative">
-        <h2 className="text-3xl font-semibold text-gray-900">
-          Blog and News <span className="text-[#DBA40D]">Updates</span>
-        </h2>
+    <section className="w-full bg-white py-6">
 
-        <p className="mt-4 text-sm text-gray-600">
-          Your trusted source for expert updates on residential and commercial real estate.
-        </p>
+      {/* ================= HEADING + BUTTON ================= */}
+      <div className="mx-auto max-w-6xl px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
 
-        {/* Explore More (same visual position on desktop, safe on mobile) */}
+        {/* Center Heading */}
+        <div className="flex-1 text-center">
+          <h2 className="text-3xl font-semibold text-gray-900">
+            Blog and News <span className="text-[#DBA40D]">Updates</span>
+          </h2>
+
+          <p className="mt-2 text-sm text-gray-600">
+            Your trusted source for expert updates on residential and commercial real estate.
+          </p>
+        </div>
+
+        {/* Button Right */}
         <button
           className="
-            mt-6 md:mt-0
-    md:absolute md:right-[0.1px] md:top-1/2 md:-translate-y-1/2
-    bg-[#DBA40D] p-1 border-2 border-[#DBA40D]
-    rounded-sm text-white text-sm 
+            bg-[#DBA40D] px-4 py-2 border-2 border-[#DBA40D]
+            rounded-sm text-white text-sm
           "
         >
           Explore More
@@ -66,13 +68,13 @@ const BlogSection: React.FC = () => {
       </div>
 
       {/* ================= BLOG CARDS ================= */}
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 md:grid-cols-3 mt-12">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 md:grid-cols-3 mt-6">
+
         {posts.map((post) => (
           <article
             key={`${post.title}-${post.date}`}
             className="overflow-hidden rounded-2xl bg-white shadow-sm"
           >
-            {/* Image */}
             <div className="relative h-56 w-full">
               <Image
                 src={post.image}
@@ -82,7 +84,6 @@ const BlogSection: React.FC = () => {
                 className="object-cover"
               />
 
-              {/* Date badge */}
               <div className="absolute -bottom-6 right-6 z-10">
                 <div className="flex flex-col items-center rounded-lg bg-white px-6 py-4 shadow-md">
                   <span className="text-xs text-gray-500">{post.month}</span>
@@ -93,7 +94,6 @@ const BlogSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Content */}
             <div className="px-5 pb-5 pt-7 relative">
               <h3 className="text-sm font-semibold leading-snug text-gray-900">
                 {post.title}
@@ -103,7 +103,6 @@ const BlogSection: React.FC = () => {
                 {post.excerpt}
               </p>
 
-              {/* Read more (same alignment on desktop, safe on mobile) */}
               <button
                 type="button"
                 className="
@@ -123,4 +122,3 @@ const BlogSection: React.FC = () => {
 };
 
 export default BlogSection;
-
