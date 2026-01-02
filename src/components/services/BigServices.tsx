@@ -3,7 +3,9 @@ import bigServices from "@/data/bigServices";
 
 export default function BigServices() {
   return (
-    <section className="py-20">
+    <section className="py-8">
+      <h1 className="text-center text-4xl font-bold mb-6">Our <span className="text-[#F5A200]">Services</span></h1>
+      <p className="text-center mb-4 ">Whether you are searching for a home, a commercial space, or a high-potential investment, Neev Realty offers expert guidance at every step.</p>
       <div className="max-w-[1180px] mx-auto px-4">
 
         {/* TOP 2 BOXES */}

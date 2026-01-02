@@ -62,7 +62,7 @@ export default function Home() {
 
         <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-12 lg:px-20">
           <h1 className="text-white text-3xl sm:text-4xl lg:text-6xl font-semibold max-w-2xl">
-            Turning <span className="text-[#E7C873]">Dreams</span> into Real Homes
+            Turning <span className="text-[#E7C873]">Dreams</span> into Reality
           </h1>
 
           <button className="mt-6 w-fit border border-white px-6 py-3 rounded-lg text-white hover:bg-white hover:text-black transition">
@@ -73,23 +73,23 @@ export default function Home() {
 
       {/* ================= WELCOME ================= */}
       <section className="max-w-6xl mx-auto px-6 py-16 text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium">
-          Welcome to Neev Realty –{" "}
-          <span className="text-[#DBA40D]">Turning Dreams</span> Into Real Homes
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+          Welcome to {" "}
+          <span className="text-[#DBA40D]">Neev Realty</span>
         </h2>
       </section>
 
       {/* ================= WHO WE ARE ================= */}
-      <section className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 text-center lg:text-left">
+      <section className="max-w-6xl relative bottom-12 mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 text-center lg:text-left">
 
         {/* TEXT */}
         <div>
-          <h3 className="mb-6 text-[36px] font-semibold leading-none">
+          <h3 className=" text-[36px] font-semibold leading-none relative bottom-8">
             <span className="text-[#DBA40D] text-[44px] font-bold">WHO</span>{" "}
             <span className="text-gray-900">WE ARE</span>
           </h3>
 
-          <p className="text-[15px] text-gray-600 leading-[24px] max-w-[420px] mx-auto lg:mx-0">
+          <p className="text-[15px] text-gray-600 leading-[28px] max-w-[302px] mx-auto lg:mx-0">
             As a leading luxury real estate boutique firm, we offer a
             comprehensive range of solutions tailored to your specific needs.
             We specialize in brand-new projects across Delhi NCR.
@@ -106,7 +106,7 @@ export default function Home() {
 
         {/* IMAGES - MOBILE PERFECTLY FIT */}
         <div className="flex justify-center">
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-0">
+          <div className="grid grid-cols-2 gap-3  shadow-sm hover:scale-102 border-gray-200 border sm:gap-4 lg:gap-0">
 
             {/* DIAMOND (Top-Left) */}
             <div className="relative w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] lg:w-[220px] lg:h-[220px] xl:w-[260px] xl:h-[260px]">
@@ -139,7 +139,7 @@ export default function Home() {
       </section>
 
       {/* ================= WHY DIFFERENT ================= */}
-      <section className="bg-white py-20">
+      <section className="bg-white relative bottom-26 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-center text-3xl sm:text-4xl font-semibold mb-12">
             <span className="text-[#DBA40D]">Why</span>{" "}
@@ -175,7 +175,7 @@ export default function Home() {
       </section>
 
       {/* ================= VISION / MISSION ================= */}
-      <section className="bg-[#F8FBFF] py-20">
+      <section className="bg-[#F8FBFF] py-6 relative bottom-26">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-semibold mb-16">
             <span className="text-[#DBA40D]">Our</span> Vision & Mission
@@ -239,8 +239,8 @@ export default function Home() {
       </section>
 
       {/* ================= 5 STEPS - MOBILE SCROLL ONLY ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-16 lg:py-20">
-        <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl mb-12 lg:mb-16">
+      <section className="max-w-7xl mx-auto relative bottom-28 px-6 py-16 ">
+        <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl mb-12 ">
           <span className="text-[#DBA40D] font-semibold">5 Steps</span> to Your Dream Home
         </h2>
 
