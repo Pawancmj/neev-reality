@@ -56,12 +56,21 @@ const BlogSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Button Right */}
         <button
           className="
-            bg-[#DBA40D] px-4 py-2 border-2 border-[#DBA40D]
-            rounded-sm text-white text-sm
-          "
+    bg-[#DBA40D]
+    border border-[#DBA40D]
+    rounded-sm
+    text-white font-medium
+
+    px-4 py-2 text-sm        /* desktop default */
+
+    max-sm:scale-70         
+    max-sm:origin-center
+
+    transition
+    md:mr-0
+  "
         >
           Explore More
         </button>

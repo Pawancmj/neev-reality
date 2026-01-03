@@ -68,7 +68,7 @@ const DevelopersSection: React.FC = () => {
       </div>
 
       {/* ===== MOBILE / TABLET SLIDER WITH BUTTONS ===== */}
-      <div className="mt-12 lg:hidden relative">
+      <div className="lg:hidden relative">
         {/* Scroll Buttons */}
         <button
           onClick={scrollLeft}

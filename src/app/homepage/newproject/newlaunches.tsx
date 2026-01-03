@@ -54,7 +54,12 @@ const projects: ProjectCardProps[] = [
 
 export default function NewLaunchProjects() {
   return (
-    <section className="max-w-[1240px] mx-auto px-4 mt-12 mb-10">
+    <section className="
+  max-w-[1240px] mx-auto px-4
+  mt-[200px] sm:mt-[200px] md:mt-40
+  mb-10
+">
+
 
       {/* HEADER + BUTTON */}
       <div className="max-w-[1480px] mx-auto px-1 
@@ -71,18 +76,30 @@ flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           </p>
         </div>
 
-        {/* Explore More Button */}
         <button
-  className="
-    bg-[#DBA40D] px-4 py-2 border-2 border-[#DBA40D]
-    rounded-sm text-white text-sm
+          className="
+    bg-[#DBA40D]
+    border border-[#DBA40D]
+    rounded-sm
+    text-white font-medium
+
+    px-4 py-2 text-sm        /* desktop default */
+
+    max-sm:scale-70         
+    max-sm:origin-center
+
+    transition
     md:mr-0
   "
->
-  Explore More
-</button>
+        >
+          Explore More
+        </button>
 
-         
+
+
+
+
+
       </div>
 
 

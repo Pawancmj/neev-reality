@@ -39,7 +39,7 @@ export default function SearchCard() {
         {/* ================= DESKTOP VIDEO ================= */}
         {showVideo && (
           <div className="absolute inset-0 z-20 hidden md:flex items-center justify-center">
-            <div className="absolute right-10 top-49 -translate-y-1/2 w-[320px] h-[370px]">
+            <div className="absolute right-10 top-49 -translate-y-1/2 w-[280px] h-[320px]">
               <button
                 onClick={() => setShowVideo(false)}
                 className="absolute -top-3 -right-3 z-30 h-9 w-9 rounded-full bg-black text-white"
@@ -59,7 +59,7 @@ export default function SearchCard() {
 
         {/* ================= MOBILE YOUTUBE ICON ================= */}
         {!playMobileVideo && (
-          <div className="md:hidden absolute right-3 bottom-4 z-30">
+          <div className="md:hidden absolute right-3 bottom-50 z-30">
             <button
               onClick={() => setPlayMobileVideo(true)}
               className="h-11 w-11 rounded-full bg-white shadow-lg flex items-center justify-center"
@@ -82,7 +82,7 @@ export default function SearchCard() {
             {/* CLOSE BUTTON */}
             <button
               onClick={() => setPlayMobileVideo(false)}
-              className="absolute top-3 right-3 z-50 h-9 w-9 rounded-full bg-black text-white flex items-center justify-center"
+              className="absolute top-15 right-3 z-50 h-9 w-9 rounded-full bg-black text-white flex items-center justify-center"
             >
               ✕
             </button>
@@ -100,103 +100,127 @@ export default function SearchCard() {
         )}
 
       </div>
-      {/* ================= SEARCH CARD ================= */}
+      {/* ================= SEARCH WRAPPER ================= */}
       <div
         className="
     absolute left-1/2 top-[380px] -translate-x-1/2
-    w-[1020px] max-w-[95vw]
-    bg-white rounded-2xl
-    shadow-[0_20px_60px_rgba(0,0,0,0.15)]
-    px-4 sm:px-6 pt-4 pb-5
-    max-lg:static
-    max-lg:translate-x-0
-    max-lg:mt-6
+    w-full max-w-[1020px]
+    z-20
+
+    max-lg:top-[320px]
+    max-sm:top-[220px]
+
+    max-lg:left-1/2
+    max-lg:-translate-x-1/2
   "
       >
-        {/* HEADER */}
-        <div className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-          <h2 className="text-lg sm:text-[22px] font-semibold text-gray-800">
-            Find your perfect home with{" "}
-            <span className="text-[#DBA40D]">Neev Reality</span>
-          </h2>
-
-          <div className="flex rounded-full bg-gray-100 p-1 w-fit">
-            {(["Residential", "Commercial"] as Tab[]).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`rounded-full px-4 py-1.5 text-xs font-medium transition ${activeTab === tab
-                    ? "bg-white shadow text-gray-900"
-                    : "text-gray-500"
-                  }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* SEARCH BAR */}
+        {/* ================= SEARCH CARD ================= */}
         <div
           className="
-      flex flex-col sm:flex-row
-      items-stretch sm:items-center
-      gap-3 rounded-2xl
-      bg-white px-3 sm:px-4 py-2 shadow
-      w-full max-w-[940px] mx-auto
+      bg-white rounded-2xl
+      shadow-[0_20px_60px_rgba(0,0,0,0.15)]
+      px-4 sm:px-6 pt-4 pb-5
+      w-full
     "
         >
-          <div className="flex flex-1 items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-500">
-              <FiMapPin size={15} />
-            </span>
+          {/* HEADER */}
+          <div
+            className="
+    mb-4
+    flex flex-col
+    items-center text-center
+    gap-3
 
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              className="flex-1 bg-transparent py-2 px-3 text-sm outline-none"
-              placeholder="Search by City, Locality, or Project"
-            />
+    md:flex-row
+    md:items-center
+    md:justify-between
+    md:text-left
+  "
+          >
+            <h2 className="text-lg sm:text-[22px] font-semibold text-gray-800">
+              Find your perfect home with{" "}
+              <span className="text-[#DBA40D]">Neev Reality</span>
+            </h2>
 
-            <div className="flex gap-1 sm:hidden">
-              <button className="h-9 w-9 rounded-full hover:bg-gray-100 flex items-center justify-center">
-                <CiGlobe size={16} />
-              </button>
-              <button className="h-9 w-9 rounded-full hover:bg-gray-100 flex items-center justify-center">
-                <FiMic size={15} />
-              </button>
+            <div className="flex rounded-full bg-gray-100 p-1">
+              {(["Residential", "Commercial"] as Tab[]).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`rounded-full px-4 py-1.5 text-xs font-medium transition ${activeTab === tab
+                      ? "bg-white shadow text-gray-900"
+                      : "text-gray-500"
+                    }`}
+                >
+                  {tab}
+                </button>
+              ))}
             </div>
           </div>
 
-          <button
+
+          {/* SEARCH BAR */}
+          <div
             className="
-        bg-[#DBA40D]
-        px-5 py-3
-        rounded-xl
-        text-white text-sm font-medium
-        flex items-center justify-center gap-2
-        w-full sm:w-auto
+        flex flex-col sm:flex-row
+        items-stretch sm:items-center
+        gap-3 rounded-2xl
+        bg-white px-3 sm:px-4 py-2 shadow
+        w-full max-w-[940px] mx-auto
       "
           >
-            <FiSearch size={15} />
-            Search
-          </button>
+            <div className="flex flex-1 items-center gap-2">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-500">
+                <FiMapPin size={15} />
+              </span>
+
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className="flex-1 bg-transparent py-2 px-3 text-sm outline-none"
+                placeholder="Search by City, Locality, or Project"
+              />
+
+              <div className="flex gap-1 sm:hidden">
+                <button className="h-9 w-9 rounded-full hover:bg-gray-100 flex items-center justify-center">
+                  <CiGlobe size={16} />
+                </button>
+                <button className="h-9 w-9 rounded-full hover:bg-gray-100 flex items-center justify-center">
+                  <FiMic size={15} />
+                </button>
+              </div>
+            </div>
+
+            <button
+              className="
+          bg-[#DBA40D]
+          px-5 py-3
+          rounded-xl
+          text-white text-sm font-medium
+          flex items-center justify-center gap-2
+          w-full sm:w-auto
+        "
+            >
+              <FiSearch size={15} />
+              Search
+            </button>
+          </div>
+        </div>
+
+        {/* ================= TAGS (NO SHADOW / NO BG) ================= */}
+        <div className="mt-4 flex gap-2 overflow-x-auto pb-2 px-2">
+          {TAGS.map((tag) => (
+            <button
+              key={tag}
+              className="whitespace-nowrap rounded-full border px-3 py-1.5 text-xs bg-white"
+            >
+              {tag}
+            </button>
+          ))}
         </div>
       </div>
 
 
-
-      {/* ================= TAGS ================= */}
-      <div className="mt-6 lg:mt-[90px] w-full max-w-[940px] mx-auto flex gap-2 overflow-x-auto pb-2 px-2">
-        {TAGS.map(tag => (
-          <button
-            key={tag}
-            className="whitespace-nowrap rounded-full border px-3 py-1.5 text-xs bg-white"
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
 
     </section>
   );
