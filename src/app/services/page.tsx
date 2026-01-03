@@ -13,8 +13,7 @@ export default function Page() {
   return (
     <main className="bg-white text-gray-900 overflow-x-hidden">
 
-      {/* ===== FULL WIDTH NAVBAR ===== */}
-      <Navbar />
+     
 
       {/* ===== PAGE CONTENT ===== */}
       <section className="w-full">
@@ -30,8 +29,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ===== FULL WIDTH FOOTER ===== */}
-      <Footer />
+     
 
     </main>
   );

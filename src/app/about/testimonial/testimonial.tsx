@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 
 type Testimonial = {
@@ -44,29 +44,8 @@ const testimonials: Testimonial[] = [
 export default function TestimonialsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  /* ===== AUTO SCROLL ONLY ===== */
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    const cardWidth = 360;
-
-    const interval = setInterval(() => {
-      if (
-        container.scrollLeft + container.clientWidth >=
-        container.scrollWidth - cardWidth
-      ) {
-        container.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        container.scrollBy({ left: cardWidth, behavior: "smooth" });
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="bg-[#F7F9FC] py-16 sm:py-20">
+    <section className="bg-[#F7F9FC] py-16 sm:py-20  -mt-8 sm:-mt-12 lg:-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
@@ -80,13 +59,14 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Auto Scroll Slider */}
+        {/* Testimonials Slider - NO AUTO SCROLL */}
         <div
           ref={scrollRef}
           className="
             flex gap-6
-            overflow-x-hidden
+            overflow-x-auto scrollbar-hide
             scroll-smooth
+            pb-4
             px-2
           "
         >
