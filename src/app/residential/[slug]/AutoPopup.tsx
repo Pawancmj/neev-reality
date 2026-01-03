@@ -9,7 +9,7 @@ export default function AutoPopup() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 2000); // page load ke 2 sec baad
+    }, 5000); // page load ke 5 sec baad
 
     return () => clearTimeout(timer);
   }, []);

@@ -62,7 +62,16 @@ const WhyChooseNeev: React.FC = () => {
       </div>
 
       {/* ===== Feature Cards Grid / Horizontal Scroll ===== */}
-      <div className="mx-auto mt-12 max-w-[1240px] px-4">
+     <div
+  className="
+    mx-auto mt-12 max-w-[1240px]
+
+    px-4          /* mobile */
+    md:px-8       /*  tablet left/right margin */
+    lg:px-4       /* desktop back to normal */
+  "
+>
+
         <div
           className="
             grid 

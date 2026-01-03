@@ -103,17 +103,21 @@ export default function SearchCard() {
       {/* ================= SEARCH WRAPPER ================= */}
       <div
         className="
-    absolute left-1/2 top-[380px] -translate-x-1/2
+    absolute left-1/2 -translate-x-1/2
+    top-[380px]
+
+    /*  MOBILE + TABLET */
+    max-lg:top-[370px]
+    max-sm:top-[220px]
+    max-lg:px-4
+    max-sm:px-3
+
+    /*  DESKTOP */
     w-full max-w-[1020px]
     z-20
-
-    max-lg:top-[320px]
-    max-sm:top-[220px]
-
-    max-lg:left-1/2
-    max-lg:-translate-x-1/2
   "
       >
+
         {/* ================= SEARCH CARD ================= */}
         <div
           className="
@@ -148,8 +152,8 @@ export default function SearchCard() {
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`rounded-full px-4 py-1.5 text-xs font-medium transition ${activeTab === tab
-                      ? "bg-white shadow text-gray-900"
-                      : "text-gray-500"
+                    ? "bg-white shadow text-gray-900"
+                    : "text-gray-500"
                     }`}
                 >
                   {tab}

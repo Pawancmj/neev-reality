@@ -34,7 +34,7 @@ export default function ScrollTabs() {
   };
 
   return (
-    <div className="sticky top-[102px] z-50 bg-white border rounded-xl shadow-sm">
+    <div className="sticky top-[102px] z-50 bg-white rounded-xl shadow-md">
 
       {/* SCROLL CONTAINER */}
       <div
