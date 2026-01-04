@@ -50,7 +50,8 @@ export default function Home() {
     <main className="w-full overflow-x-hidden">
 
       {/* ================= HERO ================= */}
-      <section className="relative w-full h-[70vh] sm:h-[80vh]">
+      {/* smaller height on mobile, a bit taller on tablet, original tall on desktop */}
+      <section className="relative w-full h-[55vh] sm:h-[65vh] lg:h-[70vh]">
         <Image
           src="/images/aboutimg/img1.jpg"
           alt="Neev Realty Banner"
@@ -74,7 +75,7 @@ export default function Home() {
       {/* ================= WELCOME ================= */}
       <section className="max-w-6xl mx-auto px-6 py-16 text-center">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-          Welcome to {" "}
+          Welcome to{" "}
           <span className="text-[#DBA40D]">Neev Realty</span>
         </h2>
       </section>
@@ -110,8 +111,10 @@ export default function Home() {
 
             {/* DIAMOND (Top-Left) */}
             <div className="relative w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] lg:w-[220px] lg:h-[220px] xl:w-[260px] xl:h-[260px]">
-              <div className="absolute inset-0 overflow-hidden 
-                [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]">
+              <div
+                className="absolute inset-0 overflow-hidden 
+                [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]"
+              >
                 <Image src="/images/aboutimg/img7.png" alt="" fill className="object-cover" />
               </div>
             </div>
@@ -122,14 +125,18 @@ export default function Home() {
             </div>
 
             {/* PIZZA (Bottom-Left) */}
-            <div className="relative w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] lg:w-[220px] lg:h-[220px] xl:w-[260px] xl:h-[260px]
-              overflow-hidden [clip-path:circle(100%_at_0%_100%)] rotate-180">
+            <div
+              className="relative w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] lg:w-[220px] lg:h-[220px] xl:w-[260px] xl:h-[260px]
+              overflow-hidden [clip-path:circle(100%_at_0%_100%)] rotate-180"
+            >
               <Image src="/images/aboutimg/img5.jpg" alt="" fill className="object-cover" />
             </div>
 
             {/* CIRCLE (Bottom-Right) */}
-            <div className="relative w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] lg:w-[220px] lg:h-[220px] xl:w-[260px] xl:h-[260px]
-               rounded-full overflow-hidden">
+            <div
+              className="relative w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] lg:w-[220px] lg:h-[220px] xl:w-[260px] xl:h-[260px]
+               rounded-full overflow-hidden"
+            >
               <Image src="/images/aboutimg/img10.png" alt="" fill className="object-cover" />
             </div>
 
@@ -148,27 +155,27 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-12 text-[15px] leading-[26px] text-gray-600 text-center md:text-left">
             <p>
-            At Neev Realty, we redefine real estate with a client-first philosophy.
-            Our unique solutions are crafted to match your unique aspirations,
-            whether you are seeking a luxurious home, building a profitable
-            investment portfolio or navigating the complexities of property
-            sales. We believe in empowering our clients with expert insights,
-            curated property selections and expert financial advice to make
-            informed decisions. Our approach is rooted in trust, transparency
-            and a deep understanding of the ever-evolving real estate
-            landscape.
+              At Neev Realty, we redefine real estate with a client-first philosophy.
+              Our unique solutions are crafted to match your unique aspirations,
+              whether you are seeking a luxurious home, building a profitable
+              investment portfolio or navigating the complexities of property
+              sales. We believe in empowering our clients with expert insights,
+              curated property selections and expert financial advice to make
+              informed decisions. Our approach is rooted in trust, transparency
+              and a deep understanding of the ever-evolving real estate
+              landscape.
             </p>
             <p>
-             What truly makes us stand out is our ability to merge personalization
-            with expertise. With over 20 years of experience and a portfolio of 100
-            premium projects, we deliver a world of opportunities tailored just
-            for you. From immersive virtual tours and in-person visits to
-            seamless transaction support and ongoing assistance, we ensure
-            your journey with us is as smooth as it is successful. At Neev Realty,
-            we combine local expertise and global insight, ensuring that every
-            client enjoys unparalleled service and a rewarding real estate
-            experience. Experience the difference with Neev Realty - a trusted
-            partner who brings your real estate dreams to life.
+              What truly makes us stand out is our ability to merge personalization
+              with expertise. With over 20 years of experience and a portfolio of 100
+              premium projects, we deliver a world of opportunities tailored just
+              for you. From immersive virtual tours and in-person visits to
+              seamless transaction support and ongoing assistance, we ensure
+              your journey with us is as smooth as it is successful. At Neev Realty,
+              we combine local expertise and global insight, ensuring that every
+              client enjoys unparalleled service and a rewarding real estate
+              experience. Experience the difference with Neev Realty - a trusted
+              partner who brings your real estate dreams to life.
             </p>
           </div>
         </div>
@@ -177,7 +184,7 @@ export default function Home() {
       {/* ================= VISION / MISSION ================= */}
       <section className="bg-[#F8FBFF] py-6 relative bottom-26">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-semibold mb-16">
+          <h2 className="text-4xl font-semibold mb-8">
             <span className="text-[#DBA40D]">Our</span> Vision & Mission
           </h2>
 
@@ -211,7 +218,7 @@ export default function Home() {
 
             {/* MISSION */}
             <div
-              className="
+              className="relative bottom-10 md:top-1
                 w-[280px] h-[280px]
                 sm:w-[320px] sm:h-[320px]
                 lg:w-[360px] lg:h-[360px]
@@ -254,7 +261,7 @@ export default function Home() {
           >
             ‹
           </button>
-          
+
           <button
             onClick={scrollRight}
             className="absolute left-62 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-white/95 backdrop-blur-sm shadow-lg border flex items-center justify-center hover:bg-white hover:shadow-xl transition-all text-gray-700 hover:text-[#DBA40D] text-lg"

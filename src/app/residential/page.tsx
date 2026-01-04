@@ -41,17 +41,19 @@ export default function ApartmentsPage() {
 
       {/* ================= TRENDING BANNER ================= */}
       <section className="bg-white py-6 sm:py-10 md:py-16">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-26">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6">
           <h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 lg:mb-12">
             Trending <span className="text-[#F5A300]">Projects</span>
           </h2>
           
-          <div className="md:w-[1514px] md:relative md:right-35 md:h-38 md:text-center md:text-2xl md:bg-blue-100 md:rounded-lg w-full h-24 bg-blue-100 rounded-lg flex items-center justify-center text-lg">Banner</div>
+          <div className="w-full h-24 md:h-38 md:w-[90%] md:mx-auto md:text-center md:text-2xl md:bg-blue-100 md:rounded-lg bg-blue-100 rounded-lg flex items-center justify-center text-lg">
+            Banner
+          </div>
         </div>
       </section>
 
       {/* ================= HERO SECTION ================= */}
-      <section className="bg-[#F6FBFF] pt-20 p-6 overflow-x-hidden">
+      <section className="lg:bg-[#F6FBFF] pt-20 p-6 relative">
         <div className="max-w-[1240px] mx-auto px-4">
           <div className="relative flex flex-col lg:flex-row items-start gap-20 max-lg:hidden">
             {/* LEFT */}
@@ -60,7 +62,7 @@ export default function ApartmentsPage() {
                 From as low as $10 per day with limited-time offer discounts.
               </p>
 
-              <h1 className="text-[42px] sm:text-[52px] font-extrabold text-gray-900">
+              <h1 className="text-[42px] sm:text-[52px] font-extrabold text-gray-900 leading-tight">
                 Your <span className="text-[#F5A300]">Property</span>, <br />
                 Our Priority.
               </h1>
@@ -80,64 +82,53 @@ export default function ApartmentsPage() {
             </div>
           </div>
 
-          {/* MOBILE SEARCH ONLY */}
+          {/* MOBILE/TABLET SEARCH */}
           <div className="lg:hidden mt-8 mb-12">
-            <div className="
-                bg-white shadow-2xl
-                px-4 py-4 w-full sm:px-5 sm:py-4
-                flex flex-col gap-3 md:flex-row md:items-center md:gap-3
-                overflow-hidden rounded-2xl
-              ">
+            <div className="bg-white shadow-2xl p-3 w-full flex flex-col gap-2 md:flex-row md:items-center md:gap-2 md:p-4 rounded-2xl max-w-full">
               <input
                 placeholder="Enter Keyword"
-                className="w-full px-4 py-3 rounded-full bg-gray-50 outline-none text-sm sm:text-base"
+                className="w-full px-3 py-2.5 rounded-full bg-gray-50 outline-none text-sm flex-1 min-w-0"
               />
 
-              <select className="w-full px-4 py-3 rounded-full bg-gray-50 text-sm sm:text-base">
+              <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
                 <option>All Status</option>
               </select>
 
-              <select className="w-full px-4 py-3 rounded-full bg-gray-50 text-sm sm:text-base">
+              <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
                 <option>All Type</option>
               </select>
 
-              <button className="w-full px-5 py-3 rounded-full border text-sm sm:text-base">
+              <button className="w-full px-3 py-2.5 rounded-full border text-sm md:w-20 flex-shrink-0">
                 Filter
               </button>
 
-              <button className="w-full px-6 py-3 rounded-full bg-[#F5A300] text-white font-medium text-sm sm:text-base">
+              <button className="w-full px-4 py-2.5 rounded-full bg-[#F5A300] text-white font-medium text-sm md:w-24 flex-shrink-0">
                 Search
               </button>
             </div>
           </div>
 
           {/* DESKTOP SEARCH BAR */}
-          <div className="hidden lg:block w-full max-w-full z-20 absolute left-0 top-170 translate-y-[244px] lg:w-[80%] xl:w-[85%] 2xl:w-[90%]">
-            <div className="
-                bg-white shadow-2xl
-                px-4 py-4 w-full sm:px-5 sm:py-4
-                flex flex-col gap-3 md:flex-row md:items-center md:gap-3
-                overflow-hidden rounded-2xl
-                lg:flex-row lg:items-center lg:rounded-full border border-yellow-400
-              ">
+          <div className="hidden lg:block relative bottom-60 left-114 -translate-x-1/2  w-full max-w-[900px]">
+            <div className="bg-white shadow-2xl px-5  flex items-center gap-3 rounded-full border border-yellow-400">
               <input
                 placeholder="Enter Keyword"
-                className="w-full lg:flex-1 px-4 py-3 rounded-full bg-gray-50 outline-none text-sm sm:text-base"
+                className="flex-1 px-4 py-3 rounded-full bg-gray-50 outline-none text-sm flex-shrink-0 min-w-0"
               />
 
-              <select className="w-full lg:w-auto px-4 py-3 rounded-full bg-gray-50 text-sm sm:text-base">
+              <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
                 <option>All Status</option>
               </select>
 
-              <select className="w-full lg:w-auto px-4 py-3 rounded-full bg-gray-50 text-sm sm:text-base">
+              <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
                 <option>All Type</option>
               </select>
 
-              <button className="w-full lg:w-auto px-5 py-3 rounded-full border text-sm sm:text-base">
+              <button className="w-20 px-3 py-3 rounded-full border text-sm flex-shrink-0">
                 Filter
               </button>
 
-              <button className="w-full lg:w-auto px-6 py-3 rounded-full bg-[#F5A300] text-white font-medium text-sm sm:text-base">
+              <button className="w-24 px-4 py-3 rounded-full bg-[#F5A300] text-white font-medium text-sm flex-shrink-0">
                 Search
               </button>
             </div>
@@ -146,9 +137,9 @@ export default function ApartmentsPage() {
       </section>
 
       {/* ================= LISTINGS ================= */}
-      <main className="py-10">
-        <div className="max-w-[1240px] mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+      <main className="py-10 lg:pt-32">
+        <div className="max-w-[1240px] mx-auto px-4 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 md:gap-5 lg:gap-6">
             {apartments.map((item) => (
               <PropertyCard key={item.id} property={item} />
             ))}
