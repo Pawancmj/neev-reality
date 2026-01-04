@@ -2,6 +2,10 @@
 
 import { useState } from "react";
 
+type ScrollTabsProps = {
+  menuOpen: boolean;
+};
+
 const tabs = [
   { label: "Overview", id: "overview" },
   { label: "Floor Plan", id: "floor-plan" },
@@ -13,7 +17,7 @@ const tabs = [
   { label: "Developer", id: "developer" },
 ];
 
-export default function ScrollTabs() {
+export default function ScrollTabs({ menuOpen }: ScrollTabsProps) {
   const [activeTab, setActiveTab] = useState("overview");
 
   const scrollToSection = (id: string) => {
@@ -34,9 +38,18 @@ export default function ScrollTabs() {
   };
 
   return (
-    <div className="sticky top-[102px] z-50 bg-white rounded-xl shadow-md">
+    <div
+      className={`
+        bg-white shadow-md transition-all duration-300
 
-      {/* SCROLL CONTAINER */}
+        /* DESKTOP */
+        lg:sticky lg:top-[102px] lg:z-40 lg:block
+        lg:max-w-[800px] lg:ml-24 lg:mr-auto lg:mt-6
+
+        /* MOBILE + TABLET */
+        ${menuOpen ? "hidden lg:block" : "sticky top-[102px] z-30"}
+      `}
+    >
       <div
         className="
           flex gap-6
@@ -44,7 +57,8 @@ export default function ScrollTabs() {
           no-scrollbar
           px-4 py-4
 
-          lg:justify-center
+          /* DESKTOP */
+          lg:justify-start
           lg:flex-wrap
         "
       >
@@ -57,7 +71,6 @@ export default function ScrollTabs() {
               text-sm font-medium
               pb-2 transition-all
               flex-shrink-0
-
               ${
                 activeTab === tab.id
                   ? "text-blue-600 border-b-2 border-blue-600"
@@ -72,5 +85,3 @@ export default function ScrollTabs() {
     </div>
   );
 }
-
-

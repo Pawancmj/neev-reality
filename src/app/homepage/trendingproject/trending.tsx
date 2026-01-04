@@ -12,6 +12,7 @@ type ProjectCardProps = {
   area: string;
   priceRange: string;
   image: string;
+  slug: string;
 };
 
 const projects: ProjectCardProps[] = [
@@ -23,6 +24,7 @@ const projects: ProjectCardProps[] = [
     area: "1458 SQ. FT.",
     priceRange: "₹ 1.25 Cr - 2.89 Cr",
     image: "/images/newlaunchproject/newpro1.jpg",
+    slug: "adani-shantigram-meadows",
   },
   {
     title: "Adani Shantigram The Meadows",
@@ -32,6 +34,7 @@ const projects: ProjectCardProps[] = [
     area: "1458 SQ. FT.",
     priceRange: "₹ 1.25 Cr - 2.89 Cr",
     image: "/images/newlaunchproject/newpro2.png",
+    slug: "adani-shantigram-meadows",
   },
   {
     title: "Adani Shantigram The Meadows",
@@ -41,6 +44,7 @@ const projects: ProjectCardProps[] = [
     area: "1458 SQ. FT.",
     priceRange: "₹ 1.25 Cr - 2.89 Cr",
     image: "/images/newlaunchproject/newpro3.jpg",
+    slug: "adani-shantigram-meadows",
   },
   {
     title: "Adani Shantigram The Meadows",
@@ -50,6 +54,7 @@ const projects: ProjectCardProps[] = [
     area: "1458 SQ. FT.",
     priceRange: "₹ 1.25 Cr - 2.89 Cr",
     image: "/images/newlaunchproject/newpro4.jpg",
+    slug: "adani-shantigram-meadows",
   },
 ];
 
@@ -101,7 +106,7 @@ export default function NewLaunchProjects() {
         {projects.map((project) => (
           <Link
             key={project.title + project.image}
-            href="/faqs"
+            href={`/residential/${project.slug}`}
             className="min-w-[320px] max-w-[320px] flex-shrink-0"
           >
             <div
