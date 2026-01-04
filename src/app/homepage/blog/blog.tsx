@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 type BlogPost = {
@@ -55,77 +56,77 @@ const BlogSection: React.FC = () => {
             Your trusted source for expert updates on residential and commercial real estate.
           </p>
         </div>
+         <div className="max-sm:text-center">
+                 <Link
+                   href="/blog"
+                   className="
+             inline-flex
+             items-center justify-center   
+             bg-[#DBA40D]
+             border border-[#DBA40D]
+             rounded-sm
+             text-white font-medium
+             px-4 py-2 text-sm
+             transition
+             cursor-pointer
+             
+             max-sm:w-38               /* ⭐ MOBILE width fix */
+             max-sm:text-center        /* ⭐ text center */
+           "
+                 >
+                   Explore More
+                 </Link>
+               </div>
 
-        <button
-          className="
-    bg-[#DBA40D]
-    border border-[#DBA40D]
-    rounded-sm
-    text-white font-medium
-
-    px-4 py-2 text-sm        /* desktop default */
-
-    max-sm:scale-70         
-    max-sm:origin-center
-
-    transition
-    md:mr-0
-  "
-        >
-          Explore More
-        </button>
       </div>
 
       {/* ================= BLOG CARDS ================= */}
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 md:grid-cols-3 mt-6">
 
-        {posts.map((post) => (
-          <article
-            key={`${post.title}-${post.date}`}
-            className="overflow-hidden rounded-2xl bg-white shadow-sm"
+        {posts.map((post, index) => (
+          <Link
+            key={index}
+            href={`/blog/${index + 1}`}
+            className="block rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition cursor-pointer"
           >
-            <div className="relative h-56 w-full">
-              <Image
-                src={post.image}
-                alt={post.title}
-                fill
-                sizes="(min-width: 1024px) 350px, 100vw"
-                className="object-cover"
-              />
+            <article>
 
-              <div className="absolute -bottom-6 right-6 z-10">
-                <div className="flex flex-col items-center rounded-lg bg-white px-6 py-4 shadow-md">
-                  <span className="text-xs text-gray-500">{post.month}</span>
-                  <span className="text-lg font-semibold text-gray-900">
-                    {post.date}
-                  </span>
+              <div className="relative h-56 w-full">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                />
+
+                <div className="absolute -bottom-6 right-6 z-10">
+                  <div className="flex flex-col items-center rounded-lg bg-white px-6 py-4 shadow-md">
+                    <span className="text-xs text-gray-500">{post.month}</span>
+                    <span className="text-lg font-semibold">{post.date}</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="px-5 pb-5 pt-7 relative">
-              <h3 className="text-sm font-semibold leading-snug text-gray-900">
-                {post.title}
-              </h3>
+              <div className="px-5 pb-5 pt-7 relative">
+                <h3 className="text-sm font-semibold leading-snug text-gray-900">
+                  {post.title}
+                </h3>
 
-              <p className="mt-3 text-xs leading-relaxed text-gray-600">
-                {post.excerpt}
-              </p>
+                <p className="mt-3 text-xs leading-relaxed text-gray-600">
+                  {post.excerpt}
+                </p>
 
-              <button
-                type="button"
-                className="
-                  mt-4 md:mt-0
-                  md:absolute md:right-5 md:bottom-5
-                  text-xs font-semibold text-gray-900
-                "
-              >
-                Read More
-              </button>
-            </div>
-          </article>
+                <span className="md:absolute md:right-5 md:bottom-5 mt-4 text-xs font-semibold">
+                  Read More
+                </span>
+              </div>
+
+            </article>
+          </Link>
         ))}
+
       </div>
+
     </section>
   );
 };

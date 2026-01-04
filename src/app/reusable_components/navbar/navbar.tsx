@@ -1,9 +1,9 @@
-// components/Navbar.tsx
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FiPhone } from "react-icons/fi";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -77,49 +77,66 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Phone */}
+        {/* Desktop Phone */}
         <div className="hidden min-[800px]:block text-sm rounded-full bg-[#F5F5F5] px-4 py-1.5 text-xs font-medium text-[#F5A300]">
           <a href="tel:+918824966669">+91 8824966669</a>
         </div>
 
-        {/* Hamburger */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="flex flex-col gap-1 min-[800px]:hidden"
-          aria-label="Open Menu"
-        >
-          <span className="h-0.5 w-5 bg-black" />
-          <span className="h-0.5 w-5 bg-black" />
-          <span className="h-0.5 w-5 bg-black" />
-        </button>
+        {/* ===== MOBILE RIGHT SIDE ===== */}
+        <div className="flex items-center gap-4 min-[800px]:hidden">
+
+          {/* CALL ICON */}
+          <a
+            href="tel:+918824966669"
+            className="text-black text-xl"
+            aria-label="Call Now"
+          >
+            <FiPhone />
+          </a>
+
+          {/* Hamburger */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="flex flex-col gap-1"
+            aria-label="Open Menu"
+          >
+            <span className="h-0.5 w-5 bg-black" />
+            <span className="h-0.5 w-5 bg-black" />
+            <span className="h-0.5 w-5 bg-black" />
+          </button>
+        </div>
       </nav>
 
       {/* ================= MOBILE MENU ================= */}
       {menuOpen && (
         <div className="min-[800px]:hidden bg-white border-t shadow-md">
-          <ul className="flex flex-col px-6 py-4 gap-4 text-sm">
+
+          {/* ⭐ UL PAR HI CLICK CLOSE */}
+          <ul
+            className="flex flex-col px-6 py-4 gap-4 text-sm"
+            onClick={() => setMenuOpen(false)}
+          >
+
             {navLinks.map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  onClick={() => setMenuOpen(false)}
                   className="font-medium"
                 >
                   {item.label}
                 </Link>
 
-                {item.hasDropdown && item.children && (
+                {item.children && (
                   <ul className="ml-4 mt-2 space-y-2 text-gray-600">
+
                     {item.children.map((child) => (
                       <li key={child.label}>
-                        <Link
-                          href={child.href}
-                          onClick={() => setMenuOpen(false)}
-                        >
+                        <Link href={child.href}>
                           {child.label}
                         </Link>
                       </li>
                     ))}
+
                   </ul>
                 )}
               </li>
@@ -128,9 +145,11 @@ export default function Navbar() {
             <li className="pt-4 border-t text-[#DBA40D] font-medium">
               <a href="tel:+918824966669">+91 8824966669</a>
             </li>
+
           </ul>
         </div>
       )}
+
     </header>
   );
 }

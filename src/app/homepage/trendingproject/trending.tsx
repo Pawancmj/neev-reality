@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type ProjectCardProps = {
   title: string;
@@ -70,37 +71,47 @@ export default function NewLaunchProjects() {
           </p>
         </div>
 
-        {/* Explore Button */}
-        <button
-          className="
-    bg-[#DBA40D]
-    border border-[#DBA40D]
-    rounded-sm
-    text-white font-medium
+        <div className="max-sm:text-center">
+                <Link
+                  href="/faqs"
+                  className="
+            inline-flex
+            items-center justify-center   
+            bg-[#DBA40D]
+            border border-[#DBA40D]
+            rounded-sm
+            text-white font-medium
+            px-4 py-2 text-sm
+            transition
+            cursor-pointer
+            
+            max-sm:w-38               /* ⭐ MOBILE width fix */
+            max-sm:text-center        /* ⭐ text center */
+          "
+                >
+                  Explore More
+                </Link>
+              </div>
 
-    px-4 py-2 text-sm        /* desktop default */
-
-    max-sm:scale-70         
-    max-sm:origin-center
-
-    transition
-    md:mr-0
-  "
-        >
-          Explore More
-        </button>
       </div>
 
       {/* HORIZONTAL SCROLL */}
       <div className="flex gap-6 overflow-x-auto scroll-smooth p-2 pb-8 mt-6">
 
         {projects.map((project) => (
-          <div
+          <Link
             key={project.title + project.image}
-            className="min-w-[320px] max-w-[320px]"
+            href="/faqs"
+            className="min-w-[320px] max-w-[320px] flex-shrink-0"
           >
-            <div className="group flex h-full w-80 flex-col overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg cursor-pointer">
-
+            <div
+              className="
+        group flex h-full w-80 flex-col overflow-hidden rounded-xl 
+        bg-white shadow-sm hover:shadow-md transition-all duration-300 
+        hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg 
+        cursor-pointer
+      "
+            >
               <div className="relative h-46 w-full">
                 <Image
                   src={project.image}
@@ -143,20 +154,22 @@ export default function NewLaunchProjects() {
                     {project.priceRange}
                   </p>
 
-                  <button
-                    className="rounded-full bg-[#F5F5F5] px-4 py-1.5 text-xs font-medium text-[#F5A300]
-                    transition-all duration-300
-                    group-hover:bg-amber-500
-                    group-hover:text-white"
+                  <span
+                    className="
+              rounded-full bg-[#F5F5F5] px-4 py-1.5 text-xs font-medium text-[#F5A300]
+              transition-all duration-300
+              group-hover:bg-amber-500 group-hover:text-white
+            "
                   >
                     Contact
-                  </button>
+                  </span>
                 </div>
 
               </div>
             </div>
-          </div>
+          </Link>
         ))}
+
 
       </div>
     </section>

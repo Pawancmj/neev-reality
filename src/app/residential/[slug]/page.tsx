@@ -444,12 +444,14 @@ export default async function ApartmentDetails({ params }: Props) {
               {/* LEFT : MAP CARD */}
               <div
                 className="
-                  w-full max-w-[390px] h-[288px]
-                  bg-white
-                  border border-gray-300/70
-                  rounded-2xl
-                  overflow-hidden
-                  flex-shrink-0
+                  w-full md:w-[35%]
+    max-w-none
+    h-[288px]
+    bg-white
+    border border-gray-300/70
+    rounded-2xl
+    overflow-hidden
+    flex-shrink-0
                 "
               >
                 <iframe
@@ -463,7 +465,7 @@ export default async function ApartmentDetails({ params }: Props) {
               {/* RIGHT : DISTANCE LIST CARD */}
               <div
                 className="
-                  w-full max-w-[390px] h-[288px]
+                  w-full max-w-[490px] h-[288px]
                   bg-white
                   border border-gray-300/70
                   rounded-2xl

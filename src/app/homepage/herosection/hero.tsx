@@ -169,7 +169,7 @@ export default function SearchCard() {
         flex flex-col sm:flex-row
         items-stretch sm:items-center
         gap-3 rounded-2xl
-        bg-white px-3 sm:px-4 py-2 shadow
+        bg-white px-3 sm:px-4 py-2
         w-full max-w-[940px] mx-auto
       "
           >
@@ -185,11 +185,11 @@ export default function SearchCard() {
                 placeholder="Search by City, Locality, or Project"
               />
 
-              <div className="flex gap-1 sm:hidden">
+              <div className="flex sm:hidden">
                 <button className="h-9 w-9 rounded-full hover:bg-gray-100 flex items-center justify-center">
                   <CiGlobe size={16} />
                 </button>
-                <button className="h-9 w-9 rounded-full hover:bg-gray-100 flex items-center justify-center">
+                <button className="h-9 w-9 rounded-full hover:bg-gray-100 flex items-center justify-center -ml-2">
                   <FiMic size={15} />
                 </button>
               </div>
