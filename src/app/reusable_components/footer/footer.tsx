@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
     setShowLastDiv(!showLastDiv);
   };
   return (
-    <footer className="bg-[#1B121E] text-gray-300 w-full">
+    <footer id="site-footer" className="bg-[#1B121E] text-gray-300 w-full">
 
          {/* ================= TOP LINKS (FIXED ALIGNMENT) ================= */}
 <div className="relative bg-[#29192B] border-b border-[#2c1b32]">

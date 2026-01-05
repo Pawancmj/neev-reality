@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/app/reusable_components/navbar/navbar";
 import ScrollTabs from "./ScrollTabs";
 
@@ -13,20 +13,37 @@ export default function ApartmentClient({ children }: ApartmentClientProps) {
   const [showTabs, setShowTabs] = useState(false);
 
   useEffect(() => {
+    const overview = document.getElementById("tabstart"); //visible
+    const footer = document.getElementById("tabend"); //Hide
+
+    if (!overview || !footer) return;
+
+    const startPoint = overview.offsetTop;
+    const endPoint = footer.offsetTop;
+
     const onScroll = () => {
-      setShowTabs(window.scrollY > 120);
+      const scrollY = window.scrollY + 120; // navbar height adjust
+
+      if (scrollY > startPoint && scrollY < endPoint) {
+        setShowTabs(true);
+      } else {
+        setShowTabs(false);
+      }
     };
+
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    onScroll(); // initial check
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
     <>
-      {/* NAVBAR */}
       <Navbar />
 
-      {/*  FIXED SCROLL TABS (sticky replacement) */}
-      {!menuOpen && showTabs && (
+      {showTabs && !menuOpen && (
         <div className="fixed top-[102px] left-0 right-0 z-40">
           <div className="max-w-[1240px] mx-auto px-4">
             <div className="lg:w-[calc(100%-380px-2rem)] bg-white shadow-md">
@@ -36,7 +53,6 @@ export default function ApartmentClient({ children }: ApartmentClientProps) {
         </div>
       )}
 
-      {/* PAGE CONTENT */}
       <div className="pt-[70px]">{children}</div>
     </>
   );

@@ -36,7 +36,7 @@ export default function ScrollTabs({ menuOpen }: ScrollTabsProps) {
   if (menuOpen) return null;
 
   return (
-    <div className="bg-white rounded-xl shadow-md">
+    <div className="bg-white shadow-md">
       <div className="flex gap-6 overflow-x-auto no-scrollbar px-4 py-4">
         {tabs.map((tab) => (
           <button
