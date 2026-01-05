@@ -1,122 +1,148 @@
 "use client";
 
-
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   FaFacebookF,
   FaLinkedinIn,
   FaInstagram,
   FaXTwitter,
   FaYoutube,
+  FaChevronLeft,
+  FaChevronRight,
 } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
-  const [showLastDiv, setShowLastDiv] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const toggleDivs = () => {
-    setShowLastDiv(!showLastDiv);
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -350, behavior: "smooth" });
+    }
   };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 350, behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="bg-[#1B121E] text-gray-300 w-full">
+      {/* ================= TOP LINKS (DESKTOP SCROLL) ================= */}
+      <div className="relative bg-[#29192B] border-b border-[#2c1b32]">
+        <div className="max-w-[1380px] mx-auto px-6 py-10">
+          <div className="flex items-center gap-4 lg:gap-6">
+            {/* Scroll Buttons - Desktop Only */}
+            <button
+              onClick={scrollLeft}
+              className="hidden lg:flex h-12 w-12 items-center justify-center bg-white/10 hover:bg-white/20 rounded-lg transition-all shrink-0"
+            >
+              <FaChevronLeft className="text-white" />
+            </button>
 
-         {/* ================= TOP LINKS (FIXED ALIGNMENT) ================= */}
-<div className="relative bg-[#29192B] border-b border-[#2c1b32]">
-  <div className="max-w-[1212px] mx-auto px-6 py-10">
+            {/* Scroll Container */}
+            <div
+              ref={scrollContainerRef}
+              className="
+                flex
+                gap-6 lg:gap-8
+                overflow-x-auto lg:overflow-x-scroll
+                whitespace-nowrap pb-4 lg:pb-2
+                scrollbar-thin scrollbar-thumb-gray-600/50 scrollbar-track-gray-900/50
+                lg:max-w-[calc(100%-96px)]
+                snap-x snap-mandatory lg:snap-none
+                flex-1
+              "
+            >
+              {/* Div 1 - HIDDEN ON DESKTOP INITIAL SCROLL */}
+              <div className="min-w-[320px] lg:min-w-[220px] whitespace-normal snap-start lg:snap-none flex-shrink-0">
+                <h4 className="text-white font-semibold text-base lg:text-[16px] mb-3 lg:mb-4">Projects by size</h4>
+                <ul className="space-y-2 text-sm lg:text-[15px] text-gray-400">
+                  <li>1 BHK property in Gurgaon</li>
+                  <li>1.5 BHK property in Gurgaon</li>
+                  <li>2 BHK property in Gurgaon</li>
+                  <li>2.5 BHK property in Gurgaon</li>
+                  <li>3 BHK property in Gurgaon</li>
+                  <li>3.5 BHK property in Gurgaon</li>
+                  <li>4 BHK property in Gurgaon</li>
+                  <li>4.5 BHK property in Gurgaon</li>
+                  <li>5 BHK property in Gurgaon</li>
+                  <li>Above 5 BHK property in Gurgaon</li>
+                </ul>
+              </div>
 
-    <div
-      className="
-        flex
-        gap-6
-        overflow-x-auto
-        whitespace-nowrap
-        snap-x snap-mandatory
-        pb-2
-        scrollbar-hide
-      "
-    >
+              {/* Div 2 */}
+              <div className="min-w-[320px] lg:min-w-[220px] whitespace-normal snap-start lg:snap-none flex-shrink-0">
+                <h4 className="text-white font-semibold text-base lg:text-[16px] mb-3 lg:mb-4">Properties by type</h4>
+                <ul className="space-y-2 text-sm lg:text-[15px] text-gray-400">
+                  <li>Residential property in Gurgaon</li>
+                  <li>Commercial property in Gurgaon</li>
+                  <li>Luxury apartment in Gurgaon</li>
+                  <li>Builder floor in Gurgaon</li>
+                  <li>Retail shops in Gurgaon</li>
+                  <li>SCO plots in Gurgaon</li>
+                </ul>
+              </div>
 
-      {/* Div 1 */}
-      <div className="min-w-[85%] sm:min-w-[70%] md:min-w-[10%] whitespace-normal snap-start">
-        <h4 className="text-white font-semibold text-[16px] mb-4">Projects by size</h4>
-        <ul className="space-y-3 text-gray-400 text-[15px]">
-          <li>1 BHK property in Gurgaon</li>
-          <li>1.5 BHK property in Gurgaon</li>
-          <li>2 BHK property in Gurgaon</li>
-          <li>2.5 BHK property in Gurgaon</li>
-          <li>3 BHK property in Gurgaon</li>
-          <li>3.5 BHK property in Gurgaon</li>
-          <li>4 BHK property in Gurgaon</li>
-          <li>4.5 BHK property in Gurgaon</li>
-          <li>5 BHK property in Gurgaon</li>
-          <li>Above 5 BHK property in Gurgaon</li>
-        </ul>
+              {/* Div 3 */}
+              <div className="min-w-[320px] lg:min-w-[220px] whitespace-normal snap-start lg:snap-none flex-shrink-0">
+                <h4 className="text-white font-semibold text-base lg:text-[16px] mb-3 lg:mb-4">
+                  Projects by construction status
+                </h4>
+                <ul className="space-y-2 text-sm lg:text-[15px] text-gray-400">
+                  <li>New launch project in Gurgaon</li>
+                  <li>Ready to move project in Gurgaon</li>
+                  <li>Under construction project in Gurgaon</li>
+                  <li>Pre launch project in Gurgaon</li>
+                </ul>
+              </div>
+
+              {/* Div 4 */}
+              <div className="min-w-[320px] lg:min-w-[220px] whitespace-normal snap-start lg:snap-none flex-shrink-0">
+                <h4 className="text-white font-semibold text-base lg:text-[16px] mb-3 lg:mb-4">Projects by Location</h4>
+                <ul className="space-y-2 text-sm lg:text-[15px] text-gray-400">
+                  <li>Projects in Dwarka Expressway</li>
+                  <li>Projects in Golf Course Road</li>
+                  <li>Projects in Golf Course Extension Road</li>
+                  <li>Projects in Sohna Road</li>
+                  <li>Projects in New Gurgaon</li>
+                  <li>Projects in Old Gurgaon</li>
+                  <li>Projects in SPR</li>
+                  <li>Projects in NH8</li>
+                </ul>
+              </div>
+
+              {/* Div 5 - SCROLLS INTO VIEW */}
+              <div className="min-w-[320px] lg:min-w-[220px] whitespace-normal snap-start lg:snap-none flex-shrink-0">
+                <h4 className="text-white font-semibold text-base lg:text-[16px] mb-3 lg:mb-4">Projects by Budget</h4>
+                <ul className="space-y-2 text-sm lg:text-[15px] text-gray-400">
+                  <li>Property between 1 to 2 cr in Gurgaon</li>
+                  <li>Property between 2 to 3 cr in Gurgaon</li>
+                  <li>Property between 3 to 4 cr in Gurgaon</li>
+                  <li>Property between 4 to 5 cr in Gurgaon</li>
+                  <li>Property between 5 to 6 cr in Gurgaon</li>
+                  <li>Property between 6 to 7 cr in Gurgaon</li>
+                  <li>Property between 7 to 8 cr in Gurgaon</li>
+                  <li>Property above 8 cr in Gurgaon</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Scroll Buttons - Desktop Only */}
+            <button
+              onClick={scrollRight}
+              className="hidden lg:flex h-12 w-12 items-center justify-center bg-white/10 hover:bg-white/20 rounded-lg transition-all shrink-0"
+            >
+              <FaChevronRight className="text-white" />
+            </button>
+          </div>
+        </div>
       </div>
-
-      {/* Div 2 */}
-      <div className="min-w-[85%] sm:min-w-[70%] md:min-w-[10%] whitespace-normal snap-start">
-        <h4 className="text-white font-semibold text-[16px] mb-4">Properties by type</h4>
-        <ul className="space-y-3 text-gray-400 text-[15px]">
-          <li>Residential property in Gurgaon</li>
-          <li>Commercial property in Gurgaon</li>
-          <li>Luxury apartment in Gurgaon</li>
-          <li>Builder floor in Gurgaon</li>
-          <li>Retail shops in Gurgaon</li>
-          <li>SCO plots in Gurgaon</li>
-        </ul>
-      </div>
-
-      {/* Div 3 */}
-      <div className="min-w-[85%] sm:min-w-[70%] md:min-w-[10%] whitespace-normal snap-start">
-        <h4 className="text-white font-semibold text-[16px] mb-4">
-          Projects by construction status
-        </h4>
-        <ul className="space-y-3 text-gray-400 text-[15px]">
-          <li>New launch project in Gurgaon</li>
-          <li>Ready to move project in Gurgaon</li>
-          <li>Under construction project in Gurgaon</li>
-          <li>Pre launch project in Gurgaon</li>
-        </ul>
-      </div>
-
-      {/* Div 4 */}
-      <div className="min-w-[85%] sm:min-w-[70%] md:min-w-[10%] whitespace-normal snap-start">
-        <h4 className="text-white font-semibold text-[16px] mb-4">Projects by Location</h4>
-        <ul className="space-y-3 text-gray-400 text-[15px]">
-          <li>Projects in Dwarka Expressway</li>
-          <li>Projects in Golf Course Road</li>
-          <li>Projects in Golf Course Extension Road</li>
-          <li>Projects in Sohna Road</li>
-          <li>Projects in New Gurgaon</li>
-          <li>Projects in Old Gurgaon</li>
-          <li>Projects in SPR</li>
-          <li>Projects in NH8</li>
-        </ul>
-      </div>
-
-      {/* Div 5 */}
-      <div className="min-w-[85%] sm:min-w-[70%] md:min-w-[10%] whitespace-normal snap-start">
-        <h4 className="text-white font-semibold text-[16px] mb-4">Projects by Budget</h4>
-        <ul className="space-y-3 text-gray-400 text-[15px]">
-          <li>Property between 1 to 2 cr in Gurgaon</li>
-          <li>Property between 2 to 3 cr in Gurgaon</li>
-          <li>Property between 3 to 4 cr in Gurgaon</li>
-          <li>Property between 4 to 5 cr in Gurgaon</li>
-          <li>Property between 5 to 6 cr in Gurgaon</li>
-          <li>Property between 6 to 7 cr in Gurgaon</li>
-          <li>Property between 7 to 8 cr in Gurgaon</li>
-          <li>Property above 8 cr in Gurgaon</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</div>
-
 
       {/* ================= MIDDLE ================= */}
       <div className="max-w-[1212px] mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
-
         {/* ABOUT US */}
         <div>
           <h4 className="text-white font-semibold text-[18px] mb-4">
@@ -181,7 +207,6 @@ const Footer: React.FC = () => {
             )}
           </div>
         </div>
-
       </div>
 
       {/* ================= BOTTOM ================= */}
@@ -190,7 +215,6 @@ const Footer: React.FC = () => {
           © Copyright NeevRealty.com 2025. Comperhensive Property Portal in India. All Rights Reserved.
         </div>
       </div>
-
     </footer>
   );
 };

@@ -53,7 +53,7 @@ export default function ApartmentsPage() {
       </section>
 
       {/* ================= HERO SECTION ================= */}
-      <section className="lg:bg-[#F6FBFF] pt-20 p-6 relative">
+      <section className="lg:bg-[#F6FBFF] pt-12  relative">
         <div className="max-w-[1240px] mx-auto px-4">
           <div className="relative flex flex-col lg:flex-row items-start gap-20 max-lg:hidden">
             {/* LEFT */}
@@ -70,7 +70,7 @@ export default function ApartmentsPage() {
 
             {/* RIGHT IMAGE */}
             <div className="flex-1 flex justify-center lg:-ml-20 max-lg:ml-0">
-              <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px] rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-xl bg-white">
+              <div className="relative w-[240px] h-[240px] sm:w-[310px] sm:h-[310px] md:w-[370px] md:h-[370px] lg:w-[450px] lg:h-[450px] rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-xl bg-white">
                 <Image
                   src="/images/hero-tiles.png"
                   alt="Property collage"
@@ -110,7 +110,7 @@ export default function ApartmentsPage() {
 
           {/* DESKTOP SEARCH BAR */}
           <div className="hidden lg:block relative bottom-60 left-114 -translate-x-1/2  w-full max-w-[900px]">
-            <div className="bg-white shadow-2xl px-5  flex items-center gap-3 rounded-full border border-yellow-400">
+            <div className="bg-white shadow-2xl px-5 py-3  flex items-center gap-3 rounded-full border border-yellow-400">
               <input
                 placeholder="Enter Keyword"
                 className="flex-1 px-4 py-3 rounded-full bg-gray-50 outline-none text-sm flex-shrink-0 min-w-0"
@@ -137,7 +137,7 @@ export default function ApartmentsPage() {
       </section>
 
       {/* ================= LISTINGS ================= */}
-      <main className="py-10 lg:pt-32">
+      <main className="py-10  lg:pt-20">
         <div className="max-w-[1240px] mx-auto px-4 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 md:gap-5 lg:gap-6">
             {apartments.map((item) => (

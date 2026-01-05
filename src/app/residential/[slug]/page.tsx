@@ -156,7 +156,7 @@ export default async function ApartmentDetails({ params }: Props) {
         <AutoPopup />
 
         {/* ================= LEFT MAIN ================= */}
-        <div className="lg:col-span-2 space-y-6 apartment-left">
+        <div className="lg:col-span-2 space-y-8 apartment-left">
            
                      
           {/* HERO IMAGE */}
@@ -282,7 +282,7 @@ export default async function ApartmentDetails({ params }: Props) {
           </div>
 
           {/* ================= OVERVIEW ================= */}
-          <section id="overview" className="max-w-[1240px] mx-auto px-4 mt-12">
+          <section id="overview" className="max-w-[1240px] mx-auto px-4 mt-12">z
             <div className="bg-white rounded-xl shadow-sm p-8 text-center">
               {/* TITLE */}
               <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4">

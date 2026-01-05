@@ -43,7 +43,7 @@ export default function StickyIcons() {
         </div>
 
         {/* Enquire Button */}
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-6">
+        <div className="absolute right-1 -translate-x-1/2 bottom-6">
           <Link
             href="/Contact"
             className="bg-[#DBA40D] text-white px-6 py-3 rounded-2xl font-semibold shadow-lg inline-flex items-center gap-2 cursor-pointer"

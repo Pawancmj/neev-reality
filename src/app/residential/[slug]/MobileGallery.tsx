@@ -14,7 +14,7 @@ export default function MobileGallery({ images, title }: Props) {
   return (
     <div>
       {/* HERO IMAGE */}
-      <div className="relative w-full h-[260px] sm:h-[300px] rounded-xl overflow-hidden">
+      <div className="relative w-203 h-[260px] sm:h-[312px]  rounded-xl overflow-hidden">
         <Image
           src={activeImage}
           alt={title}

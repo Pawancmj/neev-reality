@@ -24,10 +24,8 @@ export default function SearchCard() {
 
   return (
     <section className="relative w-full">
-
       {/* ================= HERO ================= */}
       <div className="relative w-full h-[360px] sm:h-[400px] md:h-[450px] overflow-hidden">
-
         <Image
           src="/images/heroimg.png"
           alt="Hero"
@@ -69,7 +67,7 @@ export default function SearchCard() {
                 className="h-6 w-6 text-red-600"
                 fill="currentColor"
               >
-                <path d="M23.5 6.2s-.2-1.7-.9-2.4c-.8-.9-1.7-.9-2.1-1C17.7 2.5 12 2.5 12 2.5s-5.7 0-8.5.3c-.4.1-1.3.1-2.1 1C.7 4.5.5 6.2.5 6.2S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.7.9 2.4c.8.9 1.9.9 2.4 1 1.7.2 7.2.3 7.2.3s5.7 0 8.5-.3c.4-.1 1.3-.1 2.1-1 .7-.7.9-2.4.9-2.4s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8zM9.5 13.5V7.5l6 3-6 3z" />
+                <path d="M23.5 6.2s-.2-1.7-.9-2.4c-.8-.9-1.7-.9-2.1-1C17.7 2.5 12 2.5 12 2.5s-5.7 0-8.5.3c-.4.1-1.3.1-2.1 1C.7 4.5.5 6.2.5 6.2S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.7.9 2.4c.8.9 1.9.9 2.4 1 1.7.2 7.2.3 7.2.3s5.7 0 8.5-.3c-.4-.1 1.3-.1 2.1-1 .7-.7.9-2.4.9-2.4s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8zM9.5 13.5V7.5l6 3-6 3z" />
               </svg>
             </button>
           </div>
@@ -78,7 +76,6 @@ export default function SearchCard() {
         {/* ================= MOBILE HERO VIDEO ================= */}
         {playMobileVideo && (
           <div className="md:hidden absolute inset-0 z-40 bg-black/60 flex items-center justify-center px-4">
-
             {/* CLOSE BUTTON */}
             <button
               onClick={() => setPlayMobileVideo(false)}
@@ -98,63 +95,58 @@ export default function SearchCard() {
             </div>
           </div>
         )}
-
       </div>
+
       {/* ================= SEARCH WRAPPER ================= */}
       <div
         className="
-    absolute left-1/2 -translate-x-1/2
-    top-[380px]
-
-    /*  MOBILE + TABLET */
-    max-lg:top-[370px]
-    max-sm:top-[220px]
-    max-lg:px-4
-    max-sm:px-3
-
-    /*  DESKTOP */
-    w-full max-w-[1020px]
-    z-20
-  "
+          absolute left-1/2 -translate-x-1/2
+          top-[380px]
+          max-lg:top-[370px]
+          max-sm:top-[320px]
+          max-lg:px-4
+          max-sm:px-3
+          w-full max-w-[1020px]
+          z-20
+        "
       >
-
         {/* ================= SEARCH CARD ================= */}
         <div
           className="
-      bg-white rounded-2xl
-      shadow-[0_20px_60px_rgba(0,0,0,0.15)]
-      px-4 sm:px-6 pt-4 pb-5
-      w-full
-    "
+            bg-white rounded-2xl
+            shadow-[0_20px_60px_rgba(0,0,0,0.15)]
+            px-4 sm:px-6 pt-4 pb-5
+            w-full
+          "
         >
           {/* HEADER */}
           <div
             className="
-    mb-4
-    flex flex-col
-    items-center text-center
-    gap-3
-
-    md:flex-row
-    md:items-center
-    md:justify-between
-    md:text-left
-  "
+              mb-4
+              flex flex-col
+              items-center text-center
+              gap-3
+              md:flex-row
+              md:items-center
+              md:justify-between
+              md:text-left
+            "
           >
-            <h2 className="text-lg sm:text-[22px] font-semibold text-gray-800">
+            <h2 className="lg:text-lg sm:text-sm font-semibold text-gray-800">
               Find your perfect home with{" "}
               <span className="text-[#DBA40D]">Neev Reality</span>
             </h2>
 
-            <div className="flex rounded-full bg-gray-100 p-1">
+            <div className="flex rounded-full bg-gray-100">
               {(["Residential", "Commercial"] as Tab[]).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`rounded-full px-4 py-1.5 text-xs font-medium transition ${activeTab === tab
-                    ? "bg-white shadow text-gray-900"
-                    : "text-gray-500"
-                    }`}
+                  className={`rounded-full px-4 lg:text-lg sm:text-xs font-medium transition ${
+                    activeTab === tab
+                      ? "bg-white shadow text-gray-900"
+                      : "text-gray-500"
+                  }`}
                 >
                   {tab}
                 </button>
@@ -162,51 +154,54 @@ export default function SearchCard() {
             </div>
           </div>
 
-
           {/* SEARCH BAR */}
           <div
             className="
-        flex flex-col sm:flex-row
-        items-stretch sm:items-center
-        gap-3 rounded-2xl
-        bg-white px-3 sm:px-4 py-2
-        w-full max-w-[940px] mx-auto
-      "
+              flex items-center
+              gap-2 max-sm:gap-1.5 sm:gap-3 lg:gap-4
+              rounded-2xl
+              bg-white 
+              px-3 max-sm:px-2 py-2.5
+              w-full max-w-[940px] mx-auto
+            "
           >
-            <div className="flex flex-1 items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-500">
-                <FiMapPin size={15} />
+            {/* LOCATION ICON + INPUT - MOBILE COMPACT */}
+            <div className="flex items-center flex-1 min-w-0 gap-1.5 sm:gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600">
+                <FiMapPin className="size-4 sm:size-[18px]" />
               </span>
-
+              
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="flex-1 bg-transparent py-2 px-3 text-sm outline-none"
+                className="flex-1 bg-transparent py-2 px-2 sm:px-4 text-xs sm:text-sm outline-none placeholder:text-gray-500 min-w-[120px] max-sm:min-w-[100px]"
                 placeholder="Search by City, Locality, or Project"
               />
-
-              <div className="flex sm:hidden">
-                <button className="h-9 w-9 rounded-full hover:bg-gray-100 flex items-center justify-center">
-                  <CiGlobe size={16} />
-                </button>
-                <button className="h-9 w-9 rounded-full hover:bg-gray-100 flex items-center justify-center -ml-2">
-                  <FiMic size={15} />
-                </button>
-              </div>
             </div>
 
+            {/* MOBILE: Icons hidden, DESKTOP: Icons visible */}
+            <div className="hidden sm:flex gap-1.5 sm:gap-2 lg:gap-3 -ml-1.5 sm:-ml-2 items-center">
+              <button className="h-10 w-10 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-all shrink-0">
+                <CiGlobe className="size-4 sm:size-[18px]" />
+              </button>
+              <button className="h-10 w-10 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-all shrink-0">
+                <FiMic className="size-4 sm:size-[18px]" />
+              </button>
+            </div>
+
+            {/* SEARCH BUTTON */}
             <button
               className="
-          bg-[#DBA40D]
-          px-5 py-3
-          rounded-xl
-          text-white text-sm font-medium
-          flex items-center justify-center gap-2
-          w-full sm:w-auto
-        "
+                bg-[#DBA40D] hover:bg-[#c8950b] 
+                px-5 sm:px-7 lg:px-8 py-2.5
+                rounded-xl shadow-md hover:shadow-lg transition-all
+                text-white font-semibold text-xs sm:text-sm
+                flex items-center justify-center gap-1.5 shrink-0
+                h-10 whitespace-nowrap
+              "
             >
-              <FiSearch size={15} />
-              Search
+              <FiSearch className="size-4 sm:size-[18px]" />
+              <span className="max-sm:hidden sm:inline">Search</span>
             </button>
           </div>
         </div>
@@ -216,16 +211,13 @@ export default function SearchCard() {
           {TAGS.map((tag) => (
             <button
               key={tag}
-              className="whitespace-nowrap rounded-full border px-3 py-1.5 text-xs bg-white"
+              className="whitespace-nowrap rounded-full border px-3 py-1.5 text-xs bg-white hover:bg-gray-50 transition-colors"
             >
               {tag}
             </button>
           ))}
         </div>
       </div>
-
-
-
     </section>
   );
 }
