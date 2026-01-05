@@ -2,6 +2,10 @@
 
 import { useState } from "react";
 
+type ScrollTabsProps = {
+  menuOpen: boolean;
+};
+
 const tabs = [
   { label: "Overview", id: "overview" },
   { label: "Floor Plan", id: "floor-plan" },
@@ -13,7 +17,7 @@ const tabs = [
   { label: "Developer", id: "developer" },
 ];
 
-export default function ScrollTabs() {
+export default function ScrollTabs({ menuOpen }: ScrollTabsProps) {
   const [activeTab, setActiveTab] = useState("overview");
 
   const scrollToSection = (id: string) => {
@@ -23,47 +27,27 @@ export default function ScrollTabs() {
     if (!section) return;
 
     const HEADER_OFFSET = 140;
-
     const elementPosition = section.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.scrollY - HEADER_OFFSET;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
   };
 
+  if (menuOpen) return null;
+
   return (
-    <div className="sticky top-[102px] z-50 bg-white rounded-xl shadow-md">
-
-      {/* SCROLL CONTAINER */}
-      <div
-        className="
-          flex gap-6
-          overflow-x-auto
-          no-scrollbar
-          px-4 py-4
-
-          lg:justify-center
-          lg:flex-wrap
-        "
-      >
+    <div className="bg-white rounded-xl shadow-md">
+      <div className="flex gap-6 overflow-x-auto no-scrollbar px-4 py-4">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => scrollToSection(tab.id)}
-            className={`
-              whitespace-nowrap
-              text-sm font-medium
-              pb-2 transition-all
-              flex-shrink-0
-
+            className={`whitespace-nowrap text-sm font-medium pb-2 transition-all
               ${
                 activeTab === tab.id
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-600 hover:text-blue-600"
-              }
-            `}
+                  ? "text-[#DBA40D] border-b-2 border-[#DBA40D]"
+                  : "text-gray-600 hover:text-[#DBA40D]"
+              }`}
           >
             {tab.label}
           </button>
@@ -72,5 +56,3 @@ export default function ScrollTabs() {
     </div>
   );
 }
-
-

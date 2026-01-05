@@ -1,3 +1,4 @@
+
 import {
   FaInstagram,
   FaLinkedinIn,
@@ -8,14 +9,11 @@ import {
   FaWhatsapp,
   FaPhoneAlt,
 } from "react-icons/fa";
-
-import ScrollTabs from "./ScrollTabs";
 import FloorPlanSection from "./FloorPlanSection";
 import AutoPopup from "./AutoPopup";
 import MobileGallery from "./MobileGallery";
-
-import apartments from "../../../data/apartmentsData";
-import Navbar from "@/app/reusable_components/navbar/navbar";
+import ApartmentClient from "./ApartmentClient";
+import apartments from "../../../data/apartmentsData"
 import Footer from "@/app/reusable_components/footer/footer";
 import Image from "next/image";
 import Link from "next/link";
@@ -64,8 +62,9 @@ export default async function ApartmentDetails({ params }: Props) {
     );
   }
 
+  
   const floorPlans: FloorPlan[] =
-    property.floorPlans && property.floorPlans.length > 0
+  property.floorPlans && property.floorPlans.length > 0
       ? property.floorPlans
       : [
         {
@@ -117,9 +116,9 @@ export default async function ApartmentDetails({ params }: Props) {
           img: "/images/fp4.png",
         },
       ];
-
-  const amenities =
-    property.amenities && property.amenities.length > 0
+      
+      const amenities =
+      property.amenities && property.amenities.length > 0
       ? property.amenities
       : [
         "/images/am1.png",
@@ -130,6 +129,7 @@ export default async function ApartmentDetails({ params }: Props) {
         "/images/am1.png",
         "/images/am1.png",
         "/images/am1.png",
+        
       ];
   const galleryImages = [
     property.img,
@@ -144,7 +144,7 @@ export default async function ApartmentDetails({ params }: Props) {
 
   return (
     <>
-      <Navbar />
+        <ApartmentClient>
       {/* ================= BREADCRUMB ================= */}
       <div className="max-w-[1240px] mx-auto px-4 py-4 text-sm text-gray-500">
         Home / Residential /{" "}
@@ -156,8 +156,9 @@ export default async function ApartmentDetails({ params }: Props) {
         <AutoPopup />
 
         {/* ================= LEFT MAIN ================= */}
-        <div className="lg:col-span-2 space-y-6 shadow-md">
-
+        <div className="lg:col-span-2 space-y-6 apartment-left">
+           
+                     
           {/* HERO IMAGE */}
           {/* HERO + MOBILE GALLERY */}
           <MobileGallery
@@ -210,11 +211,15 @@ export default async function ApartmentDetails({ params }: Props) {
                   {/* RERA */}
                   <div className="flex items-center gap-2">
 
-                    <span className="flex items-center gap-1 rounded-full bg-[#f3f3f3] px-1.5 py-0.5 sm:px-2 sm:py-1 text-[9px] sm:text-[10px] font-medium text-gray-600 whitespace-nowrap">
-                      <span className="w-7 h-7 sm:w-2 sm:h-2 rounded-full bg-green-500" />
-                      RERA
-
-                    </span>
+                    <span className="flex items-center gap-1 rounded-full bg-[#f3f3f3] px-2 py-1 text-[10px] font-medium text-gray-600">
+                                        RERA
+                                        <Image
+                                          src="/images/newlaunchproject/rera.png"
+                                          alt="RERA"
+                                          width={12}
+                                          height={12}
+                                        />
+                                      </span>
 
 
                   </div>
@@ -226,11 +231,10 @@ export default async function ApartmentDetails({ params }: Props) {
                     </span>
                     <span>Last Updated Date 02 April, 2025</span>
                   </div>
-
                 </div>
               </div>
 
-
+               
               {/* ================= RIGHT SIDE ================= */}
               <div className="flex flex-col items-start lg:items-end justify-between gap-3">
 
@@ -277,12 +281,6 @@ export default async function ApartmentDetails({ params }: Props) {
             </div>
           </div>
 
-
-
-
-
-
-          <ScrollTabs />
           {/* ================= OVERVIEW ================= */}
           <section id="overview" className="max-w-[1240px] mx-auto px-4 mt-12">
             <div className="bg-white rounded-xl shadow-sm p-8 text-center">
@@ -717,13 +715,16 @@ export default async function ApartmentDetails({ params }: Props) {
             </div>
 
             {/* HORIZONTAL SCROLL */}
-            <div className="flex gap-6 overflow-x-auto scroll-smooth pb-6">
+            <div className="flex gap-20 overflow-x-auto scroll-smooth pb-6">
               {apartments
                 .filter((p) => p.slug !== property.slug)
                 .map((p) => (
                   <div key={p.slug} className="min-w-[260px] max-w-[260px] flex-shrink-0">
                     <Link href={`/residential/${p.slug}`}>
-                      <div className="flex h-full flex-col overflow-hidden rounded-xl bg-white border shadow-sm hover:shadow-md transition cursor-pointer">
+                      <div className="group flex h-full w-80 flex-col overflow-hidden rounded-xl 
+        bg-white shadow-sm hover:shadow-md transition-all duration-300 
+        hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg 
+        cursor-pointer">
                         {/* IMAGE */}
                         <div className="relative h-40 w-full">
                           <Image
@@ -743,9 +744,14 @@ export default async function ApartmentDetails({ params }: Props) {
                             </h3>
 
                             <span className="flex items-center gap-1 rounded-full bg-[#f3f3f3] px-2 py-1 text-[10px] font-medium text-gray-600">
-                              RERA
-                              <span className="w-2 h-2 rounded-full bg-green-500" />
-                            </span>
+                                            RERA
+                                            <Image
+                                              src="/images/newlaunchproject/rera.png"
+                                              alt="RERA"
+                                              width={12}
+                                              height={12}
+                                            />
+                                          </span>
                           </div>
 
                           {/* TEXT BLOCK (IMAGE JAISE) */}
@@ -769,9 +775,15 @@ export default async function ApartmentDetails({ params }: Props) {
                               {p.price}
                             </p>
 
-                            <span className="rounded-full bg-[#F5F5F5] px-3 py-1.5 text-[11px] font-medium text-[#F5A300] hover:bg-[#EFEFEF]">
-                              Contact
-                            </span>
+                            <span
+                    className="
+              rounded-full bg-[#F5F5F5] px-4 py-1.5 text-xs font-medium text-[#F5A300]
+              transition-all duration-300
+              group-hover:bg-amber-500 group-hover:text-white
+            "
+                  >
+                    Contact
+                  </span>
                           </div>
                         </div>
                       </div>
@@ -964,6 +976,7 @@ export default async function ApartmentDetails({ params }: Props) {
       </section>
 
       <Footer />
+      </ApartmentClient>
     </>
   );
 }
