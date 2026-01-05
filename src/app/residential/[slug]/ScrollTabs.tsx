@@ -27,56 +27,27 @@ export default function ScrollTabs({ menuOpen }: ScrollTabsProps) {
     if (!section) return;
 
     const HEADER_OFFSET = 140;
-
     const elementPosition = section.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.scrollY - HEADER_OFFSET;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
   };
 
+  if (menuOpen) return null;
+
   return (
-    <div
-      className={`
-        bg-white shadow-md transition-all duration-300
-
-        /* DESKTOP */
-        lg:sticky lg:top-[102px] lg:z-40 lg:block
-        lg:max-w-[800px] lg:ml-24 lg:mr-auto lg:mt-6
-
-        /* MOBILE + TABLET */
-        ${menuOpen ? "hidden lg:block" : "sticky top-[102px] z-30"}
-      `}
-    >
-      <div
-        className="
-          flex gap-6
-          overflow-x-auto
-          no-scrollbar
-          px-4 py-4
-
-          /* DESKTOP */
-          lg:justify-start
-          lg:flex-wrap
-        "
-      >
+    <div className="bg-white rounded-xl shadow-md">
+      <div className="flex gap-6 overflow-x-auto no-scrollbar px-4 py-4">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => scrollToSection(tab.id)}
-            className={`
-              whitespace-nowrap
-              text-sm font-medium
-              pb-2 transition-all
-              flex-shrink-0
+            className={`whitespace-nowrap text-sm font-medium pb-2 transition-all
               ${
                 activeTab === tab.id
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-600 hover:text-blue-600"
-              }
-            `}
+                  ? "text-[#DBA40D] border-b-2 border-[#DBA40D]"
+                  : "text-gray-600 hover:text-[#DBA40D]"
+              }`}
           >
             {tab.label}
           </button>

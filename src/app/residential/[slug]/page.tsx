@@ -156,8 +156,9 @@ export default async function ApartmentDetails({ params }: Props) {
         <AutoPopup />
 
         {/* ================= LEFT MAIN ================= */}
-        <div className="lg:col-span-2 space-y-6 shadow-md">
-
+        <div className="lg:col-span-2 space-y-6 apartment-left">
+           
+                     
           {/* HERO IMAGE */}
           {/* HERO + MOBILE GALLERY */}
           <MobileGallery
@@ -230,11 +231,10 @@ export default async function ApartmentDetails({ params }: Props) {
                     </span>
                     <span>Last Updated Date 02 April, 2025</span>
                   </div>
-
                 </div>
               </div>
 
-
+               
               {/* ================= RIGHT SIDE ================= */}
               <div className="flex flex-col items-start lg:items-end justify-between gap-3">
 
