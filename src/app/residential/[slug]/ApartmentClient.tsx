@@ -14,7 +14,7 @@ export default function ApartmentClient({ children }: ApartmentClientProps) {
   return (
     <>
       {/* NAVBAR */}
-      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Navbar />
 
       {/* SCROLL TABS */}
       <ScrollTabs menuOpen={menuOpen} />
