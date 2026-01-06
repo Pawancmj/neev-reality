@@ -11,15 +11,15 @@ export default function ApartmentsPage() {
   const [page, setPage] = useState(1);
 
   return (
-    <> 
+    <>
       <Navbar />
 
       {/* ================= PAGE INTRO ================= */}
       <section className="bg-[#F6FBFF]">
         <div className="max-w-[1240px] mx-auto px-4 py-6">
-         <div className="text-sm text-gray-500 mb-3">Residential</div>
+          <div className="text-sm text-gray-500 mb-3">Residential</div>
 
-         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="max-w-4xl">
               <h1 className="text-xl sm:text-2xl md:text-[26px] font-semibold text-gray-900">
                 Residential Apartments Property for Sale in Gurgaon
@@ -45,7 +45,7 @@ export default function ApartmentsPage() {
           <h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 lg:mb-12">
             Trending <span className="text-[#F5A300]">Projects</span>
           </h2>
-          
+
           <div className="w-full h-24 md:h-38 md:w-[90%] md:mx-auto md:text-center md:text-2xl md:bg-blue-100 md:rounded-lg bg-blue-100 rounded-lg flex items-center justify-center text-lg">
             Banner
           </div>
@@ -92,27 +92,63 @@ export default function ApartmentsPage() {
 
               <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
                 <option>Property Type</option>
+                <option value="residential">Residential Property</option>
+                <option value="commercial">Commercial Property</option>
+                <option value="luxury-apartment">Luxury Apartment</option>
+                <option value="builder-floor">Builder Floor</option>
+                <option value="retail-shops">Retail Shops</option>
+                <option value="sco-plots">SCO Plots</option>
               </select>
 
               <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
                 <option>Property Status</option>
+                <option value="new-launch">New Launch Project</option>
+                <option value="ready-to-move">Ready to Move Project</option>
+                <option value="under-construction">Under Construction Project</option>
+                <option value="pre-launch">Pre Launch Project</option>
               </select>
 
               <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
                 <option>Localities</option>
+                <option value="dwarka-expressway">Dwarka Expressway</option>
+                <option value="golf-course-road">Golf Course Road</option>
+                <option value="golf-course-extension-road">
+                  Golf Course Extension Road
+                </option>
+                <option value="sohna-road">Sohna Road</option>
+                <option value="new-gurgaon">New Gurgaon</option>
+                <option value="old-gurgaon">Old Gurgaon</option>
+                <option value="spr">SPR</option>
+                <option value="nh8">NH8</option>
               </select>
 
               <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
                 <option>Budget</option>
+                <option value="1-2-cr">1 – 2 Cr</option>
+                <option value="2-3-cr">2 – 3 Cr</option>
+                <option value="3-4-cr">3 – 4 Cr</option>
+                <option value="4-5-cr">4 – 5 Cr</option>
+                <option value="5-6-cr">5 – 6 Cr</option>
+                <option value="6-7-cr">6 – 7 Cr</option>
+                <option value="7-8-cr">7 – 8 Cr</option>
+                <option value="above-8-cr">Above 8 Cr</option>
               </select>
 
               <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
-                <option>Property</option>
+                <option value="">Property Size</option>
+                <option value="1-bhk">1 BHK</option>
+                <option value="1.5-bhk">1.5 BHK</option>
+                <option value="2-bhk">2 BHK</option>
+                <option value="2.5-bhk">2.5 BHK</option>
+                <option value="3-bhk">3 BHK</option>
+                <option value="3.5-bhk">3.5 BHK</option>
+                <option value="4-bhk">4 BHK</option>
+                <option value="4.5-bhk">4.5 BHK</option>
+                <option value="5-bhk">5 BHK</option>
+                <option value="above-5-bhk">Above 5 BHK</option>
               </select>
 
-              <button className="w-full px-3 py-2.5 rounded-full border text-sm md:w-20 flex-shrink-0">
-                Filter
-              </button>
+
 
               <button className="w-full px-4 py-2.5 rounded-full bg-[#F5A300] text-white font-medium text-sm md:w-24 flex-shrink-0">
                 Search
@@ -125,32 +161,68 @@ export default function ApartmentsPage() {
             <div className="bg-white shadow-2xl px-5 py-3  flex items-center gap-3 rounded-full border border-yellow-400">
               <input
                 placeholder="Enter Keyword"
-                className="flex-1 px-4 py-3 rounded-full bg-gray-50 outline-none text-sm flex-shrink-0 min-w-0"
+                className="flex-1 px-0 py-3 rounded-full bg-gray-50 outline-none text-sm flex-shrink-0 min-w-0"
               />
 
               <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
                 <option>Property Type</option>
+                <option value="residential">Residential Property</option>
+                <option value="commercial">Commercial Property</option>
+                <option value="luxury-apartment">Luxury Apartment</option>
+                <option value="builder-floor">Builder Floor</option>
+                <option value="retail-shops">Retail Shops</option>
+                <option value="sco-plots">SCO Plots</option>
               </select>
 
               <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
                 <option>Property Status</option>
+                <option value="new-launch">New Launch Project</option>
+                <option value="ready-to-move">Ready to Move Project</option>
+                <option value="under-construction">Under Construction Project</option>
+                <option value="pre-launch">Pre Launch Project</option>
               </select>
 
               <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
                 <option>Localities</option>
+                <option value="dwarka-expressway">Dwarka Expressway</option>
+                <option value="golf-course-road">Golf Course Road</option>
+                <option value="golf-course-extension-road">
+                  Golf Course Extension Road
+                </option>
+                <option value="sohna-road">Sohna Road</option>
+                <option value="new-gurgaon">New Gurgaon</option>
+                <option value="old-gurgaon">Old Gurgaon</option>
+                <option value="spr">SPR</option>
+                <option value="nh8">NH8</option>
               </select>
 
               <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
                 <option>Budget</option>
+                <option value="1-2-cr">1 – 2 Cr</option>
+                <option value="2-3-cr">2 – 3 Cr</option>
+                <option value="3-4-cr">3 – 4 Cr</option>
+                <option value="4-5-cr">4 – 5 Cr</option>
+                <option value="5-6-cr">5 – 6 Cr</option>
+                <option value="6-7-cr">6 – 7 Cr</option>
+                <option value="7-8-cr">7 – 8 Cr</option>
+                <option value="above-8-cr">Above 8 Cr</option>
               </select>
 
               <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
-                <option>Property Size</option>
+                <option value="">Property Size</option>
+                <option value="1-bhk">1 BHK </option>
+                <option value="1.5-bhk">1.5 BHK </option>
+                <option value="2-bhk">2 BHK </option>
+                <option value="2.5-bhk">2.5 BHK </option>
+                <option value="3-bhk">3 BHK </option>
+                <option value="3.5-bhk">3.5 BHK </option>
+                <option value="4-bhk">4 BHK </option>
+                <option value="4.5-bhk">4.5 BHK </option>
+                <option value="5-bhk">5 BHK </option>
+                <option value="above-5-bhk">Above 5 BHK </option>
               </select>
 
-              <button className="w-20 px-3 py-3 rounded-full border text-sm flex-shrink-0">
-                Filter
-              </button>
+
 
               <button className="w-24 px-4 py-3 rounded-full bg-[#F5A300] text-white font-medium text-sm flex-shrink-0">
                 Search
