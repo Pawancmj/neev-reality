@@ -260,13 +260,14 @@ export default function BlogDetailPage() {
           <aside className="hidden lg:block space-y-6">
 
             {/* ===== TOC (STICKY) ===== */}
-            <div className="sticky top-64 ">
+            <div className="sticky top-[96px] self-start mt-[95px]">
               <div className="bg-white rounded-lg p-5 shadow-sm mb-5">
                 <h3 className="text-lg font-semibold mb-4">
                   Table of Contents
                 </h3>
 
                 <ol className="list-decimal pl-5 space-y-1 text-sm">
+                  <li><a href="#intro">Introduction</a></li>
                   <li>
                     <a href="#what-is-smart-city" className="hover:underline">
                       What is a Smart City
