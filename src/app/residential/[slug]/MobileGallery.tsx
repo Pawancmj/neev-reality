@@ -14,9 +14,10 @@ export default function MobileGallery({ images, title }: Props) {
   return (
     <div>
       {/* HERO IMAGE */}
-      <div className="relative w-203 h-[260px] sm:h-[312px]  rounded-xl overflow-hidden">
+      
+      <div className="relative w-full max-w-[380px] h-[260px] sm:h-[312px] mx-auto rounded-xl overflow-hidden">
         <Image
-          src={activeImage}
+    src={activeImage}
           alt={title}
           fill
           priority
