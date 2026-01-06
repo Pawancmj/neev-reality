@@ -13,8 +13,8 @@ export default function ApartmentClient({ children }: ApartmentClientProps) {
   const [showTabs, setShowTabs] = useState(false);
 
   useEffect(() => {
-    const overview = document.getElementById("tabstart"); //visible
-    const footer = document.getElementById("tabend"); //Hide
+    const overview = document.getElementById("strt"); //visible
+    const footer = document.getElementById("project"); //Hide
 
     if (!overview || !footer) return;
 
@@ -53,7 +53,7 @@ export default function ApartmentClient({ children }: ApartmentClientProps) {
         </div>
       )}
 
-      <div className="pt-[70px]">{children}</div>
+      <div className="pt-[1px] md:pt-[70px]">{children}</div>
     </>
   );
 }

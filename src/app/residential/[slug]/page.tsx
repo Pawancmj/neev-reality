@@ -146,7 +146,8 @@ export default async function ApartmentDetails({ params }: Props) {
     <>
       <ApartmentClient>
         {/* ================= BREADCRUMB ================= */}
-        <div className="max-w-[1240px] mx-auto px-4 py-4 text-sm text-gray-500">
+        <div className="max-w-[1240px] mx-auto px-4 py-2 md:py-4 text-sm text-gray-500">
+
           Home / Residential /{" "}
           <span className="text-gray-900 font-medium">{property.title}</span>
         </div>
@@ -280,10 +281,12 @@ export default async function ApartmentDetails({ params }: Props) {
                 <p>Project Handover :</p>
               </div>
             </div>
+            <div id="strt" className="py-2">
 
+            </div>
             {/* ================= OVERVIEW ================= */}
             <section id="overview" className="max-w-[1240px] mx-auto px-4 mt-12">
-              <div className="bg-white rounded-xl shadow-sm p-8 text-center">
+              <div className="bg-white  rounded-xl shadow-sm p-8 text-center">
                 {/* TITLE */}
                 <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4">
                   Adani Shantigram The Meadows: World Class Luxury Apartments
@@ -310,6 +313,7 @@ export default async function ApartmentDetails({ params }: Props) {
                 </div>
               </div>
             </section>
+
             <FloorPlanSection floorPlans={floorPlans} />
 
             {/* ================= PAYMENT PLAN ================= */}
@@ -697,7 +701,7 @@ export default async function ApartmentDetails({ params }: Props) {
                 </div>
 
                 {/* DESCRIPTION */}
-                <p id="tabend" className="text-sm text-gray-600 mt-6 leading-relaxed">
+                <p  className="text-sm text-gray-600 mt-6 leading-relaxed">
                   The Prestige Group is a leading real estate developer of South India,
                   established in 1986 and headquartered in Bangalore. With a strong presence
                   across residential, commercial, retail and hospitality segments, the
@@ -715,16 +719,33 @@ export default async function ApartmentDetails({ params }: Props) {
               </div>
 
               {/* HORIZONTAL SCROLL */}
-              <div className="flex gap-20 overflow-x-auto scroll-smooth pb-6">
+              <div className="flex gap-4 md:gap-10 lg:gap-10 overflow-x-auto scroll-smooth pb-6">
+
                 {apartments
                   .filter((p) => p.slug !== property.slug)
                   .map((p) => (
-                    <div key={p.slug} className="min-w-[260px] max-w-[260px] flex-shrink-0">
+                    <div
+                      key={p.slug}
+                      className="
+                     min-w-[220px] max-w-[220px]
+                     sm:min-w-[240px] sm:max-w-[240px]
+                     md:min-w-[260px] md:max-w-[260px]
+                     flex-shrink-0
+                   "
+                    >
+
                       <Link href={`/residential/${p.slug}`}>
-                        <div className="group flex h-full w-80 flex-col overflow-hidden rounded-xl 
-        bg-white shadow-sm hover:shadow-md transition-all duration-300 
-        hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg 
-        cursor-pointer">
+                        <div
+                          className="
+                          group flex h-full w-full
+                          flex-col overflow-hidden rounded-xl
+                          bg-white shadow-sm
+                          hover:shadow-md transition-all duration-300
+                          hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg
+                          cursor-pointer
+                        "
+                        >
+
                           {/* IMAGE */}
                           <div className="relative h-40 w-full">
                             <Image
@@ -1004,7 +1025,11 @@ export default async function ApartmentDetails({ params }: Props) {
           </div>
         </section>
 
-        <Footer />
+
+        <div className="mt-10">
+
+          <Footer />
+        </div>
       </ApartmentClient>
     </>
   );
