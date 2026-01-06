@@ -18,6 +18,8 @@ export default function ComingSoon() {
             This page will be live very soon.
           </p>
 
+          
+
         </div>
       </section>
 
