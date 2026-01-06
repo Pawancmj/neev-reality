@@ -49,12 +49,12 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white w-full">
       <nav className="mx-auto flex items-center justify-between px-4 sm:px-6 py-3 max-w-[1212px] h-[102px]">
         {/* LOGO */}
-        <Link href="/" className="w-[75px] h-[75px] flex items-center">
+        <Link href="/" className="w-[80px] h-[80px] flex items-center">
           <Image
             src="/images/logo.png"
             alt="Neev Realty"
-            width={75}
-            height={75}
+            width={80}
+            height={80}
             priority
           />
         </Link>
@@ -117,7 +117,7 @@ export default function Navbar() {
         {/* ================= MOBILE ACTIONS ================= */}
         <div className="flex items-center gap-4 min-[800px]:hidden">
           <a href="tel:+918824966669" aria-label="Call">
-            <FiPhone className="text-xl" />
+            <FiPhone className="text-xl w-8 h-20" />
           </a>
 
           {/* HAMBURGER */}
@@ -126,9 +126,9 @@ export default function Navbar() {
             aria-label="Toggle Menu"
             className="flex flex-col gap-1"
           >
-            <span className="h-0.5 w-5 bg-black" />
-            <span className="h-0.5 w-5 bg-black" />
-            <span className="h-0.5 w-5 bg-black" />
+            <span className="h-1.5 w-7 bg-black" />
+            <span className="h-1.5 w-7 bg-black" />
+            <span className="h-1.5 w-7 bg-black" />
           </button>
         </div>
       </nav>

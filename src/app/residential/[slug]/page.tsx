@@ -9,9 +9,11 @@ import {
   FaWhatsapp,
   FaPhoneAlt,
 } from "react-icons/fa";
+import TitleBlockWithBrochure from "./TitleBlockWithBrochure";
 import FloorPlanSection from "./FloorPlanSection";
 import AutoPopup from "./AutoPopup";
 import MobileGallery from "./MobileGallery";
+import EmiCalculatorSection from "./EmiCalculatorSection";
 import ApartmentClient from "./ApartmentClient";
 import apartments from "../../../data/apartmentsData"
 import Footer from "@/app/reusable_components/footer/footer";
@@ -139,9 +141,6 @@ export default async function ApartmentDetails({ params }: Props) {
     "/images/s4.png",
   ];
 
-
-
-
   return (
     <>
       <ApartmentClient>
@@ -167,110 +166,12 @@ export default async function ApartmentDetails({ params }: Props) {
               title={property.title}
             />
 
+            <TitleBlockWithBrochure property={property} />
 
-
-
-            {/* ================= TITLE BLOCK ================= */}
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-
-              <div className="flex flex-col md:flex-row md:justify-between gap-6">
-
-                {/* ================= LEFT SIDE ================= */}
-                <div className="flex flex-col gap-3">
-
-                  {/* TITLE */}
-                  <h1 className="text-[22px] font-semibold text-gray-900 leading-snug">
-                    {property.title}
-                  </h1>
-
-                  {/* LOCATION */}
-                  <p className="text-sm text-pink-600">
-                    {property.location}
-                  </p>
-
-                  {/* INFO LIST */}
-                  <div className="flex flex-col gap-2 mt-1 text-sm text-gray-600">
-
-                    {/* BY BUILDER */}
-                    <div className="flex items-center gap-2">
-                      <span className="w-7 h-7 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 text-xs">
-                        🏢
-                      </span>
-                      <span>
-                        By <span className="text-pink-600">Adani Shantigram</span>
-                      </span>
-                    </div>
-
-                    {/* SIZE */}
-                    <div className="flex items-center gap-2">
-                      <span className="w-7 h-7 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 text-xs">
-                        📐
-                      </span>
-                      <span>1139 - 1458 SQ. FT.</span>
-                    </div>
-
-                    {/* RERA */}
-                    <div className="flex items-center gap-2">
-
-                      <span className="flex items-center gap-1 rounded-full bg-[#f3f3f3] px-2 py-1 text-[10px] font-medium text-gray-600">
-                        RERA
-                        <Image
-                          src="/images/newlaunchproject/rera.png"
-                          alt="RERA"
-                          width={12}
-                          height={12}
-                        />
-                      </span>
-
-
-                    </div>
-
-                    {/* LAST UPDATED */}
-                    <div className="flex items-center gap-2 text-gray-400">
-                      <span className="w-7 h-7 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 text-xs">
-                        ⏱
-                      </span>
-                      <span>Last Updated Date 02 April, 2025</span>
-                    </div>
-                  </div>
-                </div>
-
-
-                {/* ================= RIGHT SIDE ================= */}
-                <div className="flex flex-col items-start lg:items-end justify-between gap-3">
-
-                  {/* BHK */}
-                  <p className="text-sm text-gray-500">
-                    2,2.5,3 BHK
-                  </p>
-
-                  {/* PRICE */}
-                  <p className="text-[18px] font-semibold text-gray-900">
-                    ₹ 81.08 Lakh - 1.05 Cr*
-                  </p>
-
-                  {/* BUTTON */}
-                  <button id="tabstart"
-                    className="
-          inline-flex items-center gap-2
-          px-4 py-2
-          bg-[#F5A300]
-          hover:bg-[#e49a00]
-          text-white
-          rounded-md
-          text-sm
-          font-medium
-          transition
-        "
-                  >
-                    ⬇ Download Brochure
-                  </button>
-                </div>
-
-              </div>
-            </div>
+            
 
             {/* QUICK FACTS — MOBILE & TABLET */}
+
             <div className="block lg:hidden bg-white rounded-xl p-5 shadow-sm">
               <h3 className="font-semibold mb-3 border-b pb-2">Quick Facts</h3>
               <div className="text-sm space-y-2 text-gray-600">
@@ -281,11 +182,12 @@ export default async function ApartmentDetails({ params }: Props) {
                 <p>Project Handover :</p>
               </div>
             </div>
-            <div id="strt" className="py-2">
+            <div id="strt" className="py-0">
 
             </div>
             {/* ================= OVERVIEW ================= */}
             <section id="overview" className="max-w-[1240px] mx-auto px-4 mt-12">
+              <h3 className="text-xl font-semibold">Overview</h3>
               <div className="bg-white  rounded-xl shadow-sm p-8 text-center">
                 {/* TITLE */}
                 <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4">
@@ -446,7 +348,7 @@ export default async function ApartmentDetails({ params }: Props) {
                 {/* LEFT : MAP CARD */}
                 <div
                   className="
-                  w-full md:w-[35%]
+                  w-full md:w-[45%]
     max-w-none
     h-[288px]
     bg-white
@@ -507,88 +409,7 @@ export default async function ApartmentDetails({ params }: Props) {
             </section>
 
             {/* ================= EMI CALCULATOR ================= */}
-            <section id="emi" className="max-w-[1240px] mx-auto px-4 mt-14">
-              <h2 className="text-xl font-semibold mb-6">EMI Calculator</h2>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-[#F6FAFF] p-6 rounded-xl">
-                {/* RIGHT : PIE CHART (STATIC UI VERSION) */}
-                <div className="flex flex-col items-center">
-                  <h3 className="text-lg font-semibold mb-4 text-center">
-                    Break-up of Total Payment
-                  </h3>
-
-                  {/* PIE IMAGE */}
-                  <Image
-                    src="/images/emi-chart.png"
-                    alt="EMI Breakup Chart"
-                    width={360}
-                    height={260}
-                    className="object-contain"
-                  />
-
-                  {/* LEGEND */}
-                  <div className="flex gap-8 mt-6 text-sm">
-                    {/* TOTAL INTEREST */}
-                    <span className="flex items-center gap-2">
-                      <span className="w-3 h-3 rounded-full bg-[#9C6A1E]"></span>
-                      <span className="text-gray-700">Total interest</span>
-                    </span>
-
-                    {/* PRINCIPAL */}
-                    <span className="flex items-center gap-2">
-                      <span className="w-3 h-3 rounded-full bg-[#F1D2A2]"></span>
-                      <span className="text-gray-700">Principal loan amount</span>
-                    </span>
-                  </div>
-                </div>
-
-                {/* LEFT : FORM */}
-                <div className="bg-white rounded-xl p-6 shadow-sm space-y-4">
-                  <div>
-                    <label className="text-sm text-gray-600">Loan Amount</label>
-                    <input
-                      type="number"
-                      defaultValue={2500000}
-                      className="w-full mt-1 px-4 py-2 border rounded-md outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-sm text-gray-600">Interest Rate (%)</label>
-                    <input
-                      type="number"
-                      defaultValue={10.5}
-                      className="w-full mt-1 px-4 py-2 border rounded-md outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-sm text-gray-600">Loan Tenure (Yr)</label>
-                    <input
-                      type="number"
-                      defaultValue={30}
-                      className="w-full mt-1 px-4 py-2 border rounded-md outline-none"
-                    />
-                  </div>
-
-                  {/* EMI RESULT */}
-                  <div className="bg-gray-50 rounded-md p-4">
-                    <p className="text-sm text-gray-600">EMI</p>
-                    <p className="text-2xl font-bold text-[#F5A300]">₹ 22,868.48</p>
-                  </div>
-
-                  <div className="flex justify-between text-sm">
-                    <span>Interest to be paid</span>
-                    <span className="font-medium">₹ 57,32,652</span>
-                  </div>
-
-                  <div className="flex justify-between text-sm border-t pt-2">
-                    <span>Total of Payments</span>
-                    <span className="font-semibold">₹ 82,32,652</span>
-                  </div>
-                </div>
-              </div>
-            </section>
+            <EmiCalculatorSection />
 
             {/* ================= FAQ ================= */}
             <section id="faq" className="max-w-[1240px] mx-auto px-4 mt-16">
@@ -701,7 +522,7 @@ export default async function ApartmentDetails({ params }: Props) {
                 </div>
 
                 {/* DESCRIPTION */}
-                <p  className="text-sm text-gray-600 mt-6 leading-relaxed">
+                <p className="text-sm text-gray-600 mt-6 leading-relaxed">
                   The Prestige Group is a leading real estate developer of South India,
                   established in 1986 and headquartered in Bangalore. With a strong presence
                   across residential, commercial, retail and hospitality segments, the

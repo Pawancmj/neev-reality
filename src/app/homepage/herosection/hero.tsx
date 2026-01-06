@@ -79,13 +79,19 @@ export default function SearchCard() {
             {/* CLOSE BUTTON */}
             <button
               onClick={() => setPlayMobileVideo(false)}
-              className="absolute top-15 right-3 z-50 h-9 w-9 rounded-full bg-black text-white flex items-center justify-center"
+              className="absolute top-2 right-10 z-50 h-9 w-9 rounded-full bg-black text-white flex items-center justify-center"
             >
               ✕
             </button>
 
             {/* VIDEO */}
-            <div className="w-full max-w-sm aspect-video rounded-xl overflow-hidden bg-black shadow-2xl">
+            <div className="w-[90vw] 
+    max-w-[260px]
+    h-[300px]
+    rounded-2xl
+    overflow-hidden
+    bg-black
+    shadow-2xl">
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/4jnzf1yj48M?autoplay=1&mute=1"
@@ -134,7 +140,7 @@ export default function SearchCard() {
           >
             <h2 className="lg:text-lg sm:text-sm font-semibold text-gray-800">
               Find your perfect home with{" "}
-              <span className="text-[#DBA40D]">Neev Reality</span>
+              <span className="text-[#DBA40D]">Neev Realty</span>
             </h2>
 
             <div className="flex rounded-full bg-gray-100">

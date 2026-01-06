@@ -53,7 +53,7 @@ export default function ApartmentsPage() {
       </section>
 
       {/* ================= HERO SECTION ================= */}
-      <section className="lg:bg-[#F6FBFF] pt-12  relative">
+      <section className="lg:bg-[#F6FBFF] pt-4  relative">
         <div className="max-w-[1240px] mx-auto px-4">
           <div className="relative flex flex-col lg:flex-row items-start gap-20 max-lg:hidden">
             {/* LEFT */}
@@ -69,8 +69,8 @@ export default function ApartmentsPage() {
             </div>
 
             {/* RIGHT IMAGE */}
-            <div className="flex-1 flex justify-center lg:-ml-20 max-lg:ml-0">
-              <div className="relative w-[240px] h-[240px] sm:w-[310px] sm:h-[310px] md:w-[370px] md:h-[370px] lg:w-[450px] lg:h-[450px] rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-xl bg-white">
+            <div className="flex-1 flex justify-center ml-60">
+              <div className="relative w-[240px] h-[240px] sm:w-[310px] sm:h-[310px] md:w-[370px] md:h-[370px] lg:w-[450px] lg:h-[450px] rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-xl bg-bg-[#F6FBFF]">
                 <Image
                   src="/images/hero-tiles.png"
                   alt="Property collage"
@@ -91,11 +91,23 @@ export default function ApartmentsPage() {
               />
 
               <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
-                <option>All Status</option>
+                <option>Property Type</option>
               </select>
 
               <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
-                <option>All Type</option>
+                <option>Property Status</option>
+              </select>
+
+              <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
+                <option>Localities</option>
+              </select>
+
+              <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
+                <option>Budget</option>
+              </select>
+
+              <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
+                <option>Property</option>
               </select>
 
               <button className="w-full px-3 py-2.5 rounded-full border text-sm md:w-20 flex-shrink-0">
@@ -109,7 +121,7 @@ export default function ApartmentsPage() {
           </div>
 
           {/* DESKTOP SEARCH BAR */}
-          <div className="hidden lg:block relative bottom-60 left-114 -translate-x-1/2  w-full max-w-[900px]">
+          <div className="hidden lg:block relative bottom-60 left-134 -translate-x-1/2  w-full max-w-[1100px]">
             <div className="bg-white shadow-2xl px-5 py-3  flex items-center gap-3 rounded-full border border-yellow-400">
               <input
                 placeholder="Enter Keyword"
@@ -117,11 +129,23 @@ export default function ApartmentsPage() {
               />
 
               <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
-                <option>All Status</option>
+                <option>Property Type</option>
               </select>
 
               <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
-                <option>All Type</option>
+                <option>Property Status</option>
+              </select>
+
+              <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
+                <option>Localities</option>
+              </select>
+
+              <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
+                <option>Budget</option>
+              </select>
+
+              <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
+                <option>Property Size</option>
               </select>
 
               <button className="w-20 px-3 py-3 rounded-full border text-sm flex-shrink-0">

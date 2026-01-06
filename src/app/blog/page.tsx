@@ -26,7 +26,10 @@ export default function Blog() {
     <>
       <Navbar />
 
-      
+      {/* ================= BREADCRUMB ================= */}
+        <div className="max-w-[1240px] mx-auto px-4 py-2  text-sm text-gray-500">
+          Home / Blog 
+        </div>
       <BlogPage blogs={visibleBlogs} />
       <div className="py-10">
       <Pagination

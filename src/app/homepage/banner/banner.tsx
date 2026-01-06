@@ -57,7 +57,7 @@ const StatsBar: React.FC = () => {
   };
 
   return (
-    <section className="mx-auto bg-[#F8FBFF] mb-6 py-6 w-full max-w-[1520px]">
+    <section className="mx-auto bg-[#DBA40D] mb-6 py-6 w-full max-w-[1520px]">
       {/* ================= MOBILE / TAB SLIDER ================= */}
       <div className="md:hidden">
         <div
@@ -74,7 +74,7 @@ const StatsBar: React.FC = () => {
                 flex-shrink-0
                 flex flex-col items-center
                 text-center
-                shadow-sm p-2 hover:scale-105 rounded-lg
+                shadow-sm p-2 hover:scale-105 rounded-lg bg-white
               "
             >
               <span className="text-3xl font-semibold text-black">
@@ -93,7 +93,7 @@ const StatsBar: React.FC = () => {
         {stats.map((item) => (
           <div
             key={item.label}
-            className="flex flex-col items-start shadow-sm p-2 hover:scale-105 rounded-lg"
+            className="flex flex-col items-center shadow-sm p-2 hover:scale-105 rounded-lg bg-white"
           >
             <span className="text-4xl text-black">
               {item.value}

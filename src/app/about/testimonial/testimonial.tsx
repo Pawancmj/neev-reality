@@ -15,28 +15,42 @@ const testimonials: Testimonial[] = [
     name: "Subham Rao",
     role: "First-time Homebuyer",
     quote:
-      "Livora made my dream of homeownership a reality. The agents were patient, knowledgeable, and helped me navigate every step of the process.",
+    "The buying process was smooth and well-organized. From property selection to final paperwork, everythingwas handledprofessionallyand transparently",
     avatar: "/images/aboutimg/testimonial.png",
   },
   {
     name: "Krishankaa",
     role: "Real Estate Investor",
     quote:
-      "Livora's platform exceeded my expectations with verified listings and market insights that helped me make informed decisions.",
+      "They guided us honestly at every step and helped us choose the right property based on our needs and budget. Truly reliable real estate consultants",
     avatar: "/images/aboutimg/testimonial.png",
   },
   {
     name: "Atu Daga",
     role: "Family Relocating",
     quote:
-      "Moving across states was stressful, but Livora made it seamless and found us the perfect home.",
+      "Excellent support during site visits and documentation. Their deep market knowledge made us feel confident in our investment decision.",
     avatar: "/images/aboutimg/testimonial.png",
   },
   {
     name: "Rahul Mehta",
     role: "NRI Buyer",
     quote:
-      "Transparent process, regular updates, and genuine advice. Highly recommended.",
+      "A very professional team that values customer satisfaction. Clear communication, timely updates, and great after-sales assistance throughout.",
+    avatar: "/images/aboutimg/testimonial.png",
+  },
+  {
+    name: "Ashish Dubey",
+    role: "NRI Buyer",
+    quote:
+      "They made the property buying experience stress-free with their transparent approach and expert guidance. Highly recommended for serious buyers",
+    avatar: "/images/aboutimg/testimonial.png",
+  },
+  {
+    name: "Preeti Singh",
+    role: "NRI Buyer",
+    quote:
+      "From the first call to final possession, the service quality was outstanding. They focus on long-term relationships, not just sales.",
     avatar: "/images/aboutimg/testimonial.png",
   },
 ];
