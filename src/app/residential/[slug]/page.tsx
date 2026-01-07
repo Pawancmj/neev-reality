@@ -540,7 +540,7 @@ export default async function ApartmentDetails({ params }: Props) {
               </div>
 
               {/* HORIZONTAL SCROLL */}
-              <div className="flex gap-4 md:gap-10 lg:gap-10 overflow-x-auto scroll-smooth pb-6">
+              <div className="flex gap-4 md:gap-10 lg:gap-10 overflow-x-auto scrollbar-hide scroll-smooth pb-6">
 
                 {apartments
                   .filter((p) => p.slug !== property.slug)

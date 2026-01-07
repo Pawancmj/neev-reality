@@ -54,10 +54,22 @@ export default function ApartmentsPage() {
 
       {/* ================= HERO SECTION ================= */}
       <section className="lg:bg-[#F6FBFF] pt-4  relative">
+        {/* HERO TEXT – MOBILE & TABLET */}
+        <div className="lg:hidden mb-6 text-center px-2">
+          <p className="text-sm text-gray-500 mb-2">
+            From as low as $10 per day with limited-time offer discounts.
+          </p>
+
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
+            Your <span className="text-[#F5A300]">Property</span>, <br />
+            Our Priority.
+          </h1>
+        </div>
+
         <div className="max-w-[1240px] mx-auto px-4">
-          <div className="relative flex flex-col lg:flex-row items-start gap-20 max-lg:hidden">
+          <div className="relative hidden lg:flex items-start gap-10">
             {/* LEFT */}
-            <div className="flex-1">
+            <div className="flex-1 ml-10">
               <p className="text-sm text-gray-500 mb-4">
                 From as low as $10 per day with limited-time offer discounts.
               </p>
@@ -68,9 +80,16 @@ export default function ApartmentsPage() {
               </h1>
             </div>
 
-            {/* RIGHT IMAGE */}
-            <div className="flex-1 flex justify-center ml-60">
-              <div className="relative w-[240px] h-[240px] sm:w-[310px] sm:h-[310px] md:w-[370px] md:h-[370px] lg:w-[450px] lg:h-[450px] rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-xl bg-bg-[#F6FBFF]">
+            <div className="flex-1 flex justify-center self-end">
+              <div className="
+    relative
+    w-[240px] h-[240px]
+    sm:w-[310px] sm:h-[310px]
+    md:w-[370px] md:h-[370px]
+    lg:w-[450px] lg:h-[420px]
+    rounded-[40px] lg:rounded-[60px]
+    overflow-hidden shadow-xl
+  ">
                 <Image
                   src="/images/hero-tiles.png"
                   alt="Property collage"
@@ -80,11 +99,12 @@ export default function ApartmentsPage() {
                 />
               </div>
             </div>
+
           </div>
 
           {/* MOBILE/TABLET SEARCH */}
           <div className="lg:hidden mt-8 mb-12">
-            <div className="bg-white shadow-2xl p-3 w-full flex flex-col gap-2 md:flex-row md:items-center md:gap-2 md:p-4 rounded-2xl max-w-full">
+            <div className="bg-white shadow-2xl p-3 w-full flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center md:gap-2 md:p-4 rounded-2xl max-w-full">
               <input
                 placeholder="Enter Keyword"
                 className="w-full px-3 py-2.5 rounded-full bg-gray-50 outline-none text-sm flex-1 min-w-0"
@@ -157,7 +177,7 @@ export default function ApartmentsPage() {
           </div>
 
           {/* DESKTOP SEARCH BAR */}
-          <div className="hidden lg:block relative bottom-60 left-134 -translate-x-1/2  w-full max-w-[1100px]">
+          <div className="hidden lg:block relative bottom-40 left-125 -translate-x-1/2  w-full max-w-[950px]">
             <div className="bg-white shadow-2xl px-5 py-3  flex items-center gap-3 rounded-full border border-yellow-400">
               <input
                 placeholder="Enter Keyword"

@@ -1,5 +1,6 @@
 "use client";
 
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -108,7 +109,7 @@ flex flex-col md:flex-row md:items-end md:justify-between gap-4">
 
 
       {/* HORIZONTAL SCROLL */ }
-  <div className="flex gap-6 p-2 overflow-x-auto scroll-smooth pb-6 mt-8">
+  <div className="flex gap-6 p-2 overflow-x-auto scrollbar-hide scroll-smooth pb-6 mt-8">
 
     {projects.map((project) => (
       <Link

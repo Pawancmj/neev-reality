@@ -47,9 +47,9 @@ const Footer: React.FC = () => {
               ref={scrollContainerRef}
               className="
                 flex
-                gap-6 lg:gap-8
+                gap-1.7 lg:gap-8
                 overflow-x-auto lg:overflow-x-scroll
-                whitespace-nowrap pb-4 lg:pb-2
+                whitespace-nowrap pb-4 lg:pb-2 scrollbar-hide
                 scrollbar-thin scrollbar-thumb-gray-600/50 scrollbar-track-gray-900/50
                 lg:max-w-[calc(100%-96px)]
                 snap-x snap-mandatory lg:snap-none

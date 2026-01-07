@@ -54,7 +54,7 @@ const BlogSection: React.FC = () => {
       </div>
 
       {/* 🔥 HORIZONTAL SCROLL – EXACT LIKE TRENDING PROJECTS */}
-      <div className="flex gap-6 overflow-x-auto scroll-smooth p-2 pb-8 mt-6">
+      <div className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth p-2 pb-8 mt-6">
 
         {posts.map((post, index) => (
           <Link

@@ -101,7 +101,7 @@ export default function NewLaunchProjects() {
       </div>
 
       {/* HORIZONTAL SCROLL */}
-      <div className="flex gap-6 overflow-x-auto scroll-smooth p-2 pb-8 mt-6">
+      <div className="flex gap-6 overflow-x-auto scrollbar-hide  scroll-smooth p-2 pb-8 mt-6">
 
         {projects.map((project) => (
           <Link

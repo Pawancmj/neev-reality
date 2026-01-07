@@ -54,7 +54,7 @@ export default function OurServices() {
   return (
     <section className="bg-white py-16">
       <div className="max-w-[1240px] mx-auto px-4">
-        
+
         {/* HEADING */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <h2 className="text-3xl font-semibold text-gray-900">
@@ -67,19 +67,41 @@ export default function OurServices() {
         </div>
 
         {/* MOBILE SCROLL VIEW */}
-        <div className="lg:hidden relative mb-8">
-          {/* Mobile Scroll Buttons */}
+        <div className="lg:hidden relative mb-8 px-8">
+
+          {/* LEFT BUTTON */}
           <button
             onClick={scrollLeft}
-            className="absolute right-62 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-white/95 backdrop-blur-sm shadow-md border flex items-center justify-center hover:bg-white hover:shadow-lg transition-all text-gray-700 hover:text-[#DBA40D]"
+            className="
+      absolute left-2 top-1/2 -translate-y-1/2
+      z-20 h-9 w-9
+      rounded-full bg-white/95 backdrop-blur-sm
+      shadow-md border
+      flex items-center justify-center
+      hover:bg-white hover:shadow-lg
+      transition-all
+      text-gray-700 hover:text-[#DBA40D]
+      text-lg
+    "
             aria-label="Scroll left"
           >
             ‹
           </button>
-          
+
+          {/* RIGHT BUTTON */}
           <button
             onClick={scrollRight}
-            className="absolute left-62 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-white/95 backdrop-blur-sm shadow-md border flex items-center justify-center hover:bg-white hover:shadow-lg transition-all text-gray-700 hover:text-[#DBA40D]"
+            className="
+      absolute right-2 top-1/2 -translate-y-1/2
+      z-20 h-9 w-9
+      rounded-full bg-white/95 backdrop-blur-sm
+      shadow-md border
+      flex items-center justify-center
+      hover:bg-white hover:shadow-lg
+      transition-all
+      text-gray-700 hover:text-[#DBA40D]
+      text-lg
+    "
             aria-label="Scroll right"
           >
             ›

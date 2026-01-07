@@ -111,8 +111,8 @@ export default function SearchCard() {
           max-lg:top-[370px]
           max-sm:top-[320px]
           max-lg:px-4
-          max-sm:px-3
-          w-full max-w-[1020px]
+          max-sm:px-4
+          w-full max-w-[990px]
           z-20
         "
       >

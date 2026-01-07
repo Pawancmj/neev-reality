@@ -252,23 +252,46 @@ export default function Home() {
         </h2>
 
         {/* MOBILE SCROLL VIEW */}
-        <div className="lg:hidden relative">
+        <div className="lg:hidden relative px-8">
           {/* Mobile Scroll Buttons */}
+          {/* LEFT BUTTON */}
           <button
             onClick={scrollLeft}
-            className="absolute right-62 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-white/95 backdrop-blur-sm shadow-lg border flex items-center justify-center hover:bg-white hover:shadow-xl transition-all text-gray-700 hover:text-[#DBA40D] text-lg"
+            className="
+    absolute left-2 top-1/2 -translate-y-1/2
+    z-20 h-9 w-9
+    rounded-full bg-white/95 backdrop-blur-sm
+    shadow-lg border
+    flex items-center justify-center
+    hover:bg-white hover:shadow-xl
+    transition-all
+    text-gray-700 hover:text-[#DBA40D]
+    text-lg
+  "
             aria-label="Scroll left"
           >
             ‹
           </button>
 
+          {/* RIGHT BUTTON */}
           <button
             onClick={scrollRight}
-            className="absolute left-62 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-white/95 backdrop-blur-sm shadow-lg border flex items-center justify-center hover:bg-white hover:shadow-xl transition-all text-gray-700 hover:text-[#DBA40D] text-lg"
+            className="
+    absolute right-2 top-1/2 -translate-y-1/2
+    z-20 h-9 w-9
+    rounded-full bg-white/95 backdrop-blur-sm
+    shadow-lg border
+    flex items-center justify-center
+    hover:bg-white hover:shadow-xl
+    transition-all
+    text-gray-700 hover:text-[#DBA40D]
+    text-lg
+  "
             aria-label="Scroll right"
           >
             ›
           </button>
+
 
           {/* Mobile Scroll Container */}
           <div
