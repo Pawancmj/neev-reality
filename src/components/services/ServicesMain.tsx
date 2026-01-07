@@ -52,8 +52,8 @@ export default function OurServices() {
   };
 
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-[1240px] mx-auto px-4">
+    <section className="bg-white" >
+      <div className="max-w-[1240px] mx-auto px-4 py-4">
 
         {/* HEADING */}
         <div className="text-center max-w-3xl mx-auto mb-14">

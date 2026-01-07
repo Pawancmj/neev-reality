@@ -7,7 +7,10 @@ export default function ContactPage() {
     <div>
 <Navbar/>
      <Page/>
+     <div className="mt-5">
+
       <Footer/>
+     </div>
     </div>
   );
 }
