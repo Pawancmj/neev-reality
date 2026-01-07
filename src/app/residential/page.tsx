@@ -181,7 +181,7 @@ export default function ApartmentsPage() {
             <div className="bg-white shadow-2xl px-5 py-3  flex items-center gap-3 rounded-full border border-yellow-400">
               <input
                 placeholder="Enter Keyword"
-                className="flex-1 px-0 py-3 rounded-full bg-gray-50 outline-none text-sm flex-shrink-0 min-w-0"
+                className="flex-1 px-5 py-3 rounded-full bg-gray-50 outline-none text-sm flex-shrink-0 min-w-0"
               />
 
               <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">

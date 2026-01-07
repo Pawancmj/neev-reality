@@ -54,7 +54,7 @@ export default function FloorPlanSection({ floorPlans }: any) {
         {/* CARDS */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth pb-4 no-scrollbar"
+          className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4 no-scrollbar"
         >
           {filteredPlans.map((fp: any, i: number) => (
             <div
