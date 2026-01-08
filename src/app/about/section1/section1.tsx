@@ -90,7 +90,7 @@ export default function Home() {
             <span className="text-gray-900">WE ARE</span>
           </h3>
 
-          <p className="text-[15px] text-gray-600 leading-[25px] max-w-[320px] mx-auto lg:mx-0">
+          <p className="text-[14.5px] text-gray-600 leading-[23px] max-w-[400px] mx-auto lg:mx-0">
             As a leading luxury real estate boutique firm, we offer a
             comprehensive range of solutions tailored to your specific needs.
             We specialize in brand-new projects across Delhi NCR.
@@ -101,8 +101,11 @@ export default function Home() {
             needs.
             <br /><br />
             Discover your real estate journey with{" "}
-            <span className="font-semibold text-gray-900">Neev Realty.</span>
+            <span className="font-semibold text-gray-900 whitespace-nowrap">
+              Neev Realty.
+            </span>
           </p>
+
         </div>
 
         {/* IMAGES - MOBILE PERFECTLY FIT */}

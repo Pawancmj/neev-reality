@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Navbar from "../reusable_components/navbar/navbar";
 import Footer from "../reusable_components/footer/footer";
@@ -8,7 +9,29 @@ import Pagination from "@/components/apartment-property/Pagination";
 import apartments from "@/data/apartmentsData";
 
 export default function ApartmentsPage() {
-  const [page, setPage] = useState(1);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const initialPage = Number(searchParams.get("page")) || 1;
+  const [page, setPage] = useState(initialPage);
+
+  const apartmentsPerPage = 12;
+
+  const totalPages = Math.ceil(apartments.length / apartmentsPerPage);
+  const startIndex = (page - 1) * apartmentsPerPage;
+  const endIndex = startIndex + apartmentsPerPage;
+
+  const currentApartments = apartments.slice(startIndex, endIndex);
+
+  useEffect(() => {
+    router.push(`?page=${page}`, { scroll: false });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [page]);
+
 
   return (
     <>
@@ -40,7 +63,7 @@ export default function ApartmentsPage() {
       </section>
 
       {/* ================= TRENDING BANNER ================= */}
-      <section className="bg-white py-6 sm:py-10 md:py-16">
+      <section className="bg-white py-6 sm:py-10 md:py-10">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6">
           <h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 lg:mb-12">
             Trending <span className="text-[#F5A300]">Projects</span>
@@ -255,8 +278,8 @@ export default function ApartmentsPage() {
       {/* ================= LISTINGS ================= */}
       <main className="py-10  lg:pt-20">
         <div className="max-w-[1240px] mx-auto px-4 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 md:gap-5 lg:gap-6">
-            {apartments.map((item) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {currentApartments.map((item) => (
               <PropertyCard key={item.id} property={item} />
             ))}
           </div>
@@ -264,7 +287,7 @@ export default function ApartmentsPage() {
 
         <Pagination
           currentPage={page}
-          totalPages={23}
+          totalPages={totalPages}
           onPageChange={setPage}
         />
       </main>

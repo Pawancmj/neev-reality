@@ -3,7 +3,7 @@ import bigServices from "@/data/bigServices";
 
 export default function BigServices() {
   return (
-    <section className="py-0">
+    <section className="py-10">
       <div className="max-w-[1180px] mx-auto px-4">
 
         {/* TOP 2 BOXES */}

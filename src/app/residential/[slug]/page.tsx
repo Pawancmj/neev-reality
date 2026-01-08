@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import TitleBlockWithBrochure from "./TitleBlockWithBrochure";
 import OverviewSection from "./OverviewSection";
+import ScrollTabs from "./ScrollTabs";
 import FloorPlanSection from "./FloorPlanSection";
 import AutoPopup from "./AutoPopup";
 import MobileGallery from "./MobileGallery";
@@ -184,61 +185,63 @@ export default async function ApartmentDetails({ params }: Props) {
                 <p>Project Handover :</p>
               </div>
             </div>
-            <div id="strt" className="py-0">
+            <section className="relative">
+              <div className="sticky top-[96px] z-30 bg-white">
+                <ScrollTabs />
+              </div>
 
-            </div>
-            <OverviewSection/>
-            <FloorPlanSection floorPlans={floorPlans} />
+              <OverviewSection />
+              <FloorPlanSection floorPlans={floorPlans} />
 
-            {/* ================= PAYMENT PLAN ================= */}
-            <section id="payment-plan" className="max-w-[1240px] mx-auto px-4 mt-16">
-              <h2 className="text-xl font-semibold mb-6">Payment Plan</h2>
+              {/* ================= PAYMENT PLAN ================= */}
+              <section id="payment-plan" className="max-w-[1240px] mx-auto px-4 mt-16">
+                <h2 className="text-xl font-semibold mb-6">Payment Plan</h2>
 
-              <div className="bg-[#FBF6F1] rounded-2xl px-6 py-10">
-                <div className="grid grid-cols-1 md:grid-cols-3 text-center gap-8 md:gap-0">
-                  {/* INSTALLMENT 1 */}
-                  <div className="md:border-r last:border-r-0">
-                    <p className="text-lg font-medium mb-4">Installment 1</p>
-                    <p className="text-2xl font-semibold mb-2">10%</p>
-                    <p className="text-sm text-gray-600">Down Payment</p>
-                  </div>
+                <div className="bg-[#FBF6F1] rounded-2xl px-6 py-10">
+                  <div className="grid grid-cols-1 md:grid-cols-3 text-center gap-8 md:gap-0">
+                    {/* INSTALLMENT 1 */}
+                    <div className="md:border-r last:border-r-0">
+                      <p className="text-lg font-medium mb-4">Installment 1</p>
+                      <p className="text-2xl font-semibold mb-2">10%</p>
+                      <p className="text-sm text-gray-600">Down Payment</p>
+                    </div>
 
-                  {/* INSTALLMENT 2 */}
-                  <div className="md:border-r last:border-r-0">
-                    <p className="text-lg font-medium mb-4">Installment 2</p>
-                    <p className="text-2xl font-semibold mb-2">80%</p>
-                    <p className="text-sm text-gray-600">During Construction</p>
-                  </div>
+                    {/* INSTALLMENT 2 */}
+                    <div className="md:border-r last:border-r-0">
+                      <p className="text-lg font-medium mb-4">Installment 2</p>
+                      <p className="text-2xl font-semibold mb-2">80%</p>
+                      <p className="text-sm text-gray-600">During Construction</p>
+                    </div>
 
-                  {/* INSTALLMENT 3 */}
-                  <div>
-                    <p className="text-lg font-medium mb-4">Installment 3</p>
-                    <p className="text-2xl font-semibold mb-2">10%</p>
-                    <p className="text-sm text-gray-600">Handover</p>
+                    {/* INSTALLMENT 3 */}
+                    <div>
+                      <p className="text-lg font-medium mb-4">Installment 3</p>
+                      <p className="text-2xl font-semibold mb-2">10%</p>
+                      <p className="text-sm text-gray-600">Handover</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </section>
+              </section>
 
-            {/* ================= AMENITIES ================= */}
-            <section id="amenities" className="max-w-[1240px] mx-auto px-4 mt-12">
-              <h2 className="text-xl font-semibold mb-6">Amenities</h2>
+              {/* ================= AMENITIES ================= */}
+              <section id="amenities" className="max-w-[1240px] mx-auto px-4 mt-12">
+                <h2 className="text-xl font-semibold mb-6">Amenities</h2>
 
-              {/* ================= MOBILE + TABLET (2 ROWS + HORIZONTAL SWIPE) ================= */}
-              <div className="lg:hidden overflow-x-auto scrollbar-hide">
-                <div
-                  className="
+                {/* ================= MOBILE + TABLET (2 ROWS + HORIZONTAL SWIPE) ================= */}
+                <div className="lg:hidden overflow-x-auto scrollbar-hide">
+                  <div
+                    className="
         grid
         grid-rows-2
         grid-flow-col
         auto-cols-max
         gap-4
       "
-                >
-                  {amenities.map((a, i) => (
-                    <div
-                      key={i}
-                      className="
+                  >
+                    {amenities.map((a, i) => (
+                      <div
+                        key={i}
+                        className="
             w-[160px] h-[140px]
             bg-white
             border border-gray-300
@@ -247,15 +250,54 @@ export default async function ApartmentDetails({ params }: Props) {
             flex flex-col
             flex-shrink-0
           "
+                      >
+                        {/* IMAGE AREA */}
+                        <div className="h-[90px] w-full bg-gray-50 flex items-center justify-center">
+                          <Image
+                            src={a}
+                            alt="Amenity"
+                            width={160}
+                            height={90}
+                            className="object-contain w-[90%] h-[90%]"
+                          />
+                        </div>
+
+                        {/* TEXT AREA */}
+                        <div className="flex-1 flex items-center justify-center px-2 text-center">
+                          <p className="text-xs font-medium text-gray-700 leading-tight">
+                            Multicuisine Restaurant
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* ================= DESKTOP (NORMAL GRID) ================= */}
+                <div className="hidden lg:grid grid-cols-4 gap-6">
+                  {amenities.map((a, i) => (
+                    <div
+                      key={i}
+                      className="
+          w-[172px] h-[149px]
+          bg-white
+          border border-gray-300
+          rounded-[4px]
+          overflow-hidden
+          flex flex-col
+          hover:-translate-y-1
+          hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)]
+          hover:border-gray-400
+        "
                     >
                       {/* IMAGE AREA */}
-                      <div className="h-[90px] w-full bg-gray-50 flex items-center justify-center">
+                      <div className="h-[100px] w-full bg-gray-50 flex items-center justify-center">
                         <Image
                           src={a}
                           alt="Amenity"
-                          width={160}
-                          height={90}
-                          className="object-contain w-[90%] h-[90%]"
+                          width={172}
+                          height={100}
+                          className="object-contain w-[95%] h-[95%]"
                         />
                       </div>
 
@@ -268,58 +310,19 @@ export default async function ApartmentDetails({ params }: Props) {
                     </div>
                   ))}
                 </div>
-              </div>
+              </section>
 
-              {/* ================= DESKTOP (NORMAL GRID) ================= */}
-              <div className="hidden lg:grid grid-cols-4 gap-6">
-                {amenities.map((a, i) => (
+
+              {/* ================= LOCATION ================= */}
+              <section id="location" className="max-w-[1240px] mx-auto px-4 mt-16">
+                <h2 className="text-xl font-semibold mb-8">Location</h2>
+
+                {/* WRAPPER */}
+                <div className="flex flex-col md:flex-row items-start gap-6 lg:gap-10">
+
+                  {/* LEFT : MAP CARD */}
                   <div
-                    key={i}
                     className="
-          w-[172px] h-[149px]
-          bg-white
-          border border-gray-300
-          rounded-[4px]
-          overflow-hidden
-          flex flex-col
-          hover:-translate-y-1
-          hover:shadow-[0_8px_20px_rgba(0,0,0,0.12)]
-          hover:border-gray-400
-        "
-                  >
-                    {/* IMAGE AREA */}
-                    <div className="h-[100px] w-full bg-gray-50 flex items-center justify-center">
-                      <Image
-                        src={a}
-                        alt="Amenity"
-                        width={172}
-                        height={100}
-                        className="object-contain w-[95%] h-[95%]"
-                      />
-                    </div>
-
-                    {/* TEXT AREA */}
-                    <div className="flex-1 flex items-center justify-center px-2 text-center">
-                      <p className="text-xs font-medium text-gray-700 leading-tight">
-                        Multicuisine Restaurant
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-
-            {/* ================= LOCATION ================= */}
-            <section id="location" className="max-w-[1240px] mx-auto px-4 mt-16">
-              <h2 className="text-xl font-semibold mb-8">Location</h2>
-
-              {/* WRAPPER */}
-              <div className="flex flex-col md:flex-row items-start gap-6 lg:gap-10">
-
-                {/* LEFT : MAP CARD */}
-                <div
-                  className="
                   w-full md:w-[45%]
     max-w-none
     h-[288px]
@@ -329,18 +332,18 @@ export default async function ApartmentDetails({ params }: Props) {
     overflow-hidden
     flex-shrink-0
                 "
-                >
-                  <iframe
-                    src="https://www.google.com/maps?q=Adani%20Shantigram%20Ahmedabad&output=embed"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="w-full h-full border-0"
-                  />
-                </div>
+                  >
+                    <iframe
+                      src="https://www.google.com/maps?q=Adani%20Shantigram%20Ahmedabad&output=embed"
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="w-full h-full border-0"
+                    />
+                  </div>
 
-                {/* RIGHT : DISTANCE LIST CARD */}
-                <div
-                  className="
+                  {/* RIGHT : DISTANCE LIST CARD */}
+                  <div
+                    className="
                   w-full max-w-[490px] h-[288px]
                   bg-white
                   border border-gray-300/70
@@ -349,21 +352,21 @@ export default async function ApartmentDetails({ params }: Props) {
                   overflow-y-auto
                   space-y-3
                 "
-                >
-                  {[
-                    "SG Highway – 2 km",
-                    "Metro Station – 1.5 km",
-                    "School – 1 km",
-                    "Hospital – 2.2 km",
-                    "Mall – 3 km",
-                    "Airport – 18 km",
-                    "Railway Station – 9 km",
-                    "Bus Stand – 1.2 km",
-                    "IT Park – 4 km",
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="
+                  >
+                    {[
+                      "SG Highway – 2 km",
+                      "Metro Station – 1.5 km",
+                      "School – 1 km",
+                      "Hospital – 2.2 km",
+                      "Mall – 3 km",
+                      "Airport – 18 km",
+                      "Railway Station – 9 km",
+                      "Bus Stand – 1.2 km",
+                      "IT Park – 4 km",
+                    ].map((item, i) => (
+                      <div
+                        key={i}
+                        className="
                       bg-gray-100
                       rounded-full
                       px-4 py-2
@@ -372,136 +375,138 @@ export default async function ApartmentDetails({ params }: Props) {
                       text-center
                       whitespace-nowrap
                     "
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* ================= EMI CALCULATOR ================= */}
-            <EmiCalculatorSection />
-
-            {/* ================= FAQ ================= */}
-            <section id="faq" className="max-w-[1240px] mx-auto px-4 mt-16">
-              {/* HEADER */}
-              <div className="bg-[#F4F6F6] rounded-xl p-8">
-                <h2 className="text-lg font-semibold mb-6">
-                  Frequently Asked question
-                  <span className="block w-10 h-[2px] bg-pink-600 mt-2"></span>
-                </h2>
-
-                {/* FAQ LIST */}
-                <div className="space-y-4">
-                  {[
-                    {
-                      q: "Where is Prestige City Hyderabad located?",
-                      a: "Prestige City Hyderabad is located in a prime residential area with excellent connectivity.",
-                    },
-                    {
-                      q: "What is the floor plan of Prestige City Hyderabad?",
-                      a: "The project offers well-designed 2, 3 and 4 BHK floor plans.",
-                    },
-                    {
-                      q: "What is the price range of the apartments in Prestige City Hyderabad?",
-                      a: "Prices vary depending on configuration. Please contact our sales team for details.",
-                    },
-                  ].map((item, i) => (
-                    <details key={i} className="group bg-white border rounded-lg px-5 py-4">
-                      {/* QUESTION */}
-                      <summary className="flex justify-between items-center cursor-pointer list-none">
-                        <span className="text-sm font-medium text-gray-800">
-                          {item.q}
-                        </span>
-
-                        {/* ARROW */}
-                        <span className="transition-transform duration-300 group-open:rotate-180">
-                          ▼
-                        </span>
-                      </summary>
-
-                      {/* ANSWER */}
-                      <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                        {item.a}
-                      </p>
-                    </details>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* ================= ABOUT DEVELOPER ================= */}
-            <section id="developer" className="max-w-[1240px] mx-auto px-4 mt-14">
-              <h2 className="text-xl font-semibold mb-6 pb-2">About Developer</h2>
-
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                {/* TOP ROW */}
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                  {/* LEFT : LOGO + NAME */}
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 border rounded-lg flex items-center justify-center">
-                      <Image
-                        src="/images/pg-logo.png"
-                        alt="Developer Logo"
-                        width={48}
-                        height={48}
-                      />
-                    </div>
-
-                    <h3 className="text-lg font-semibold">Prestige Group</h3>
-                  </div>
-
-                  {/* RIGHT : PARTNER BADGE */}
-                  <button className="px-4 py-2 border border-[#F5A300] text-[#F5A300] rounded-full text-sm font-medium">
-                    Neev Realty Channel Partner
-                  </button>
-                </div>
-
-                {/* STATS */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8 text-center">
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
-                      🏛️
-                    </div>
-                    <p className="text-sm text-gray-500">Established</p>
-                    <p className="font-semibold">1986</p>
-                  </div>
-
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
-                      🏗️
-                    </div>
-                    <p className="text-sm text-gray-500">Total Projects</p>
-                    <p className="font-semibold">102</p>
-                  </div>
-
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
-                      🏢
-                    </div>
-                    <p className="text-sm text-gray-500">Ongoing Projects</p>
-                    <p className="font-semibold">1</p>
-                  </div>
-
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
-                      📍
-                    </div>
-                    <p className="text-sm text-gray-500">City Present</p>
-                    <p className="font-semibold">7</p>
+                      >
+                        {item}
+                      </div>
+                    ))}
                   </div>
                 </div>
+              </section>
 
-                {/* DESCRIPTION */}
-                <p className="text-sm text-gray-600 mt-6 leading-relaxed">
-                  The Prestige Group is a leading real estate developer of South India,
-                  established in 1986 and headquartered in Bangalore. With a strong presence
-                  across residential, commercial, retail and hospitality segments, the
-                  group is known for innovation, quality construction and timely delivery.
-                  <span className="text-blue-600 cursor-pointer"> Read More</span>
-                </p>
-              </div>
+              {/* ================= EMI CALCULATOR ================= */}
+              <EmiCalculatorSection />
+
+              {/* ================= FAQ ================= */}
+              <section id="faq" className="max-w-[1240px] mx-auto px-4 mt-16">
+                {/* HEADER */}
+                <div className="bg-[#F4F6F6] rounded-xl p-8">
+                  <h2 className="text-lg font-semibold mb-6">
+                    Frequently Asked question
+                    <span className="block w-10 h-[2px] bg-pink-600 mt-2"></span>
+                  </h2>
+
+                  {/* FAQ LIST */}
+                  <div className="space-y-4">
+                    {[
+                      {
+                        q: "Where is Prestige City Hyderabad located?",
+                        a: "Prestige City Hyderabad is located in a prime residential area with excellent connectivity.",
+                      },
+                      {
+                        q: "What is the floor plan of Prestige City Hyderabad?",
+                        a: "The project offers well-designed 2, 3 and 4 BHK floor plans.",
+                      },
+                      {
+                        q: "What is the price range of the apartments in Prestige City Hyderabad?",
+                        a: "Prices vary depending on configuration. Please contact our sales team for details.",
+                      },
+                    ].map((item, i) => (
+                      <details key={i} className="group bg-white border rounded-lg px-5 py-4">
+                        {/* QUESTION */}
+                        <summary className="flex justify-between items-center cursor-pointer list-none">
+                          <span className="text-sm font-medium text-gray-800">
+                            {item.q}
+                          </span>
+
+                          {/* ARROW */}
+                          <span className="transition-transform duration-300 group-open:rotate-180">
+                            ▼
+                          </span>
+                        </summary>
+
+                        {/* ANSWER */}
+                        <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                          {item.a}
+                        </p>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* ================= ABOUT DEVELOPER ================= */}
+              <section id="developer" className="max-w-[1240px] mx-auto px-4 mt-14">
+                <h2 className="text-xl font-semibold mb-6 pb-2">About Developer</h2>
+
+                <div className="bg-white rounded-xl p-6 shadow-sm">
+                  {/* TOP ROW */}
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                    {/* LEFT : LOGO + NAME */}
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 border rounded-lg flex items-center justify-center">
+                        <Image
+                          src="/images/pg-logo.png"
+                          alt="Developer Logo"
+                          width={48}
+                          height={48}
+                        />
+                      </div>
+
+                      <h3 className="text-lg font-semibold">Prestige Group</h3>
+                    </div>
+
+                    {/* RIGHT : PARTNER BADGE */}
+                    <button className="px-4 py-2 border border-[#F5A300] text-[#F5A300] rounded-full text-sm font-medium">
+                      Neev Realty Channel Partner
+                    </button>
+                  </div>
+
+                  {/* STATS */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8 text-center">
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
+                        🏛️
+                      </div>
+                      <p className="text-sm text-gray-500">Established</p>
+                      <p className="font-semibold">1986</p>
+                    </div>
+
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
+                        🏗️
+                      </div>
+                      <p className="text-sm text-gray-500">Total Projects</p>
+                      <p className="font-semibold">102</p>
+                    </div>
+
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
+                        🏢
+                      </div>
+                      <p className="text-sm text-gray-500">Ongoing Projects</p>
+                      <p className="font-semibold">1</p>
+                    </div>
+
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="w-10 h-10 bg-[#F5A300] text-white rounded-full flex items-center justify-center">
+                        📍
+                      </div>
+                      <p className="text-sm text-gray-500">City Present</p>
+                      <p className="font-semibold">7</p>
+                    </div>
+                  </div>
+
+                  {/* DESCRIPTION */}
+                  <p className="text-sm text-gray-600 mt-6 leading-relaxed">
+                    The Prestige Group is a leading real estate developer of South India,
+                    established in 1986 and headquartered in Bangalore. With a strong presence
+                    across residential, commercial, retail and hospitality segments, the
+                    group is known for innovation, quality construction and timely delivery.
+                    <span className="text-blue-600 cursor-pointer"> Read More</span>
+                  </p>
+                </div>
+              </section>
+
             </section>
 
             {/* ================= SIMILAR PROJECTS ================= */}
@@ -562,7 +567,7 @@ export default async function ApartmentDetails({ params }: Props) {
                   purposes and the viewer has not relied on this information for making
                   any booking/purchase in any project.
                   <Link
-                    href="/faqs"
+                    href="/disclaimer"
                     className="ml-1 text-[#F5A300] font-medium hover:underline"
                   >
                     Read More

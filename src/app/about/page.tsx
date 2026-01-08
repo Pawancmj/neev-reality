@@ -44,7 +44,7 @@ export default function about() {
             </div>
 
             {/* Right Content - Map */}
-            <div className="w-full h-[300px] rounded-2xl overflow-hidden border">
+            <div className="w-full h-[162px] rounded-2xl overflow-hidden border">
               <iframe
                 src="https://www.google.com/maps?q=Gurugram,Haryana&output=embed"
                 width="100%"
