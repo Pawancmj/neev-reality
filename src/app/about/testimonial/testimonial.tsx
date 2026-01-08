@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 
+
 type Testimonial = {
   name: string;
   role: string;
@@ -15,14 +16,14 @@ const testimonials: Testimonial[] = [
     name: "Subham Rao",
     role: "First-time Homebuyer",
     quote:
-    "The buying process was smooth and well-organized. From property selection to final paperwork, everythingwas handledprofessionallyand transparently",
+      "The buying process was smooth and well-organized. From property selection to final paperwork, everything was handled professionally and transparently.",
     avatar: "/images/aboutimg/testimonial.png",
   },
   {
     name: "Krishankaa",
     role: "Real Estate Investor",
     quote:
-      "They guided us honestly at every step and helped us choose the right property based on our needs and budget. Truly reliable real estate consultants",
+      "They guided us honestly at every step and helped us choose the right property based on our needs and budget. Truly reliable real estate consultants.",
     avatar: "/images/aboutimg/testimonial.png",
   },
   {
@@ -43,7 +44,7 @@ const testimonials: Testimonial[] = [
     name: "Ashish Dubey",
     role: "NRI Buyer",
     quote:
-      "They made the property buying experience stress-free with their transparent approach and expert guidance. Highly recommended for serious buyers",
+      "They made the property buying experience stress-free with their transparent approach and expert guidance. Highly recommended for serious buyers.",
     avatar: "/images/aboutimg/testimonial.png",
   },
   {
@@ -59,81 +60,65 @@ export default function TestimonialsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="bg-[#F7F9FC] py-16 sm:py-20  -mt-8 sm:-mt-12 lg:-mt-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <>
+      {/* ================= TESTIMONIAL SECTION ================= */}
+      <section className="bg-[#F7F9FC] py-10 sm:py-20 -mt-8 sm:-mt-10 lg:-mt-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900">
-            What Our Clients Say{" "}
-            <span className="text-[#DBA40D]">About Us</span>
-          </h2>
-          <p className="mt-4 text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">
-            Real stories from families and investors who trusted Livora.
-          </p>
-        </div>
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900">
+              What Our Clients Say{" "}
+              <span className="text-[#DBA40D]">About Us</span>
+            </h2>
+            <p className="mt-4 text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">
+              Real stories from families and investors who trusted Livora.
+            </p>
+          </div>
 
-        {/* Testimonials Slider - NO AUTO SCROLL */}
-        <div
-          ref={scrollRef}
-          className="
-            flex gap-6
-            overflow-x-auto scrollbar-hide
-            scroll-smooth
-            pb-4
-            px-2
-          "
-        >
-          {testimonials.map((item, i) => (
-            <article
-              key={i}
-              className="
-                w-[85%]
-                sm:w-[70%]
-                lg:w-[32%]
-                flex-shrink-0
-                bg-white
-                rounded-2xl
-                border border-gray-200
-                shadow-sm
-                p-6
-                flex flex-col
-              "
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                  <Image
-                    src={item.avatar}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                  />
+          {/* Slider */}
+          <div
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4 px-2"
+          >
+            {testimonials.map((item, i) => (
+              <article
+                key={i}
+                className="w-[85%] sm:w-[70%] lg:w-[32%] flex-shrink-0 bg-white rounded-2xl border border-gray-200 shadow-sm p-6 flex flex-col"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                    <Image
+                      src={item.avatar}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">
+                      {item.name}
+                    </h3>
+                    <p className="text-sm text-gray-500">{item.role}</p>
+                  </div>
                 </div>
 
-                <div>
-                  <h3 className="font-semibold text-gray-900">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-gray-500">
-                    {item.role}
-                  </p>
+                <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                  {item.quote}
+                </p>
+
+                <div className="flex gap-1 mt-6 text-[#DBA40D]">
+                  {Array.from({ length: 5 }).map((_, idx) => (
+                    <span key={idx} className="text-lg">★</span>
+                  ))}
                 </div>
-              </div>
-
-              <p className="text-sm text-gray-600 leading-relaxed flex-1">
-                {item.quote}
-              </p>
-
-              <div className="flex gap-1 mt-6 text-[#DBA40D]">
-                {Array.from({ length: 5 }).map((_, idx) => (
-                  <span key={idx} className="text-lg">★</span>
-                ))}
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
+      </section>
 
-      </div>
-    </section>
+      
+    </>
   );
 }

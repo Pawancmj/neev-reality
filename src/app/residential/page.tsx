@@ -91,7 +91,7 @@ export default function ApartmentsPage() {
     overflow-hidden shadow-xl
   ">
                 <Image
-                  src="/images/hero-tiles.png"
+                  src="/images/residental.jpg"
                   alt="Property collage"
                   fill
                   className="object-cover"

@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="w-full xl:w-[1350px] xl:relative xl:-right-3 bg-[#F7F9FC] py-12 xl:py-2 overflow-hidden">
-      <div className="max-w-[1240px] w-full mx-auto px-4 grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-10 items-center">
+    <section className="w-full xl:w-[1350px] xl:relative bg-[#F7F9FC] py-12 xl:py-2 overflow-hidden">
+      <div className="max-w-[1240px] w-full mx-auto px-4 grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-10 items-center ">
 
         {/* LEFT TEXT */}
         <div className="xl:col-span-6 order-1 flex flex-col items-center xl:items-start text-center xl:text-left py-6 xl:py-0">
@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="xl:col-span-6 order-2 flex justify-center xl:justify-end px-2 xl:px-0 pt-4 xl:pt-0">
+        <div className="xl:col-span-5 order-2 flex justify-center xl:justify-end px-1 xl:px-0 pt-4 xl:pt-0">
           <div className="relative w-[300px] sm:w-[360px] md:w-[420px] lg:w-[460px] xl:w-[480px] 2xl:w-[540px] 
                           h-[240px] sm:h-[290px] md:h-[340px] lg:h-[380px] xl:h-[420px] 2xl:h-[480px]">
             <Image

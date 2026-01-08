@@ -53,7 +53,7 @@ export default function ApartmentClient({ children }: ApartmentClientProps) {
         </div>
       )}
 
-      <div className="pt-[1px] md:pt-[70px]">{children}</div>
+      <div className="pt-[1px] md:pt-[7px]">{children}</div>
     </>
   );
 }

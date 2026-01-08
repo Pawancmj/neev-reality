@@ -202,7 +202,7 @@ export default function BlogDetailPage() {
 
   return (
     <main className="bg-[#f5f5f5] w-full">
-      <div className="mx-auto max-w-7xl px-4 py-8">
+      <div className="mx-auto max-w-7xl px-4 ">
         {/* ================= BREADCRUMB ================= */}
         <div className="max-w-[1240px] mx-auto px-4 py-2 md:py-4 text-sm text-gray-500">
 
@@ -371,7 +371,7 @@ export default function BlogDetailPage() {
 
           {/* ================= RIGHT COLUMN ================= */}
           <aside className="hidden lg:block space-y-6">
-            <div className="sticky top-[96px] mt-[95px]">
+            <div className="sticky top-[110px] mt-[95px]">
 
               {/* ===== TABLE OF CONTENTS ===== */}
               <div className="bg-white rounded-lg p-5 shadow-sm">

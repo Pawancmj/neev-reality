@@ -10,11 +10,13 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import TitleBlockWithBrochure from "./TitleBlockWithBrochure";
+import OverviewSection from "./OverviewSection";
 import FloorPlanSection from "./FloorPlanSection";
 import AutoPopup from "./AutoPopup";
 import MobileGallery from "./MobileGallery";
 import EmiCalculatorSection from "./EmiCalculatorSection";
 import ApartmentClient from "./ApartmentClient";
+import PropertyCard from "@/components/apartment-property/PropertyCard";
 import apartments from "../../../data/apartmentsData"
 import Footer from "@/app/reusable_components/footer/footer";
 import Image from "next/image";
@@ -145,14 +147,14 @@ export default async function ApartmentDetails({ params }: Props) {
     <>
       <ApartmentClient>
         {/* ================= BREADCRUMB ================= */}
-        <div className="max-w-[1240px] mx-auto px-4 py-2 md:py-4 text-sm text-gray-500">
+        <div className="max-w-[1240px] mx-auto px-4 text-sm text-gray-500">
 
           Home / Residential /{" "}
           <span className="text-gray-900 font-medium">{property.title}</span>
         </div>
 
         {/* ================= HERO + SIDEBAR ================= */}
-        <section className="max-w-[1240px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <section className="max-w-[1240px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-2">
           <AutoPopup />
 
           {/* ================= LEFT MAIN ================= */}
@@ -168,7 +170,7 @@ export default async function ApartmentDetails({ params }: Props) {
 
             <TitleBlockWithBrochure property={property} />
 
-            
+
 
             {/* QUICK FACTS — MOBILE & TABLET */}
 
@@ -185,37 +187,7 @@ export default async function ApartmentDetails({ params }: Props) {
             <div id="strt" className="py-0">
 
             </div>
-            {/* ================= OVERVIEW ================= */}
-            <section id="overview" className="max-w-[1240px] mx-auto px-4 mt-12">
-              <h3 className="text-xl font-semibold">Overview</h3>
-              <div className="bg-white  rounded-xl shadow-sm p-8 text-center">
-                {/* TITLE */}
-                <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4">
-                  Adani Shantigram The Meadows: World Class Luxury Apartments
-                  <span className="block text-base font-normal mt-1">
-                    in the Heart of Gujarat!
-                  </span>
-                </h2>
-
-                {/* DESCRIPTION */}
-                <p className="text-sm md:text-base text-gray-600 max-w-[900px] mx-auto leading-relaxed">
-                  Adani Group has launched a magnificent new offering in Ahmedabad,
-                  called Adani Shantigram The Meadows. The complex boasts of luxury
-                  filled apartments, which are desired by all……
-                  <span className="text-pink-600 cursor-pointer ml-1">
-                    Read More
-                  </span>
-                </p>
-
-                {/* CTA BUTTON */}
-                <div className="mt-6">
-                  <button className="px-6 py-2 bg-[#F5A300] text-white rounded-md text-sm font-medium hover:bg-[#e39a00] transition">
-                    Inquire Now !
-                  </button>
-                </div>
-              </div>
-            </section>
-
+            <OverviewSection/>
             <FloorPlanSection floorPlans={floorPlans} />
 
             {/* ================= PAYMENT PLAN ================= */}
@@ -540,7 +512,7 @@ export default async function ApartmentDetails({ params }: Props) {
               </div>
 
               {/* HORIZONTAL SCROLL */}
-              <div className="flex gap-4 md:gap-10 lg:gap-10 overflow-x-auto scrollbar-hide scroll-smooth pb-6">
+              <div className="flex gap-4 md:gap-10 overflow-x-auto scrollbar-hide scroll-smooth pb-6">
 
                 {apartments
                   .filter((p) => p.slug !== property.slug)
@@ -548,92 +520,29 @@ export default async function ApartmentDetails({ params }: Props) {
                     <div
                       key={p.slug}
                       className="
-                     min-w-[220px] max-w-[220px]
-                     sm:min-w-[240px] sm:max-w-[240px]
-                     md:min-w-[260px] md:max-w-[260px]
-                     flex-shrink-0
-                   "
+            min-w-[220px] max-w-[220px]
+            sm:min-w-[240px] sm:max-w-[240px]
+            md:min-w-[260px] md:max-w-[260px]
+            flex-shrink-0
+          "
                     >
-
-                      <Link href={`/residential/${p.slug}`}>
-                        <div
-                          className="
-                          group flex h-full w-full
-                          flex-col overflow-hidden rounded-xl
-                          bg-white shadow-sm
-                          hover:shadow-md transition-all duration-300
-                          hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg
-                          cursor-pointer
-                        "
-                        >
-
-                          {/* IMAGE */}
-                          <div className="relative h-40 w-full">
-                            <Image
-                              src={p.img}
-                              alt={p.title}
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-
-                          {/* CONTENT */}
-                          <div className="flex flex-1 flex-col px-4 py-3">
-                            {/* TITLE + RERA */}
-                            <div className="flex items-center justify-between gap-2">
-                              <h3 className="text-sm font-semibold text-gray-900 line-clamp-1">
-                                {p.title}
-                              </h3>
-
-                              <span className="flex items-center gap-1 rounded-full bg-[#f3f3f3] px-2 py-1 text-[10px] font-medium text-gray-600">
-                                RERA
-                                <Image
-                                  src="/images/newlaunchproject/rera.png"
-                                  alt="RERA"
-                                  width={12}
-                                  height={12}
-                                />
-                              </span>
-                            </div>
-
-                            {/* TEXT BLOCK (IMAGE JAISE) */}
-                            <p className="mt-1 text-xs text-gray-500">
-                              By{" "}
-                              <span className="font-medium text-gray-700">
-                                {p.builder}
-                              </span>
-                            </p>
-
-                            <p className="text-xs text-gray-500">{p.location}</p>
-
-                            <p className="text-xs text-gray-500">{p.bhk}</p>
-
-                            {/* DIVIDER */}
-                            <div className="my-3 h-px w-full bg-gray-200" />
-
-                            {/* PRICE + CONTACT */}
-                            <div className="flex items-center justify-between">
-                              <p className="text-sm font-semibold text-gray-900">
-                                {p.price}
-                              </p>
-
-                              <span
-                                className="
-              rounded-full bg-[#F5F5F5] px-4 py-1.5 text-xs font-medium text-[#F5A300]
-              transition-all duration-300
-              group-hover:bg-amber-500 group-hover:text-white
-            "
-                              >
-                                Contact
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
+                      <PropertyCard
+                        property={{
+                          title: p.title,
+                          builder: p.builder,
+                          location: p.location,
+                          bhk: p.bhk,
+                          size: p.size,        // same as before
+                          price: p.price,
+                          img: p.img,
+                          slug: p.slug,
+                        }}
+                      />
                     </div>
                   ))}
               </div>
             </section>
+
             {/* ================= DISCLAIMER ================= */}
             <section className="w-full bg-[#FFF7E6] border-t border-[#F5A300]/30 mt-10">
               <div className="max-w-[1240px] mx-auto px-4 py-8">
@@ -735,7 +644,7 @@ export default async function ApartmentDetails({ params }: Props) {
             {/*  NOT STICKY — IMAGE + VIDEO PREVIEW */}
             <div className="bg-white rounded-xl overflow-hidden">
               {/* TOP THUMBNAILS */}
-              <div className="grid grid-cols-2 gap-1 p-1">
+              <div className="grid grid-cols-2 gap-1 mb-1">
                 <div className="relative">
                   <Image
                     src="/images/s1.png"
@@ -835,11 +744,11 @@ export default async function ApartmentDetails({ params }: Props) {
                 </div>
 
                 <div className="flex justify-center gap-3">
-                  <FaInstagram className="w-9 h-9 p-2 bg-pink-500 text-white rounded cursor-pointer" />
-                  <FaLinkedinIn className="w-9 h-9 p-2 bg-blue-700 text-white rounded cursor-pointer" />
-                  <FaPinterestP className="w-9 h-9 p-2 bg-red-600 text-white rounded cursor-pointer" />
-                  <FaFacebookF className="w-9 h-9 p-2 bg-blue-600 text-white rounded cursor-pointer" />
-                  <FaTwitter className="w-9 h-9 p-2 bg-sky-500 text-white rounded cursor-pointer" />
+                  <FaInstagram className="w-9 h-9 p-2 bg-[#DBA40D] text-white rounded cursor-pointer" />
+                  <FaLinkedinIn className="w-9 h-9 p-2 bg-[#DBA40D] text-white rounded cursor-pointer" />
+                  <FaPinterestP className="w-9 h-9 p-2 bg-[#DBA40D] text-white rounded cursor-pointer" />
+                  <FaFacebookF className="w-9 h-9 p-2 bg-[#DBA40D] text-white rounded cursor-pointer" />
+                  <FaTwitter className="w-9 h-9 p-2 bg-[#DBA40D] text-white rounded cursor-pointer" />
                 </div>
               </div>
             </aside>
