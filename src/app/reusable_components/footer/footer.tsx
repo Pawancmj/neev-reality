@@ -180,7 +180,7 @@ const Footer: React.FC = () => {
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
 
             <Link href="/commercial" className="hover:text-white transition">Commercial</Link>
-            <Link href="/services" className="hover:text-white transition">Our Services</Link>
+            <Link href="/disclaimer" className="hover:text-white transition">Disclaimer</Link>
 
             <Link href="/Career" className="hover:text-white transition">Careers</Link>
             <Link href="/Contact" className="hover:text-white transition">Contact</Link>
