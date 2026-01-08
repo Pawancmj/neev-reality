@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {  // Better name, but works as ComingSo
     <>
       <Navbar />
       
-      <section className="py-12 px-4 sm:px-6 lg:ml-20 lg:-left-20 lg:px-0 text-left">
+      <section className="py-4 px-4 sm:px-6 lg:ml-20 lg:-left-20 lg:px-0 text-left">
         <div className="max-w-[1243px] mx-auto">
           {/* Title - centered, exact size */}
           <h1 className="font-semibold text-4xl text-center mb-5">Privacy Policy</h1>
