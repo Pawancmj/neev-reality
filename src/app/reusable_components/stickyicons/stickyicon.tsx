@@ -76,7 +76,7 @@ export default function StickyIcons() {
         <GetInTouchModal
           open={showEnquiryPopup}
           onClose={() => setShowEnquiryPopup(false)}
-          propertyName={isPropertyPage ? "This Property" : "Featured Properties"}
+          
         />
       )}
     </>

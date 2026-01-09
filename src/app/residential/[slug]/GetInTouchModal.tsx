@@ -7,9 +7,10 @@ import { FaTimes } from "react-icons/fa";
 type Props = {
   open: boolean;
   onClose: () => void;
+  propertyTitle?: string;
 };
 
-export default function GetInTouchModal({ open, onClose }: Props) {
+export default function GetInTouchModal({ open, onClose, propertyTitle, }: Props) {
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
     return () => {
@@ -59,6 +60,9 @@ export default function GetInTouchModal({ open, onClose }: Props) {
           <p className="text-sm font-semibold text-gray-800">
             I Am Interested In
           </p>
+          <p className="mt-1 text-sm text-[#c8950a] font-medium">
+            {propertyTitle}
+          </p>
 
           <input
             type="text"
@@ -82,6 +86,12 @@ export default function GetInTouchModal({ open, onClose }: Props) {
             placeholder="Email"
             className="w-full border border-gray-300 rounded-md px-4 py-2 outline-none focus:border-[#F5A300]"
           />
+
+          <textarea
+            placeholder="Your Message"
+            rows={4}
+            className="w-full border border-gray-300 rounded-md px-4 py-2 outline-none resize-none focus:border-[#F5A300]"
+          ></textarea>
 
           {/* CHECKBOX */}
           <label className="flex items-center gap-3 text-sm text-gray-700">

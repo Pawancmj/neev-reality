@@ -2,9 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import GetInTouchModal from "@/app/residential/[slug]/GetInTouchModal";
+import BrandEnquiryPopup from "./BrandEnquiryPopup";
+
 
 export default function OverviewSection() {
-  const [showOverviewEnquiry, setShowOverviewEnquiry] = useState(false);
+  const [openEnquiry, setOpenEnquiry] = useState(false);
 
   return (
     <>
@@ -34,7 +37,7 @@ export default function OverviewSection() {
           {/* CTA BUTTON */}
           <div className="mt-6">
             <button
-              onClick={() => setShowOverviewEnquiry(true)}
+              onClick={() => setOpenEnquiry(true)}
               className="px-6 py-2 bg-[#F5A300] text-white rounded-md text-sm font-medium hover:bg-[#e39a00] transition"
             >
               Enquire Now
@@ -43,66 +46,11 @@ export default function OverviewSection() {
         </div>
       </section>
 
-      {/* ================= ENQUIRY POPUP ================= */}
-      {showOverviewEnquiry && (
-        <div className="fixed inset-0 z-[999] bg-black/60 flex items-center justify-center px-4">
-          <div className="bg-white w-full max-w-md rounded-2xl p-6 relative">
+     <BrandEnquiryPopup
+  open={openEnquiry}
+  onClose={() => setOpenEnquiry(false)}
+/>
 
-            {/* CLOSE */}
-            <button
-              onClick={() => setShowOverviewEnquiry(false)}
-              className="absolute top-3 right-3 text-gray-500 hover:text-black text-xl"
-            >
-              ✕
-            </button>
-
-            {/* HEADER */}
-            <h3 className="text-xl font-semibold mb-2">
-              Enquire Now
-            </h3>
-            <p className="text-sm text-gray-600 mb-4">
-              Interested in{" "}
-              <span className="font-medium text-[#F5A300]">
-                Adani Shantigram The Meadows
-              </span>
-            </p>
-
-            {/* FORM */}
-            <div className="space-y-3">
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="w-full px-4 py-2 border rounded-md outline-none focus:ring-1 focus:ring-[#F5A300]"
-              />
-
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                className="w-full px-4 py-2 border rounded-md outline-none focus:ring-1 focus:ring-[#F5A300]"
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full px-4 py-2 border rounded-md outline-none focus:ring-1 focus:ring-[#F5A300]"
-              />
-
-              <textarea
-                rows={3}
-                placeholder="Message (optional)"
-                className="w-full px-4 py-2 border rounded-md outline-none focus:ring-1 focus:ring-[#F5A300]"
-              />
-            </div>
-
-            {/* SUBMIT */}
-            <button
-              className="w-full mt-5 bg-[#F5A300] text-white py-2.5 rounded-lg font-semibold hover:bg-[#e39a00] transition"
-            >
-              Submit Enquiry
-            </button>
-          </div>
-        </div>
-      )}
     </>
   );
 }
