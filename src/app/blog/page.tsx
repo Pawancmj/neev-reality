@@ -31,7 +31,7 @@ export default function Blog() {
           Home / Blog 
         </div>
       <BlogPage blogs={visibleBlogs} />
-      <div className="py-10">
+      <div className="py-10 ">
       <Pagination
         currentPage={page}
         totalPages={Math.ceil(blogs.length / blogsPerPage)}

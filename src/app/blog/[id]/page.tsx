@@ -374,7 +374,7 @@ export default function BlogDetailPage() {
             <div className="sticky top-[110px] mt-[95px]">
 
               {/* ===== TABLE OF CONTENTS ===== */}
-              <div className="bg-white rounded-lg p-5 shadow-sm">
+              <div className="bg-white rounded-lg p-5 relative right-4 shadow-sm">
                 <h3 className="text-lg font-semibold mb-4">
                   Table of Contents
                 </h3>

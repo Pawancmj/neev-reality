@@ -5,11 +5,14 @@ import { usePathname } from "next/navigation";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { FiMail } from "react-icons/fi";
+import GetInTouchModal from "@/app/residential/[slug]/GetInTouchModal";
 
 export default function StickyIcons() {
   const [showEnquiryPopup, setShowEnquiryPopup] = useState(false);
   const pathname = usePathname();
-
+  
+  // Home page only (/) OR root path
+  const isHomePage = pathname === "/";
   const isPropertyPage = pathname.startsWith("/residential/");
 
   return (
@@ -17,47 +20,43 @@ export default function StickyIcons() {
       {/* ================= STICKY BAR ================= */}
       <div className="fixed bottom-0 left-0 z-50 w-full">
 
-        {/* ========= MOBILE VERSION ========= */}
+        {/* ========= MOBILE VERSION - BOTH BUTTONS ALWAYS ========= */}
         <div className="sm:hidden w-full bg-white py-2 shadow-lg">
-          <div className="flex justify-center gap-2">
-
+          <div className="flex justify-center gap-2 max-w-md mx-auto px-4">
             {/* WhatsApp — ALWAYS */}
-            <button className="flex items-center border border-green-500 text-green-600 px-5 py-3 rounded-2xl font-medium gap-1">
-              <IoLogoWhatsapp size={28} />
+            <button className="flex-1 flex items-center justify-center border border-green-500 text-green-600 px-4 py-3 rounded-2xl font-medium gap-2 shadow-md hover:shadow-lg transition-all">
+              <IoLogoWhatsapp size={24} />
               Whatsapp
             </button>
 
-            {/* Enquire — HIDE on property page */}
-            {!isPropertyPage && (
-              <button
-                onClick={() => setShowEnquiryPopup(true)}
-                className="flex items-center bg-[#DBA40D] text-white px-5 py-3 rounded-2xl font-medium gap-1 cursor-pointer"
-              >
-                <FiMail size={28} />
-                Enquire Now
-              </button>
-            )}
+            {/* Enquire — ALWAYS ON MOBILE */}
+            <button
+              onClick={() => setShowEnquiryPopup(true)}
+              className="flex-1 flex items-center justify-center bg-[#DBA40D] text-white px-4 py-3 rounded-2xl font-medium gap-2 shadow-md hover:shadow-lg hover:brightness-105 transition-all"
+            >
+              <FiMail size={24} />
+              Enquire
+            </button>
           </div>
         </div>
 
         {/* ========= DESKTOP / TABLET VERSION ========= */}
         <div className="hidden sm:flex mx-auto max-w-5xl items-center justify-between px-4 py-2 h-20 md:h-24">
-
           {/* Phone — ALWAYS */}
           <div className="group absolute left-4 md:left-16">
-            <div className="border-2 border-[#DBA40D]/50 bg-white/80 rounded-2xl p-3 shadow-lg hover:scale-110 hover:border-[#DBA40D]">
-              <FaPhoneAlt />
+            <div className="border-2 border-[#DBA40D]/50 bg-white/80 backdrop-blur-sm rounded-2xl p-3 shadow-lg hover:scale-110 hover:border-[#DBA40D] transition-all">
+              <FaPhoneAlt size={20} />
             </div>
           </div>
 
-          {/* Enquire Button — HIDE on property page */}
-          {!isPropertyPage && (
+          {/* Enquire Button — ONLY ON HOME PAGE (/) */}
+          {isHomePage && (
             <div className="absolute right-1 -translate-x-1/2 bottom-6">
               <button
                 onClick={() => setShowEnquiryPopup(true)}
-                className="bg-[#DBA40D] text-white px-6 py-3 rounded-2xl font-semibold shadow-lg inline-flex items-center gap-2 cursor-pointer"
+                className="bg-[#DBA40D] text-white px-6 py-3 rounded-2xl font-semibold shadow-lg inline-flex items-center gap-2 hover:brightness-105 hover:shadow-xl transition-all"
               >
-                <FiMail />
+                <FiMail size={20} />
                 Enquire Now!
               </button>
             </div>
@@ -65,41 +64,20 @@ export default function StickyIcons() {
 
           {/* WhatsApp — ALWAYS */}
           <div className="group absolute right-4 md:right-6">
-            <div className="bg-green-600 text-white rounded-2xl p-3 shadow-xl">
+            <div className="bg-green-600 text-white rounded-2xl p-3 shadow-xl hover:scale-110 hover:shadow-2xl transition-all">
               <IoLogoWhatsapp size={22} />
             </div>
           </div>
         </div>
       </div>
 
-      {/* ================= ENQUIRY POPUP ================= */}
-      {!isPropertyPage && showEnquiryPopup && (
-        <div className="fixed inset-0 z-[999] bg-black/60 flex items-center justify-center px-4">
-          <div className="bg-white w-full max-w-md rounded-2xl p-6 relative">
-
-            <button
-              onClick={() => setShowEnquiryPopup(false)}
-              className="absolute top-3 right-3 text-gray-500 hover:text-black text-xl"
-            >
-              ✕
-            </button>
-
-            <h3 className="text-xl font-semibold mb-2">Enquire Now</h3>
-            <p className="text-sm text-gray-600 mb-4">
-              Fill the form and our expert will contact you shortly.
-            </p>
-
-            <div className="space-y-3">
-              <input type="text" placeholder="Full Name" className="w-full px-4 py-2 border rounded-md" />
-              <input type="tel" placeholder="Phone Number" className="w-full px-4 py-2 border rounded-md" />
-              <input type="email" placeholder="Email" className="w-full px-4 py-2 border rounded-md" />
-            </div>
-
-            <button className="w-full mt-5 bg-[#DBA40D] text-white py-2.5 rounded-lg font-semibold">
-              Submit Enquiry
-            </button>
-          </div>
-        </div>
+      {/* ================= ENQUIRY MODAL ================= */}
+      {showEnquiryPopup && (
+        <GetInTouchModal
+          open={showEnquiryPopup}
+          onClose={() => setShowEnquiryPopup(false)}
+          propertyName={isPropertyPage ? "This Property" : "Featured Properties"}
+        />
       )}
     </>
   );

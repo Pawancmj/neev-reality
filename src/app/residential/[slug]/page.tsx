@@ -612,8 +612,8 @@ export default async function ApartmentDetails({ params }: Props) {
                 <button className="flex-1 py-2 border rounded-lg text-sm">
                   Call Us
                 </button>
-                <button className="flex-1 py-2 border border-blue-600 text-blue-600 rounded-lg text-sm">
-                  Inquiry
+                <button className="flex-1 py-2 border border-yellow-600 text-yellow-600 rounded-lg text-sm">
+                  Enquiry
                 </button>
               </div>
 
@@ -635,11 +635,11 @@ export default async function ApartmentDetails({ params }: Props) {
               <p className="font-medium mb-4">Share</p>
 
               <div className="flex justify-center gap-3">
-                <FaInstagram className="w-9 h-9 p-2 bg-pink-500 text-white rounded" />
-                <FaLinkedinIn className="w-9 h-9 p-2 bg-blue-700 text-white rounded" />
-                <FaPinterestP className="w-9 h-9 p-2 bg-red-600 text-white rounded" />
-                <FaFacebookF className="w-9 h-9 p-2 bg-blue-600 text-white rounded" />
-                <FaTwitter className="w-9 h-9 p-2 bg-sky-500 text-white rounded" />
+                <FaInstagram className="w-9 h-9 p-2 bg-[#DBA40D] text-white rounded" />
+                <FaLinkedinIn className="w-9 h-9 p-2 bg-[#DBA40D] text-white rounded" />
+                <FaPinterestP className="w-9 h-9 p-2 bg-[#DBA40D] text-white rounded" />
+                <FaFacebookF className="w-9 h-9 p-2 bg-[#DBA40D] text-white rounded" />
+                <FaTwitter className="w-9 h-9 p-2 bg-[#DBA40D] text-white rounded" />
               </div>
             </div>
           </div>
@@ -723,8 +723,8 @@ export default async function ApartmentDetails({ params }: Props) {
                   <button className="flex-1 py-2 border rounded-lg text-sm">
                     Call Us
                   </button>
-                  <button className="flex-1 py-2 border border-blue-600 text-blue-600 rounded-lg text-sm">
-                    Inquiry
+                  <button className="flex-1 py-2 border border-yellow-600 text-yellow-600 rounded-lg text-sm">
+                    Enquiry
                   </button>
                 </div>
 
