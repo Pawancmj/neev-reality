@@ -23,7 +23,6 @@ const WhatWeOffer = () => {
       <section className="w-full bg-[#F6FAFF] py-16">
         {/* MAIN CONTAINER */}
         <div className="mx-auto max-w-6xl space-y-12 px-4">
-
           {/* HEADING */}
           <div>
             <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
@@ -86,49 +85,45 @@ const WhatWeOffer = () => {
 
       {/* ================= RESUME POPUP ================= */}
       {showResumePopup && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4">
-          <div className="relative w-full max-w-2xl bg-white rounded-xl p-8">
-
+        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-2 md:p-4">
+          <div className="relative w-full max-w-2xl bg-white rounded-xl mb-14 p-3 md:p-4 lg:p-8 max-h-[85dvh] md:max-h-[90dvh] overflow-y-auto shadow-2xl">
             {/* CLOSE */}
             <button
               onClick={() => setShowResumePopup(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-black text-xl"
+              className="absolute top-2 right-2 md:top-4 md:right-4 text-gray-400 hover:text-black text-xl"
             >
               ✕
             </button>
 
             {/* HEADER */}
-            <h3 className="text-2xl font-semibold text-gray-900 mb-1">
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-1 md:mb-2">
               Submit Your Resume
             </h3>
-            <p className="text-sm text-gray-500 mb-6">
+            <p className="text-xs md:text-sm text-gray-500 mb-2 md:mb-4 leading-tight">
               Please fill in your details below and upload your resume. Our HR team will get in touch with you shortly.
             </p>
 
             {/* FORM GRID */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
               <input
                 type="text"
                 placeholder="Full Name*"
-                className="border rounded-md px-4 py-3 text-sm outline-none focus:border-[#DBA40D]"
+                className="border rounded-md px-3 md:px-4 py-2.5 text-sm outline-none focus:border-[#DBA40D] w-full"
               />
 
               <input
                 type="email"
                 placeholder="Email Address*"
-                className="border rounded-md px-4 py-3 text-sm outline-none focus:border-[#DBA40D]"
+                className="border rounded-md px-3 md:px-4 py-2.5 text-sm outline-none focus:border-[#DBA40D] w-full"
               />
 
               <input
                 type="tel"
                 placeholder="Mobile Number*"
-                className="border rounded-md px-4 py-3 text-sm outline-none focus:border-[#DBA40D]"
+                className="border rounded-md px-3 md:px-4 py-2.5 text-sm outline-none focus:border-[#DBA40D] w-full"
               />
 
-              <select
-                className="border rounded-md px-4 py-3 text-sm outline-none focus:border-[#DBA40D] text-gray-600"
-              >
+              <select className="border rounded-md px-3 md:px-4 py-2.5 text-sm outline-none focus:border-[#DBA40D] text-gray-600 w-full">
                 <option>Applying For Position*</option>
                 <option>Sales Executive</option>
                 <option>Marketing Manager</option>
@@ -136,9 +131,7 @@ const WhatWeOffer = () => {
                 <option>Operations</option>
               </select>
 
-              <select
-                className="border rounded-md px-4 py-3 text-sm outline-none focus:border-[#DBA40D] text-gray-600"
-              >
+              <select className="border rounded-md px-3 md:px-4 py-2.5 text-sm outline-none focus:border-[#DBA40D] text-gray-600 w-full">
                 <option>Total Work Experience</option>
                 <option>Fresher</option>
                 <option>1–2 Years</option>
@@ -147,28 +140,28 @@ const WhatWeOffer = () => {
               </select>
 
               {/* FILE UPLOAD */}
-              <div className="border rounded-md px-4 py-3 text-sm flex items-center gap-3">
-                <input type="file" className="text-sm" />
+              <div className="border rounded-md px-3 md:px-4 py-2.5 text-sm flex items-center gap-2 md:gap-3 w-full md:col-span-2">
+                <input 
+                  type="file" 
+                  className="text-sm w-full file:mr-2 md:file:mr-4 file:py-1.5 md:file:py-2 file:px-3 md:file:px-4 file:rounded-md file:border-0 file:text-xs md:file:text-sm file:font-semibold file:bg-[#DBA40D] file:text-white hover:file:bg-[#c8950a] cursor-pointer" 
+                />
               </div>
             </div>
 
             {/* TEXTAREA */}
             <textarea
               placeholder="Briefly describe your experience (optional)"
-              rows={3}
-              className="w-full mt-4 border rounded-md px-4 py-3 text-sm outline-none focus:border-[#DBA40D]"
+              rows={1}
+              className="w-full mt-2 md:mt-3 border rounded-md px-3 md:px-4 py-2.5 text-sm outline-none focus:border-[#DBA40D] resize-vertical"
             />
 
             {/* SUBMIT BUTTON */}
-            <button
-              className="mt-6 w-full rounded-lg bg-[#DBA40D] py-3 text-sm font-semibold text-white hover:bg-[#c8950a]"
-            >
+            <button className="mt-3 md:mt-4 lg:mt-6 w-full rounded-lg bg-[#DBA40D] py-2.5 md:py-3 text-sm font-semibold text-white hover:bg-[#c8950a] shadow-md">
               Submit Resume
             </button>
           </div>
         </div>
       )}
-
     </>
   );
 };

@@ -52,7 +52,7 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className="w-[80px] h-[80px] flex items-center">
           <Image
-            src="/images/logo.png"
+            src="/images/neevlogo.png"
             alt="Neev Realty"
             width={80}
             height={80}
