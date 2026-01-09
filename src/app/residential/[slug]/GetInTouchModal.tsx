@@ -58,11 +58,11 @@ export default function GetInTouchModal({ open, onClose, propertyTitle, }: Props
 
           {/* INTERESTED IN */}
           <p className="text-sm font-semibold text-gray-800">
-            I Am Interested In
-          </p>
-          <p className="mt-1 text-sm text-[#c8950a] font-medium">
+            I Am Interested In <span className="mt-1 text-sm text-[#c8950a] font-medium">
             {propertyTitle}
+          </span>
           </p>
+          
 
           <input
             type="text"
