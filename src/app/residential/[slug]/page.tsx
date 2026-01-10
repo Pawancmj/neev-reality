@@ -597,39 +597,7 @@ export default async function ApartmentDetails({ params }: Props) {
             </div>
 
 
-            {/* BRAND + CTA */}
-            <div className="bg-white rounded-xl p-5 text-center shadow-sm">
-              <Image
-                src="/images/logo.png"
-                alt="Neev Realty"
-                width={70}
-                height={70}
-                className="mx-auto"
-              />
-
-              <p className="mt-2 font-medium text-lg">Neev Realty</p>
-
-              <div className="flex gap-3 mt-4">
-                <button className="flex-1 py-2 border rounded-lg text-sm">
-                  Call Us
-                </button>
-                <button className="flex-1 py-2 border border-yellow-600 text-yellow-600 rounded-lg text-sm">
-                  Enquiry
-                </button>
-              </div>
-
-              <p className="mt-4 text-sm text-gray-500">Connect us via</p>
-
-              <div className="flex justify-center mt-2">
-                <a
-                  href="https://wa.me/918824966669"
-                  target="_blank"
-                  className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center"
-                >
-                  <FaWhatsapp className="text-xl" />
-                </a>
-              </div>
-            </div>
+            <BrandCTA />
 
             {/* SHARE */}
             <div className="bg-white rounded-xl p-5 shadow-sm text-center">
