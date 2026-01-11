@@ -12,7 +12,7 @@ export default function about() {
       <Section1 />
       <TestimonialsSection />
       {/* ================= GET IN TOUCH SECTION ================= */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Heading */}

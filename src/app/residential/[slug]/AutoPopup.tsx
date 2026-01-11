@@ -5,15 +5,20 @@ import GetInTouchModal from "./GetInTouchModal";
 
 type Props = {
   propertyTitle: string;
+  notifyTimerDone?: () => void;
 };
 
-export default function AutoPopup({ propertyTitle }: Props) {
+export default function AutoPopup({
+  propertyTitle,
+  notifyTimerDone,
+}: Props) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 5000); // page load ke 5 sec baad popup
+      notifyTimerDone?.(); // ✅ ab error nahi
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);

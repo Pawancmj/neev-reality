@@ -63,9 +63,9 @@ export default function ApartmentsPage() {
       </section>
 
       {/* ================= TRENDING BANNER ================= */}
-      <section className="bg-white py-6 sm:py-10 md:py-10">
+      <section className="bg-white py-6 sm:py-10 md:py-5">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6">
-          <h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 lg:mb-12">
+          <h2 className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-4 lg:mb-4">
             Trending <span className="text-[#F5A300]">Projects</span>
           </h2>
 

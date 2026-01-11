@@ -7,6 +7,8 @@ import BrandEnquiryPopup from "./BrandEnquiryPopup";
 
 export default function BrandCTA() {
   const [openEnquiry, setOpenEnquiry] = useState(false);
+  const [autoPopupDone, setAutoPopupDone] = useState(false);
+
 
   return (
     <>

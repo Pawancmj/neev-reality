@@ -73,7 +73,7 @@ export default function Home() {
       </section>
 
       {/* ================= WELCOME ================= */}
-      <section className="max-w-6xl mx-auto px-6 py-10 text-center">
+      <section className="max-w-6xl mx-auto px-6 py-8 text-center">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
           Welcome to{" "}
           <span className="text-[#DBA40D]">Neev Realty</span>
@@ -149,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* ================= WHY DIFFERENT ================= */}
-      <section className="bg-white relative bottom-15 py-20">
+      <section className="bg-white relative bottom-15 py-5 mb-8">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-center text-3xl sm:text-4xl font-semibold mb-12">
             <span className="text-[#DBA40D]">Why</span>{" "}
@@ -185,14 +185,14 @@ export default function Home() {
       </section>
 
       {/* ================= VISION / MISSION ================= */}
-      <section className="bg-[#F8FBFF] py-6 relative bottom-15">
+      <section className="bg-[#F8FBFF] py-10 relative ">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-semibold mb-8">
             <span className="text-[#DBA40D]">Our</span> Vision & Mission
           </h2>
 
           {/* CENTERED CIRCLES */}
-          <div className="flex flex-col items-center justify-center md:flex-row md:items-center md:justify-center gap-20">
+          <div className="flex flex-col items-center justify-center md:flex-row md:items-center md:justify-center gap-30">
 
             {/* VISION */}
             <div
@@ -249,8 +249,8 @@ export default function Home() {
       </section>
 
       {/* ================= 5 STEPS - MOBILE SCROLL ONLY ================= */}
-      <section className="max-w-7xl mx-auto relative bottom-8 px-6 py-10 ">
-        <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl mb-12 ">
+      <section className="max-w-7xl mx-auto relative px-6 py-10 bottom-5 ">
+        <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl mb-6 ">
           <span className="text-[#DBA40D] font-semibold">5 Steps</span> to Your Dream Home
         </h2>
 

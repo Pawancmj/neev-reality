@@ -62,7 +62,7 @@ export default function TestimonialsSection() {
   return (
     <>
       {/* ================= TESTIMONIAL SECTION ================= */}
-      <section className="bg-[#F7F9FC] py-10 sm:py-20 -mt-8 sm:-mt-10 lg:-mt-8">
+      <section className="bg-[#F7F9FC] sm:py-10 -mt-8 sm:-mt-10 lg:-mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Heading */}
@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
           {/* Slider */}
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4 px-2"
+            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-1 px-2"
           >
             {testimonials.map((item, i) => (
               <article

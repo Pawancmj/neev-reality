@@ -210,7 +210,7 @@ export default function BlogDetailPage() {
           <span className="text-gray-900 font-medium">{blogPost.title}</span>
         </div>
         {/* ================= CONTENT + SIDEBAR ================= */}
-        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[3fr_1fr]">
+        <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-[3fr_1fr]">
 
           {/* ================= LEFT COLUMN ================= */}
           <div className="space-y-8">
@@ -370,11 +370,11 @@ export default function BlogDetailPage() {
           </div>
 
           {/* ================= RIGHT COLUMN ================= */}
-          <aside className="hidden lg:block space-y-6">
+          <aside className="hidden lg:block space-y-6 mb-8">
             <div className="sticky top-[110px] mt-[95px]">
 
               {/* ===== TABLE OF CONTENTS ===== */}
-              <div className="bg-white rounded-lg p-5 relative right-4 shadow-sm">
+              <div className="bg-white rounded-lg p-5 relative shadow-sm">
                 <h3 className="text-lg font-semibold mb-4">
                   Table of Contents
                 </h3>
@@ -399,8 +399,8 @@ export default function BlogDetailPage() {
                 </ul>
               </div>
 
-              {/* ===== RECENT BLOGS (OPTIONAL – SAME AS PEHLE) ===== */}
-              <section className="bg-white rounded-lg p-4 mt-6">
+              {/* ===== RECENT BLOGS (OPTIONAL ) ===== */}
+              <section className="bg-white rounded-lg p-9.5 mt-6">
                 <h3 className="font-semibold mb-2">Latest Blogs</h3>
                 <p className="text-xs text-gray-400 mb-4">
                   Updates from around the world
@@ -437,6 +437,7 @@ export default function BlogDetailPage() {
 
             </div>
           </aside>
+          
 
         </div>
 
