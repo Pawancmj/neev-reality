@@ -48,7 +48,7 @@ const recentBlogs: RecentBlog[] = [
 /* ================= PAGE ================= */
 export default function BlogPage({ blogs }: BlogPageProps) {
   return (
-    <main className="bg-white py-12">
+    <main className="bg-white py-1">
       {/* ===== HEADING ===== */}
       <div className="max-w-[1240px] mx-auto px-4 text-center mb-10">
         <h1 className="text-3xl md:text-4xl font-bold">

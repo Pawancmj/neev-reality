@@ -24,7 +24,7 @@ export default function GetInTouchModal({ open, onClose, propertyTitle, }: Props
     <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 px-4">
 
       {/* MODAL */}
-      <div className="relative w-full max-w-md bg-white rounded-2xl p-6 shadow-xl">
+      <div className="relative w-full max-w-md bg-white rounded-2xl p-4 shadow-xl">
 
         {/* CLOSE */}
         <button
@@ -35,7 +35,7 @@ export default function GetInTouchModal({ open, onClose, propertyTitle, }: Props
         </button>
 
         {/* HEADER */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <Image
             src="/images/logo.png"
             alt="Neev Realty"
@@ -43,18 +43,18 @@ export default function GetInTouchModal({ open, onClose, propertyTitle, }: Props
             height={38}
           />
 
-          <h2 className="text-2xl font-semibold">
+          <h2 className="text-xl font-semibold">
             Get in <span className="text-[#F5A300]">Touch</span>
           </h2>
         </div>
 
-        <p className="text-sm text-gray-500 mt-2">
+        <p className="text-sm text-gray-500 mt-1">
           Please fill in your details below and We will get in
           touch with you shortly
         </p>
 
         {/* FORM */}
-        <form className="mt-6 space-y-4">
+        <form className="mt-4 space-y-3">
 
           {/* INTERESTED IN */}
           <p className="text-sm font-semibold text-gray-800">
@@ -77,20 +77,20 @@ export default function GetInTouchModal({ open, onClose, propertyTitle, }: Props
             <input
               type="tel"
               placeholder="Phone"
-              className="flex-1 px-4 py-2 outline-none"
+              className="flex-1 px-3 py-1.5 outline-none"
             />
           </div>
 
           <input
             type="email"
             placeholder="Email"
-            className="w-full border border-gray-300 rounded-md px-4 py-2 outline-none focus:border-[#F5A300]"
+            className="w-full border border-gray-300 rounded-md px-3 py-1.5 outline-none focus:border-[#F5A300]"
           />
 
           <textarea
             placeholder="Your Message"
-            rows={4}
-            className="w-full border border-gray-300 rounded-md px-4 py-2 outline-none resize-none focus:border-[#F5A300]"
+            rows={2}
+            className="w-full border border-gray-300 rounded-md px-3 py-1.5 outline-none resize-none focus:border-[#F5A300]"
           ></textarea>
 
           {/* CHECKBOX */}
@@ -98,7 +98,7 @@ export default function GetInTouchModal({ open, onClose, propertyTitle, }: Props
             <input
               type="checkbox"
               defaultChecked
-              className="w-5 h-5 accent-green-500"
+              className="w-4 h-4 accent-green-500"
             />
             <span>
               I agree to neevrealty.com{" "}

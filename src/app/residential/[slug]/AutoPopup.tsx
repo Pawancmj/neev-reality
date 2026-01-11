@@ -18,7 +18,7 @@ export default function AutoPopup({
     const timer = setTimeout(() => {
       setOpen(true);
       notifyTimerDone?.(); // ✅ ab error nahi
-    }, 5000);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, []);
