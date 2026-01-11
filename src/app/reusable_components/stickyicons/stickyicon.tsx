@@ -10,19 +10,19 @@ import GetInTouchModal from "@/app/residential/[slug]/GetInTouchModal";
 export default function StickyIcons() {
   const [showEnquiryPopup, setShowEnquiryPopup] = useState(false);
   const pathname = usePathname();
-  
-  // Home page only (/) OR root path
-  const isHomePage = pathname === "/";
-  const isPropertyPage = pathname.startsWith("/residential/");
+
+  // ❌ Hide only on slug pages
+  const isSlugPage = pathname.startsWith("/residential/");
 
   return (
     <>
       {/* ================= STICKY BAR ================= */}
       <div className="fixed bottom-0 left-0 z-50 w-full">
 
-        {/* ========= MOBILE VERSION - BOTH BUTTONS ALWAYS ========= */}
+        {/* ========= MOBILE VERSION ========= */}
         <div className="sm:hidden w-full bg-white py-2 shadow-lg">
           <div className="flex justify-center gap-2 max-w-md mx-auto px-4">
+
             {/* WhatsApp — ALWAYS */}
             <button className="flex-1 flex items-center justify-center border border-green-500 text-green-600 px-4 py-3 rounded-2xl font-medium gap-2 shadow-md hover:shadow-lg transition-all">
               <IoLogoWhatsapp size={24} />
@@ -37,11 +37,13 @@ export default function StickyIcons() {
               <FiMail size={24} />
               Enquire
             </button>
+
           </div>
         </div>
 
-        {/* ========= DESKTOP / TABLET VERSION ========= */}
+        {/* ========= DESKTOP / TABLET ========= */}
         <div className="hidden sm:flex mx-auto max-w-5xl items-center justify-between px-4 py-2 h-20 md:h-24">
+
           {/* Phone — ALWAYS */}
           <div className="group absolute left-4 md:left-16">
             <div className="border-2 border-[#DBA40D]/50 bg-white/80 backdrop-blur-sm rounded-2xl p-3 shadow-lg hover:scale-110 hover:border-[#DBA40D] transition-all">
@@ -49,8 +51,8 @@ export default function StickyIcons() {
             </div>
           </div>
 
-          {/* Enquire Button — ONLY ON HOME PAGE (/) */}
-          {isHomePage && (
+          {/* Enquire Now — ALL PAGES EXCEPT SLUG */}
+          {!isSlugPage && (
             <div className="absolute right-1 -translate-x-1/2 bottom-6">
               <button
                 onClick={() => setShowEnquiryPopup(true)}
@@ -68,6 +70,7 @@ export default function StickyIcons() {
               <IoLogoWhatsapp size={22} />
             </div>
           </div>
+
         </div>
       </div>
 
@@ -76,7 +79,6 @@ export default function StickyIcons() {
         <GetInTouchModal
           open={showEnquiryPopup}
           onClose={() => setShowEnquiryPopup(false)}
-          
         />
       )}
     </>
