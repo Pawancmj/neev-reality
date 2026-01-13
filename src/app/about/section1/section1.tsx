@@ -377,7 +377,7 @@ export default function Home() {
     
     {/* BUTTON FULLY VISIBLE */}
     <Link 
-      href="/team" 
+      href="" 
       className="w-fit px-4 py-2 sm:px-6 sm:py-3 bg-yellow-400 hover:bg-yellow-500 font-semibold text-sm sm:text-base lg:text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-yellow-500 self-start"
     >
       Explore
