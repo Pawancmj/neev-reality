@@ -117,8 +117,15 @@ export default function TitleBlockWithBrochure({ property }: Props) {
             </button>
 
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
-               Brochure
+              Brochure
             </h3>
+
+            <p className="text-sm font-semibold text-gray-800 mb-3">
+              I Am Interested In
+              <span className="block mt-1 text-sm text-[#c8950a] font-medium">
+                {property.title}
+              </span>
+            </p>
 
             <p className="text-sm text-gray-600 mb-4">
               Enter your details to get the project brochure.

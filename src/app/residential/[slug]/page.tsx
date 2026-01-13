@@ -385,7 +385,8 @@ export default async function ApartmentDetails({ params }: Props) {
               </section>
 
               {/* ================= EMI CALCULATOR ================= */}
-              <EmiCalculatorSection />
+              <EmiCalculatorSection propertyTitle={property.title} />
+
 
               {/* ================= FAQ ================= */}
               <section id="faq" className="max-w-[1240px] mx-auto px-4 mt-16">
