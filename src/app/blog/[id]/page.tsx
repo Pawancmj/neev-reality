@@ -210,7 +210,7 @@ export default function BlogDetailPage() {
           <span className="text-gray-900 font-medium">{blogPost.title}</span>
         </div>
         {/* ================= CONTENT + SIDEBAR ================= */}
-        <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-[3fr_1fr]">
+        <div className="mt-0 px-4 grid grid-cols-1 gap-4 lg:grid-cols-[3fr_1fr]">
 
           {/* ================= LEFT COLUMN ================= */}
           <div className="space-y-8">

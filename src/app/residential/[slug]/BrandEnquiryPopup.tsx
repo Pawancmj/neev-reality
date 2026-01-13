@@ -8,9 +8,10 @@ import Portal from "./Portal";
 type Props = {
   open: boolean;
   onClose: () => void;
+  propertyTitle?: string;
 };
 
-export default function BrandEnquiryPopup({ open, onClose }: Props) {
+export default function BrandEnquiryPopup({ open, onClose, propertyTitle, }: Props) {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
@@ -52,6 +53,14 @@ export default function BrandEnquiryPopup({ open, onClose }: Props) {
 
           {/* FORM */}
           <form className="space-y-3">
+
+            {/* INTERESTED IN */}
+          <p className="text-sm font-semibold text-gray-800">
+            I Am Interested In <span className="mt-1 text-sm text-[#c8950a] font-medium">
+            {propertyTitle}
+          </span>
+          </p>
+
             <input
               type="text"
               placeholder="Name"

@@ -191,7 +191,7 @@ export default async function ApartmentDetails({ params }: Props) {
                 <ScrollTabs />
               </div>
 
-              <OverviewSection />
+              <OverviewSection propertyTitle={property.title} />
               <FloorPlanSection floorPlans={floorPlans} />
 
               {/* ================= PAYMENT PLAN ================= */}

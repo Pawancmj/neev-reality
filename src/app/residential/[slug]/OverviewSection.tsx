@@ -5,8 +5,13 @@ import Image from "next/image";
 import GetInTouchModal from "@/app/residential/[slug]/GetInTouchModal";
 import BrandEnquiryPopup from "./BrandEnquiryPopup";
 
+type Props = {
+  propertyTitle: string;
+};
 
-export default function OverviewSection() {
+export default function OverviewSection({
+  propertyTitle,
+}: Props) {
   const [openEnquiry, setOpenEnquiry] = useState(false);
 
   return (
@@ -46,10 +51,11 @@ export default function OverviewSection() {
         </div>
       </section>
 
-     <BrandEnquiryPopup
-  open={openEnquiry}
-  onClose={() => setOpenEnquiry(false)}
-/>
+      <BrandEnquiryPopup
+        open={openEnquiry}
+        onClose={() => setOpenEnquiry(false)}
+        propertyTitle={propertyTitle}
+      />
 
     </>
   );
