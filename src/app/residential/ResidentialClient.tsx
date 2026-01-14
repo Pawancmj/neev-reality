@@ -51,9 +51,7 @@ export default function ApartmentsPage() {
               <p className="mt-2 text-sm sm:text-[15px] text-gray-600">
                 Booming Micro Residential Apartments Market in Gurgaon –
                 luxury apartments offering massive long-term capital gains.
-                <span className="text-blue-600 cursor-pointer ml-1">
-                  Read More
-                </span>
+                
               </p>
             </div>
 

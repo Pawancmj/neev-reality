@@ -504,7 +504,6 @@ export default async function ApartmentDetails({ params }: Props) {
                     established in 1986 and headquartered in Bangalore. With a strong presence
                     across residential, commercial, retail and hospitality segments, the
                     group is known for innovation, quality construction and timely delivery.
-                    <span className="text-blue-600 cursor-pointer"> Read More</span>
                   </p>
                 </div>
               </section>
