@@ -75,7 +75,7 @@ const StatsBar: React.FC<{ stats?: StatItem[] }> = ({ stats: customStats }) => {
   }, [useStats]);
 
   return (
-    <section ref={observedRef} className="relative mx-auto py-8 sm:py-12 w-full max-w-[1520px] overflow-hidden">
+    <section ref={observedRef} className="relative mx-auto py-8 sm:py-12 w-full max-w-[1520px] bg-[#F8FBFF] h-[330px]  overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-4 sm:top-10 left-4 sm:left-10 w-16 sm:w-20 h-16 sm:h-20 bg-white/30 rounded-full blur-xl"></div>
@@ -111,24 +111,25 @@ const StatsBar: React.FC<{ stats?: StatItem[] }> = ({ stats: customStats }) => {
         </div>
 
         {/* 1024px+: HORIZONTAL ROW - OVERFLOW FIXED */}
-        <div className="hidden lg:flex lg:gap-3 xl:gap-20 p-6  bg-white/86 shadow-2xl rounded-2xl mx-auto  max-w-[1240px] h-[259px] justify-center items-start overflow-x-auto lg:overflow-visible xl:overflow-hidden">
+        {/* <section className="h-[300px] w-[1520px] bg-blue-100 mx-auto relative right-28 bottom-12"> */}
+        <div className="hidden lg:flex lg:gap-3 xl:gap-20 p-6   bg-white/95 shadow-2xl rounded-2xl mx-auto  max-w-[1240px] h-[240px] justify-center items-start overflow-x-auto lg:overflow-visible xl:overflow-hidden">
           {useStats.map((item, index) => (
             <div
               key={item.label}
               className="
-                flex flex-col items-center xl:h-48 hover:scale-110 rounded-2xl bg-white/95
+                flex flex-col items-center xl:h-44 hover:scale-95 rounded-2xl bg-white/95
                 backdrop-blur-xl shadow-2xl border border-white/50 hover:shadow-gold
-                transition-all duration-500 hover:-translate-y-2 flex-shrink-0 group relative p-3 xl:p-4 w-[200px] lg:w-[224px] xl:w-[224px] h-[166px]
+                transition-all duration-500 hover:-translate-y-2 flex-shrink-0 group relative p-3 xl:p-4 w-[200px] lg:w-[200px] xl:w-[200px] h-[130px] relative top-3
               "
             >
               {/* Custom Logo/Image Section - ORIGINAL positioning */}
-              <div className="w-16 xl:w-20 h-16 xl:h-20 rounded-full relative right-6 xl:right-8 bottom-3 xl:bottom-10 bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300 overflow-hidden">
+              <div className="w-16 xl:w-20 h-16 xl:h-20 rounded-full relative right-6 xl:right-8 bottom-3 xl:bottom-10 bg-white flex items-center justify-center shadow-xl border-2 border-[#cad1db] group-hover:scale-110 transition-all duration-300 overflow-hidden">
                 <Image
                   src={item.icon}
                   alt={item.label}
                   width={86}
                   height={86}
-                  className="w-[86px] xl:w-10 h-[86px] xl:h-10 object-contain drop-shadow-lg group-hover:scale-110 transition-all duration-300"
+                  className="w-[86px]   xl:w-10 h-[86px] xl:h-10 object-contain drop-shadow-lg group-hover:scale-110 transition-all duration-300"
                 />
               </div>
               
@@ -142,6 +143,7 @@ const StatsBar: React.FC<{ stats?: StatItem[] }> = ({ stats: customStats }) => {
             </div>
           ))}
         </div>
+        {/* </section> */}
       </div>
     </section>
   );
