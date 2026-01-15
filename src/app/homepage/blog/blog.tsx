@@ -23,7 +23,7 @@ const posts: BlogPost[] = Array.from({ length: 5 }).map((_, i) => ({
 
 const BlogSection: React.FC = () => {
   return (
-    <section className="max-w-[1240px] mx-auto px-4 mt-16 mb-10">
+    <section className="max-w-[1240px] mx-auto px-4 mt-8 ">
 
       {/* HEADER + BUTTON (SAME ALIGNMENT AS TRENDING PROJECTS) */}
       <div className="max-w-[1480px] mx-auto px-1 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
