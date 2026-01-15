@@ -385,7 +385,7 @@ export default async function ApartmentDetails({ params }: Props) {
               </section>
 
               {/* ================= EMI CALCULATOR ================= */}
-              <EmiCalculatorSection propertyTitle={property.title} />
+              <EmiCalculatorSection />
 
 
               {/* ================= FAQ ================= */}
@@ -456,11 +456,6 @@ export default async function ApartmentDetails({ params }: Props) {
 
                       <h3 className="text-lg font-semibold">Prestige Group</h3>
                     </div>
-
-                    {/* RIGHT : PARTNER BADGE */}
-                    <button className="px-4 py-2 border border-[#F5A300] text-[#F5A300] rounded-full text-sm font-medium">
-                      Neev Realty Channel Partner
-                    </button>
                   </div>
 
                   {/* STATS */}
@@ -597,7 +592,7 @@ export default async function ApartmentDetails({ params }: Props) {
             </div>
 
 
-            <BrandCTA />
+            <BrandCTA propertyTitle={property.title} />
 
             {/* SHARE */}
             <div className="bg-white rounded-xl p-5 shadow-sm text-center">
@@ -676,7 +671,7 @@ export default async function ApartmentDetails({ params }: Props) {
 
             {/* ✅ STICKY PART STARTS HERE */}
             <aside className="sticky top-[135px] space-y-4 z-20">
-              <BrandCTA />
+              <BrandCTA propertyTitle={property.title} />
 
               {/* SHARE */}
               <div className="bg-white rounded-xl p-5 py-5 shadow-sm text-center">

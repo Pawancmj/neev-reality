@@ -5,7 +5,13 @@ import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import BrandEnquiryPopup from "./BrandEnquiryPopup";
 
-export default function BrandCTA() {
+type Props = {
+  propertyTitle: string;
+};
+
+export default function BrandCTA({
+  propertyTitle,
+}: Props) {
   const [openEnquiry, setOpenEnquiry] = useState(false);
   const [autoPopupDone, setAutoPopupDone] = useState(false);
 
@@ -56,6 +62,7 @@ export default function BrandCTA() {
       <BrandEnquiryPopup
         open={openEnquiry}
         onClose={() => setOpenEnquiry(false)}
+        propertyTitle={propertyTitle}
       />
     </>
   );

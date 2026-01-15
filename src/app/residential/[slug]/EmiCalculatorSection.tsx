@@ -3,11 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 
-type Props = {
-  propertyTitle: string;
-};
 
-export default function EmiCalculatorSection({ propertyTitle }: Props) {
+
+export default function EmiCalculatorSection() {
   const [showLoanPopup, setShowLoanPopup] = useState(false);
 
   return (
@@ -129,13 +127,7 @@ export default function EmiCalculatorSection({ propertyTitle }: Props) {
               Apply for Loan
             </h3>
 
-            {/* ===== INTERESTED IN ===== */}
-            <p className="text-sm font-semibold text-gray-800 mb-3">
-              I Am Interested In
-              <span className="block mt-1 text-sm text-[#c8950a] font-medium">
-                {propertyTitle || "This Property"}
-              </span>
-            </p>
+           
 
             <p className="text-sm text-gray-600 mb-4">
               Our loan expert will contact you shortly.
