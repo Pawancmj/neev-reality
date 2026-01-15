@@ -51,9 +51,6 @@ export default function ApartmentsPage() {
               <p className="mt-2 text-sm sm:text-[15px] text-gray-600">
                 Booming Micro Residential Apartments Market in Gurgaon –
                 luxury apartments offering massive long-term capital gains.
-                <span className="text-blue-600 cursor-pointer ml-1">
-                  Read More
-                </span>
               </p>
             </div>
 
@@ -79,9 +76,6 @@ export default function ApartmentsPage() {
       <section className="lg:bg-[#F6FBFF] pt-4  relative">
         {/* HERO TEXT – MOBILE & TABLET */}
         <div className="lg:hidden mb-6 text-center px-2">
-          <p className="text-sm text-gray-500 mb-2">
-            From as low as $10 per day with limited-time offer discounts.
-          </p>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight">
             Your <span className="text-[#F5A300]">Property</span>, <br />
@@ -93,9 +87,6 @@ export default function ApartmentsPage() {
           <div className="relative hidden lg:flex items-start gap-10">
             {/* LEFT */}
             <div className="flex-1 ml-10">
-              <p className="text-sm text-gray-500 mb-4">
-                From as low as $10 per day with limited-time offer discounts.
-              </p>
 
               <h1 className="text-[42px] sm:text-[52px] font-extrabold text-gray-900 leading-tight">
                 Your <span className="text-[#F5A300]">Property</span>, <br />
@@ -134,7 +125,7 @@ export default function ApartmentsPage() {
               />
 
               <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
-                <option>Property Type</option>
+                <option>Type</option>
                 <option value="residential">Residential Property</option>
                 <option value="commercial">Commercial Property</option>
                 <option value="luxury-apartment">Luxury Apartment</option>
@@ -144,7 +135,7 @@ export default function ApartmentsPage() {
               </select>
 
               <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
-                <option>Property Status</option>
+                <option>Status</option>
                 <option value="new-launch">New Launch Project</option>
                 <option value="ready-to-move">Ready to Move Project</option>
                 <option value="under-construction">Under Construction Project</option>
@@ -178,7 +169,7 @@ export default function ApartmentsPage() {
               </select>
 
               <select className="w-full px-3 py-2.5 rounded-full bg-gray-50 text-sm md:w-28 flex-shrink-0">
-                <option value="">Property Size</option>
+                <option value="">Size</option>
                 <option value="1-bhk">1 BHK</option>
                 <option value="1.5-bhk">1.5 BHK</option>
                 <option value="2-bhk">2 BHK</option>
@@ -208,7 +199,7 @@ export default function ApartmentsPage() {
               />
 
               <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
-                <option>Property Type</option>
+                <option>Type</option>
                 <option value="residential">Residential Property</option>
                 <option value="commercial">Commercial Property</option>
                 <option value="luxury-apartment">Luxury Apartment</option>
@@ -218,7 +209,7 @@ export default function ApartmentsPage() {
               </select>
 
               <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
-                <option>Property Status</option>
+                <option>Status</option>
                 <option value="new-launch">New Launch Project</option>
                 <option value="ready-to-move">Ready to Move Project</option>
                 <option value="under-construction">Under Construction Project</option>
@@ -252,7 +243,7 @@ export default function ApartmentsPage() {
               </select>
 
               <select className="w-28 px-3 py-3 rounded-full bg-gray-50 text-sm flex-shrink-0">
-                <option value="">Property Size</option>
+                <option value="">Size</option>
                 <option value="1-bhk">1 BHK </option>
                 <option value="1.5-bhk">1.5 BHK </option>
                 <option value="2-bhk">2 BHK </option>

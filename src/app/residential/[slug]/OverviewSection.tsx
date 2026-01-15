@@ -33,10 +33,8 @@ export default function OverviewSection({
           <p className="text-sm md:text-base text-gray-600 max-w-[900px] mx-auto leading-relaxed">
             Adani Group has launched a magnificent new offering in Ahmedabad,
             called Adani Shantigram The Meadows. The complex boasts of luxury
-            filled apartments, which are desired by all…
-            <span className="text-pink-600 cursor-pointer ml-1">
-              Read More
-            </span>
+            filled apartments, which are desired by all.
+            
           </p>
 
           {/* CTA BUTTON */}
