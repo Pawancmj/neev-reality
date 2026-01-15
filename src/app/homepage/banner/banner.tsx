@@ -29,10 +29,10 @@ const StatsBar: React.FC<{ stats?: StatItem[] }> = ({ stats: customStats }) => {
     observer.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCounts();
-            observer.current?.unobserve(entry.target);
-          }
+         if (entry.isIntersecting) {
+           animateCounts();
+           observer.current?.unobserve(entry.target);
+         }
         });
       },
       { threshold: 0.5 }
@@ -62,8 +62,8 @@ const StatsBar: React.FC<{ stats?: StatItem[] }> = ({ stats: customStats }) => {
       animationIds.current[index] = setInterval(() => {
         start += increment;
         if (start >= target) {
-          start = target;
-          clearInterval(animationIds.current[index]!);
+         start = target;
+         clearInterval(animationIds.current[index]!);
         }
         setCounts((prev) => {
           const newCounts = [...prev];
@@ -85,7 +85,7 @@ const StatsBar: React.FC<{ stats?: StatItem[] }> = ({ stats: customStats }) => {
       {/* Horizontal Cards Layout - Fully Responsive */}
       <div className="mx-auto max-w-[1400px] px-3 sm:px-4 md:px-6 lg:px-12">
         {/* Mobile Only: Horizontal Scroll (up to lg breakpoint) */}
-        <div className="flex gap-3 sm:gap-4 lg:hidden overflow-x-auto pb-4 sm:pb-6 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent [-webkit-scrollbar:height-4px] [-webkit-scrollbar-track:rounded] [-webkit-scrollbar-thumb:rounded-full]">
+        <div className="flex gap-3 sm:gap-4 lg:hidden overflow-x-auto pb-4 sm:pb-6 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent  [-webkit-scrollbar:height-4px] [-webkit-scrollbar-track:rounded] [-webkit-scrollbar-thumb:rounded-full]">
           {useStats.map((item, index) => (
             <div
               key={item.label}
@@ -103,39 +103,40 @@ const StatsBar: React.FC<{ stats?: StatItem[] }> = ({ stats: customStats }) => {
               <span className="text-lg sm:text-xl font-black text-black drop-shadow-lg mb-1 sm:mb-2 block leading-tight">
                 {counts[index].toLocaleString()}+
               </span>
-              <span className="text-xs sm:text-sm font-semibold text-gray-700 tracking-wide text-center leading-tight line-clamp-2">
+              <span className="text-xs sm:text-sm  tracking-wide text-center leading-tight line-clamp-2">
                 {item.label}
               </span>
             </div>
           ))}
         </div>
 
-        {/* Tablet/Laptop/Desktop: Responsive Grid (lg+) */}
-        <div className="hidden lg:grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6 xl:p-6 xl:bg-gray-100 xl:shadow-sm xl:rounded-2xl xl:mx-4">
+        {/* 1024px+: HORIZONTAL ROW - OVERFLOW FIXED */}
+        <div className="hidden lg:flex lg:gap-3 xl:gap-20 p-6  bg-white/86 shadow-2xl rounded-2xl mx-auto  max-w-[1240px] h-[259px] justify-center items-start overflow-x-auto lg:overflow-visible xl:overflow-hidden">
           {useStats.map((item, index) => (
             <div
               key={item.label}
               className="
-                flex flex-col items-center h-44 xl:h-48 hover:scale-110 rounded-2xl bg-white/95
+                flex flex-col items-center xl:h-48 hover:scale-110 rounded-2xl bg-white/95
                 backdrop-blur-xl shadow-2xl border border-white/50 hover:shadow-gold
-                transition-all duration-500 hover:-translate-y-2 group relative p-3 xl:p-4
+                transition-all duration-500 hover:-translate-y-2 flex-shrink-0 group relative p-3 xl:p-4 w-[200px] lg:w-[224px] xl:w-[224px] h-[166px]
               "
             >
-              {/* Custom Logo/Image Section */}
+              {/* Custom Logo/Image Section - ORIGINAL positioning */}
               <div className="w-16 xl:w-20 h-16 xl:h-20 rounded-full relative right-6 xl:right-8 bottom-3 xl:bottom-10 bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300 overflow-hidden">
                 <Image
                   src={item.icon}
                   alt={item.label}
-                  width={32}
-                  height={32}
-                  className="w-8 xl:w-10 h-8 xl:h-10 object-contain  drop-shadow-lg group-hover:scale-110 transition-all duration-300"
+                  width={86}
+                  height={86}
+                  className="w-[86px] xl:w-10 h-[86px] xl:h-10 object-contain drop-shadow-lg group-hover:scale-110 transition-all duration-300"
                 />
               </div>
               
+              {/* ORIGINAL text positioning restored */}
               <span className="text-2xl xl:text-4xl font-black text-black drop-shadow-2xl group-hover:text-[#B8860B] absolute bottom-16 xl:bottom-20 left-1/2 -translate-x-1/2 leading-none">
                 {counts[index].toLocaleString()}+
               </span>
-              <span className="text-base xl:text-lg font-semibold text-gray-700 tracking-wide text-center leading-tight absolute bottom-2 left-1/2 -translate-x-1/2 w-[95%] xl:w-[99%] px-1 xl:px-2 line-clamp-2">
+              <span className="text-base xl:text-lg w-[133px] h-[47px]   text-center leading-tight absolute bottom-2 left-1/2 -translate-x-1/2 w-[95%] xl:w-[99%] px-1 xl:px-2 line-clamp-2">
                 {item.label}
               </span>
             </div>
