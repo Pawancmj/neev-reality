@@ -75,7 +75,7 @@ const StatsBar: React.FC<{ stats?: StatItem[] }> = ({ stats: customStats }) => {
   }, [useStats]);
 
   return (
-    <section ref={observedRef} className="relative mx-auto py-8 sm:py-12 w-full max-w-[1520px] bg-[#F8FBFF] h-[330px]  overflow-hidden">
+    <section ref={observedRef} className="relative mx-auto py-8 sm:py-12 w-full max-w-[1520px] bg-[#F8FBFF] h-[200px] sm:h-[330px] overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-4 sm:top-10 left-4 sm:left-10 w-16 sm:w-20 h-16 sm:h-20 bg-white/30 rounded-full blur-xl"></div>
@@ -84,8 +84,8 @@ const StatsBar: React.FC<{ stats?: StatItem[] }> = ({ stats: customStats }) => {
 
       {/* Horizontal Cards Layout - Fully Responsive */}
       <div className="mx-auto max-w-[1400px] px-3 sm:px-4 md:px-6 lg:px-12">
-        {/* Mobile Only: Horizontal Scroll (up to lg breakpoint) */}
-        <div className="flex gap-3 sm:gap-4 lg:hidden overflow-x-auto pb-4 sm:pb-6 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent  [-webkit-scrollbar:height-4px] [-webkit-scrollbar-track:rounded] [-webkit-scrollbar-thumb:rounded-full]">
+        {/* Mobile Only: UNCHANGED */}
+        <div className="flex gap-3 sm:gap-4 md:hidden overflow-x-auto pb-4 sm:pb-6 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent [-webkit-scrollbar:height-4px] [-webkit-scrollbar-track:rounded] [-webkit-scrollbar-thumb:rounded-full]">
           {useStats.map((item, index) => (
             <div
               key={item.label}
@@ -103,47 +103,49 @@ const StatsBar: React.FC<{ stats?: StatItem[] }> = ({ stats: customStats }) => {
               <span className="text-lg sm:text-xl font-black text-black drop-shadow-lg mb-1 sm:mb-2 block leading-tight">
                 {counts[index].toLocaleString()}+
               </span>
-              <span className="text-xs sm:text-sm  tracking-wide text-center leading-tight line-clamp-2">
+              <span className="text-xs sm:text-sm tracking-wide text-center leading-tight line-clamp-2">
                 {item.label}
               </span>
             </div>
           ))}
         </div>
 
-        {/* 1024px+: HORIZONTAL ROW - OVERFLOW FIXED */}
-        {/* <section className="h-[300px] w-[1520px] bg-blue-100 mx-auto relative right-28 bottom-12"> */}
-        <div className="hidden lg:flex lg:gap-3 xl:gap-20 p-6   bg-white/95 shadow-2xl rounded-2xl mx-auto  max-w-[1240px] h-[240px] justify-center items-start overflow-x-auto lg:overflow-visible xl:overflow-hidden">
+        {/* FIXED Tablet: Reduced card heights for text visibility */}
+        <div className="hidden md:flex md:gap-1.5 lg:gap-3 xl:gap-20 p-4 md:p-5 lg:p-6 bg-white/90 shadow-2xl shadow-[#00000020] border border-white/60 backdrop-blur-xl rounded-3xl mx-auto max-w-[1240px] h-[220px] md:h-[240px] justify-center items-start">
           {useStats.map((item, index) => (
             <div
               key={item.label}
               className="
-                flex flex-col items-center xl:h-44 hover:scale-95 rounded-2xl bg-white/95
-                backdrop-blur-xl shadow-2xl border border-white/50 hover:shadow-gold
-                transition-all duration-500 hover:-translate-y-2 flex-shrink-0 group relative p-3 xl:p-4 w-[200px] lg:w-[200px] xl:w-[200px] h-[130px] relative top-3
+                flex flex-col items-center h-[130px] md:h-[135px] lg:h-[176px] xl:h-44 
+                hover:scale-95 rounded-2xl bg-white/95 backdrop-blur-xl shadow-xl lg:shadow-2xl 
+                border border-white/50 hover:shadow-gold hover:border-gold/80
+                transition-all duration-500 hover:-translate-y-2 flex-shrink-0 group relative 
+                p-1 md:p-1.5 lg:p-4 w-[155px] md:w-[165px] lg:w-[200px] top-2
               "
             >
-              {/* Custom Logo/Image Section - ORIGINAL positioning */}
-              <div className="w-16 xl:w-20 h-16 xl:h-20 rounded-full relative right-6 xl:right-8 bottom-3 xl:bottom-10 bg-white flex items-center justify-center shadow-xl border-2 border-[#cad1db] group-hover:scale-110 transition-all duration-300 overflow-hidden">
+              {/* Icon - Adjusted positioning */}
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20 rounded-full relative right-4 md:right-5 lg:right-6 bottom-1 md:bottom-1.5 lg:bottom-3 xl:right-8 xl:bottom-10 bg-white flex items-center justify-center shadow-xl border-2 border-[#cad1db] group-hover:scale-110 transition-all duration-300 overflow-hidden">
                 <Image
                   src={item.icon}
                   alt={item.label}
-                  width={86}
-                  height={86}
-                  className="w-[86px]   xl:w-10 h-[86px] xl:h-10 object-contain drop-shadow-lg group-hover:scale-110 transition-all duration-300"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-10 xl:h-10 object-contain drop-shadow-lg group-hover:scale-110 transition-all duration-300"
                 />
               </div>
               
-              {/* ORIGINAL text positioning restored */}
-              <span className="text-2xl xl:text-4xl font-black text-black drop-shadow-2xl group-hover:text-[#B8860B] absolute bottom-16 xl:bottom-20 left-1/2 -translate-x-1/2 leading-none">
+              {/* Number - Adjusted positioning */}
+              <span className="text-base md:text-lg lg:text-2xl xl:text-4xl font-black text-black drop-shadow-2xl group-hover:text-[#B8860B] absolute bottom-10 md:bottom-11 lg:bottom-16 xl:bottom-20 left-1/2 -translate-x-1/2 leading-none">
                 {counts[index].toLocaleString()}+
               </span>
-              <span className="text-base xl:text-lg w-[133px] h-[47px]   text-center leading-tight absolute bottom-2 left-1/2 -translate-x-1/2 w-[95%] xl:w-[99%] px-1 xl:px-2 line-clamp-2">
+              
+              {/* Label - Fixed positioning & sizing */}
+              <span className="text-xs md:text-sm lg:text-base xl:text-lg text-center leading-tight absolute bottom-1 left-1/2 -translate-x-1/2 w-[88%] md:w-[90%] lg:w-[95%] xl:w-[99%] px-1 line-clamp-2 z-10">
                 {item.label}
               </span>
             </div>
           ))}
         </div>
-        {/* </section> */}
       </div>
     </section>
   );
